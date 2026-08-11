@@ -28,7 +28,7 @@ repository; `plugin:` and `mcp:` are installed or connected by you, not shipped 
 kind	name	domains	reference	why
 plugin	skill-builder	D-06,D-29	plugin:gitroll-dev/skill-builder@2.1.0	The deliverable IS a skill.md, and this plugin's packager compresses a skill directory into a .skill archive a non-technical owner installs through the desktop application. That is the handover problem solved, in-house and already working
 plugin	planning-with-files	D-02	plugin:planning-with-files	Task state written to files and re-injected each turn. Context engineering made concrete, and an engagement spans days
-plugin	superpowers	D-06,D-04	plugin:superpowers	The brainstorming to writing-plans to writing-skills chain is spec-before-build, which is what specification writing for AI delegation asks for, plus its verification-before-completion discipline
+plugin	superpowers	D-06	plugin:superpowers	The brainstorming to writing-plans to writing-skills chain is spec-before-build, which is what specification writing for AI delegation asks for. It carried a D-04 claim until an audit ruled that the clause supporting it described verification, which is D-05, not baselines and logged failures, which is D-04
 plugin	ralph-specum	D-05	plugin:ralph-specum	Multi-layer completion verification that never trusts a self-report. That is output verification and failure-mode literacy, exactly
 skill	wei-create-skill	D-06	repo:library/skills/wei-create-skill	Loads the skill-authoring standard the fellow's own deliverable is graded against. The playbooks are authored to the same standard
 skill	wei-explain	D-29	repo:library/skills/wei-explain	Owner handover explanation is taught, and this is the only skill aimed at explaining to a non-expert. Explanation is a separate genre from a fact-sheet
@@ -40,6 +40,41 @@ mcp	notion	D-27	mcp:claude.ai/notion	Where an engagement's notes and, often, the
 mcp	google-drive	D-27	mcp:claude.ai/google-drive	The small-business document reality. Account-level connector, connected with the client's credentials
 mcp	claude-in-chrome	D-12	mcp:extension/claude-in-chrome	Operating-environment literacy means seeing the tools the business actually uses, in the browser they use them in
 ```
+
+## What serves each taught domain — including the ones nothing serves
+
+The cut was made by asking "does this tool serve something taught?". That question, asked in that
+direction, cannot notice a taught domain with no tool at all. Asked in the other direction, seventeen
+domains resolve like this:
+
+| Domain | Served by a tool | Served by a playbook or SOP |
+|---|---|---|
+| D-01 Agent operating model | **nothing** | environment-setup playbook — **a stub** |
+| D-02 Context engineering | planning-with-files, kb-restructure | — |
+| D-03 Autonomy calibration and gating | **nothing** | `library/sops/agent-settings.md` |
+| D-04 Evaluation methodology | **nothing** | validator playbook — **a stub** |
+| D-05 Output verification, failure modes | ralph-specum, adversarial-reviewer | validator playbook — a stub |
+| D-06 Specification writing | skill-builder, superpowers, wei-create-skill, adversarial-reviewer | elicitation-to-SOP playbook — a stub |
+| D-09 Deterministic guardrails | **nothing** | `library/sops/agent-settings.md` |
+| D-12 Operating-environment literacy | claude-in-chrome | — |
+| D-21 Interview framing | **nothing** | interview playbook |
+| D-22 Non-directive questioning | **nothing** | interview playbook |
+| D-23 Past-instance evidence | **nothing** | interview playbook |
+| D-24 Process reconstruction | wei-flowchart | interview playbook |
+| D-25 Answer-directed follow-up | **nothing** | interview playbook |
+| D-26 Grounding and confirmation | **nothing** | interview playbook |
+| D-27 Coverage and boundary elicitation | wei-digest-doc, notion, google-drive | interview playbook |
+| D-28 Traceable synthesis | **nothing** | interview playbook |
+| D-29 Owner handover explanation | wei-explain, skill-builder | interview playbook |
+
+**Nine domains have no tool, and that is not automatically a defect.** Six of them — the interview
+domains D-21, D-22, D-23, D-25, D-26 and D-28 — are conversational skills, and there is no tool for
+asking a better question. The interview playbook is the right instrument and it exists.
+
+**Three of them are a real gap and are named as such.** D-01, D-03, D-04 and D-09 rest on playbooks
+that have not been written and on one settings document. `wei-prep-goal` serves D-03 and D-04 directly
+and was cut on weight, which is now a judgement worth revisiting rather than a settled call. Until one
+of those happens, four taught domains rest on stubs.
 
 ## Connected per engagement, not by default
 

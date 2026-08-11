@@ -28,6 +28,13 @@ ls -l .claude/skills          # should resolve to ../library/skills
 Then install the four plugins — the install is interactive and cannot be scripted. Commands and reasons
 are in `library/sops/agent-settings.md`.
 
+## A note on `scripts/canon-check.sh`
+
+It answers "has anything moved upstream since this library was cut?" — a question for whoever maintains
+the library, on a machine that has GitRoll's source repositories checked out. Run on your own machine it
+prints `GONE` for every vendored file, which means "the source is not here", not "the source was
+deleted". You are not the audience for it.
+
 ## Status
 
 First cut, 2026-08-11. Every layer is present and thinly populated on purpose: one worked playbook, four

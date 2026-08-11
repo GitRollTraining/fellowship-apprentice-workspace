@@ -7,19 +7,26 @@ style: descriptive
 
 ## Purpose
 
-Material that is true across every engagement: the vocabulary, the tool list, and worked examples.
-Anything you find yourself copying from one client's directory to another's belongs here instead.
+Material that is true across every engagement and that **you** accumulate. Anything you find yourself
+copying from one client's directory to another's belongs here instead of being copied again.
+
+GitRoll's own cross-engagement material — the terminology and the tool cut — is in `library/reference/`
+instead, because it is ours and read-only. This directory is yours and writable.
 
 ## Inventory
 
 | Item | What it is | Class |
 |---|---|---|
-| `terminology.md` | The defined terms, each in plain words. Define them, never rename them | Mutable |
-| `tool-inventory.md` | Every skill, plugin and MCP server that is in, what it serves, and why the rest are out | Mutable |
+| `question-bank.md` | Question stems that survived a real session. Yours, and cumulative | Mutable |
+| `self-audit-log.md` | One line per session: what you will do differently. Longitudinal on purpose | Mutable |
+
+The two files that carry GitRoll's own definitions — the terminology and the curated tool cut — are
+**not** here. They live in `library/reference/`, which is read-only and hashed in `CANON.md`, because a
+definition anyone can silently edit is not a definition.
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `terminology.md` | 2026-08-11 | Mutable | first cut |
-| `tool-inventory.md` | 2026-08-11 | Mutable | first cut — the tool layer turns over roughly annually; revalidate at twelve months |
+| `question-bank.md` | 2026-08-11 | Mutable | empty; fills from your sessions |
+| `self-audit-log.md` | 2026-08-11 | Mutable | empty; one line per session |

@@ -70,7 +70,7 @@ Missing args → ask. KB root = walk up from cwd until the repository root (`.gi
 | Classification rule | `references/classification.md` |
 | 1→1 playbook | `references/playbook-rename.md` |
 | 1→archived playbook | `references/playbook-archive.md` |
-| Eval baseline | `eval/` |
+| Eval baseline | **not shipped in this copy** — see the Eval section |
 
 **symcheck exit codes:** 0 = no broken symlinks, 1 = broken links found, 2 = usage. On any KB with pre-existing breakage it returns 1 on EVERY run — so never wrap it in `set -e` and never read its exit code as the gate. **The gate is the DELTA against the preflight baseline**, not the exit code. (Also: reading the code through a pipe — `symcheck.sh . | tee` — gets you `tee`'s status, not symcheck's.)
 
@@ -80,13 +80,17 @@ Run report, terse: scope statement · hit table (path / hint / verdict / action)
 
 ## Eval
 
-- Canonical input: `eval/baseline-input.md` (planted fixture — one ref per proven failure class)
-- Baseline output: `eval/baseline-output.md`
-- Runner: `eval/run-eval.sh` (builds the fixture in mktemp, runs both scripts, diffs against baseline)
-- Judgment regression: `eval/judgment-cases.md` — walk after any classification.md edit; scripts don't test judgment
+**The eval fixtures do not ship with this copy.** Upstream they are a planted fixture, a baseline
+output, a runner and a judgment-regression set, all built against GitRoll's own knowledge base. They
+were dropped rather than travelled because a fixture that names another organisation's directories
+tests nothing here and discloses something.
+
+What this costs you, stated plainly: after any edit to `references/classification.md` there is no
+regression set to walk, so a classification change is unverified until someone builds one. Building
+that fixture — one planted reference per failure class — is a good first contribution to this library.
 
 ## Quality Guidelines
 
 Adhere to the house standards where installed (they live at the user level, not in this skill; on a foreign install without them, skip):
-- `@references/agent-quality-guidelines.md` (runtime behavior)
-- `@references/skill-architecture.md` (structural principles)
+- `library/reference/agent-quality-guidelines.md` (runtime behavior)
+- `library/reference/skill-architecture.md` (structural principles)

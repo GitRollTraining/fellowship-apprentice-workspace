@@ -12,9 +12,9 @@ argument-hint: <file-path-or-url-or-pasted-text> [--family=govdoc|article]
 
 | Family | Status | Covers | Refs |
 |--------|--------|--------|------|
-| `govdoc` | LIVE | Federal procurement documents: RFQ, PWS, vendor response/quote, amendment | `references/govdoc-*.md` |
-| `article` | LIVE | Research articles, industry reports, white papers filed into the workspace | `references/article-*.md` |
-| books | OUT OF SCOPE | Long-form books — different mechanics (conversion, tier bands) | `wei-distill-book` (personal KB), not this skill |
+| `article` | LIVE | Anything the business already has in writing, and anything you read to understand their field: reports, manuals, policies, white papers, web articles | `references/article-*.md` |
+| `govdoc` | **NOT SHIPPED** | Federal procurement documents. Its rules were written against GitRoll's own contract documents and are removed from this copy | — |
+| books | OUT OF SCOPE | Long-form books — different mechanics | not this skill |
 
 New family = one schemas ref + one importance ref + one gotchas ref + eval baseline; update `--family` values in the frontmatter hint.
 
@@ -28,7 +28,7 @@ No other arguments. The type within the family (govdoc: rfq / pws / response / a
 ## Step 0 — establish WHERE you are, before anything else
 
 ```bash
-bash ~/.claude/scripts/workspace.sh    # -> "<name>\t<root>", exit 1 if unrecognized
+git rev-parse --show-toplevel          # -> the root of this apprentice workspace
 ```
 
 **User-level since 2026-07-27**, so this runs in every workspace and must never assume one. Whatever
@@ -53,21 +53,20 @@ every worktree, and silently resolves the wrong root.
 Top four inline; full per-family list in `references/{family}-gotchas.md` — read it at step 2.
 
 - **Dropped qualifiers flip obligations.** "Virtual unless CO approves in writing" digested as "virtual" turns a conditional into an absolute. Keep every qualifier verbatim.
-- **Unusual clauses hide inside boilerplate.** Skipping "standard" sections wholesale would have missed TO3 PWS §5.1 (absolute IP ownership, no carve-out). Skim all boilerplate for deltas from the sibling/prior document; digest only the deltas.
-- **Response digests answer "what did WE promise," not "what did they ask."** Wrong default: re-summarizing the requirements the response echoes back. Correct: commitments table (promise → requirement it answers → page), staffing names, embedded assets, over-commitments.
-- **Wrong-family forcing.** A document that fits no live family (a book, a slide deck, a transcript) squeezed into the nearest schema produces a broken digest. Correct: stop, report, propose the family (or route to the right tool — books → `wei-distill-book` in the personal KB, transcripts → `/wei-meeting-summary`).
+- **Unusual clauses hide inside boilerplate.** A section that looks standard is where the one non-standard term hides — the clause nobody reads is exactly where an obligation gets added. Skim all boilerplate for deltas from the prior or sibling version; digest only the deltas.
+- **A reply document answers "what did we commit to," not "what were we asked."** The wrong default is re-summarising the request the reply echoes back. Correct: a commitments table — promise, the requirement it answers, the page.
+- **Wrong-family forcing.** A document that fits no live family — a book, a slide deck, a transcript — squeezed into the nearest schema produces a broken digest. Correct: stop, report, and propose the family rather than forcing it.
 
 ## Constants
 
 | Key | Value |
 |---|---|
-| Skill location | `~/.claude/skills/wei-digest-doc/` — **user-level** since 2026-07-27, runs in any workspace |
-| Workspace probe | `~/.claude/scripts/workspace.sh` — shared with the transcription skills, never copy it |
+| Skill location | `library/skills/wei-digest-doc/`, reached through the `.claude/skills` symlink |
+| Workspace probe | `git rev-parse --show-toplevel`. **Local patch for the apprentice workspace:** upstream this skill probes a script that recognises exactly two GitRoll repositories by git remote and exits 1 on anything else, which halted this skill at step 0 here |
 | Filing routes | `references/routing.md` — per-workspace destinations, read at runtime |
 | Family refs pattern | `references/{family}-schemas.md`, `references/{family}-importance-rules.md`, `references/{family}-gotchas.md` |
-| govdoc refs | `references/govdoc-schemas.md`, `references/govdoc-importance-rules.md`, `references/govdoc-gotchas.md` |
 | article refs | `references/article-schemas.md`, `references/article-importance-rules.md`, `references/article-gotchas.md` |
-| Reference outputs (proven format) | Both in the **operations** workspace — govdoc: `workforce-delivery/irs-bpa/task-orders/*/20*-summary.md`; article: `agent-operations/research/2026-07-23_hpd_parsing_paper.md`. No proven itsweikuo output yet; the first article digest filed to `notes/article-summaries/` becomes it |
+| Reference outputs (proven format) | Held in GitRoll's own workspaces and not shipped here. The schemas in `references/` are the contract; follow those |
 
 ## Output
 
@@ -75,19 +74,23 @@ One markdown fact-sheet next to the source document (URL-sourced articles: in th
 
 ## Style
 
-- Style directive: descriptive fact-sheet (`.claude/rules/descriptive-style.md`) — no intro/narrative/persuasion; facts + tables + lists; no emojis.
+- Style directive: descriptive fact-sheet (`library/sops/working-standards.md`) — no intro, no narrative, no persuasion; facts, tables and lists; no emojis.
 - Tested on: Fable 5 (2026-07-06, three-document govdoc iteration; 2026-07-23, first article run).
 - Model floor: Sonnet 4.5 — below that, qualifier preservation and page-citation accuracy degrade (untested; floor is a judgment, re-eval on first sub-Sonnet run).
 
 ## Eval
 
-- govdoc: `eval/baseline-input.md` + `eval/baseline-output.md` (TO3 PWS, 8 pages — smallest real input).
-- article: `eval/article-baseline-input.md` + `eval/article-baseline-output.md` (HPD-Parsing arXiv paper, first live article run).
-- Acceptance: all must-keep categories present, ≥5 spot-checked facts match cited pages, qualifiers intact, decision-relevance confined to implications section.
-- New family → add its own baseline pair before first production run.
+**No baseline pair ships with this copy.** Upstream, this skill is evaluated against two worked
+examples; both were built from GitRoll's own federal contract documents and internal research filings,
+so neither travels. Until a replacement pair exists, judge a digest against the acceptance criteria
+directly: every must-keep category present, at least five spot-checked facts matching their cited
+pages, every qualifier intact, and decision-relevance confined to the implications section.
+
+Building the first apprentice-side baseline pair — one input document, one accepted output — is a good
+first contribution to this library.
 
 ## Quality Guidelines
 
 Adhere to:
-- `@references/agent-quality-guidelines.md` (runtime behavior)
-- `@references/skill-architecture.md` (structural principles)
+- `library/reference/agent-quality-guidelines.md` (runtime behavior)
+- `library/reference/skill-architecture.md` (structural principles)

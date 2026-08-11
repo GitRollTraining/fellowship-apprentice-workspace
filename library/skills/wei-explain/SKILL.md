@@ -7,7 +7,7 @@ argument-hint: <source-document-or-topic>
 # Explain — unfamiliar-field material
 
 > Shapes an explanation for a reader who is new to the field. The rules live in
-> `@references/explanation-style.md`. This skill routes to them and copies none of them, so there
+> `library/reference/explanation-style.md`. This skill routes to them and copies none of them, so there
 > stays exactly one home. Read the reference before writing — do not work from this summary.
 
 ## Inputs
@@ -19,7 +19,7 @@ No flags. Everything else is inferred from the source and the reader.
 
 ## Workflow
 
-1. Read `@references/explanation-style.md` in full.
+1. Read `library/reference/explanation-style.md` in full.
 2. Confirm the trigger: the READER is unfamiliar with the field. If they know the field, stop and
    write a digest instead.
 3. Pick ONE anchor object; carry it through every finding. Never switch metaphor per point.
@@ -65,5 +65,5 @@ No flags. Everything else is inferred from the source and the reader.
 ## Quality Guidelines
 
 Adhere to:
-- `@references/agent-quality-guidelines.md` (runtime behavior)
-- `@references/skill-architecture.md` (structural principles)
+- `library/reference/agent-quality-guidelines.md` (runtime behavior)
+- `library/reference/skill-architecture.md` (structural principles)

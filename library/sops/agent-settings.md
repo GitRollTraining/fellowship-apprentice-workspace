@@ -55,17 +55,36 @@ credentials in the environment, never in the file.
 
 ## Installing the plugins
 
-The plugin install is interactive and cannot be scripted. Run these in a live session, one at a time,
-and confirm each loads before the next:
+The install is interactive and cannot be scripted. **Three of the four live in third-party
+marketplaces that have to be added first**, and the marketplace name is not guessable from the plugin
+name — `ralph-specum` lives in a marketplace called `smart-ralph`. Run these in a live session, one at
+a time, and confirm each loads before moving on:
 
 ```text
-/plugin install skill-builder
-/plugin install planning-with-files
 /plugin install superpowers
-/plugin install ralph-specum
+
+/plugin marketplace add OthmanAdi/planning-with-files
+/plugin install planning-with-files@planning-with-files
+
+/plugin marketplace add tzachbon/smart-ralph
+/plugin install ralph-specum@smart-ralph
+
+/plugin marketplace add gitroll-dev/skill-builder
+/plugin install skill-builder@skill-builder
 ```
 
-What each is for, and which taught domain it serves, is in `reference/tool-inventory.md`.
+**The fourth one will fail for you today, and you have done nothing wrong.**
+`gitroll-dev/skill-builder` is a private repository. The marketplace-add returns 404 for anyone who is
+not a member of the `gitroll-dev` GitHub organisation. Until either the repository is made public or
+you are added to that organisation, you cannot install it — and that means the `.skill` packaging step
+of handover is not available to you. Say so rather than working around it; someone has to decide which
+of the two fixes happens.
+
+`skill-builder` also registers an audio MCP server of its own when it installs, which downloads several
+gigabytes of speech models on first use and needs `uv` on your machine. Nothing in this programme uses
+it. Disable it after installing.
+
+What each plugin is for, and which taught domain it serves, is in `library/reference/tool-inventory.md`.
 
 ## Making the skills visible to the agent
 

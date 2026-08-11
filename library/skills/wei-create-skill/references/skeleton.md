@@ -40,7 +40,7 @@ If args missing, ask user.
 
 | Key | Value |
 |---|---|
-| Skill location | `~/.claude/skills/{{slug}}/` (or `{workspace}/.claude/skills/{{slug}}/` for project skills) |
+| Skill location | `library/skills/{{slug}}/` |
 | Companion refs | `references/{{ref-name}}.md` |
 
 ## Output
@@ -64,8 +64,8 @@ If args missing, ask user.
 ## Quality Guidelines
 
 Adhere to:
-- `@references/agent-quality-guidelines.md` (runtime behavior)
-- `@references/skill-architecture.md` (structural principles)
+- `library/reference/agent-quality-guidelines.md` (runtime behavior)
+- `library/reference/skill-architecture.md` (structural principles)
 ```
 
 ## Companion Ref Skeletons

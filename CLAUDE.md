@@ -15,15 +15,20 @@ If a library file is wrong, report it. Do not repair it in place.
 | You are doing | It goes in |
 |---|---|
 | Anything for a specific client | `engagements/<client-slug>/` |
+| Coursework, exercises, practice interviews — anything with no client | `training/<module-id>/` |
 | Interview notes, transcripts, session records | `engagements/<client-slug>/interview/` |
 | The reconstructed process, its boundaries, its exceptions | `engagements/<client-slug>/process/` |
 | The specification you are building | `engagements/<client-slug>/spec/` |
 | The `skill.md` you hand over | `engagements/<client-slug>/deliverable/` |
 | The owner-facing account | `engagements/<client-slug>/handover/` |
-| Terms, tool lists, worked examples | `reference/` |
+| The owner-facing account | `engagements/<client-slug>/handover/` |
+| Something you will reuse on the next client — a question stem, a self-audit line | `reference/` |
+| Something you were told must not leave the business | a sidecar, untracked. See below |
 
-The five engagement subdirectories are in the order the work happens. File as you go; an engagement you
-file at the end is an engagement you reconstruct from memory.
+The five engagement subdirectories are named for the five kinds of thing an engagement produces, not
+for a sequence — a session fills `interview/` and `process/` in the same afternoon, and `interview/`
+receives more material after `process/` has. File as you go; an engagement you file at the end is an
+engagement you reconstruct from memory.
 
 ## Every directory carries an INDEX.md
 
@@ -52,7 +57,7 @@ stands alone — write the thing, and bracket the code after it if it helps with
 
 Five skills in `library/skills/` (reached through the `.claude/skills` symlink), four plugins you install
 yourself, three MCP servers on by default and three more you connect per engagement with the client's
-own credentials — never GitRoll's. The full list with reasons: `reference/tool-inventory.md`.
+own credentials — never GitRoll's. The full list with reasons: `library/reference/tool-inventory.md`.
 
 ## When you finish an engagement
 

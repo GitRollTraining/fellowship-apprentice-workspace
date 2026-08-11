@@ -9,6 +9,8 @@
       "Bash(git log:*)",
       "Write(engagements/**)",
       "Edit(engagements/**)",
+      "Write(training/**)",
+      "Edit(training/**)",
       "Write(reference/**)",
       "Edit(reference/**)"
     ],

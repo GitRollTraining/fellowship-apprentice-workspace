@@ -2,7 +2,7 @@
 
 Run every check below against newly-created skill files. Report pass/fail. A skill that fails any check should not be declared done.
 
-Source principles: `@references/skill-architecture.md`.
+Source principles: `library/reference/skill-architecture.md`.
 
 ## Checks
 
@@ -92,8 +92,8 @@ tail -10 {skill-dir}/SKILL.md | grep -E 'agent-quality-guidelines|skill-architec
 ## Quality Guidelines
 
 Adhere to:
-- `@references/agent-quality-guidelines.md` (runtime behavior)
-- `@references/skill-architecture.md` (structural principles)
+- `library/reference/agent-quality-guidelines.md` (runtime behavior)
+- `library/reference/skill-architecture.md` (structural principles)
 ```
 
 ### 9. Workflow Steps Are Imperative + Terse
@@ -113,7 +113,7 @@ After creation, verify the skill registers correctly:
 
 ```bash
 # In a fresh Claude session, check available skills include the new one
-ls ~/.claude/skills/{slug}/SKILL.md
+ls library/skills/{slug}/SKILL.md
 ```
 
 **Pass:** File exists, frontmatter parses (verify with `head -5` shows valid YAML between `---` delimiters).
@@ -147,8 +147,8 @@ Skill is NOT done until all failures resolved (excluding N/A).
 | # | Check | How | Fail means |
 |---|---|---|---|
 | S1 | Scope was decided, not defaulted | The report states which criterion branch applied | Nobody asked where the skill writes |
-| S2 | No name collision in any scope | `ls ~/.claude/skills/`, and each workspace's `.claude/skills/` | Two contents, one name — one silently wins |
+| S2 | No name collision | `ls library/skills/` and `ls .claude/skills/` | Two contents, one name — one silently wins |
 | S3 | User-level skill has no hardcoded division path | `grep -nE '(health\|finance\|career\|infra\|notes\|projects\|hobbies\|meetings)/' SKILL.md references/*.md`. **The grep cannot finish this check** — it cannot tell a *destination* from a *citation* or a worked example, and both are legitimate outside `routing.md`. Read each hit: a path the skill WRITES to outside `routing.md` is a violation; a path it cites as provenance or a proven-output example is fine. A hit that restates `routing.md`'s table is also a violation — two copies drift | Broken in every other workspace, silently; or a duplicated destination table that drifts |
 | S4 | Every flag in `argument-hint` is justified | For each: could it be inferred from workspace, input type, or config? | Preference #17 — a flag Wei must remember is a behavior that never runs |
 | S5 | Workspace resolution uses the shared probe | `grep -n 'workspace.sh' SKILL.md`; no hand-rolled "walk up to `.git/`" | Resolves the wrong root inside worktrees, without erroring |
-| S6 | No routine depends on it if user-level | `grep -rn '<slug>' <workspace>/infra/scheduled-agents/` | Cloud routines run on a fresh clone and cannot see `~/.claude/` |
+| S6 | It lives in the repository, not a home directory | `test -d library/skills/<slug>` | Anyone you hand the repository to gets the skill; a home directory does not travel |

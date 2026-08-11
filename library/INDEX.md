@@ -21,6 +21,7 @@ this material.
 | `skills/` | The five curated agent skills, verbatim from their source repositories | Instruction |
 | `personas/` | Agent personas. One shipped, a second named | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |
+| `reference/` | The defined terms, the curated tool cut, and the doctrine the skills route to | Instruction |
 
 ## Freshness
 

@@ -22,8 +22,13 @@ What was validated in this round is narrower and is stated exactly:
 | Checked | How | Result |
 |---|---|---|
 | Every step that produces an artifact has a destination directory that exists in this repo | the table below, against `structure.tsv` | pass |
-| Every tool the playbook needs is shipped in `library/` | `playbook-deps.tsv` compared to `cut.tsv` (gate G4) | pass |
+| Every tool **name** the playbook needs appears in the curated cut | a set difference between `playbook-deps.tsv` and `cut.tsv` (gate G4) | pass |
+| Every tool the playbook names actually **runs** for someone outside GitRoll | a first-round audit read every shipped `SKILL.md` | **five of eight failed, and were repaired**: three routed to doctrine files that were pointed at but never shipped, one copied its own scripts out of the author's home directory, and one halted at step 0 on a probe that recognised exactly two GitRoll repositories. Repaired here; **not yet re-run end to end by a person** |
 | Every taught competency the playbook names maps to a domain the curriculum teaches | its inline competency names against `domains-in.tsv` | pass |
+
+**Read the second and third rows together.** G4 compares two columns of text. It cannot open a skill, and
+it never did — a name matching a name is not a tool that works. The row above it says "pass" about names;
+the row below says what happened when someone actually read the files.
 
 **Not checked, and not claimable:** that following it collects more or better than not following it. The
 playbook says so on its own face, citing the one controlled study of teaching an interview method to

@@ -13,11 +13,11 @@ Ask these in order. Capture answers literally. Do not infer silently — if the 
    - Becomes `description:` field.
    - Probe if vague: "What user phrasing should trigger this?"
 
-3. **Scope.** "User-level (`~/.claude/skills/`, available across all projects) or project-level (`{workspace}/.claude/skills/`, only this workspace)?"
+3. **Scope.** "Is this ours and reusable across engagements — `library/skills/` — or this client's, and part of what they receive?"
    - Default: user.
    - If project, confirm workspace root path.
 
-3b. **Cross-workspace use.** "Will this skill be used from both operations and itsweikuo — now or plausibly later?"
+3b. **Cross-workspace use.** "Will this skill be used from more than one repository — now or plausibly later?"
    - If yes → decide the sharing pattern per SKILL.md step 2a (fork / symlink owner-consumed / promote-with-routing) and record which pattern and why.
    - If promote → scope is user-level with a routing table (2b); ask the destination per workspace.
    - If the skill needs anything outside `.claude/skills/` (templates, scripts, venv, asset library) → promotion SOP §4 governs; name the owning workspace of each dependency.

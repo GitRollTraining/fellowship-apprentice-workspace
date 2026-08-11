@@ -11,8 +11,14 @@ The specification under construction. This is the working half of the deliverabl
 
 ## Inventory
 
-Empty. Files land here as you run the interview playbook — see
-`library/playbooks/playbook-interview.runbook.md` for which step produces which file.
+Empty. **The interview playbook does not fill this directory** — its twenty-one steps end at the
+discovery record and the owner's account. What lands here is produced by the elicitation-to-SOP
+playbook, which is a stub: `library/playbooks/playbook-elicitation-to-sop.md`.
+
+Until that playbook is written, the specification is authored by hand. Do not skip it. The
+specification file is the graded artifact for nine of the twenty-five technical competencies, and it
+is a different artifact from the `skill.md` next door: the assessment engine reads this one, the
+business installs that one.
 
 ## Freshness
 

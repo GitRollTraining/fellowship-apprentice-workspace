@@ -22,9 +22,10 @@ boxes — which is what `scripts/` removes.
 ## Workflow
 
 1. **Copy the toolkit** into the caller's working directory:
-   `mkdir -p <target>/flowchart && cp ~/.claude/skills/wei-flowchart/scripts/*.py <target>/flowchart/`
+   `mkdir -p <target>/flowchart && cp library/skills/wei-flowchart/scripts/*.py <target>/flowchart/`
+   (run from the repository root; the scripts travel with this repository, not with a home directory)
 2. **Write the spec** — one file, the ONLY file that states content. Start from
-   `eval/canonical_spec.py`. Read `references/symbols.md` to pick a symbol per node.
+   `references/symbols.md` to pick a symbol per node.
 3. **Render**: `python3 <target>/flowchart/render_to.py` — or write four lines that call
    `render(SPEC)` and save the SVG. `render()` returns `(svg, res)`.
 4. **Check**: `python3 flowchart/check_map.py <spec>.py` — must print `CLEAN`. It self-tests
@@ -117,10 +118,15 @@ reports CLEAN on. The SVG is pasted inline into the document that needs it.
 
 ## Eval
 
-`eval/canonical_spec.py` — the 21-node map this skill was extracted from. `eval/baseline.md`
-holds the numbers it must reproduce. Re-run after any change to `scripts/`.
+**The eval fixture does not ship with this copy.** Upstream it is the 21-node map this skill was
+extracted from, and that map is a named client's delivery architecture, so it stays where it is.
+
+What this costs you: there is no baseline to re-run after a change to `scripts/`, so a change to the
+layout or rendering code is unverified until someone builds one. A replacement is cheap — any process
+diagram you have already drawn and checked by eye, saved as a spec plus its expected node and edge
+counts, is a working baseline.
 
 ## Quality Guidelines
 
-Adhere to the quality guidelines in `@references/agent-quality-guidelines.md` and structural
-principles in `@references/skill-architecture.md`.
+Adhere to the quality guidelines in `library/reference/agent-quality-guidelines.md` and structural
+principles in `library/reference/skill-architecture.md`.
