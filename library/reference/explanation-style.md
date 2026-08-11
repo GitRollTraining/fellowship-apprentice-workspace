@@ -106,7 +106,7 @@ once and in passing.
 
 ## Provenance
 
-Confirmed by Wei 2026-07-28 on the IECON P2 walkthrough. Two constraints he set the same day, both
+Confirmed 2026-07-28 against a live walkthrough with a reader new to the field. Two constraints set the same day, both
 load-bearing above: explanation is not digest, and this must not be folded into `wei-digest-doc`.
 Session memory: `explain-with-one-anchor-object`. Applied instance (embedded form, known-wrong
 container): a task directory holding the working notes the explanation was built from.

@@ -37,7 +37,7 @@ to nothing for the person the copy was given to.
 
 | Component | Why it diverges from its source |
 |---|---|
-| `library/reference/explanation-style.md` | local patch |
+| `library/reference/explanation-style.md` | a confirmation line named an individual and an internal event |
 | `library/skills/kb-restructure/SKILL.md` | same repoint; its eval fixtures were built against GitRoll's knowledge base and were not shipped |
 | `library/skills/wei-create-skill/SKILL.md` | routed to two doctrine files that did not ship; and its scope, workspace-probe and promotion machinery addressed GitRoll's own repositories and a script in the author's home directory |
 | `library/skills/wei-create-skill/references/checklist.md` | same repoint; two checks looked in a home directory |
@@ -97,7 +97,7 @@ library/playbooks/playbook-output-phraser.md	authored	-	-	6e06e6fc3114c6d1229af7
 library/playbooks/playbook-validator.md	authored	-	-	a2b940b36fe4330cc01b6f9025358fb08d0d91f6d001aada7a7d33e977e32b81	playbooks	-
 library/reference/INDEX.md	authored	-	-	ef74418f00e67247bbb8a063be2d81cb5f16bd36a0233787fe99c9c82ff72e4e	reference	-
 library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/references/agent-quality-guidelines.md	41bf600	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce	reference	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce
-library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	a2fa197dfd61fa28748f8d9aee07a7f86ac93e6c0d18850aad7dceb36e777e42	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
+library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	1715b1be739d8fc79b98c67e888c4480a7b369f72ac33d44e01d58f66713cf39	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
 library/reference/terminology.md	authored	-	-	81494f982286b827a8349370b0319e444b148f04e6bec7df41d10428ca3201af	reference	-
 library/reference/tool-inventory.md	authored	-	-	7630a8556fcd5691859f1d5849c29d35574b5dd8d58286b3e2c6a410825cfde0	reference	-
@@ -109,8 +109,8 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
-library/skills/wei-create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	6f6f56dba3f73e99619264aa51a0ea11ea83e40468e183bb48b166bd8209d3bb	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
-library/skills/wei-create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	802cad73d08a6602cec265346da6572d217a047584417d520749835f61d01170	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
+library/skills/wei-create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	d0fc4d3c4b0c0084b619ac4a05c830340778b07e4b60be67fbea0374fba8c832	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
+library/skills/wei-create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	df44dbe5faba336b86b5a51843172e901ab27a679eadc727c521bdc54439d69f	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/wei-create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	014451b7d5f7c0aabfac2f347806aa8cf9d3f5b1e169cd256edc5800403c07b8	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc
 library/skills/wei-create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	0376dfc8a5235c473963267f7070a402d3ec7ada861c496653923a60e26ec612	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
 library/skills/wei-digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	d326a160cc9d41093e31813db3e092f6a4b1ad7b79ac3bceb8dfb44995b22fb1	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
