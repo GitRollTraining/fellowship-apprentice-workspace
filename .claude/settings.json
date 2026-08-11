@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Write(engagements/**)",
+      "Edit(engagements/**)",
+      "Write(reference/**)",
+      "Edit(reference/**)"
+    ],
+    "ask": [
+      "WebFetch",
+      "Bash(git push:*)",
+      "Bash(gh:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [
+      "Write(library/**)",
+      "Edit(library/**)",
+      "Write(CANON.md)",
+      "Edit(CANON.md)"
+    ]
+  }
+}
