@@ -14,7 +14,6 @@ curated library of skills, playbooks, personas and standards they work with.
 | Item | What it is | Class |
 |---|---|---|
 | `CLAUDE.md` | How to work in this repository. Read first | Instruction |
-| `CANON.md` | Provenance: every extracted file, its source, its hash at the cut | Compiled |
 | `README.md` | What this is, and setup | Instruction |
 | `.claude/settings.json` | Permissions and autonomy gating. Reasoning in `library/sops/agent-settings.md` | Data |
 | `engagements/` | Your work, one directory per client | Mutable |

@@ -4,115 +4,96 @@ style: descriptive
 
 # Tool inventory
 
-Every skill, plugin, persona and MCP server that is in this workspace, what taught capability it serves,
-and why the rest are out.
+Every skill, template, renderer, persona, plugin and connector in this workspace, what it is for,
+and where it is. One test decided all of it: **does this help someone new to AI do an engagement?**
 
-## How the cut was made
+An engagement is: interview a business owner, reconstruct their process, write a specification,
+build an agent-executable `skill.md`, and hand it over so they can run it without you.
 
-Three tests, applied in this order. Failing any one is out.
+## What is here
 
-1. **Does it serve a domain the curriculum actually teaches?** Seventeen of twenty-seven domains are
-   taught; the list is in `terminology.md`. A tool justified by a deferred or ruled-out domain is a
-   tool for something nobody is learning.
-2. **Is it portable?** No GitRoll-specific destinations, no Notion or roadmap coupling, no personal data.
-3. **Can you install it without GitRoll's credentials?**
+| Kind | Name | Serves | Where it is | What you do with it |
+|---|---|---|---|---|
+| skill | `create-skill` | Specification writing for AI delegation | `library/skills/create-skill` | Runs a guided interview and scaffolds a SKILL.md with frontmatter, gotchas, and an eval baseline — the direct mechanism for engagement step 4, build an agent-executable skill.md. |
+| skill | `digest-doc` | Coverage and boundary elicitation | `library/skills/digest-doc` | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
+| skill | `drive-portal` | Operating-environment literacy | `library/skills/drive-portal` | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |
+| skill | `explain` | Owner handover explanation | `library/skills/explain` | Shapes plain-language explanation for a reader unfamiliar with a field — usable both while the fellow makes sense of an unfamiliar business domain during the interview/reconstruction steps and when writing handover material the owner (unfamiliar with AI) can actually read. |
+| skill | `flowchart` | Process reconstruction in context | `library/skills/flowchart` | Builds a validated process/flow diagram as self-tested inline SVG (ISO 5807 symbols, automatic layout) — a direct fit for step 2, reconstructing the owner's process into steps/branches/exceptions, and for illustrating the resulting specification. |
+| skill | `interview-recording` | Traceable synthesis | `library/skills/interview-recording` | Turns a recorded interview into a transcript with speakers attributed, and reduces it to key points, decisions and open questions. |
+| skill | `kb-restructure` | Context engineering | `library/skills/kb-restructure` | Renames and re-nests an engagement directory as it grows without breaking what points at it |
+| skill | `video-to-markdown` | Past-instance evidence | `library/skills/video-to-markdown` | Turns a screen recording of a business owner demonstrating their process into a transcript-with-stills markdown document, directly serving step 2 (reconstruct the process) when the process is screen-based. |
+| skill | `youtube-transcript` | Coverage and boundary elicitation | `library/skills/youtube-transcript` | Turns a YouTube (or any yt-dlp-supported) URL into a clean transcript, useful when a business owner points to an existing explainer/tutorial video as part of their process during step 1-2 research. |
+| template | `brief-design` | Owner handover explanation | `library/templates/brief-design` | A design system for single-page HTML briefs; paired with the PDF renderer it is how a written handover becomes one file a non-technical owner opens |
+| template | `engagement-notes` | Context engineering | `library/templates/engagement-notes.md` | Generic two-mode project-notes pattern (objective, success criteria, context, decisions, materials) a fellow working alone across sessions can use to keep external state on the engagement. |
+| template | `engagement-progress-log` | Context engineering | `library/templates/engagement-progress-log.md` | Companion running session-log so a fellow with no reviewer keeps a verifiable record of what was done, verified, and next across multiple sessions with the owner. |
+| template | `handover` | Owner handover explanation | `library/templates/handover.md` | What the process does, what it will not do and what to check, in the owner's vocabulary; it also carries the renderer's input contract |
+| template | `index-manifest` | Context engineering | `library/templates/index-manifest.md` | Defines the INDEX.md manifest the toolbox mandates in every directory - Purpose, Inventory, Freshness, upstream pointer |
+| template | `interview-record` | Traceable synthesis | `library/templates/interview-record.md` | What was heard kept visibly apart from what was concluded, one statement per entry in the owner's own words, and a required pointer per load-bearing statement |
+| template | `process-confirmation` | Grounding and confirmation | `library/templates/process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
+| template | `process-inventory` | Coverage and boundary elicitation | `library/templates/process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
+| template | `process-reconstruction` | Process reconstruction in context | `library/templates/process-reconstruction.md` | A per-step input/output schema-plus-sample, decision-criteria, human-approval-point, and systems-table capture form that converts interview answers directly into the granular detail a spec and an agent-executable skill.md need. |
+| template | `requirements-gathering` | Coverage and boundary elicitation | `library/templates/requirements-gathering.md` | Questionnaire pattern (systems access, data sources, technical environment, dependencies) helps the fellow pin down exactly what the owner's process touches before building the skill. |
+| template | `specification` | Specification writing for AI delegation | `library/templates/specification.md` | The shape the specification is written into, ordered so that specification to skill.md is a mechanical step rather than a second act of authorship |
+| renderer | `build-document-pdf` | Owner handover explanation | `library/renderers/build-document-pdf.py` | Turns one markdown file into an A4 PDF a business owner can open; this is the whole answer to turning finished work into a file the owner opens |
+| renderer | `check-document-pdf` | Owner handover explanation | `library/renderers/check-document-pdf.py` | Proves the PDF actually rendered - catches a table that silently became prose and a character that silently vanished, neither of which changes the page count or the exit code |
+| renderer | `make-the-handover-file` | Owner handover explanation | `library/renderers/make-the-handover-file.md` | The runbook that joins the two renderer scripts into the sequence that produces one PDF of the specification instead of raw markdown. |
+| persona | `adversarial-reviewer` | AI output verification and failure-mode literacy, Specification writing for AI delegation | `library/personas/adversarial-reviewer.md` | Nobody grades their own work, and a solo engagement has nobody else in the room |
+| plugin | `claude-plugins-official` | Specification writing for AI delegation | install it: `claude-plugins-official` | Installed as a unit; 6 of its skills earn it, each named in library/sops/agent-settings.md |
+| plugin | `planning-with-files` | Context engineering | install it: `planning-with-files` | Installed as a unit; 1 of its skills earn it, each named in library/sops/agent-settings.md |
+| plugin | `smart-ralph` | Interview framing | install it: `smart-ralph` | Installed as a unit; 1 of its skills earn it, each named in library/sops/agent-settings.md |
+| plugin | `superpowers` | Specification writing for AI delegation | install it: `superpowers` | Installed as a unit; 10 of its skills earn it, each named in library/sops/agent-settings.md |
+| mcp | `claude-in-chrome` | Operating-environment literacy | connect it: claude-in-chrome | Seeing the tools the business actually uses, in the browser they use them in |
+| mcp | `google-drive` | Coverage and boundary elicitation | connect it: google-drive | The small-business document reality. Connected with the client's credentials, never ours |
+| mcp | `notion` | Coverage and boundary elicitation | connect it: notion | Where a business's own documentation often lives. Connected with the client's credentials, never ours |
 
-Starting pool: 51 skills across three scopes, 6 plugins, 10 reachable MCP servers. What survived is below.
+## The plugins, skill by skill
 
-## What is in
+A plugin installs as a unit, so the row above buys all of its skills. These are the ones that earn
+it. Install instructions and the marketplace names are in `library/sops/agent-settings.md`.
 
-The block below is the machine-readable cut. Columns: `kind`, `name`, `domains`, `reference`, `why`. A `repo:` reference is a path inside this
-repository; `plugin:` and `mcp:` are installed or connected by you, not shipped here.
-
-```tsv
-kind	name	domains	reference	why
-plugin	skill-builder	D-06,D-29	plugin:gitroll-dev/skill-builder@2.1.0	The deliverable IS a skill.md, and this plugin's packager compresses a skill directory into a .skill archive a non-technical owner installs through the desktop application. That is the handover problem solved, in-house and already working
-plugin	planning-with-files	D-02	plugin:planning-with-files	Task state written to files and re-injected each turn. Context engineering made concrete, and an engagement spans days
-plugin	superpowers	D-06	plugin:superpowers	The brainstorming to writing-plans to writing-skills chain is spec-before-build, which is what specification writing for AI delegation asks for. It carried a D-04 claim until an audit ruled that the clause supporting it described verification, which is D-05, not baselines and logged failures, which is D-04
-plugin	ralph-specum	D-05	plugin:ralph-specum	Multi-layer completion verification that never trusts a self-report. That is output verification and failure-mode literacy, exactly
-skill	wei-create-skill	D-06	repo:library/skills/wei-create-skill	Loads the skill-authoring standard the fellow's own deliverable is graded against. The playbooks are authored to the same standard
-skill	wei-explain	D-29	repo:library/skills/wei-explain	Owner handover explanation is taught, and this is the only skill aimed at explaining to a non-expert. Explanation is a separate genre from a fact-sheet
-skill	wei-flowchart	D-24	repo:library/skills/wei-flowchart	A reconstructed process is confirmed by an owner looking at a diagram
-skill	wei-digest-doc	D-27	repo:library/skills/wei-digest-doc	Coverage and boundary elicitation means reading what the business already has. Resolves its destinations at runtime, so it travels
-skill	kb-restructure	D-02	repo:library/skills/kb-restructure	An engagement directory that grows needs renaming and re-nesting without breaking what points at it. Keeping a workspace navigable is context engineering applied to a filesystem
-persona	adversarial-reviewer	D-05,D-06	repo:library/personas/adversarial-reviewer.md	Nobody grades their own work, and a solo engagement has nobody else in the room
-mcp	notion	D-27	mcp:claude.ai/notion	Where an engagement's notes and, often, the business's own documentation live. Account-level connector, connected with the client's credentials
-mcp	google-drive	D-27	mcp:claude.ai/google-drive	The small-business document reality. Account-level connector, connected with the client's credentials
-mcp	claude-in-chrome	D-12	mcp:extension/claude-in-chrome	Operating-environment literacy means seeing the tools the business actually uses, in the browser they use them in
-```
-
-## What serves each taught domain — including the ones nothing serves
-
-The cut was made by asking "does this tool serve something taught?". That question, asked in that
-direction, cannot notice a taught domain with no tool at all. Asked in the other direction, seventeen
-domains resolve like this:
-
-| Domain | Served by a tool | Served by a playbook or SOP |
-|---|---|---|
-| D-01 Agent operating model | **nothing** | environment-setup playbook — **a stub** |
-| D-02 Context engineering | planning-with-files, kb-restructure | — |
-| D-03 Autonomy calibration and gating | **nothing** | `library/sops/agent-settings.md` |
-| D-04 Evaluation methodology | **nothing** | validator playbook — **a stub** |
-| D-05 Output verification, failure modes | ralph-specum, adversarial-reviewer | validator playbook — a stub |
-| D-06 Specification writing | skill-builder, superpowers, wei-create-skill, adversarial-reviewer | elicitation-to-SOP playbook — a stub |
-| D-09 Deterministic guardrails | **nothing** | `library/sops/agent-settings.md` |
-| D-12 Operating-environment literacy | claude-in-chrome | — |
-| D-21 Interview framing | **nothing** | interview playbook |
-| D-22 Non-directive questioning | **nothing** | interview playbook |
-| D-23 Past-instance evidence | **nothing** | interview playbook |
-| D-24 Process reconstruction | wei-flowchart | interview playbook |
-| D-25 Answer-directed follow-up | **nothing** | interview playbook |
-| D-26 Grounding and confirmation | **nothing** | interview playbook |
-| D-27 Coverage and boundary elicitation | wei-digest-doc, notion, google-drive | interview playbook |
-| D-28 Traceable synthesis | **nothing** | interview playbook |
-| D-29 Owner handover explanation | wei-explain, skill-builder | interview playbook |
-
-**Nine domains have no tool, and that is not automatically a defect.** Six of them — the interview
-domains D-21, D-22, D-23, D-25, D-26 and D-28 — are conversational skills, and there is no tool for
-asking a better question. The interview playbook is the right instrument and it exists.
-
-**Three of them are a real gap and are named as such.** D-01, D-03, D-04 and D-09 rest on playbooks
-that have not been written and on one settings document. `wei-prep-goal` serves D-03 and D-04 directly
-and was cut on weight, which is now a judgement worth revisiting rather than a settled call. Until one
-of those happens, four taught domains rest on stubs.
+| Plugin | Skill | 
+|---|---|
+| `claude-plugins-official` | `agent-development` |
+| `claude-plugins-official` | `command-development` |
+| `claude-plugins-official` | `mcp-integration` |
+| `claude-plugins-official` | `skill-creator` |
+| `claude-plugins-official` | `skill-development` |
+| `planning-with-files` | `planning-with-files` |
+| `smart-ralph` | `interview-framework` |
+| `superpowers` | `brainstorming` |
+| `superpowers` | `dispatching-parallel-agents` |
+| `superpowers` | `receiving-code-review` |
+| `superpowers` | `subagent-driven-development` |
+| `superpowers` | `systematic-debugging` |
+| `superpowers` | `test-driven-development` |
+| `superpowers` | `using-superpowers` |
+| `superpowers` | `verification-before-completion` |
+| `superpowers` | `writing-plans` |
+| `superpowers` | `writing-skills` |
 
 ## Connected per engagement, not by default
 
 | Server | Why it is not in the base set |
 |---|---|
-| Slack | Real but not universal. Needs the client's own workspace authorisation |
-| Gmail | Same, and the blast radius of a mistake is higher — it can send |
-| Google Calendar | Same, and rarely load-bearing for process reconstruction |
+| Slack | Real but not universal, and it needs the client's own workspace authorisation |
+| Gmail | Same, and the blast radius of a mistake is higher because it can send |
+| Google Calendar | Same, and rarely load-bearing for reconstructing a process |
 
-Ship the instructions, not the connection. A connector authorised with GitRoll's account against a
+Ship the instructions, not the connection. A connector authorised with our account against a
 client's data is the wrong answer even when it works.
 
 ## Documented, deliberately not enabled
 
 | Tool | Why |
 |---|---|
-| `computer-use` | Genuinely relevant to desktop automation, and it needs a per-session human grant plus native-application access. Too sharp for an unsupervised first engagement, and enabling it by default trains the fellow to click through the grant without reading it |
+| `computer-use` | Genuinely relevant to desktop automation, and it needs a per-session human grant plus native-application access. Too sharp for an unsupervised first engagement, and enabling it by default trains the habit of clicking through the grant without reading it |
 
-## Out, and why
+## What is missing, named rather than hidden
 
-| Class | Examples | Reason |
-|---|---|---|
-| Notion and roadmap coupled | `wei-notion-sync`, `wei-ticket-create`, `wei-ticket-review`, `wei-publish-meeting-actions`, `ray-notion-brief` | Wired to GitRoll's own Notion databases. Nothing to point at from here |
-| Meeting pipeline | `wei-process-meetings`, `wei-meeting-prep`, `wei-meeting-summary`, `wei-meeting-plaud` | Runs GitRoll's transcript pipeline against GitRoll's records |
-| Our deliverables, not theirs | `wei-deck`, `wei-journey-map`, `wei-web-capture`, `wei-deploy-web` | Producing decks and deploying sites is our job, not a fellow's |
-| Repository tooling | `wei-review-pr`, `wei-draft-pr`, `wei-commit-plan`, `wei-techdebt`, `wei-test-and-fix`, `wei-ux-lint`, `wei-codebase-snapshot` | Software-engineering work, which the programme puts outside its stopping point |
-| Personal | `wei-disk-cleanup`, `wei-time-tracker`, `wei-youtube`, `wei-linkedin-post` | Nothing to do with an engagement |
-| Plugins out | `frontend-design`, `caveman` | The deliverable is a skill.md, not a user interface; caveman was retired in July 2026 |
-| MCP out | figma, plaud, chrome-devtools, skill-builder-audio | figma and plaud serve no taught domain, chrome-devtools is developer tooling, and the audio server arrives with its own plugin |
+| Gap | What it means for you |
+|---|---|
+| Packaging the finished `skill.md` into an installer a non-technical owner double-clicks | The tool that does this is in a private repository. You hand over the file plus the written account instead, which works and takes one more step from the owner |
+| Turning the interview record into the specification | `library/playbooks/playbook-elicitation-to-sop.md` states what that procedure must contain and is not written. `library/templates/specification.md` gives you the shape; the transformation is yours to make and to check |
+| Proving the finished `skill.md` behaves on the owner's real cases | `library/playbooks/playbook-validator.md` is in the same state. The adversarial-reviewer persona attacks the draft; running it against real cases is yours |
 
-## One judgement call, flagged rather than hidden
-
-`wei-prep-goal` serves autonomy calibration [D-03] and evaluation methodology [D-04] well. It is out on
-**weight, not fit** — its five-gate, five-pass discipline is heavy for a first engagement. This is the
-one entry a reasonable person could overturn, and it is named here so they can.
-
-## Revalidation
-
-The tool layer turns over roughly annually — one protocol course in this field was retired seven months
-and twenty-two days after publication. **Owner and cadence: unassigned, twelve months.** Without both,
-this list ships stale, and that is the failure the programme record already named against itself.
+These three are the honest edges of this toolbox. Nothing here pretends to close them.

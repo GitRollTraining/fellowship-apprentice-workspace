@@ -1,7 +1,6 @@
 # Agent & Skill Quality Guidelines
 
 > All agents and skills MUST follow these principles.
-> Reference: `@references/agent-quality-guidelines.md`
 
 ## Principle 0: Delegate to Sub-Agents
 

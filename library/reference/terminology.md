@@ -18,7 +18,7 @@ other document in the programme.
 | **deliverable** | One SOP for one business process, written for one client. Same artifact type as a playbook, different audience |
 | **skill.md** | The agent-executable form the deliverable takes. What the business receives and installs |
 | **persona** | A role an agent takes for one job, defined precisely enough that two people invoking it get the same behaviour |
-| **provenance** | Where a file came from and the hash it was at when it was copied. Recorded in `CANON.md` |
+| **provenance** | Where a file came from and the hash it was at when it was copied |
 | **assessment engine** | The instrument that grades a fellow's work at a gate. Not the same as the validator playbook, which checks before every ship |
 
 ## The domains this programme teaches

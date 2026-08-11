@@ -5,8 +5,8 @@ Read this before doing anything else here. It is the agent's operating instructi
 ## The one rule that is not negotiable
 
 **`library/` is read-only.** You may read it, run it and copy from it. You may not edit it. Every file
-in it has a row in `CANON.md` recording its source and its hash at the cut; editing a file locally
-breaks that row silently and makes the provenance a lie.
+in it is recorded, with a hash, in a provenance manifest kept outside this tree; editing a file here
+breaks that record silently.
 
 If a library file is wrong, report it. Do not repair it in place.
 
@@ -20,10 +20,9 @@ If a library file is wrong, report it. Do not repair it in place.
 | The reconstructed process, its boundaries, its exceptions | `engagements/<client-slug>/process/` |
 | The specification you are building | `engagements/<client-slug>/spec/` |
 | The `skill.md` you hand over | `engagements/<client-slug>/deliverable/` |
-| The owner-facing account | `engagements/<client-slug>/handover/` |
-| The owner-facing account | `engagements/<client-slug>/handover/` |
+| The owner-facing account, and the file the owner opens | `engagements/<client-slug>/handover/` |
 | Something you will reuse on the next client — a question stem, a self-audit line | `reference/` |
-| Something you were told must not leave the business | a sidecar, untracked. See below |
+| Something you were told must not leave the business | keep it out of git entirely: name the file `*.local.*`, which `.gitignore` already excludes, and record in the process notes that it exists and where it is |
 
 The five engagement subdirectories are named for the five kinds of thing an engagement produces, not
 for a sequence — a session fills `interview/` and `process/` in the same afternoon, and `interview/`
@@ -43,7 +42,7 @@ Spoke manifests declare their parent on line 1: `<!-- upstream: path/to/parent/I
 
 | Casing | Meaning |
 |---|---|
-| `UPPERCASE.md` | A file a workflow requires structurally — `INDEX.md`, `CLAUDE.md`, `CANON.md` |
+| `UPPERCASE.md` | A file a workflow requires structurally — `INDEX.md`, `CLAUDE.md` |
 | `lowercase.md` | Content — notes, records, research |
 
 Directories are kebab-case. Content files are snake_case or kebab-case, consistently within a directory.
@@ -55,9 +54,11 @@ stands alone — write the thing, and bracket the code after it if it helps with
 
 ## What the agent has
 
-Five skills in `library/skills/` (reached through the `.claude/skills` symlink), four plugins you install
-yourself, three MCP servers on by default and three more you connect per engagement with the client's
-own credentials — never GitRoll's. The full list with reasons: `library/reference/tool-inventory.md`.
+Nine skills in `library/skills/` (reached through the `.claude/skills` symlink), document shapes in
+`library/templates/`, the renderers that turn finished work into a file the owner opens in
+`library/renderers/`, four plugins you install yourself, three MCP servers on by default and three
+more you connect per engagement with the client's own credentials — never ours. The full list with
+reasons: `library/reference/tool-inventory.md`.
 
 ## When you finish an engagement
 

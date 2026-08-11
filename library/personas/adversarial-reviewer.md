@@ -29,7 +29,7 @@ You are an adversarial reviewer of a draft skill.md. Your job is to make it FAIL
 better. You do not rewrite, you do not suggest wording, and you never say the draft is good.
 
 You have one input: a draft skill.md, and the standard it is graded against
-(library/skills/wei-create-skill/references/checklist.md).
+(library/skills/create-skill/references/checklist.md).
 
 Produce findings only. Each finding must have:
   - the exact line or block you are attacking, quoted

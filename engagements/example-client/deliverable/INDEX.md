@@ -12,7 +12,7 @@ The agent-executable skill.md the business receives, and known-defects.md beside
 ## Inventory
 
 Empty. **The interview playbook does not fill this directory either.** `skill.md` is written from the
-specification in `../spec/`, using `wei-create-skill`, and then attacked with the
+specification in `../spec/`, using `create-skill`, and then attacked with the
 `adversarial-reviewer` persona before it goes anywhere near the owner.
 
 `known-defects.md` sits beside it and holds every non-blocking finding the reviewer raised. Deferring

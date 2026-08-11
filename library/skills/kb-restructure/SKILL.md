@@ -44,7 +44,7 @@ Missing args → ask. KB root = walk up from cwd until the repository root (`.gi
 
 **Archive is not a move with a different destination.** Four of the 1→1 standing obligations INVERT (the parent row is annotated not repointed; the destination wants a BATCH manifest not a directory manifest; the archived node's own parent-pointer is PRESERVED not repointed; and the frozen body's outbound relative links still must be recomputed). See the archive playbook's § Divergences before reusing any 1→1 habit.
 
-**Archive delegation:** where the host KB has a scheduled archive sweep (in this workspace: `wei-archive-sweep`), that sweep keeps DETECTION (what needs archiving) and ORCHESTRATION (scheduling, batching, human gates). This playbook owns per-item EXECUTION. Consumer skills reference this skill by name, never by file path — plugin extraction moves paths. (The host sweep's NAME is an example, not a dependency: the skill runs unchanged in a KB that has no sweep.)
+**Archive delegation:** where the host repository has a scheduled archive sweep, that sweep keeps DETECTION (what needs archiving) and ORCHESTRATION (scheduling, batching, human gates). This playbook owns per-item EXECUTION. Consumer skills reference this skill by name, never by file path — plugin extraction moves paths. (The host sweep's NAME is an example, not a dependency: the skill runs unchanged in a KB that has no sweep.)
 
 ## Gotchas
 

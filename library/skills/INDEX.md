@@ -5,40 +5,30 @@ style: descriptive
 
 # skills
 
-Five agent skills, vendored from the repositories that own them. Each was selected against three tests
-in this order: does it serve a domain the curriculum actually teaches; is it portable; can you install
-it without GitRoll's credentials.
+Agent skills, vendored into this repository and reached through the `.claude/skills` symlink at the
+repository root. They are copies, not links: each was taken from a source repository at a recorded
+commit and patched where it named something that does not exist here.
 
-**They are not byte-identical to their sources, and `CANON.md` shows exactly where they differ.** Every
-row carries both the hash as shipped here and the hash at the source; where the two differ, this copy
-carries a deliberate local patch. Four skills were patched in the first cut, all for the same reason:
-each instructed the agent to read a file that lives in a private GitRoll repository and does not ship.
-Those pointers now resolve to `library/reference/`. The `eval/` fixtures were dropped for a second
-reason — they carried client and federal task-order material that has no business in an apprentice's
-repository.
+**They are not byte-identical to their sources.** Where a copy carries a deliberate patch, the
+provenance record outside this tree holds both hashes, so the divergence is recorded rather than
+silent.
 
 ## Inventory
 
-| Skill | Serves | What it does |
+| Skill | You reach for it when | What it does |
 |---|---|---|
-| `wei-create-skill` | writing a specification for an agent to execute [D-06] | Authors a skill against the skill-authoring standard — the same standard your deliverable is graded by |
-| `wei-explain` | explaining the finished process to the owner [D-29] | The explanation register, for a reader who is not in the field |
-| `wei-flowchart` | rebuilding a process from start to finish [D-24] | A validated diagram, which is how an owner confirms a process you reconstructed |
-| `wei-digest-doc` | reading what the business already has [D-27] | Turns a source document into a sourced fact-sheet |
-| `kb-restructure` | keeping this workspace healthy | Renames, moves and archives files without breaking what points at them |
+| `create-skill/` | you are writing the deliverable | Runs a guided interview and scaffolds a SKILL.md with frontmatter, gotchas, and an eval baseline — the direct mechanism for engagement step 4, build an agent-executable skill.md. |
+| `digest-doc/` | the business hands you a document | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
+| `drive-portal/` | the process runs through an old web form | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |
+| `explain/` | you are writing for the owner | Shapes plain-language explanation for a reader unfamiliar with a field — usable both while the fellow makes sense of an unfamiliar business domain during the interview/reconstruction steps and when writing handover material the owner (unfamiliar with AI) can actually read. |
+| `flowchart/` | you are rebuilding a process end to end | Builds a validated process/flow diagram as self-tested inline SVG (ISO 5807 symbols, automatic layout) — a direct fit for step 2, reconstructing the owner's process into steps/branches/exceptions, and for illustrating the resulting specification. |
+| `interview-recording/` | the session is recorded and needs to become a record | Turns a recorded interview into a transcript with speakers attributed, and reduces it to key points, decisions and open questions. |
+| `kb-restructure/` | the engagement directory has outgrown its shape | Renames and re-nests an engagement directory as it grows without breaking what points at it |
+| `video-to-markdown/` | the owner recorded their screen doing the work | Turns a screen recording of a business owner demonstrating their process into a transcript-with-stills markdown document, directly serving step 2 (reconstruct the process) when the process is screen-based. |
+| `youtube-transcript/` | the owner points you at a video | Turns a YouTube (or any yt-dlp-supported) URL into a clean transcript, useful when a business owner points to an existing explainer/tutorial video as part of their process during step 1-2 research. |
 
-## How the agent finds them
+## Freshness
 
-`.claude/skills` is a symlink to this directory. Details, and the Windows fallback, in
-`library/sops/agent-settings.md`.
-
-## What is deliberately absent
-
-Forty-six other skills exist in the source repositories. They were cut for one of four reasons: they are
-wired to GitRoll's Notion and roadmap; they run GitRoll's meeting pipeline; they produce deliverables
-that are our job rather than a fellow's; or they are personal. The full reasoning is in
-`library/reference/tool-inventory.md`.
-
-**One is a judgement call rather than a rule**, and it is flagged for the next developer: `wei-prep-goal`
-serves autonomy calibration [D-03] and evaluation methodology [D-04] well, and its five-gate,
-five-pass discipline is heavy for a first engagement. It is out on weight, not on fit.
+| File set | Cut at | Class | Status |
+|---|---|---|---|
+| all 9 skills | 2026-08-11 | Instruction | current at the commit recorded per file |

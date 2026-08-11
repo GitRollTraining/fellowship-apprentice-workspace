@@ -65,11 +65,11 @@ Machine-readable in `playbook-deps.tsv` at the task root; this is the same list 
 
 | Step | Tool | Why this one |
 |---|---|---|
-| 7 Reconstruct the process | `wei-flowchart` | A process is confirmed by an owner looking at a diagram, not by reading prose back to them |
-| 20 Write the owner's version | `wei-explain` | The owner is not in the field. This is the explanation register, and it is a different genre from the discovery record |
-| 21 Comprehension check | `wei-explain` | The revision loop is the same register as the draft it repairs |
-| 15 to 17 Write the record | `wei-digest-doc` | Reading what the business already has, and composing it into a sourced fact-sheet |
-| after 21 Draft the deliverable | `wei-create-skill` | The deliverable is a `skill.md`, and this is the skill that loads the standard it will be graded against |
+| 7 Reconstruct the process | `flowchart` | A process is confirmed by an owner looking at a diagram, not by reading prose back to them |
+| 20 Write the owner's version | `explain` | The owner is not in the field. This is the explanation register, and it is a different genre from the discovery record |
+| 21 Comprehension check | `explain` | The revision loop is the same register as the draft it repairs |
+| 15 to 17 Write the record | `digest-doc` | Reading what the business already has, and composing it into a sourced fact-sheet |
+| after 21 Draft the deliverable | `create-skill` | The deliverable is a `skill.md`, and this is the skill that loads the standard it will be graded against |
 | after the draft | `adversarial-reviewer` persona | Nobody grades their own work, and on a solo engagement there is nobody else in the room |
 | throughout | `planning-with-files` plugin | The session spans days. State that is not on disk is state that is lost |
 | throughout | `kb-restructure` skill | An engagement directory that grows will need renaming and re-nesting without breaking its own references |
