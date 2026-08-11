@@ -20,9 +20,11 @@ Each check exists because that failure was observed, not imagined:
   4. no replacement glyphs    - a font without the character renders a blank or a
      box. Seven arrows vanished this way while every word count still matched.
 
-Requires: pdftotext (poppler) on PATH.
+Uses pdftotext (poppler) when it is on PATH. Without it the two source-side checks
+still run, and the script says so rather than pretending the render was inspected.
 """
 import re
+from collections import Counter
 import subprocess
 import sys
 from pathlib import Path
@@ -78,23 +80,33 @@ def check_pdf(pdf_path):
         # than dying with a traceback and reporting nothing at all.
         print("    [skipped] pdftotext not installed - the two source-side checks still ran")
         return [], 0
-    # Pipes that came from a fenced block in the source are not tables. Compare against the
-    # fence-stripped source so a code sample cannot masquerade as a broken table.
-    src = ""
+    # Pipes that came from a fenced block in the source are not tables - a document that SHOWS a
+    # markdown table as a code sample is supposed to print pipes. Budget them: count each fenced
+    # pipe line in the source, then let each one explain at most one pipe line in the PDF.
+    # Matching by content alone does not work, because a separator row like |---|---|---| is
+    # byte-identical whether it is a live table or a code sample.
+    budget = Counter()
     md = pdf_path.with_suffix(".md")
     if md.exists():
-        fenced, keep = False, []
+        fenced = False
         for ln in md.read_text(encoding="utf-8").split("\n"):
             if ln.lstrip().startswith("```"):
                 fenced = not fenced; continue
-            if not fenced: keep.append(ln)
-        src = "\n".join(keep)
+            if fenced and "|" in ln:
+                budget[ln.strip()[:40]] += 1
     failures = []
     for marker, why in (("|", "a table did not render"),
                         ("�", "a glyph is missing from the font")):
         hits = [ln for ln in text.split("\n") if marker in ln]
-        if marker == "|" and src:
-            hits = [ln for ln in hits if ln.strip() and ln.strip()[:40] in src]
+        if marker == "|":
+            left, unexplained = budget.copy(), []
+            for ln in hits:
+                key = ln.strip()[:40]
+                if left[key] > 0:
+                    left[key] -= 1
+                else:
+                    unexplained.append(ln)
+            hits = unexplained
         if hits:
             failures.append(
                 f"{pdf_path.name}: {len(hits)} line(s) contain {marker!r} - {why}"
