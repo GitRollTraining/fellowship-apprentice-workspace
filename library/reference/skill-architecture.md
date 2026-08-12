@@ -1,7 +1,6 @@
 # Skill Architecture Guidelines
 
 > All skills MUST follow these structural principles.
-> Reference: `@references/skill-architecture.md`
 > Source: Lax Meiyappan, "What You're Actually Writing When You Write a SKILL.md" (https://internals.laxmena.com/p/what-youre-actually-writing-when, 2026-04-30)
 
 A SKILL.md is a **loader specification**, not a long prompt. The runtime uses progressive disclosure to load content at different times. Architectural choices compound across every skill and every turn — restructuring beats rewriting.
@@ -81,8 +80,8 @@ Skills must work across machines and clones. Never bake absolute paths into body
 - Workspace-relative paths — `.claude/rules/INDEX.md` (acceptable for project-scoped skills inside a known workspace)
 
 **Avoid:**
-- `/Users/{name}/...`
-- `~/Documents/{specific-project}/...`
+- An absolute path into one person's home directory
+- A path naming one specific project directory on one machine
 - Hard assumptions about layout without a discovery step
 
 **Project-scoped skill caveat:** If the skill lives inside a workspace (`{workspace}/.claude/skills/`), workspace-relative paths are fine. The skill is intentionally coupled to the workspace.
@@ -156,12 +155,12 @@ Run this against every new skill before merging:
 | Frontmatter on a ref file | `head -5 references/*.md \| grep -B1 '^---'` should be empty |
 | Body > 500 lines | `wc -l SKILL.md` |
 | Body > 100 lines without justification | Could content move to refs? |
-| Hardcoded absolute paths | `grep -nE '/Users/\|~/Documents/' SKILL.md` |
+| Hardcoded absolute paths | `grep -nE '^/(Users\|home)/\|~/[A-Z]' SKILL.md` |
 | No Gotchas section | `grep -i 'gotchas\|edge cases\|what not' SKILL.md` |
 | Voice prescription without model tier | Search for style/tone directives without "model" / "Sonnet" / "Opus" / "Haiku" |
 | No eval baseline (for high-stakes skills) | `ls eval/` or `.claude/evaluations/{skill}/` |
 | Description teaches instead of routing | Description >200 chars, contains examples or rules |
-| Broken `@references/{file}` ref | `ls ~/.claude/references/{file}` AND `ls {skill-dir}/references/{file}` — at least one must exist |
+| Reference that does not resolve | `ls {skill-dir}/references/{file}` — a skill's references must live inside the skill directory |
 
 ## New-Skill Skeleton
 
@@ -212,7 +211,7 @@ Canonical input + baseline at `eval/` or `.claude/evaluations/{skill-name}/`.
 
 ## Quality Guidelines
 
-Adhere to the quality guidelines in `@references/agent-quality-guidelines.md` and structural principles in `@references/skill-architecture.md`.
+Adhere to the quality guidelines in `library/reference/agent-quality-guidelines.md` and structural principles in `library/reference/skill-architecture.md`.
 ```
 
 Companion `references/` files (each WITHOUT frontmatter):

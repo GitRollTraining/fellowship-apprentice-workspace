@@ -21,7 +21,7 @@ instead, because it is ours and read-only. This directory is yours and writable.
 | `self-audit-log.md` | One line per session: what you will do differently. Longitudinal on purpose | Mutable |
 
 The two files that carry GitRoll's own definitions — the terminology and the curated tool cut — are
-**not** here. They live in `library/reference/`, which is read-only and hashed in `CANON.md`, because a
+**not** here. They live in `library/reference/`, which is read-only and hashed, because a
 definition anyone can silently edit is not a definition.
 
 ## Freshness

@@ -43,7 +43,7 @@ for the rest of the document.
 
 ## Where these came from
 
-This file was **written for this workspace**, not copied — `CANON.md` records it as authored, which is
+This file was **written for this workspace**, not copied, which is
 why it carries no upstream hash. Its content is not invented:
 
 - Rules 1 to 3 restate the three content-generation principles stated in the AI Fellowship programme

@@ -2,8 +2,7 @@
 
 > **User-level: applies in every repository, not only the KBs.** The trigger is the reader's
 > unfamiliarity with the field, so this is as relevant explaining a codebase, a library or an API as
-> explaining a research paper. Pointed at from `~/.claude/CLAUDE.md`; the KB style rule
-> (`descriptive-style.md` Layer 4) records only the exemption it creates and defers here.
+> explaining a research paper. > (`descriptive-style.md` Layer 4) records only the exemption it creates and defers here.
 >
 > Established 2026-07-28, promoted to user level the same day. Distilled from a live walkthrough of an
 > IECON 2026 paper on attention sinks under 4-bit quantization, where the reader began at "none of
@@ -31,7 +30,7 @@ Where both are wanted, produce **two artifacts** that cross-link — never expla
 a digest. (The 2026-07-27 IECON run did embed them, under time pressure; that is the known-wrong
 form, retained only because it was already in use.)
 
-Do **not** fold these rules into a document-ingestion skill such as `wei-digest-doc`: that skill
+Do **not** fold these rules into a document-ingestion skill such as `digest-doc`: that skill
 handles RFQs, statements of work, vendor responses and amendments as well as papers, and four of
 those five want the deadline and the page limit, not an anchor object.
 
@@ -107,6 +106,6 @@ once and in passing.
 ## Provenance
 
 Confirmed 2026-07-28 against a live walkthrough with a reader new to the field. Two constraints set the same day, both
-load-bearing above: explanation is not digest, and this must not be folded into `wei-digest-doc`.
+load-bearing above: explanation is not digest, and this must not be folded into `digest-doc`.
 Session memory: `explain-with-one-anchor-object`. Applied instance (embedded form, known-wrong
 container): a task directory holding the working notes the explanation was built from.

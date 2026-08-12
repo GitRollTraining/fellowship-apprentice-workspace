@@ -9,13 +9,15 @@ already in place.
 | Half | Who owns it |
 |---|---|
 | `engagements/` | You. Everything you produce for a client goes here |
-| `library/` | GitRoll. Read-only. `CANON.md` records where every file came from |
+| `library/` | Ours. Read-only: read it, run it, copy from it, do not edit it |
 
 ## Start here
 
 1. Read `CLAUDE.md` — how to work in this repository.
 2. Read `library/sops/working-standards.md` — the four rules.
 3. Run `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
+4. When the work is written, follow `library/renderers/make-the-handover-file.md` — it turns your
+   markdown into the one file the owner opens.
 
 ## Setup
 
@@ -28,15 +30,8 @@ ls -l .claude/skills          # should resolve to ../library/skills
 Then install the four plugins — the install is interactive and cannot be scripted. Commands and reasons
 are in `library/sops/agent-settings.md`.
 
-## A note on `scripts/canon-check.sh`
-
-It answers "has anything moved upstream since this library was cut?" — a question for whoever maintains
-the library, on a machine that has GitRoll's source repositories checked out. Run on your own machine it
-prints `GONE` for every vendored file, which means "the source is not here", not "the source was
-deleted". You are not the audience for it.
-
 ## Status
 
 First cut, 2026-08-11. Every layer is present and thinly populated on purpose: one worked playbook, four
-stubs, five skills, one persona. It is built to be extended, and what each extension must contain is
+stubs, nine skills, one persona. It is built to be extended, and what each extension must contain is
 written down rather than assumed.

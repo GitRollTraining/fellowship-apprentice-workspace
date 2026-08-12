@@ -23,8 +23,8 @@
     "deny": [
       "Write(library/**)",
       "Edit(library/**)",
-      "Write(CANON.md)",
-      "Edit(CANON.md)"
+      "Write(.maintainers/**)",
+      "Edit(.maintainers/**)"
     ]
   }
 }
