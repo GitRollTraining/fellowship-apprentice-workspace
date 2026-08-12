@@ -5,18 +5,20 @@ style: descriptive
 
 # skills
 
-Agent skills, vendored into this repository and reached through the `.claude/skills` symlink at the
-repository root. They are copies, not links: each was taken from a source repository at a recorded
-commit and patched where it named something that does not exist here.
+Curated agent skills reached through the `.claude/skills` symlink at the repository root. The original
+nine are copies rather than links: each was taken from a source repository at a recorded commit and
+patched where it named something that does not exist here. `choose-automation-approach` was authored for
+this workspace. `CANON.md` records both kinds explicitly.
 
-**They are not byte-identical to their sources.** Where a copy carries a deliberate patch, the
-provenance record outside this tree holds both hashes, so the divergence is recorded rather than
-silent.
+**Vendored copies are not always byte-identical to their sources.** Where one carries a deliberate
+patch, the provenance record outside this tree holds both hashes, so the divergence is recorded rather
+than silent.
 
 ## Inventory
 
 | Skill | You reach for it when | What it does |
 |---|---|---|
+| `choose-automation-approach/` | you are choosing how an automation reaches systems, runs and acts | Runs an adaptive interview and recommends a proportionate deployment, integration, credential and high-stakes-control design while preserving the Fellow's overrides and accepted trade-offs. |
 | `create-skill/` | you are writing the deliverable | Runs a guided interview and scaffolds a SKILL.md with frontmatter, gotchas, and an eval baseline — the direct mechanism for engagement step 4, build an agent-executable skill.md. |
 | `digest-doc/` | the business hands you a document | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
 | `drive-portal/` | the process runs through an old web form | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |
@@ -31,4 +33,5 @@ silent.
 
 | File set | Cut at | Class | Status |
 |---|---|---|---|
-| all 9 skills | 2026-08-11 | Instruction | current at the commit recorded per file |
+| original nine skills | 2026-08-11 | Instruction | current at the commit recorded per file |
+| `choose-automation-approach/` | 2026-08-13 | Instruction | authored for this workspace; eval baseline included |

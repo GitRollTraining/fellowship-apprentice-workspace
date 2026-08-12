@@ -14,6 +14,7 @@ build an agent-executable `skill.md`, and hand it over so they can run it withou
 
 | Kind | Name | Serves | Where it is | What you do with it |
 |---|---|---|---|---|
+| skill | `choose-automation-approach` | Automation deployment, integration and risk trade-offs | `library/skills/choose-automation-approach` | Helps a Fellow choose a proportionate runtime, access method, credential arrangement and high-stakes controls without turning every prototype into production infrastructure or hiding residual risk. |
 | skill | `create-skill` | Specification writing for AI delegation | `library/skills/create-skill` | Runs a guided interview and scaffolds a SKILL.md with frontmatter, gotchas, and an eval baseline — the direct mechanism for engagement step 4, build an agent-executable skill.md. |
 | skill | `digest-doc` | Coverage and boundary elicitation | `library/skills/digest-doc` | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
 | skill | `drive-portal` | Operating-environment literacy | `library/skills/drive-portal` | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |

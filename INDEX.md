@@ -20,15 +20,17 @@ curated library of skills, playbooks, personas and standards they work with.
 | `training/` | Your work from before you have a client: coursework, exercises, practice | Mutable |
 | `library/` | Ours, read-only. Playbooks, skills, personas, SOPs | Instruction |
 | `reference/` | Terms, the tool inventory, worked examples | Mutable |
+| `.maintainers/` | Provenance, cut decisions and high-level library design records | Record |
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-11 | Instruction | first cut |
+| `library/` | 2026-08-13 | Instruction | automation-approach skill added after first cut |
 | `engagements/example-client/` | 2026-08-11 | Mutable | empty example, safe to delete |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |
+| `.maintainers/` | 2026-08-13 | Record | automation-approach design added |
 
 ## Conventions
 

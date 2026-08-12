@@ -1,38 +1,43 @@
 # For whoever maintains this toolbox
 
-Nothing in this directory is for an apprentice. It is the record of how the toolbox was cut and the
-one command that tells you whether it has drifted since.
+This directory contains the maintenance record for the shipped toolbox: provenance, cut decisions and
+high-level design decisions that should not be mixed into Fellow-facing runtime instructions.
 
-| File | What it is |
+Start with `INDEX.md`. Nothing here is confidential: `.maintainers/` ships in every clone. The boundary
+is audience and purpose, not access control.
+
+## Structure
+
+| Path | What it contains |
 |---|---|
-| `CANON.md` | Provenance for every file under `library/`: where it came from, the commit it was taken at, its hash as shipped, and its hash at the source |
-| `canon-check.sh` | Answers "what has moved upstream since the cut?" Run it on a machine that has the source repositories checked out |
-| `cut-record.md` | Which candidates were considered, which were kept, and the reason for each |
+| `INDEX.md` | Directory manifest and freshness record |
+| `CANON.md` | Provenance for every file under `library/` |
+| `canon-check.sh` | Reports moved upstream or locally drifted vendored files |
+| `cut-record.md` | Candidate-selection record for the original toolbox cut |
+| `design/` | High-level design records for locally authored library components |
 
-## Why the provenance record exists
+## Updating `library/`
 
-Four earlier attempts to share this material failed the same way, and none of them failed for lack of
-a sync mechanism. They failed because nothing recorded what had been cut from what. `CANON.md` is
-built to prevent that one failure. It does not sync anything and does not claim to.
+The workspace tells a Fellow that `library/` is read-only. A maintainer may change it only as one
+reviewable transaction:
 
-## Why it lives here rather than at the repository root
+1. change the library component and its parent inventory;
+2. update every affected row in `CANON.md`, using `authored` for content written for this workspace;
+3. update manifest counts and freshness statements;
+4. run the component's validation and the provenance checks;
+5. commit the library change and provenance update together.
 
-An apprentice opening this repository should see the engagement structure and the tools, not the
-maintenance apparatus for a library they are told not to edit. The mechanism is kept because it
-guards a real failure; it is moved because it is not their business.
+A local edit without the provenance update is the exact drift this directory exists to prevent.
 
-## Running the check
+## Running the provenance check
 
 ```bash
 bash .maintainers/canon-check.sh
 ```
 
-`GONE` on every vendored file means the source repositories are not on this machine, not that the
-sources were deleted.
+Run it on a machine that has the source repositories checked out. `GONE` on vendored files means the
+source path is unavailable on that machine, not that the source was deleted.
 
-## The one thing that will rot
-
-`CANON.md` column 5 is the hash as shipped and column 7 is the hash at the source. They differ
-exactly where a copy carries a deliberate local patch. If someone edits a `library/` file in place,
-column 5 stops matching the file and the gate that reads it fails. That is the intended behaviour:
-report the file, do not repair it in place.
+`CANON.md` column 5 is the hash as shipped and column 7 is the hash at source. They differ where a
+vendored copy carries a deliberate local patch. For an `authored` row, source path, commit and source
+hash are `-`.

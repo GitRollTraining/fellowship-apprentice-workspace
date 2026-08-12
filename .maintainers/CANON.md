@@ -73,11 +73,12 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 46 |
-| Vendored from a source repository | 30 |
-| Written for this workspace (`authored`) | 16 |
-| Vendored files carrying a local patch | 10 |
-| Cut date | 2026-08-11 |
+| Rows | 110 |
+| Vendored from a source repository | 75 |
+| Written for this workspace (`authored`) | 35 |
+| Vendored files carrying a local patch | 52 |
+| Original cut date | 2026-08-11 |
+| Last manifest update | 2026-08-13 |
 
 ## What this file does NOT do
 
@@ -88,7 +89,7 @@ automatically is being designed separately; this manifest is deliberately usable
 ## The manifest
 
 ```tsv
-library/INDEX.md	authored	-	-	adfac851d2c409f8f9de798a44491eb9174f0fae7df1457ed6b3d4f3ebc12bac	library	-
+library/INDEX.md	authored	-	-	6158cccd1e0575104b36e0d02b1a6cea0179242afdd45d48fe5e969f56d2966b	library	-
 library/personas/INDEX.md	authored	-	-	8b5455a188a9d5842f08e32a1955ec1fc45db39e4fa54c9379cbc93e86989686	personas	-
 library/personas/adversarial-reviewer.md	authored	-	-	2f032ac6d2b37faa0fac06128458e7db1681a7ee2e904f0933af9cd04f299e2c	personas	-
 library/playbooks/INDEX.md	authored	-	-	fe38bbe26ee4178d82f7c8e761ea64f4ba2c04fb6e528a450201e91b702bad58	playbooks	-
@@ -98,17 +99,30 @@ library/playbooks/playbook-interview.md	gitroll-dev/curriculum	~/Documents/jobs/
 library/playbooks/playbook-interview.runbook.md	authored	-	-	aae146951fa79bcc20cf218a44377a627e48d1517545a0cd7b8a935c83b6a061	playbooks	-
 library/playbooks/playbook-output-phraser.md	authored	-	-	6e06e6fc3114c6d1229af7d5da1e527b9b66bae1daa75e7b059a204104c862de	playbooks	-
 library/playbooks/playbook-validator.md	authored	-	-	a2b940b36fe4330cc01b6f9025358fb08d0d91f6d001aada7a7d33e977e32b81	playbooks	-
-library/reference/INDEX.md	authored	-	-	76012a01a8882fab5803fbb24ecbe510e61e8fe23b86ac671b8f5b25bc1fdc7c	reference	-
+library/reference/INDEX.md	authored	-	-	d59c2cd35cb333bb1aa8a16c851f0cf3896e43db970c42badc9f89c398ee1e0a	reference	-
 library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/references/agent-quality-guidelines.md	41bf600	1d456ebac204b7d969b5066a9e2c1035b6cbaaaa9f10ed0d7be944d4b666c812	reference	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
 library/reference/terminology.md	authored	-	-	312132e73cb628057857267d243b71ad16be3a44756568221be19063ff8d75c8	reference	-
-library/reference/tool-inventory.md	authored	-	-	6c95ea8a6a357637b7cb948d1036963d491f3700aa906e42dfdb689b8ff402d3	reference	-
+library/reference/tool-inventory.md	authored	-	-	c73f7eef95f20d575118864e017a3df162b3850ec2da6fe248eff8dcf32ef5f8	reference	-
 library/renderers/INDEX.md	authored	-	-	11f394e257f2db313ef09822413905eee3043c8ecbaac0672463a3087d3932ed	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	ce7f30691d38a484e784f2c5f2f4ea710a24eb07db7246ac90c5cbb03d0a30bf	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
 library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	f753750e67fbbc5a08291e752eeabfa0553b1823c0b4611a4ddbb4cad7a0c177	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
-library/skills/INDEX.md	authored	-	-	275349b8205b91e69eed8c82611fd9adbd168cddc261f7fcaa23c5a41537b1f0	skills	-
+library/skills/INDEX.md	authored	-	-	41423a31edff32073a4b8367d466a05e9317fdd0f97fc9157e62fd888f6f55ee	skills	-
+library/skills/choose-automation-approach/SKILL.md	authored	-	-	572fafef397512f6be7aa44a0d995e55b0da2c7abfb62cf8ae5e37255f4944e1	skills	-
+library/skills/choose-automation-approach/agents/openai.yaml	authored	-	-	108a51c4d4a184bd0478b05ca8aa9d1685dd3111109c468396daa4ac1f22ffcb	skills	-
+library/skills/choose-automation-approach/eval/acceptance-criteria.md	authored	-	-	582f5a639b51e5fa6ed10b7833b341702ef27312b6bee10d76921b801d00001d	skills	-
+library/skills/choose-automation-approach/eval/baseline-input.md	authored	-	-	dda0f4b0316448c94e5b11b9dc9f027642d872370555395b6d9327711c968cf1	skills	-
+library/skills/choose-automation-approach/eval/baseline-output.md	authored	-	-	d5077589394db32279a47b6dc0a067380e5d84e533b20e9d2b72277e8bd8b894	skills	-
+library/skills/choose-automation-approach/references/credential-design.md	authored	-	-	bb442c35ca246842995140b3544803a486858540d5f334d9ad68f2e5ffc08cd5	skills	-
+library/skills/choose-automation-approach/references/deployment-and-trust.md	authored	-	-	3de556784a2af717c8f227c2a1f51d93dce57c4d14e66431e29c862aba3f0ebf	skills	-
+library/skills/choose-automation-approach/references/gotchas.md	authored	-	-	31b44e4cc72f325628744640aa974c77a726f69eb646c915bee8fa9917e98044	skills	-
+library/skills/choose-automation-approach/references/high-stakes-actions.md	authored	-	-	06c2d73e7e7296282e730f4f1ea920702ca91fd740866f434eb3ed1e6275a6d2	skills	-
+library/skills/choose-automation-approach/references/integration-selection.md	authored	-	-	76cca89ee6909291fdb75f5c79a1bd89fca8b61a5568b2799fae799f2ccfa6e4	skills	-
+library/skills/choose-automation-approach/references/interview.md	authored	-	-	4a30278a5a7c1f6b8e60e3962bcecf293fa1cf9ab6d0881b03827946fa5fe99b	skills	-
+library/skills/choose-automation-approach/references/output-template.md	authored	-	-	8cd067289851f679a1813da842e614226243b7ff6add1600123295cd9e5352e5	skills	-
+library/skills/choose-automation-approach/references/principles.md	authored	-	-	6bcd2c045ccd7884bba1929418355ce93383f00c2bad9c172059d0fc11742651	skills	-
 library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	cc17a30e180a54393e078183f9be612fa9e762105278135e2de0cd51aa611448	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
 library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	8ae68ae8b7a7fe85cccbdcaa43d6734f02805f88aa8d3ea92ec68e10b9841446	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	a61e97e4b61d25a33533a1ebeeac6176e4a77ceb05f0aafe248231cc8381d470	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc

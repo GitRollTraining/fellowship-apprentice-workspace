@@ -32,6 +32,6 @@ are in `library/sops/agent-settings.md`.
 
 ## Status
 
-First cut, 2026-08-11. Every layer is present and thinly populated on purpose: one worked playbook, four
-stubs, nine skills, one persona. It is built to be extended, and what each extension must contain is
-written down rather than assumed.
+First cut shipped 2026-08-11; the automation-approach skill was added 2026-08-13. Every layer remains
+thinly populated on purpose: one worked playbook, four stubs, ten skills, one persona. It is built to be
+extended, and what each extension must contain is written down rather than assumed.
