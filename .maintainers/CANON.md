@@ -95,7 +95,7 @@ library/playbooks/INDEX.md	authored	-	-	fe38bbe26ee4178d82f7c8e761ea64f4ba2c04fb
 library/playbooks/playbook-elicitation-to-sop.md	authored	-	-	a19a2c3e12e8388a45ef13a9655651df3548037fd0a68068d26752277e776cc2	playbooks	-
 library/playbooks/playbook-environment-setup.md	authored	-	-	c7b9d854e58bf21628ede8ef57ee2a63e19969cdec85e5fcaca731de3243c452	playbooks	-
 library/playbooks/playbook-interview.md	gitroll-dev/curriculum	~/Documents/jobs/gitroll/tasks/gitroll-curriculum.nosync/programs/ai-fellowship/playbooks/playbook-interview.md	2c97511	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815	playbooks	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815
-library/playbooks/playbook-interview.runbook.md	authored	-	-	dfec36f6f2b813f57b794678ee1cb0cc40b9a5ff2c77b17248ab2ea848883ff3	playbooks	-
+library/playbooks/playbook-interview.runbook.md	authored	-	-	aae146951fa79bcc20cf218a44377a627e48d1517545a0cd7b8a935c83b6a061	playbooks	-
 library/playbooks/playbook-output-phraser.md	authored	-	-	6e06e6fc3114c6d1229af7d5da1e527b9b66bae1daa75e7b059a204104c862de	playbooks	-
 library/playbooks/playbook-validator.md	authored	-	-	a2b940b36fe4330cc01b6f9025358fb08d0d91f6d001aada7a7d33e977e32b81	playbooks	-
 library/reference/INDEX.md	authored	-	-	76012a01a8882fab5803fbb24ecbe510e61e8fe23b86ac671b8f5b25bc1fdc7c	reference	-

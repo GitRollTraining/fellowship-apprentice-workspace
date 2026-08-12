@@ -16,6 +16,8 @@ already in place.
 1. Read `CLAUDE.md` — how to work in this repository.
 2. Read `library/sops/working-standards.md` — the four rules.
 3. Run `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
+4. When the work is written, follow `library/renderers/make-the-handover-file.md` — it turns your
+   markdown into the one file the owner opens.
 
 ## Setup
 
