@@ -14,7 +14,7 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 
 | Item | What it is | Class |
 |---|---|---|
-| `example-client/` | An empty engagement with the five subdirectories in place. Copy it to start; delete it when you no longer need the shape | Mutable |
+| `example-client/` | An empty engagement with the five subdirectories in place. Environment Setup copies it, then creates the engagement's notes and decision register | Mutable |
 
 ## The five subdirectories, in the order the work happens
 
@@ -30,7 +30,7 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `example-client/` | 2026-08-11 | Mutable | empty template |
+| `example-client/` | 2026-08-14 | Mutable | empty directory template; root control files are created per engagement |
 
 ## Conventions
 

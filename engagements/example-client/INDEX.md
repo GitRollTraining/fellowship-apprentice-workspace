@@ -7,8 +7,8 @@ style: descriptive
 
 ## Purpose
 
-An empty engagement. Copy this directory, rename it to the client slug, and delete this one when you no
-longer need the shape.
+An empty engagement directory shape. Environment Setup copies it to the client slug, then creates
+`notes.md`, `decision-register.md` and, once running, `progress-log.md` from the shared templates.
 
 ## Inventory
 
@@ -24,7 +24,7 @@ longer need the shape.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| all five | 2026-08-11 | Mutable | empty |
+| all five | 2026-08-14 | Mutable | empty; root control files are created after copying |
 
 ## Where the interview playbook's steps land
 

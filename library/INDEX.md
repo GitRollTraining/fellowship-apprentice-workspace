@@ -17,7 +17,7 @@ this material.
 
 | Item | What it is | Class |
 |---|---|---|
-| `playbooks/` | Procedures a fellow reruns on every engagement. One worked, four stubbed | Instruction |
+| `playbooks/` | Engagement-bound procedures: two complete drafts and three stubs | Instruction |
 | `skills/` | Eleven curated agent skills: nine vendored from source repositories and two authored here, all recorded in the provenance manifest | Instruction |
 | `personas/` | Agent personas. One shipped, a second named | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |

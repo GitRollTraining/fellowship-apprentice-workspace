@@ -15,6 +15,7 @@ If a library file is wrong, report it. Do not repair it in place.
 | You are doing | It goes in |
 |---|---|
 | Anything for a specific client | `engagements/<client-slug>/` |
+| Current engagement decisions, unresolved decision areas and stage gates | `engagements/<client-slug>/decision-register.md` |
 | Coursework, exercises, practice interviews — anything with no client | `training/<module-id>/` |
 | Interview notes, transcripts, session records | `engagements/<client-slug>/interview/` |
 | The reconstructed process, its boundaries, its exceptions | `engagements/<client-slug>/process/` |

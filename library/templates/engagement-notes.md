@@ -7,15 +7,18 @@ produces: engagements/<client-slug>/notes.md
 # Engagement notes
 
 One file per engagement, holding everything a person who has forgotten the engagement needs in order to
-pick it up: what it produces, what has been settled, what constrains it, and which files matter. An
-engagement is one client, one relationship, start to end — the unit of work and the unit of filing.
+pick it up: what it produces, where current decisions are recorded, what constrains it, and which files
+matter. An engagement is one client, one relationship, start to end — the unit of work and the unit of
+filing.
 
 ## Where it goes
 
 - File: `engagements/<client-slug>/notes.md`, beside that directory's `INDEX.md`.
+- Current decisions: `engagements/<client-slug>/decision-register.md`, created from
+  `library/templates/engagement-decision-register.md`.
 - Companion while the engagement is running: `engagements/<client-slug>/progress-log.md`, the session
   log. Its format is `library/templates/engagement-progress-log.md`.
-- Creating either file means adding a row to `engagements/<client-slug>/INDEX.md` in the same
+- Creating any of these files means adding a row to `engagements/<client-slug>/INDEX.md` in the same
   operation.
 
 ## Two modes
@@ -48,6 +51,7 @@ style: descriptive
 **Created:** {YYYY-MM-DD}
 **Status:** not-started | running | handed-over | dropped
 **Owner:** {the person who runs the process, and how to reach them}
+**Decisions:** `decision-register.md`
 
 ---
 
@@ -75,11 +79,12 @@ specification nobody has tested.}
 {How the engagement came about, what the owner said they wanted, and what the business does. Enough
 for a cold reader who has met nobody.}
 
-## What is settled, and what constrains it    (running)
+## Decision state    (running)
 
-- {a decision made, and when}
-- {a constraint: what must not be automated, who has to approve, what may not leave the business —
-  recorded in full in `process/boundaries.md`, summarised in one line here}
+The current decision areas, constraints, owners and stage gates are in `decision-register.md`. Do not
+copy the register here. State only the next unresolved gate, or `none`.
+
+- **Next unresolved gate:** {decision ID and stage, or none}
 
 ## Materials    (running)
 
@@ -87,6 +92,7 @@ for a cold reader who has met nobody.}
 
 | File | What it holds | Why it matters |
 |---|---|---|
+| `decision-register.md` | Current decisions, unresolved decision areas and stage gates | The canonical current state; do not reconstruct it from session history |
 | `interview/discovery-record.md` | What was heard, kept apart from what was concluded | The source for every claim downstream |
 | `{path}` | {what} | {why} |
 
@@ -111,9 +117,11 @@ for a cold reader who has met nobody.}
 1. A lined-up engagement stays minimal. An objective and a summary is the whole job.
 2. Once it is running, write to the session log as work happens, not afterwards. A record that lags
    the work is the failure this file exists to prevent.
-3. Anything the owner said must not leave the business does not go in this file. Record that the
+3. Durable decision state belongs in `decision-register.md`. This file points at the next gate; it does
+   not keep a second summary that can drift.
+4. Anything the owner said must not leave the business does not go in this file. Record that the
    constraint exists and where it applies; keep the restricted content out of the tracked record.
-4. Before flipping Status to `handed-over`, read this file and the session log end to end and confirm
-   every success measure is actually checked, not assumed.
-5. Names of people belong here only where you need them to do the work. Everything under
+5. Before flipping Status to `handed-over`, read this file, the decision register and the session log
+   end to end and confirm every success measure is actually checked, not assumed.
+6. Names of people belong here only where you need them to do the work. Everything under
    `engagements/<client-slug>/` is deletable as a unit when the relationship ends, which is the point.

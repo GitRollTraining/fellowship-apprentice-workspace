@@ -17,7 +17,8 @@ ignores it renders wrongly without raising an error.
 | Item | What it is |
 |---|---|
 | `brief-design.md` | A design system for single-page HTML briefs; paired with the PDF renderer it is how a written handover becomes one file a non-technical owner opens |
-| `engagement-notes.md` | Generic two-mode project-notes pattern (objective, success criteria, context, decisions, materials) a fellow working alone across sessions can use to keep external state on the engagement. |
+| `engagement-decision-register.md` | Canonical current-state register for decision areas, owners, stage gates and the position currently in force; includes the common starter rows and controlled values. |
+| `engagement-notes.md` | Generic two-mode project-notes pattern (objective, success criteria, context, decision-register pointer, materials) a fellow working alone across sessions can use to re-enter the engagement. |
 | `engagement-progress-log.md` | Companion running session-log so a fellow with no reviewer keeps a verifiable record of what was done, verified, and next across multiple sessions with the owner. |
 | `handover.md` | What the process does, what it will not do and what to check, in the owner's vocabulary; it also carries the renderer's input contract |
 | `index-manifest.md` | Defines the INDEX.md manifest the toolbox mandates in every directory - Purpose, Inventory, Freshness, upstream pointer |
@@ -33,4 +34,4 @@ ignores it renders wrongly without raising an error.
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 12 items | 2026-08-11 | Instruction | first cut |
+| all 13 items | 2026-08-14 | Instruction | decision-register template added |

@@ -11,7 +11,7 @@ exists so that a session picked up after a week starts from what happened rather
 
 ## Where it goes
 
-- File: `engagements/<client-slug>/progress-log.md`, beside `notes.md`.
+- File: `engagements/<client-slug>/progress-log.md`, beside `notes.md` and `decision-register.md`.
 - Created when the engagement starts running, not before. A lined-up engagement has no sessions to log.
 - Class `Mutable`, status `append-only, one line per session` in the directory's `INDEX.md`.
 
@@ -20,7 +20,7 @@ exists so that a session picked up after a week starts from what happened rather
 | Belongs here | Belongs elsewhere |
 |---|---|
 | That a session happened, and what changed because of it | What the owner said — `interview/session-<date>/` and `interview/discovery-record.md` |
-| A decision you made and would otherwise forget | The reconstructed process itself — `process/` |
+| A decision made or changed in this session | Its current state — `decision-register.md`; the reconstructed process itself — `process/` |
 | What is stuck, and what the next session starts with | What you will do differently next time — `interview/self-audit-<date>.md`, and one line in `reference/self-audit-log.md` |
 
 A log entry that reproduces the discovery record is two copies of one fact, and they drift.
@@ -47,7 +47,7 @@ style: descriptive
 - **Verified:** {what you checked and what came back — the owner confirmed the step order out loud, the
   draft ran on last Tuesday's real order and produced the right total, the diagram was corrected in
   two places. Evidence, not a claim that it is fine}
-- **Decided:** {any decision made; the ones that outlive the session get copied into notes.md}
+- **Decided:** {any decision made or changed; update the same decision ID in decision-register.md}
 - **Stuck:** {what is unresolved, and what it is waiting on}
 - **Next:** {the first thing the next session picks up}
 ```
@@ -59,7 +59,7 @@ style: descriptive
 2. "Verified" means something happened that could have come out the other way: a real case run, a
    correction the owner made, a check that failed. "Looks right" is not verification.
 3. Never edit an old entry. If it was wrong, say so in today's entry and name the date it corrects.
-4. Copy durable decisions into `notes.md`. The log is where a decision is recorded first, not where it
-   is looked up later.
+4. Update durable decisions in `decision-register.md` during the same session. The log records what
+   changed and why; the register is where the current position is looked up later.
 5. Before flipping the engagement to `handed-over`, read this log end to end. It is the only place the
    whole sequence exists.
