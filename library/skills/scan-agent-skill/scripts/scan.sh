@@ -55,6 +55,7 @@ fi
 exec "$scanner_bin" scan "$skill_directory" \
   --skill-file "$skill_file" \
   --policy balanced \
-  --format summary \
+  --format markdown \
+  --no-render-markdown \
   --detailed \
   --fail-on-severity high
