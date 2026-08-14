@@ -73,12 +73,12 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 110 |
+| Rows | 113 |
 | Vendored from a source repository | 75 |
-| Written for this workspace (`authored`) | 35 |
+| Written for this workspace (`authored`) | 38 |
 | Vendored files carrying a local patch | 52 |
 | Original cut date | 2026-08-11 |
-| Last manifest update | 2026-08-13 |
+| Last manifest update | 2026-08-14 |
 
 ## What this file does NOT do
 
@@ -89,7 +89,7 @@ automatically is being designed separately; this manifest is deliberately usable
 ## The manifest
 
 ```tsv
-library/INDEX.md	authored	-	-	6158cccd1e0575104b36e0d02b1a6cea0179242afdd45d48fe5e969f56d2966b	library	-
+library/INDEX.md	authored	-	-	6bc0b9508dcb23cd73f195f8bedf640ef5594f18f8335e2208c8c61e26650bba	library	-
 library/personas/INDEX.md	authored	-	-	8b5455a188a9d5842f08e32a1955ec1fc45db39e4fa54c9379cbc93e86989686	personas	-
 library/personas/adversarial-reviewer.md	authored	-	-	2f032ac6d2b37faa0fac06128458e7db1681a7ee2e904f0933af9cd04f299e2c	personas	-
 library/playbooks/INDEX.md	authored	-	-	e7eb02f7708f868c20fb3c9e6f68342280991bc466f78b181828e5cd9ea2cb35	playbooks	-
@@ -104,12 +104,12 @@ library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/refe
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
 library/reference/terminology.md	authored	-	-	312132e73cb628057857267d243b71ad16be3a44756568221be19063ff8d75c8	reference	-
-library/reference/tool-inventory.md	authored	-	-	c73f7eef95f20d575118864e017a3df162b3850ec2da6fe248eff8dcf32ef5f8	reference	-
+library/reference/tool-inventory.md	authored	-	-	5b4e4cd9cee04667876b4d4237f6b6a25ca55316a02045a9b0e019bb16d76ed9	reference	-
 library/renderers/INDEX.md	authored	-	-	11f394e257f2db313ef09822413905eee3043c8ecbaac0672463a3087d3932ed	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	ce7f30691d38a484e784f2c5f2f4ea710a24eb07db7246ac90c5cbb03d0a30bf	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
 library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	f753750e67fbbc5a08291e752eeabfa0553b1823c0b4611a4ddbb4cad7a0c177	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
-library/skills/INDEX.md	authored	-	-	c276e34e86ef0c7b6b11f5a3177d884046331d047478117dbe7f3224715da0be	skills	-
+library/skills/INDEX.md	authored	-	-	8667145bbec29e834ebf36de2596edcde5e2fed255966f26a5f5217add3cf4e2	skills	-
 library/skills/choose-automation-approach/SKILL.md	authored	-	-	572fafef397512f6be7aa44a0d995e55b0da2c7abfb62cf8ae5e37255f4944e1	skills	-
 library/skills/choose-automation-approach/agents/openai.yaml	authored	-	-	108a51c4d4a184bd0478b05ca8aa9d1685dd3111109c468396daa4ac1f22ffcb	skills	-
 library/skills/choose-automation-approach/eval/acceptance-criteria.md	authored	-	-	582f5a639b51e5fa6ed10b7833b341702ef27312b6bee10d76921b801d00001d	skills	-
@@ -159,6 +159,9 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
+library/skills/scan-agent-skill/SKILL.md	authored	-	-	2187c432e6c529a9e1cb83fe333d9dbf9e308f07bd73a504f7f5d0308465c33e	skills	-
+library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
+library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	d6a3e48431f1f9bcd39e36d70e4a7ee359e87e8708ef109a2918d4d8f87c1228	skills	-
 library/skills/video-to-markdown/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/SKILL.md	-	a124c6ff83c406152fb867b914c14d7e6c2f87e28c9234e9556970b770def918	skills	d31ae309c860953ba8247307507e856669ba3bad8a7193ff921aa14045d0235e
 library/skills/video-to-markdown/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/references/gotchas.md	-	307a14571903202f41c7087d6c1eb315750734d8734450519964eeac171bbf4d	skills	873e981206644202220734a31925137c8267a0c2e4fc372c061fb2090a118260
 library/skills/video-to-markdown/references/methodology.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/references/methodology.md	-	6fc6fff17278f0a8ba6f670ee023069b4ab8d70d7ad432961d056d7e9ce2abd1	skills	93590fcf40c73b1d17b8baf88ce1c082e25c072b6be48612dcf1a4cc9f20efd9

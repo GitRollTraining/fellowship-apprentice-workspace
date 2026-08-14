@@ -26,7 +26,7 @@ curated library of skills, playbooks, personas and standards they work with.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-13 | Instruction | automation-approach skill added after first cut |
+| `library/` | 2026-08-14 | Instruction | security-scan wrapper added after automation-approach skill |
 | `engagements/example-client/` | 2026-08-11 | Mutable | empty example, safe to delete |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |

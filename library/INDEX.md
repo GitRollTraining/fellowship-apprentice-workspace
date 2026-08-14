@@ -18,7 +18,7 @@ this material.
 | Item | What it is | Class |
 |---|---|---|
 | `playbooks/` | Procedures a fellow reruns on every engagement. One worked, four stubbed | Instruction |
-| `skills/` | Ten curated agent skills: nine vendored from source repositories and one authored here, all recorded in the provenance manifest | Instruction |
+| `skills/` | Eleven curated agent skills: nine vendored from source repositories and two authored here, all recorded in the provenance manifest | Instruction |
 | `personas/` | Agent personas. One shipped, a second named | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |
 | `templates/` | The shapes an engagement's documents are written into, and the design system for a brief | Instruction |
