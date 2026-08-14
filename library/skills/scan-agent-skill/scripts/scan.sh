@@ -52,6 +52,10 @@ if [[ "$installed_version" != "skill-scanner $expected_version" ]]; then
   exit 2
 fi
 
+# LiteLLM otherwise makes a best-effort model-pricing request during import, even when the LLM
+# analyzer is disabled. Force its bundled map so the default scan does not initiate network access.
+export LITELLM_LOCAL_MODEL_COST_MAP=True
+
 exec "$scanner_bin" scan "$skill_directory" \
   --skill-file "$skill_file" \
   --policy balanced \

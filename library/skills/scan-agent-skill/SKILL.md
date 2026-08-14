@@ -29,7 +29,8 @@ remote repository in one step.
    choose a system-wide `pip` installation for them.
 3. Re-run the wrapper after installation. Keep the default local-only scan. Do not enable LLM,
    VirusTotal, Cisco AI Defense, file uploads, or API keys unless the user explicitly requests and
-   approves that separate data flow.
+   approves that separate data flow. The wrapper also forces LiteLLM to use its bundled model-cost
+   map so that dependency does not make an incidental pricing-data request during startup.
 4. Read the detailed Markdown report. Report the command's exit status, each finding's severity and
    evidence path, and a disposition:
    fix, accept with a stated reason, or investigate manually.
