@@ -20,12 +20,13 @@ If a library file is wrong, report it. Do not repair it in place.
 | Interview notes, transcripts, session records | `engagements/<client-slug>/interview/` |
 | The reconstructed process, its boundaries, its exceptions | `engagements/<client-slug>/process/` |
 | The specification you are building | `engagements/<client-slug>/spec/` |
-| The `skill.md` you hand over | `engagements/<client-slug>/deliverable/` |
+| The implementation and canonical deployment/operations instructions you hand over | `engagements/<client-slug>/deliverable/` |
 | The owner-facing account, and the file the owner opens | `engagements/<client-slug>/handover/` |
+| Internal validation reports, manifests and permitted evidence | `engagements/<client-slug>/verification/` — never include the directory itself in the client package |
 | Something you will reuse on the next client — a question stem, a self-audit line | `reference/` |
 | Something you were told must not leave the business | keep it out of git entirely: name the file `*.local.*`, which `.gitignore` already excludes, and record in the process notes that it exists and where it is |
 
-The five engagement subdirectories are named for the five kinds of thing an engagement produces, not
+The six engagement subdirectories are named for six kinds of engagement material, not
 for a sequence — a session fills `interview/` and `process/` in the same afternoon, and `interview/`
 receives more material after `process/` has. File as you go; an engagement you file at the end is an
 engagement you reconstruct from memory.

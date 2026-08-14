@@ -23,9 +23,10 @@ No Fellow has run this procedure on a client engagement. The rules below make ar
 traceability and stage gates explicit; they are not evidence that following the procedure improves a
 solution. Record the first real run before changing that claim.
 
-This playbook does not conduct the discovery interview, test the finished deliverable on real cases,
-package the stakeholder handoff or deploy production access. Those belong to the Interview, Validator,
-Output Phraser and deployment work respectively.
+This playbook does not conduct the discovery interview, phrase the stakeholder handoff or deploy
+production access. Those belong to the Interview, Output Phraser and deployment work respectively. It
+does own the order of the final gates and invokes the specialised validators rather than asking those
+playbooks to call one another.
 
 ## Required artifact chain
 
@@ -41,6 +42,8 @@ Paths are relative to `engagements/<client-slug>/`.
 | `decision-register.md` | Canonical current position and stage status for engagement decisions | This playbook and every later decision owner |
 | `spec/specification.md` | The build contract joining the signed PRD to the technical decisions | This playbook |
 | `deliverable/` | The thing the business will operate | The builder selected by this playbook |
+| `verification/deliverable-report.md` | Validator A's evidence and verdict for the exact delivery manifest | Validate Deliverable playbook |
+| `verification/handoff-report.md` | Validator B's verdict for the final owner-accepted package | Validate Handoff playbook |
 | `progress-log.md` | When work or a decision changed and why | Every stage, append-only |
 
 The chain is not optional:
@@ -53,7 +56,16 @@ session evidence
   -> owner-signed PRD
   -> technical specification
   -> deliverable
+  -> Validator A pass
+  -> owner-facing phrasing and comprehension gates
+  -> Validator B pass
+  -> handed-over
 ```
+
+Validator A, Output Phraser, persona preflight, real-owner acceptance and Validator B run in that order.
+The Output Phraser and comprehension artifacts are still stubs, so this draft can currently establish
+only the Validator A gate. Do not skip the missing stages or mark an engagement `handed-over` because
+the earlier gates exist.
 
 ## Who decides what
 
@@ -212,6 +224,17 @@ For a larger solution, adapt the same template and inventory the components unde
 The template's larger-system example names the common concerns; this playbook does not attempt to teach
 an experienced Fellow how to architect every possible system.
 
+For every delivery shape, write the canonical operating instructions inside the delivery boundary:
+
+- `deliverable/deployment.md` covers prerequisites, installation, configuration, start, upgrade or
+  replacement, rollback and uninstall where applicable; and
+- `deliverable/operations.md` covers normal use, monitoring, failure response, recovery, credential
+  rotation or revocation, maintenance and escalation.
+
+Keep detailed technical choice rationale in `spec/automation-approach.md`. Later handover material may
+summarise and point to the two operating files, but must not create a conflicting second authority. Add
+a client-runnable smoke or health check when practical and inventory it with the other components.
+
 No deliverable component may introduce new business behaviour. If implementation reveals one, stop and
 return to the PRD or technical-decision step that owns it.
 
@@ -227,9 +250,21 @@ it was not designed to inspect.
   editing only the deliverable hides the defect.
 - Record the review input, date and disposition in `progress-log.md`.
 
-Final behavioural testing belongs to the Validator playbook, not this review.
+Final behavioural testing belongs to Validate Deliverable (Validator A), not this review.
 
-## Structural checks before handoff to Validator
+### 10. Run Validator A
+
+After the structural checks below pass, run
+`library/playbooks/playbook-validate-deliverable.md`. That playbook applies the reusable whole-deliverable
+review, executes behavioural and operational cases, freezes a content manifest and writes the internal
+report under `verification/`.
+
+Do not start owner-facing phrasing unless the latest report says `pass` and its manifest matches the
+current `deliverable/` exactly. A blocked result returns to the PRD, specification or build stage that
+owns the defect. A later delivery-file change invalidates the pass and requires the affected checks to
+run again.
+
+## Structural checks before Validator A
 
 Do not declare this playbook complete until all of the following hold:
 
@@ -244,10 +279,11 @@ Do not declare this playbook complete until all of the following hold:
 - No relevant Decision Register row remains `open` past its `Required before` gate.
 - `automation-approach.md`, the Decision Register and the signed PRD describe the same current choice.
 - Every adversarial-review finding has a disposition.
+- `deliverable/deployment.md` and `deliverable/operations.md` describe the canonical operating path.
 - The `spec/` and `deliverable/` INDEX files and `progress-log.md` are current.
 
 These checks establish structural consistency, not that the deliverable works. Hand the result to the
-Validator for behavioural evidence.
+Validate Deliverable playbook for behavioural evidence.
 
 ## Stop conditions
 

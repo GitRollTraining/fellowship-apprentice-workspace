@@ -14,9 +14,9 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 
 | Item | What it is | Class |
 |---|---|---|
-| `example-client/` | An empty engagement with the five subdirectories in place. Environment Setup copies it, then creates the engagement's notes and decision register | Mutable |
+| `example-client/` | An empty engagement with the six subdirectories in place. Environment Setup copies it, then creates the engagement's notes and decision register | Mutable |
 
-## The five subdirectories, in the order the work happens
+## The six subdirectories
 
 | Directory | What lands there |
 |---|---|
@@ -25,12 +25,13 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 | `spec/` | The specification under construction |
 | `deliverable/` | The agent-executable `skill.md` the business receives, and its known-defects list |
 | `handover/` | The owner-facing account, in the owner's own vocabulary |
+| `verification/` | Internal Validator A/B reports, candidate manifest and permitted reproducible evidence; never included in the client package |
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `example-client/` | 2026-08-14 | Mutable | empty directory template; root control files are created per engagement |
+| `example-client/` | 2026-08-15 | Mutable | empty directory template with internal verification boundary; root control files are created per engagement |
 
 ## Conventions
 

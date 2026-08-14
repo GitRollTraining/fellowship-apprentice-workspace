@@ -58,7 +58,8 @@ Normalise the slug to kebab-case and inspect `engagements/<client-slug>/`.
 ### 2. Create the engagement structure
 
 For a new setup, copy the directory shape in `engagements/example-client/` to the resolved slug. Confirm
-that `interview/`, `process/`, `spec/`, `deliverable/` and `handover/` each exist with an `INDEX.md`.
+that `interview/`, `process/`, `spec/`, `deliverable/`, `handover/` and `verification/` each exist with an
+`INDEX.md`.
 
 Edit the copied root `INDEX.md` so its title, purpose and freshness describe the real engagement. Add
 the client directory to `engagements/INDEX.md` in the same operation. Do not leave `example-client` as
@@ -171,7 +172,7 @@ The next procedure is `library/playbooks/playbook-interview.md`, using
 
 ## Completion check
 
-- The target and all five subdirectories have accurate `INDEX.md` files.
+- The target and all six subdirectories have accurate `INDEX.md` files.
 - `notes.md` and `decision-register.md` exist, are listed in the root inventory and agree on the
   engagement status.
 - `progress-log.md` exists if and only if the engagement is `running`.

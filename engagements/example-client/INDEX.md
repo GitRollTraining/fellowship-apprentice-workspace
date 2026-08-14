@@ -19,14 +19,15 @@ An empty engagement directory shape. Environment Setup copies it to the client s
 | `spec/` | The signed PRD, automation decision brief and specification under construction | Mutable |
 | `deliverable/` | The agreed deliverable; one `skill.md` is the default shape | Mutable |
 | `handover/` | The owner's own account of it | Mutable |
+| `verification/` | Internal validation reports, manifests and permitted evidence; excluded from the client package | Mutable |
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| all five | 2026-08-15 | Mutable | empty; root control files are created after copying |
+| all six | 2026-08-15 | Mutable | empty; root control files are created after copying |
 
 ## Where the interview playbook's steps land
 
-`library/playbooks/playbook-interview.runbook.md` maps all twenty-one steps to files in these five
-directories. Read it before the first session, not after.
+`library/playbooks/playbook-interview.runbook.md` maps all twenty-one steps to the applicable work areas.
+Read it before the first session, not after.

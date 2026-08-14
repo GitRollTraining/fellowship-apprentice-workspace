@@ -26,11 +26,11 @@ curated library of skills, playbooks, personas and standards they work with.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-15 | Instruction | Discovery to Deliverable draft and workspace ID glossary added |
-| `engagements/example-client/` | 2026-08-14 | Mutable | empty directory shape; Environment Setup creates root control files |
+| `library/` | 2026-08-15 | Instruction | Validator A/B, validation reports and deliverable review checklist added |
+| `engagements/example-client/` | 2026-08-15 | Mutable | empty directory shape includes the internal verification boundary |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |
-| `.maintainers/` | 2026-08-15 | Record | provenance updated for Discovery to Deliverable and the ID glossary |
+| `.maintainers/` | 2026-08-15 | Record | provenance updated for the Validator A/B layer |
 
 ## Conventions
 

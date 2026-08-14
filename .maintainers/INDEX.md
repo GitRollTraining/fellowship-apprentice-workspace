@@ -21,5 +21,5 @@ authored components work as they do and what needs revalidation.
 
 | Item | Last updated | Status |
 |---|---|---|
-| Provenance and cut records | 2026-08-15 | Updated for Discovery to Deliverable and the workspace ID glossary |
+| Provenance and cut records | 2026-08-15 | Updated for Validator A/B, validation-report templates and the deliverable-review checklist |
 | `design/` | 2026-08-13 | First design record |

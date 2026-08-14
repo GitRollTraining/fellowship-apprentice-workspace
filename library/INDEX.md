@@ -17,7 +17,7 @@ this material.
 
 | Item | What it is | Class |
 |---|---|---|
-| `playbooks/` | Engagement-bound procedures: two interview documents, two complete drafts and two stubs | Instruction |
+| `playbooks/` | Engagement-bound procedures: two interview documents, four authored drafts and one stub | Instruction |
 | `skills/` | Eleven curated agent skills: nine vendored from source repositories and two authored here, all recorded in the provenance manifest | Instruction |
 | `personas/` | Agent personas. One shipped, a second named | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |

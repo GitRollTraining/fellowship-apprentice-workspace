@@ -98,6 +98,7 @@ client's data is the wrong answer even when it works.
 | Gap | What it means for you |
 |---|---|
 | Packaging the finished `skill.md` into an installer a non-technical owner double-clicks | The tool that does this is in a private repository. You hand over the file plus the written account instead, which works and takes one more step from the owner |
-| Proving the finished `skill.md` behaves on the owner's real cases | `library/playbooks/playbook-validator.md` is in the same state. The adversarial-reviewer persona attacks the draft; running it against real cases is yours |
+| Evidence that the finished deliverable behaves on the owner's real cases | Validator A now defines the evidence and release gate, but it has not yet been run on a client engagement. Treat it as an authored procedure, not proof that the procedure improves outcomes |
 
-These two are the honest edges of this toolbox. Nothing here pretends to close them.
+These are the honest edges of this toolbox. The first remains unimplemented; the second has a draft
+procedure but no real-use evidence. Nothing here pretends to close either gap further than that.

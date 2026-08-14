@@ -20,7 +20,9 @@ ignores it renders wrongly without raising an error.
 | `engagement-decision-register.md` | Canonical current-state register for decision areas, owners, stage gates and the position currently in force; includes the common starter rows and controlled values. |
 | `engagement-notes.md` | Generic two-mode project-notes pattern (objective, success criteria, context, decision-register pointer, materials) a fellow working alone across sessions can use to re-enter the engagement. |
 | `engagement-progress-log.md` | Companion running session-log so a fellow with no reviewer keeps a verifiable record of what was done, verified, and next across multiple sessions with the owner. |
+| `deliverable-validation-report.md` | Internal Validator A record: candidate manifest, acceptance evidence, behavioural cases, operating checks, findings and exact verdict |
 | `handover.md` | What the process does, what it will not do and what to check, in the owner's vocabulary; it also carries the renderer's input contract |
+| `handoff-validation-report.md` | Internal Validator B record: passed-candidate integrity, package inventory, claim fidelity, comprehension gates, rendering and archive integrity |
 | `index-manifest.md` | Defines the INDEX.md manifest the toolbox mandates in every directory - Purpose, Inventory, Freshness, upstream pointer |
 | `interview-record.md` | What was heard kept visibly apart from what was concluded, one statement per entry in the owner's own words, and a required pointer per load-bearing statement |
 | `process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
@@ -34,4 +36,4 @@ ignores it renders wrongly without raising an error.
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 13 items | 2026-08-15 | Instruction | PRD and specification trace chain updated |
+| all 15 items | 2026-08-15 | Instruction | Validator A/B report contracts added |
