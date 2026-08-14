@@ -107,6 +107,8 @@ Use these identifiers:
 - `AC-001` onward for acceptance criteria; and
 - `OQ-001` onward for open questions.
 
+`library/reference/terminology.md` defines these and the other cross-artifact prefixes in one place.
+
 The first draft remains `draft`. Owner sign-off happens only after the feasibility pass below.
 
 ### 3. Run the automation feasibility and approach pass

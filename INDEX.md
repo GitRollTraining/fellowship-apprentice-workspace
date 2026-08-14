@@ -26,11 +26,11 @@ curated library of skills, playbooks, personas and standards they work with.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-14 | Instruction | Environment Setup draft and Decision Register template added |
+| `library/` | 2026-08-15 | Instruction | Discovery to Deliverable draft and workspace ID glossary added |
 | `engagements/example-client/` | 2026-08-14 | Mutable | empty directory shape; Environment Setup creates root control files |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |
-| `.maintainers/` | 2026-08-14 | Record | provenance updated for Environment Setup and Decision Register |
+| `.maintainers/` | 2026-08-15 | Record | provenance updated for Discovery to Deliverable and the ID glossary |
 
 ## Conventions
 

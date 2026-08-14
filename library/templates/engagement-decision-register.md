@@ -38,6 +38,16 @@ style: descriptive
 - `automation-approach` — lifecycle path, runtime, integration, credential design and high-stakes
   controls.
 
+### ID prefixes
+
+- `EW` — **E**ngagement **W**orkspace decisions.
+- `DP` — **D**eliverable **P**ackage decisions.
+- `DR` — **D**eliverable **R**untime decisions.
+- `AA` — **A**utomation **A**pproach decisions.
+
+These prefixes correspond to the controlled `Scope` values above. The canonical workspace glossary is
+`library/reference/terminology.md`.
+
 ### Status
 
 - `candidate` — may need a decision; relevance has not yet been confirmed.

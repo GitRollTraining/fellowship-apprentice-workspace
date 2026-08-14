@@ -21,5 +21,5 @@ authored components work as they do and what needs revalidation.
 
 | Item | Last updated | Status |
 |---|---|---|
-| Provenance and cut records | 2026-08-14 | Updated with the Environment Setup playbook and Decision Register template |
+| Provenance and cut records | 2026-08-15 | Updated for Discovery to Deliverable and the workspace ID glossary |
 | `design/` | 2026-08-13 | First design record |

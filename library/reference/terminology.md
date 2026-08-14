@@ -21,6 +21,34 @@ other document in the programme.
 | **provenance** | Where a file came from and the hash it was at when it was copied |
 | **assessment engine** | The instrument that grades a fellow's work at a gate. Not the same as the validator playbook, which checks before every ship |
 
+## Workspace identifier prefixes
+
+These are workspace conventions, not universal standards. `US` and `AC` are familiar product and
+requirements shorthand; the other prefixes are short forms chosen for this workspace. Their meaning is
+scoped to the artifact named below. Preserve the identifier when another artifact cites it, and do not
+reuse a retired identifier for a different statement.
+
+| Prefix | Meaning | Used for | Why these letters |
+|---|---|---|---|
+| `D-` | Domain | Programme capability areas in this file and `serves` metadata | **D**omain |
+| `H` | Heard | Direct evidence rows in `interview/discovery-record.md` | **H**eard from the owner or source |
+| `C` | Conclusion | Fellow-derived rows in `interview/discovery-record.md` | **C**onclusion drawn from cited evidence |
+| `X` | Possible exception | A named exception with no datable instance yet in `process/exceptions.md` | `X` marks an unverified e**x**ception candidate |
+| `B` | Boundary | Human-approval, non-automation and information-boundary rows in `process/boundaries.md` | **B**oundary |
+| `F` | Failure mode | Observed current-state failure rows in `process/failure-modes.md` | **F**ailure mode |
+| `US-` | User Story | User stories in `spec/requirements.md` | **U**ser **S**tory |
+| `R-` | Requirement | Goals, requirements, business rules and constraints in `spec/requirements.md` | **R**equirement |
+| `AC-` | Acceptance Criterion | One observable condition used to accept a user story or requirement in `spec/requirements.md` | **A**cceptance **C**riterion |
+| `OQ-` | Open Question | Material unresolved questions in `spec/requirements.md` | **O**pen **Q**uestion |
+| `EW-` | Engagement Workspace decision | Decisions about the Fellow's engagement workspace in `decision-register.md` | **E**ngagement **W**orkspace |
+| `DP-` | Deliverable Package decision | Decisions about what the client handoff may contain in `decision-register.md` | **D**eliverable **P**ackage |
+| `DR-` | Deliverable Runtime decision | Decisions about the installed deliverable's data and system boundaries in `decision-register.md` | **D**eliverable **R**untime |
+| `AA-` | Automation Approach decision | Decisions about lifecycle, runtime, integration, credentials and controls in `decision-register.md` | **A**utomation **A**pproach |
+
+The numbering shapes are intentionally inherited from their artifact schemas: discovery and process
+records use `H1`, `C1`, `X1`, `B1` and `F1`; the PRD and Decision Register use zero-padded forms such as
+`US-001`, `AC-001` and `EW-001`. Do not silently convert one style into the other.
+
 ## The domains this programme teaches
 
 Seventeen of the twenty-seven defined domains are taught. The rest are deferred or ruled out, and a tool

@@ -39,8 +39,11 @@ Use these PRD identifiers:
 
 - `US-001` onward — user stories;
 - `R-001` onward — requirements and constraints;
-- `AC-001` onward — acceptance criteria; and
+- `AC-001` onward — acceptance criteria (each `AC` is one **A**cceptance **C**riterion); and
 - `OQ-001` onward — open questions.
+
+The canonical glossary for these and the source-record prefixes is
+`library/reference/terminology.md`.
 
 Normalising a statement may change grammar, not substance. Do not add a frequency, threshold, deadline,
 guarantee or priority the owner did not state or sign off.

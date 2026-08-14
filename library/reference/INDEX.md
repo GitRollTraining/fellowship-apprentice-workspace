@@ -32,7 +32,8 @@ instructions resolved to nothing.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| four unchanged references | 2026-08-11 | Instruction | first cut; provenance recorded per file |
+| three unchanged references | 2026-08-11 | Instruction | first cut; provenance recorded per file |
+| `terminology.md` | 2026-08-15 | Instruction | engagement artifact identifier prefixes defined; provenance updated |
 | `tool-inventory.md` | 2026-08-13 | Instruction | automation-approach skill added; provenance updated |
 
 ## Where the apprentice's own reference material goes
