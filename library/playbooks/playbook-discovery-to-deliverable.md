@@ -43,6 +43,10 @@ Paths are relative to `engagements/<client-slug>/`.
 | `spec/specification.md` | The build contract joining the signed PRD to the technical decisions | This playbook |
 | `deliverable/` | The thing the business will operate | The builder selected by this playbook |
 | `verification/deliverable-report.md` | Validator A's evidence and verdict for the exact delivery manifest | Validate Deliverable playbook |
+| `handover/owner-account.*` and versioned package | The explanation and exact candidate package the owner receives | Output Phraser |
+| `verification/handoff-source-map.md` | Internal claim-to-authority and render/package derivation chain | Output Phraser |
+| `verification/persona-preflight.md` | Mandatory constrained non-technical-reader result | This playbook invoking the persona |
+| `verification/owner-acceptance.md` | The real owner's comprehension and acceptance against exact candidate bytes | This playbook and owner |
 | `verification/handoff-report.md` | Validator B's verdict for the final owner-accepted package | Validate Handoff playbook |
 | `progress-log.md` | When work or a decision changed and why | Every stage, append-only |
 
@@ -63,9 +67,8 @@ session evidence
 ```
 
 Validator A, Output Phraser, persona preflight, real-owner acceptance and Validator B run in that order.
-The Output Phraser and comprehension artifacts are still stubs, so this draft can currently establish
-only the Validator A gate. Do not skip the missing stages or mark an engagement `handed-over` because
-the earlier gates exist.
+Each component owns its specialised work; this playbook owns their order, invalidation routes and final
+status transition. No earlier pass permits a later gate to be skipped.
 
 ## Who decides what
 
@@ -285,6 +288,83 @@ Do not declare this playbook complete until all of the following hold:
 These checks establish structural consistency, not that the deliverable works. Hand the result to the
 Validate Deliverable playbook for behavioural evidence.
 
+### 11. Run Output Phraser
+
+After Validator A passes, run `library/playbooks/playbook-output-phraser.md`. It writes one owner-facing
+authoring source, its rendered output where applicable, an internal handoff source map, a plain package
+manifest and the versioned candidate archive.
+
+The Phraser may simplify language, order and presentation. It may not change a delivered file or invent
+a business claim. A delivery-file change returns to Validator A. An untraceable presentation claim
+blocks here until its governing source is corrected or the claim is removed.
+
+The Phraser's exit means `ready for comprehension testing`. It is not a release verdict.
+
+### 12. Run the mandatory non-technical-owner preflight
+
+Start `verification/persona-preflight.md` from `library/templates/persona-preflight.md`, then invoke
+`library/personas/non-technical-owner.md` in a fresh context against the exact candidate client-readable
+documents.
+
+The persona receives only:
+
+- the client-readable material in the candidate package, including canonical deployment and operations
+  instructions; and
+- direct `H*` owner statements and later owner corrections, copied with durable pointers into the
+  report's Allowed prior knowledge table.
+
+It must not receive Fellow conclusions, the PRD, specification, unpresented implementation source or
+configuration, source map, Validator reports or prior answers. Record every supplied document and hash,
+then check that boundary. A contaminated run is `blocked`, not reusable evidence.
+
+Persona preflight is mandatory but never substitutes for the real owner. On `blocked`, return to Output
+Phraser, revise the account or navigation, rebuild the package and run the persona again. Preserve the
+old report as superseded; do not edit a failed run into a pass.
+
+### 13. Obtain real-owner comprehension and acceptance
+
+Only after persona pass, start `verification/owner-acceptance.md` from
+`library/templates/owner-acceptance.md` and give the real owner the exact candidate version named in the
+preflight.
+
+Ask the owner to explain or demonstrate from the package, without prompting:
+
+- what was delivered, its trigger and visible result;
+- what it will not do and where a person acts;
+- how to distinguish success from failure;
+- the first recovery or escalation action;
+- where deployment and operations instructions live; and
+- who owns credentials, maintenance and ongoing cost.
+
+“Does this make sense?” records agreement, not comprehension. An unrecorded verbal yes is not an
+acceptance source. Record the owner's answers, role, date, route and durable evidence pointer.
+
+This is a hard gate. `rejected`, unanswered or materially corrected output returns to Output Phraser
+and leaves the engagement `running`. Rebuild the package and repeat both persona and owner checks after
+any owner-facing byte changes. A delivery-file change returns further to Validator A.
+
+### 14. Run Validator B and transition status
+
+After owner `accepted`, run `library/playbooks/playbook-validate-handoff.md` against the unchanged
+candidate archive. Validator B verifies Validator A integrity, package inventory and boundary, claim
+fidelity, limitation visibility, rendering, comprehension evidence, archive path safety and the final
+archive hash.
+
+Route a `blocked` result to the stage that owns it:
+
+| Finding | Return to |
+|---|---|
+| Delivery path or hash differs from Validator A | Build and Validator A |
+| Owner-facing claim or navigation is wrong | Output Phraser, persona and owner |
+| Persona context or result is invalid | Persona, then owner if owner-facing bytes changed |
+| Owner acceptance does not match exact bytes | Real-owner check |
+| Archive-only assembly or boundary defect | Output Phraser package assembly, then affected comprehension gates |
+
+Only a Validator B `pass` against an `accepted` package may change the Decision Register's engagement
+status to `handed-over`. In the same working session, record the package path and hash, acceptance and B
+report in `progress-log.md`, update affected INDEX files and review retention, revocation and delivery
+positions. A status field changed without those sources is not a completed handoff.
+
 ## Stop conditions
 
 Stop and report rather than filling a gap when:
@@ -296,4 +376,9 @@ Stop and report rather than filling a gap when:
 - an open question has reached the gate it blocks;
 - a signed PRD and the current automation decision contradict each other;
 - a requested action would cross a data, credential or authorisation boundary; or
-- a blocking review finding remains unresolved.
+- a blocking review finding remains unresolved;
+- Validator A or its manifest no longer matches the candidate;
+- a material handoff claim has no authoritative source;
+- persona preflight is blocked or used prohibited context;
+- real-owner acceptance is missing, rejected or tied to different bytes; or
+- Validator B is not a current `pass` for the final package hash.

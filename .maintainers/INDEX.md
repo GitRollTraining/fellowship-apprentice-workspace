@@ -21,5 +21,5 @@ authored components work as they do and what needs revalidation.
 
 | Item | Last updated | Status |
 |---|---|---|
-| Provenance and cut records | 2026-08-15 | Updated for Validator A/B, validation-report templates and the deliverable-review checklist |
-| `design/` | 2026-08-13 | First design record |
+| Provenance and cut records | 2026-08-15 | Updated for the final handoff system, owner persona, package contracts and renderer clarification |
+| `design/` | 2026-08-15 | Output Phraser/handoff conflicts and rulings added |

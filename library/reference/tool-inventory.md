@@ -41,7 +41,7 @@ common delivery shape, not the only one.
 | template | `specification` | Specification writing for AI delegation | `library/templates/specification.md` | Joins the signed PRD and current automation decisions into the traceable build contract; defaults to one skill but includes the extension shape for a larger solution. |
 | renderer | `build-document-pdf` | Owner handover explanation | `library/renderers/build-document-pdf.py` | Turns one markdown file into an A4 PDF a business owner can open; this is the whole answer to turning finished work into a file the owner opens |
 | renderer | `check-document-pdf` | Owner handover explanation | `library/renderers/check-document-pdf.py` | Proves the PDF actually rendered - catches a table that silently became prose and a character that silently vanished, neither of which changes the page count or the exit code |
-| renderer | `make-the-handover-file` | Owner handover explanation | `library/renderers/make-the-handover-file.md` | The runbook that joins the two renderer scripts into the sequence that produces one PDF of the specification instead of raw markdown. |
+| renderer | `make-the-handover-file` | Owner handover explanation | `library/renderers/make-the-handover-file.md` | Builds and checks the owner-account PDF while preserving the validated delivery tree as separate installable files. |
 | persona | `adversarial-reviewer` | AI output verification and failure-mode literacy, Specification writing for AI delegation | `library/personas/adversarial-reviewer.md` | Nobody grades their own work, and a solo engagement has nobody else in the room |
 | plugin | `claude-plugins-official` | Specification writing for AI delegation | install it: `claude-plugins-official` | Installed as a unit; 6 of its skills earn it, each named in library/sops/agent-settings.md |
 | plugin | `planning-with-files` | Context engineering | install it: `planning-with-files` | Installed as a unit; 1 of its skills earn it, each named in library/sops/agent-settings.md |
@@ -97,8 +97,8 @@ client's data is the wrong answer even when it works.
 
 | Gap | What it means for you |
 |---|---|
-| Packaging the finished `skill.md` into an installer a non-technical owner double-clicks | The tool that does this is in a private repository. You hand over the file plus the written account instead, which works and takes one more step from the owner |
-| Evidence that the finished deliverable behaves on the owner's real cases | Validator A now defines the evidence and release gate, but it has not yet been run on a client engagement. Treat it as an authored procedure, not proof that the procedure improves outcomes |
+| Packaging the finished deliverable into an installer a non-technical owner double-clicks | The default versioned zip preserves the exact delivery tree and gives the owner a start-here account, but it does not install the system. The private installer is still unavailable, so deployment follows the delivered instructions |
+| Evidence that the finished deliverable and handoff work on a real engagement | Validator A/B, the constrained persona and real-owner gate now define the evidence chain, but none has been run on a client engagement. Treat them as authored procedures, not proof that they improve outcomes |
 
-These are the honest edges of this toolbox. The first remains unimplemented; the second has a draft
-procedure but no real-use evidence. Nothing here pretends to close either gap further than that.
+These are the honest edges of this toolbox. The first has transport but no installer; the second has a
+complete draft procedure but no real-use evidence. Nothing here pretends to close either gap further.

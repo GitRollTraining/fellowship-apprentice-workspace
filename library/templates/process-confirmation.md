@@ -15,6 +15,9 @@ It is not a summary and it is not a proposal. Its whole job is to be marked up.
 ## Where it goes
 
 - File: `engagements/<client-slug>/process/confirmation-<process-slug>-v1.md`.
+- Default diagram: `engagements/<client-slug>/process/confirmation-<process-slug>-v1-flowchart.svg`,
+  embedded in or linked from the confirmation document. Keep its declarative spec with the process
+  working files so the checked SVG can be regenerated.
 - Each time the owner returns corrections, write the next version as a new file, `-v2.md`, and keep the
   earlier one. What changed between versions is part of the record.
 - Corrections the owner makes are things heard from the owner, so they also belong in the heard half of
@@ -33,6 +36,7 @@ version: v1
 sent: YYYY-MM-DD
 returned: YYYY-MM-DD | not yet
 source: interview/discovery-record.md
+diagram: "process/confirmation-{process-slug}-v1-flowchart.svg | omitted: {recorded reason}"
 ---
 ```
 
@@ -93,9 +97,18 @@ sentences describing it. Concrete enough that the owner can tell whether it is r
 Name the actual tool or record where one was named. Do not generalise "the green notebook" into "the
 record system" — the specific thing is what makes the step checkable.
 
-A diagram of the step order is worth more than the prose for confirming sequence, and the owner will
-spot a swapped pair in a picture that they will read past in a list. `library/skills/flowchart/` builds
-one.
+A checked diagram is the default when the process has a meaningful sequence, decision, loop or handoff.
+The owner will often spot a swapped pair or missing return path in a picture that they read past in a
+list. Use `library/skills/flowchart/`, run its deterministic checker and inspect the rendered SVG before
+including it.
+
+Omit the diagram only when it would add no relationship for the owner to inspect — for example, one
+atomic action with no branch or handoff. Record that reason in frontmatter. “No time” and “the prose is
+already written” are not reasons that the visual adds no value.
+
+The diagram is a confirmation view derived from the same discovery evidence, not a new fact source. A
+correction to the diagram updates the discovery record and the next confirmation version as well as the
+diagram; never repair only the picture.
 
 #### Systems and records used
 
@@ -149,6 +162,10 @@ respond does not respond.
 Whichever route, the marked-up version is filed with the engagement. A correction that exists only in
 your memory of the phone call is not a correction.
 
+When a flowchart is included, ask the owner to inspect both representations: whether the boxes are the
+right activities and whether the arrows, branches and return paths occur in the right order. A generic
+“looks right” that does not cover the diagram is not confirmation of it.
+
 ## Rules
 
 1. Every statement traces to the session record. Where something is not known, it goes in Open items —
@@ -160,3 +177,5 @@ your memory of the phone call is not a correction.
    processes described together — split them and number them separately.
 6. Bump the version on every return, keep the previous file, and log the round in the engagement's
    session log.
+7. If a flowchart is applicable, require `check_map.py` to print `CLEAN`, then inspect the rendered SVG;
+   neither the checker nor visual review substitutes for owner confirmation.

@@ -1,7 +1,7 @@
 ---
 style: procedural
 role: playbook
-status: draft — authored, blocked on the Output Phraser artifacts
+status: draft — authored, not yet run on a client engagement
 serves: D-04, D-05, D-09
 ---
 
@@ -15,8 +15,8 @@ of the already-validated deliverable?**
 Validator B does not re-implement or routinely rerun Validator A. It verifies that A's passed candidate
 is unchanged and then validates the presentation and package boundary.
 
-This draft cannot run end to end until the Output Phraser, source map and comprehension artifacts are
-defined. Those missing inputs are explicit dependencies, not permission to omit the gate.
+The artifact contracts now exist, but this playbook has not been run on a Fellow or client handoff. Do
+not treat a complete procedure as evidence that it catches the failures a real owner will expose.
 
 ## Inputs and output
 
@@ -27,11 +27,11 @@ Paths are relative to `engagements/<client-slug>/`.
 | Passed `verification/deliverable-report.md` | Establishes the behavioural gate |
 | `verification/deliverable-manifest.tsv` | Pins the exact delivery files Validator A passed |
 | Current `deliverable/` | Supplies the package's operational contents |
-| Owner-facing outputs under `handover/` | Supplies the explanation the owner accepted |
-| Handoff source map | Links material owner-facing claims to their authoritative sources |
-| Passed persona-preflight record | Shows the package was tested from the intended reader's perspective |
-| Real-owner acceptance record | Establishes the hard comprehension and acceptance gate |
-| Final staged package | The exact archive or package that will be sent |
+| Owner-facing output and `handover/package-manifest.md` | Supply the explanation and navigation the owner accepted |
+| `verification/handoff-source-map.md` | Links every material `HC-*` claim to its authority and render chain |
+| Passed `verification/persona-preflight.md` | Shows the package was tested under the constrained reader context |
+| Accepted `verification/owner-acceptance.md` | Establishes the hard real-owner gate against exact bytes |
+| `handover/<client>-handover-v<n>.zip` by default | The exact archive or package that will be sent |
 | Current `DP-*` delivery-boundary decision | Defines what may leave the workspace |
 
 Create `verification/handoff-report.md` from
@@ -77,10 +77,13 @@ constrains them.
 
 `deliverable/deployment.md` and `deliverable/operations.md` remain canonical delivery files. Handover
 material may summarise or point to them, but must not maintain a second conflicting set of instructions.
+Compare the packaged `deliverable/` paths and hashes with Validator A's manifest after removing only the
+package-root and `deliverable/` path prefixes. A complete match is required; “equivalent content” is not
+the same candidate.
 
 ### 3. Verify claim fidelity and limitation visibility
 
-Use the handoff source map to trace every material owner-facing claim to the signed PRD, confirmed
+Use `verification/handoff-source-map.md` to trace every material `HC-*` owner-facing claim to the signed PRD, confirmed
 process, validated deliverable, known-defects file or another named authority. Check especially:
 
 - what the solution does and does not do;
@@ -93,6 +96,10 @@ The Output Phraser may simplify language and presentation. It may not introduce 
 number, obligation or workaround that is absent from the source chain. An untraceable material claim is
 blocking.
 
+Confirm every material source block has an invisible claim anchor and the authoring source has an
+invisible map pointer. Confirm the recorded source, rendered-output and package hashes match current
+bytes. The pointer is trace infrastructure, not a substitute for checking each row.
+
 ### 4. Verify usability and rendering
 
 Run the applicable deterministic renderers, link checkers, schema checks and client verification command.
@@ -101,12 +108,14 @@ diagram for clipping, overlap, unreadable text, missing glyphs, broken hierarchy
 
 Confirm deployment, operations and client-verification instructions are present and reachable from the
 owner-facing account. Visual inspection supplements deterministic checks; it never replaces them.
+Search rendered text for `handoff-source-map` and `HC-*`; either appearing to the owner is blocking.
 
 ### 5. Verify comprehension evidence
 
-Confirm the mandatory persona preflight passed against the exact owner-facing bytes in the staged package.
-Confirm the real owner acceptance record names the same version and records unresolved questions or
-rejection, if any.
+Confirm `verification/persona-preflight.md` says `pass` against the exact package hash and that every
+client-readable input named in the report matches its packaged hash. Confirm its prohibited-context
+table is clean. Confirm `verification/owner-acceptance.md` says `accepted` and names the same package and
+primary owner-facing hashes, with durable evidence and no unresolved operating question.
 
 Owner acceptance is a hard status gate. If the owner cannot explain the operating boundary, does not
 accept the package or requests a material correction, return to the Output Phraser. The engagement remains
@@ -135,11 +144,12 @@ shasum -a 256 <client>-handover-v<n>.zip
 Record the exact final archive hash in the report. Extract only after the path list passes, then rerun
 the client-visible open, render or verification path from the extracted copy.
 
-### 7. Issue the verdict and update status
+### 7. Issue the verdict and return to the orchestrator
 
 Write the report against the final package hash. Append the run and disposition to `progress-log.md`.
-Mark the engagement `handed-over` only when Validator B says `pass` and the owner acceptance record still
-applies to the package version. A rejection or later invalidation returns the work to the owning stage
+Return the verdict to Discovery to Deliverable. Validator B does not change engagement status itself;
+the orchestrator may mark `handed-over` only when this report says `pass` and the owner acceptance record
+still applies to the same package bytes. A rejection or later invalidation returns to the owning stage
 and leaves the engagement running.
 
 ## Invalidation and disagreement

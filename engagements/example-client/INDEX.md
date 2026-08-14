@@ -18,8 +18,8 @@ An empty engagement directory shape. Environment Setup copies it to the client s
 | `process/` | What you reconstructed from it | Mutable |
 | `spec/` | The signed PRD, automation decision brief and specification under construction | Mutable |
 | `deliverable/` | The agreed deliverable; one `skill.md` is the default shape | Mutable |
-| `handover/` | The owner's own account of it | Mutable |
-| `verification/` | Internal validation reports, manifests and permitted evidence; excluded from the client package | Mutable |
+| `handover/` | The owner-facing account, package manifest and final versioned archive | Mutable |
+| `verification/` | Internal validation reports, source map, comprehension records, manifests and permitted evidence; excluded from the client package | Mutable |
 
 ## Freshness
 

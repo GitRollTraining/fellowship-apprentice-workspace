@@ -19,13 +19,13 @@ those engagement assumptions, it belongs under `skills/` instead.
 | `playbook-environment-setup.md` | authored here, **disposable smoke test only** | Creates or resumes a bounded engagement, initialises its control files and gates safe discovery without deciding the final automation |
 | `playbook-discovery-to-deliverable.md` | authored here, **never executed** | Turns confirmed discovery into a signed-off PRD, proportionate automation decisions, a traceable specification and the agreed deliverable |
 | `playbook-validate-deliverable.md` | authored here, **never executed** | Validator A: freezes the candidate, reviews it and collects behavioural, deployment and operational evidence against the signed contract |
-| `playbook-validate-handoff.md` | authored here, **blocked on Output Phraser artifacts** | Validator B: checks that the final owner-accepted package faithfully contains the exact deliverable that passed Validator A |
-| `playbook-output-phraser.md` | **STUB** | Specified, not written |
+| `playbook-output-phraser.md` | authored here, **never executed** | Turns the A-passed candidate into a traced, owner-facing account and versioned package without changing delivery behaviour |
+| `playbook-validate-handoff.md` | authored here, **never executed** | Validator B: checks that the final owner-accepted package faithfully contains the exact deliverable that passed Validator A |
 
-One stub remains. Environment Setup, Discovery to Deliverable and both Validators have been promoted to
+No stubs remain. Environment Setup, Discovery to Deliverable, Output Phraser and both Validators are
 complete draft contracts. Environment Setup's file and gate transitions passed a disposable smoke test;
-the other three have not had even that narrower run. Validator B also cannot run until the Output Phraser
-supplies the source-map and comprehension artifacts it consumes. None claims real-world validation.
+the other four have not had even that narrower run. The final orchestration and artifact contracts are
+now present, but none has been run by a Fellow on a real engagement or claims outcome validation.
 
 ## A warning about the word
 

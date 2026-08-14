@@ -7,15 +7,21 @@ style: descriptive
 
 ## Purpose
 
-The owner-facing account, in the owner's own vocabulary, and the record of what they could not answer from it unaided. Written in the explanation register, which is a different genre from the discovery record.
+The owner-facing account, plain package manifest and final versioned handoff archive. Output Phraser
+writes them only after Validator A passes, using the owner's vocabulary and the explanation register.
+Comprehension evidence remains internal under `../verification/`.
 
 ## Inventory
 
-Empty. Files land here as you run the interview playbook — see
-`library/playbooks/playbook-interview.runbook.md` for which step produces which file.
+Empty. Output Phraser may create `owner-account.md` or `owner-account.html`, a rendered PDF when the
+markdown route is selected, `package-manifest.md` and `<client>-handover-v<n>.zip`.
+
+The default zip contains only the rendered owner account, plain package manifest and exact
+`../deliverable/` tree. It excludes interview/specification sources and everything under
+`../verification/`.
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| — | 2026-08-11 | Mutable | empty |
+| — | 2026-08-15 | Mutable | empty; Output Phraser and package boundary defined |

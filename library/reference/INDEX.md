@@ -34,8 +34,8 @@ instructions resolved to nothing.
 | Item | Last updated | Class | Status |
 |---|---|---|---|
 | three unchanged references | 2026-08-11 | Instruction | first cut; provenance recorded per file |
-| `terminology.md` | 2026-08-15 | Instruction | engagement artifact identifier prefixes defined; provenance updated |
-| `tool-inventory.md` | 2026-08-15 | Instruction | Validator gap updated; provenance recorded |
+| `terminology.md` | 2026-08-15 | Instruction | engagement and handoff claim identifier prefixes defined; provenance updated |
+| `tool-inventory.md` | 2026-08-15 | Instruction | handoff transport, renderer and real-use evidence gaps updated; provenance recorded |
 | `deliverable-review-checklist.md` | 2026-08-15 | Instruction | first draft; no client review yet |
 
 ## Where the apprentice's own reference material goes

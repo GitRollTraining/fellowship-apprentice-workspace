@@ -40,6 +40,7 @@ reuse a retired identifier for a different statement.
 | `R-` | Requirement | Goals, requirements, business rules and constraints in `spec/requirements.md` | **R**equirement |
 | `AC-` | Acceptance Criterion | One observable condition used to accept a user story or requirement in `spec/requirements.md` | **A**cceptance **C**riterion |
 | `OQ-` | Open Question | Material unresolved questions in `spec/requirements.md` | **O**pen **Q**uestion |
+| `HC-` | Handoff Claim | Material owner-facing claims mapped to authoritative sources in `verification/handoff-source-map.md` | **H**andoff **C**laim |
 | `EW-` | Engagement Workspace decision | Decisions about the Fellow's engagement workspace in `decision-register.md` | **E**ngagement **W**orkspace |
 | `DP-` | Deliverable Package decision | Decisions about what the client handoff may contain in `decision-register.md` | **D**eliverable **P**ackage |
 | `DR-` | Deliverable Runtime decision | Decisions about the installed deliverable's data and system boundaries in `decision-register.md` | **D**eliverable **R**untime |
@@ -47,7 +48,8 @@ reuse a retired identifier for a different statement.
 
 The numbering shapes are intentionally inherited from their artifact schemas: discovery and process
 records use `H1`, `C1`, `X1`, `B1` and `F1`; the PRD and Decision Register use zero-padded forms such as
-`US-001`, `AC-001` and `EW-001`. Do not silently convert one style into the other.
+`US-001`, `AC-001` and `EW-001`; handoff claims use `HC-001` onward. Do not silently convert one style
+into the other.
 
 ## The domains this programme teaches
 

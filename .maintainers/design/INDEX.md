@@ -13,9 +13,11 @@ component itself.
 | Item | What it is | Class |
 |---|---|---|
 | `choose-automation-approach.md` | Design record for the proportional automation decision-support skill | Record |
+| `output-phraser-and-handoff.md` | Conflicts, rulings, artifact boundaries and revalidation surface for final handoff | Record |
 
 ## Freshness
 
 | Item | Last updated | Status |
 |---|---|---|
 | `choose-automation-approach.md` | 2026-08-13 | Initial implementation design |
+| `output-phraser-and-handoff.md` | 2026-08-15 | Initial conflict and system-boundary record |

@@ -26,11 +26,11 @@ curated library of skills, playbooks, personas and standards they work with.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-15 | Instruction | Validator A/B, validation reports and deliverable review checklist added |
+| `library/` | 2026-08-15 | Instruction | Output Phraser, handoff trace/comprehension system and final gate orchestration added |
 | `engagements/example-client/` | 2026-08-15 | Mutable | empty directory shape includes the internal verification boundary |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |
-| `.maintainers/` | 2026-08-15 | Record | provenance updated for the Validator A/B layer |
+| `.maintainers/` | 2026-08-15 | Record | handoff conflicts and their resolutions recorded; provenance updated |
 
 ## Conventions
 

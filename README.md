@@ -17,8 +17,9 @@ already in place.
 2. Read `library/sops/working-standards.md` — the four rules.
 3. Run `library/playbooks/playbook-environment-setup.md`, then run
    `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
-4. When the work is written, follow `library/renderers/make-the-handover-file.md` — it turns your
-   markdown into the one file the owner opens.
+4. After current-state confirmation, run `library/playbooks/playbook-discovery-to-deliverable.md`. It
+   owns PRD sign-off, automation choice, build, both validators, owner-facing phrasing, comprehension
+   gates and final handoff. The Output Phraser invokes the renderer for the owner account.
 
 ## Setup
 
@@ -35,5 +36,7 @@ are in `library/sops/agent-settings.md`.
 
 First cut shipped 2026-08-11; the automation-approach skill was added 2026-08-13, and the security-scan
 wrapper and complete Environment Setup draft followed on 2026-08-14. Every layer remains thinly
-populated on purpose: two complete draft playbooks, three stubs, eleven skills, one persona. It is built
-to be extended, and what each extension must contain is written down rather than assumed.
+populated on purpose: five authored playbook drafts with no remaining stubs, eleven skills and two
+personas. Only Environment Setup has had a disposable structural smoke test; none of the full engagement
+chain has been run by a Fellow with a real owner. It is built to be extended, and evidence limits are
+written down rather than assumed.

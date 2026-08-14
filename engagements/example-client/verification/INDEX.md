@@ -27,10 +27,22 @@ evidence/
 Validator B may add `handoff-report.md`. Evidence stored here must obey the engagement Data & Credential
 Boundary; use an access-controlled pointer when the evidence itself cannot be retained safely.
 
+Output Phraser and the comprehension gates may also create:
+
+```text
+handoff-source-map.md
+persona-preflight.md
+owner-acceptance.md
+```
+
+The source map traces material `HC-*` claims without exposing those internal identifiers to the client.
+The persona report records its restricted prior knowledge; the owner record names the exact package and
+owner-facing hashes accepted or rejected.
+
 Do not put this directory, either validation report or internal evidence into the client package.
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| — | 2026-08-15 | Mutable | empty; populated by Validator A/B |
+| — | 2026-08-15 | Mutable | empty; populated by Phraser/comprehension gates and Validator A/B |

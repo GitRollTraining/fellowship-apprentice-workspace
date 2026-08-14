@@ -16,6 +16,9 @@ validator: handoff
 status: blocked
 deliverable-report: verification/deliverable-report.md
 deliverable-manifest: verification/deliverable-manifest.tsv
+source-map: verification/handoff-source-map.md
+persona-preflight: verification/persona-preflight.md
+owner-acceptance: verification/owner-acceptance.md
 package: ""
 package-sha256: ""
 run-at: YYYY-MM-DDTHH:MM:SSZ
@@ -35,9 +38,9 @@ supersedes: none
 | Validator A status | |
 | Validator A report/manifest | |
 | Output Phraser result | |
-| Source map | |
-| Persona-preflight record | |
-| Owner-acceptance record | |
+| Source map | `verification/handoff-source-map.md` and hash |
+| Persona-preflight record | `verification/persona-preflight.md` and hash |
+| Owner-acceptance record | `verification/owner-acceptance.md` and hash |
 | Delivery-boundary decision | |
 
 ## Validator A integrity
@@ -58,9 +61,9 @@ supersedes: none
 
 ## Claim-fidelity checks
 
-| Claim/source-map ID | Owner-facing location | Authority | Check | Result |
+| Handoff Claim ID | Owner-facing location and invisible anchor | Authority | Check | Result |
 |---|---|---|---|---|
-| 1 | | | | |
+| HC-001 | | | | |
 
 ## Boundary and limitation visibility
 
@@ -78,6 +81,7 @@ supersedes: none
 | PDF/HTML/SVG rendering | | | | | |
 | Links and pointers | | | | | |
 | Placeholder/schema scan | | | | | |
+| Source-map pointer and `HC-*` absent from rendered prose | | | | | |
 | Page/diagram visual inspection | | n/a | | | |
 | Deployment/operations reachability | | | | | |
 | Client-visible verification | | | | | |
@@ -86,8 +90,8 @@ supersedes: none
 
 | Gate | Exact package/output version | Result | Evidence or unresolved questions |
 |---|---|---|---|
-| Persona preflight | | pass / blocked | |
-| Real owner acceptance | | accepted / rejected / unclear | |
+| Persona preflight and prohibited-context check | | pass / blocked | |
+| Real owner comprehension and acceptance | | accepted / rejected | |
 
 ## Archive safety and integrity
 

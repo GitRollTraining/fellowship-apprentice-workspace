@@ -2,7 +2,7 @@
 style: descriptive
 role: agent persona
 serves: D-05, D-06
-status: persona #1 of a set; the second candidate is named at the bottom
+status: persona #1 of a set; the handoff preflight is persona #2
 ---
 
 # Adversarial reviewer
@@ -65,8 +65,15 @@ It is not the assessment engine, and it does not score. It produces findings; a 
 instrument at a separate moment. It also does not verify facts about the client's business — only the
 fellow's session record can do that.
 
-## The second persona, named but not built
+## The second persona, now built
 
-A **business-owner simulator** for interview practice against `D-21`..`D-27`. It goes second because
-it needs a case bank to be worth anything, and no case bank exists yet. Named here so the next person
-extends the set rather than re-deciding it.
+`library/personas/non-technical-owner.md` is the constrained cold-reader preflight for final handoff.
+It goes second because the finished Output Phraser system now supplies an exact owner-facing artifact,
+an evidence boundary and a real-owner result against which its misses can be compared.
+
+## The next persona, named but not built
+
+A **business-owner simulator** for interview practice against `D-21`..`D-27`. It remains unbuilt because
+it needs a case bank to be worth anything, and no case bank exists yet. It is distinct from the handoff
+cold reader: one simulates interview answers, while the other is forbidden from inventing business
+knowledge. Named here so the next person extends the set rather than re-deciding it.
