@@ -5,10 +5,14 @@ style: descriptive
 
 # skills
 
-Curated agent skills reached through the `.claude/skills` symlink at the repository root. The original
-nine are copies rather than links: each was taken from a source repository at a recorded commit and
-patched where it named something that does not exist here. `choose-automation-approach` was authored for
-this workspace. `CANON.md` records both kinds explicitly.
+Skills are bounded, reusable agent capabilities that are not tightly coupled to the AI Fellowship
+engagement lifecycle, directory structure or required artifacts. A skill may be used during an
+engagement, but it remains meaningful and usable outside one.
+
+The curated skills are reached through the `.claude/skills` symlink at the repository root. The
+original nine are copies rather than links: each was taken from a source repository at a recorded
+commit and patched where it named something that does not exist here. `choose-automation-approach` was
+authored for this workspace. `CANON.md` records both kinds explicitly.
 
 **Vendored copies are not always byte-identical to their sources.** Where one carries a deliberate
 patch, the provenance record outside this tree holds both hashes, so the divergence is recorded rather

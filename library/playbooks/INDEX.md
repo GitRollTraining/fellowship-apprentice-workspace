@@ -5,9 +5,10 @@ style: descriptive
 
 # playbooks
 
-A playbook is a procedure the fellow runs, repeatedly, across engagements. A deliverable is one SOP for
-one business process, written for one client. They are the same artifact type — the fellow learns the
-form by running ours before writing their own.
+Playbooks are guidance and procedures tightly coupled to running an AI Fellowship engagement. They may
+assume the engagement stages, workspace structure, required artifacts, stakeholder interactions or
+handoff process, and may compose multiple skills. If a procedure remains meaningful and usable without
+those engagement assumptions, it belongs under `skills/` instead.
 
 ## Inventory
 
@@ -26,7 +27,7 @@ re-derive the scope.
 
 ## A warning about the word
 
-"Playbook" means two incompatible things in GitRoll's repositories. Here it is a procedure the fellow
-runs. In the cross-programme curriculum standard it is a self-serve reference document for a subject
-the course does not teach — content only, no steps. Material written for one sense is wrong for the
-other, and the conflict has never been reconciled.
+"Playbook" means two incompatible things in GitRoll's repositories. In this workspace it means
+engagement-bound guidance or procedure. In the cross-programme curriculum standard it is a self-serve
+reference document for a subject the course does not teach — content only, no steps. Material written
+for one sense is wrong for the other, and the conflict has never been reconciled.
