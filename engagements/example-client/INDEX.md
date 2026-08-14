@@ -16,15 +16,15 @@ An empty engagement directory shape. Environment Setup copies it to the client s
 |---|---|---|
 | `interview/` | Everything from talking to the owner | Mutable |
 | `process/` | What you reconstructed from it | Mutable |
-| `spec/` | The specification under construction | Mutable |
-| `deliverable/` | The `skill.md` that is handed over | Mutable |
+| `spec/` | The signed PRD, automation decision brief and specification under construction | Mutable |
+| `deliverable/` | The agreed deliverable; one `skill.md` is the default shape | Mutable |
 | `handover/` | The owner's own account of it | Mutable |
 
 ## Freshness
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| all five | 2026-08-14 | Mutable | empty; root control files are created after copying |
+| all five | 2026-08-15 | Mutable | empty; root control files are created after copying |
 
 ## Where the interview playbook's steps land
 

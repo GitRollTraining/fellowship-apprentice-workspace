@@ -7,8 +7,10 @@ style: descriptive
 Every skill, template, renderer, persona, plugin and connector in this workspace, what it is for,
 and where it is. One test decided all of it: **does this help someone new to AI do an engagement?**
 
-An engagement is: interview a business owner, reconstruct their process, write a specification,
-build an agent-executable `skill.md`, and hand it over so they can run it without you.
+An engagement is: interview a business owner, confirm their current process, obtain sign-off on future
+requirements, choose a proportionate automation approach, write a specification, build the agreed
+deliverable, and hand it over so they can operate it without you. One agent-executable `skill.md` is the
+common delivery shape, not the only one.
 
 ## What is here
 
@@ -35,8 +37,8 @@ build an agent-executable `skill.md`, and hand it over so they can run it withou
 | template | `process-confirmation` | Grounding and confirmation | `library/templates/process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
 | template | `process-inventory` | Coverage and boundary elicitation | `library/templates/process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
 | template | `process-reconstruction` | Process reconstruction in context | `library/templates/process-reconstruction.md` | A per-step input/output schema-plus-sample, decision-criteria, human-approval-point, and systems-table capture form that converts interview answers directly into the granular detail a spec and an agent-executable skill.md need. |
-| template | `requirements-gathering` | Coverage and boundary elicitation | `library/templates/requirements-gathering.md` | Questionnaire pattern (systems access, data sources, technical environment, dependencies) helps the fellow pin down exactly what the owner's process touches before building the skill. |
-| template | `specification` | Specification writing for AI delegation | `library/templates/specification.md` | The shape the specification is written into, ordered so that specification to skill.md is a mechanical step rather than a second act of authorship |
+| template | `requirements-gathering` | Coverage and boundary elicitation | `library/templates/requirements-gathering.md` | Produces the PRD-like owner-sign-off artifact: desired outcomes, scope, user stories, requirements, acceptance criteria, constraints and feasibility inputs traced to confirmed discovery. |
+| template | `specification` | Specification writing for AI delegation | `library/templates/specification.md` | Joins the signed PRD and current automation decisions into the traceable build contract; defaults to one skill but includes the extension shape for a larger solution. |
 | renderer | `build-document-pdf` | Owner handover explanation | `library/renderers/build-document-pdf.py` | Turns one markdown file into an A4 PDF a business owner can open; this is the whole answer to turning finished work into a file the owner opens |
 | renderer | `check-document-pdf` | Owner handover explanation | `library/renderers/check-document-pdf.py` | Proves the PDF actually rendered - catches a table that silently became prose and a character that silently vanished, neither of which changes the page count or the exit code |
 | renderer | `make-the-handover-file` | Owner handover explanation | `library/renderers/make-the-handover-file.md` | The runbook that joins the two renderer scripts into the sequence that produces one PDF of the specification instead of raw markdown. |
@@ -96,7 +98,6 @@ client's data is the wrong answer even when it works.
 | Gap | What it means for you |
 |---|---|
 | Packaging the finished `skill.md` into an installer a non-technical owner double-clicks | The tool that does this is in a private repository. You hand over the file plus the written account instead, which works and takes one more step from the owner |
-| Turning the interview record into the specification | `library/playbooks/playbook-elicitation-to-sop.md` states what that procedure must contain and is not written. `library/templates/specification.md` gives you the shape; the transformation is yours to make and to check |
 | Proving the finished `skill.md` behaves on the owner's real cases | `library/playbooks/playbook-validator.md` is in the same state. The adversarial-reviewer persona attacks the draft; running it against real cases is yours |
 
-These three are the honest edges of this toolbox. Nothing here pretends to close them.
+These two are the honest edges of this toolbox. Nothing here pretends to close them.

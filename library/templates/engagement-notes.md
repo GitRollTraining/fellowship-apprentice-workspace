@@ -94,6 +94,7 @@ copy the register here. State only the next unresolved gate, or `none`.
 |---|---|---|
 | `decision-register.md` | Current decisions, unresolved decision areas and stage gates | The canonical current state; do not reconstruct it from session history |
 | `interview/discovery-record.md` | What was heard, kept apart from what was concluded | The source for every claim downstream |
+| `process/confirmation-{process-slug}-v{n}.md` | The owner-confirmed current-state process | Requirements may not be written from an unconfirmed reconstruction |
 | `{path}` | {what} | {why} |
 
 ### Being produced
@@ -101,14 +102,17 @@ copy the register here. State only the next unresolved gate, or `none`.
 | File | What to do |
 |---|---|
 | `process/process-{name}.md` | {create or update} |
-| `spec/{name}.md` | {create or update} |
-| `deliverable/skill.md` | {create or update} |
+| `spec/requirements.md` | {draft, obtain sign-off or revise} |
+| `spec/automation-approach.md` | {create, confirm or revisit} |
+| `spec/specification.md` | {create or update from the signed PRD and current decisions} |
+| `deliverable/skill.md` | {create or update — default shape; replace this row with the agreed package inventory when larger} |
 
 ### Reach for when needed
 
 | File | What it holds | When |
 |---|---|---|
 | `library/playbooks/playbook-interview.runbook.md` | Which step's output goes in which file | Before every session |
+| `library/playbooks/playbook-discovery-to-deliverable.md` | PRD, automation approach, specification and build gates | After the owner confirms the current-state process |
 | `{path}` | {what} | {when} |
 ```
 

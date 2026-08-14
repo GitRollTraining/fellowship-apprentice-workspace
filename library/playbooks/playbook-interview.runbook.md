@@ -53,6 +53,7 @@ Paths are relative to `engagements/<client-slug>/`.
 | 17 List what is still ambiguous | ambiguity list with dispositions | `interview/ambiguities.md` |
 | 18 Close the loop on the pre-session note | annotated pre-session note | `interview/pre-session-note.md` |
 | 19 Audit your own questioning | the self-audit | `interview/self-audit-<date>.md` |
+| between 19 and 20 Confirm the current-state reconstruction | owner-marked confirmation and any new heard corrections | `process/confirmation-<process-slug>-v<n>.md`, `interview/discovery-record.md` |
 | 20 Write the owner's version | owner-facing account | `handover/owner-account.md` |
 | 21 Find out what they cannot answer, and fix it | what the owner could not answer, and the revision | `handover/comprehension-check.md` |
 
@@ -71,19 +72,23 @@ are the numbered steps of `playbook-interview.md`.
 | 7, 8, 12, 13 Reconstruct | `process-reconstruction.md` | `library/templates/` | Per-step capture, exceptions as named cases, the three boundary questions, and what happens when it breaks |
 | 15 to 17 Write the record | `interview-record.md` | `library/templates/` | Heard kept visibly apart from concluded, with a required pointer column |
 | 15 to 17 Write the record | `digest-doc` | `library/skills/` | Reading what the business already has, and composing it into a sourced fact-sheet |
-| 18 Confirm the reconstruction | `process-confirmation.md` | `library/templates/` | The document the owner reads back and corrects |
-| 19 Specify | `specification.md` | `library/templates/` | The shape the specification is written into |
+| between 19 and 20 Confirm the reconstruction | `process-confirmation.md` | `library/templates/` | The document the owner reads or marks up, synchronously or asynchronously, before requirements are written |
 | 20 Write the owner's version | `explain` | `library/skills/` | The owner is not in the field. This is the explanation register, and it is a different genre from the discovery record |
 | 20 Write the owner's version | `handover.md` | `library/templates/` | What the process does, what it will not do, what to check. It also carries the renderer's input contract |
 | 21 Comprehension check | `explain` | `library/skills/` | The revision loop is the same register as the draft it repairs |
-| after 21 Draft the deliverable | `create-skill` | `library/skills/` | The deliverable is a `skill.md`, and this is the skill that loads the standard it will be graded against |
+| after 21 Continue from discovery to the deliverable | `playbook-discovery-to-deliverable.md` | `library/playbooks/` | Owns PRD drafting and sign-off, automation approach, specification and build |
+| Draft the PRD | `requirements-gathering.md` | `library/templates/` | Normalises confirmed discovery into future behaviour, user stories, requirements and acceptance criteria |
+| Test the PRD for feasibility | `choose-automation-approach` | `library/skills/` | Makes runtime, integration, credential and high-stakes-control decisions without owning engagement bookkeeping |
+| Write the technical specification | `specification.md` | `library/templates/` | Joins the signed PRD to the technical decisions in the build contract |
+| Build the default single-skill deliverable | `create-skill` | `library/skills/` | Loads the standard and scaffolds `deliverable/skill.md`; larger agreed solutions adapt the build shape |
 | after the draft | `adversarial-reviewer` persona | `library/personas/` | Nobody grades their own work, and on a solo engagement there is nobody else in the room |
 | Hand it over | `make-the-handover-file.md` | `library/renderers/` | One file the owner opens, and the check that proves it rendered. A clean build is not evidence |
 | throughout | `planning-with-files` plugin | installed, see `library/sops/agent-settings.md` | The session spans days. State that is not on disk is state that is lost |
 | throughout | `kb-restructure` skill | `library/skills/` | An engagement directory that grows will need renaming and re-nesting without breaking its own references |
 
 The last row of the playbook is not the last step of the engagement. After step 21 the work continues
-into `spec/`, then `deliverable/skill.md`, and ends when the owner opens
+through `library/playbooks/playbook-discovery-to-deliverable.md`: signed-off requirements, automation
+approach, specification and then the agreed deliverable. It ends when the owner opens
 `handover/handover.pdf` — the sequence in `library/renderers/make-the-handover-file.md`.
 
 ## Stop conditions this workspace adds

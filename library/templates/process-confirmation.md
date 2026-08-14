@@ -131,8 +131,9 @@ subscriptions are not confirmation questions; they belong in the requirements do
 
 ### Closing
 
-Repeat the marking instruction word for word, then one sentence on what happens once it comes back: the
-specification is written from the confirmed process, and the deliverable from the specification.
+Repeat the marking instruction word for word, then one sentence on what happens once it comes back: a
+PRD is drafted from the confirmed process, tested against an automation approach, returned for owner
+sign-off, and then turned into the specification and deliverable.
 
 ## How the owner marks it up
 

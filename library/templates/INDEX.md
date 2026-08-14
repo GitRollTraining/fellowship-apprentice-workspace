@@ -26,12 +26,12 @@ ignores it renders wrongly without raising an error.
 | `process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
 | `process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
 | `process-reconstruction.md` | A per-step input/output schema-plus-sample, decision-criteria, human-approval-point, and systems-table capture form that converts interview answers directly into the granular detail a spec and an agent-executable skill.md need. |
-| `requirements-gathering.md` | Questionnaire pattern (systems access, data sources, technical environment, dependencies) helps the fellow pin down exactly what the owner's process touches before building the skill. |
-| `specification.md` | The shape the specification is written into, ordered so that specification to skill.md is a mechanical step rather than a second act of authorship |
+| `requirements-gathering.md` | PRD-like document for owner sign-off: desired outcomes, scope, user stories, requirements, acceptance criteria, operational constraints and feasibility inputs, all traced to confirmed discovery. |
+| `specification.md` | The default build-contract shape, joining the signed PRD and automation decisions to the deliverable while preserving a resolvable evidence chain. |
 | `brief-design/` | A design system for a single-page HTML brief: tokens, components, composition rules and a starter file |
 
 ## Freshness
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 13 items | 2026-08-14 | Instruction | decision-register template added |
+| all 13 items | 2026-08-15 | Instruction | PRD and specification trace chain updated |
