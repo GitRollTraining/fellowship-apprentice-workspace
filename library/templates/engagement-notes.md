@@ -33,9 +33,10 @@ An engagement directory is one of two things. Fill only what the mode needs.
 A lined-up engagement graduates: flip Status to `running`, fill the rest, create the session log. Do
 not demand the running-mode sections of an engagement that has not started.
 
-Two statuses end an engagement: `handed-over` when the owner is running the deliverable without you,
-and `dropped` when it stopped for any other reason. Say which in one line at the top rather than
-deleting the file.
+Two statuses end an engagement: `handed-over` when a current operational-acceptance record confirms the
+unchanged validated package was deployed and the owner ran it without you, and `dropped` when it stopped
+for any other reason. Say which in one line at the top rather than deleting the file. Keep this status
+and the Decision Register synchronized.
 
 ## The shape
 
@@ -63,7 +64,8 @@ only valid result.}
 
 ## How you will know it worked    (lined up: rough is fine; running: firm and checkable)
 
-- [ ] The owner runs the deliverable without you in the room and accepts the result.
+- [ ] The owner runs the deliverable without Fellow intervention or undocumented Fellow knowledge and
+      accepts the result.
 - [ ] {criterion}
 - [ ] {criterion}
 

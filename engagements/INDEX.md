@@ -25,7 +25,7 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 | `spec/` | The signed PRD, automation decision brief and technical specification under construction |
 | `deliverable/` | The agreed client-operated files, canonical deployment/operations instructions and known defects; one agent skill is the common default |
 | `handover/` | The owner-facing account, client package manifest and final versioned handoff archive |
-| `verification/` | Internal Validator reports, source map, comprehension records, candidate manifest and permitted evidence; never included in the client package |
+| `verification/` | Internal Validator reports, source map, comprehension and operational-acceptance records, candidate manifest and permitted evidence; never included in the client package |
 
 ## Freshness
 

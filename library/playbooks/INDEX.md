@@ -20,7 +20,7 @@ those engagement assumptions, it belongs under `skills/` instead.
 | `playbook-discovery-to-deliverable.md` | authored here, **never executed** | Turns confirmed discovery into a signed-off PRD, proportionate automation decisions, a traceable specification and the agreed deliverable |
 | `playbook-validate-deliverable.md` | authored here, **never executed** | Validator A: freezes the candidate, reviews it and collects behavioural, deployment and operational evidence against the signed contract |
 | `playbook-output-phraser.md` | authored here, **never executed** | Turns the A-passed candidate into a traced, owner-facing account and versioned package without changing delivery behaviour |
-| `playbook-validate-handoff.md` | authored here, **never executed** | Validator B: checks that the final owner-accepted package faithfully contains the exact deliverable that passed Validator A |
+| `playbook-validate-handoff.md` | authored here, **never executed** | Validator B: checks that the comprehension-accepted candidate faithfully contains the A-passed deliverable and releases exact bytes to operational acceptance |
 
 No stubs remain. Environment Setup, Discovery to Deliverable, Output Phraser and both Validators are
 complete draft contracts. Environment Setup's file and gate transitions passed a disposable smoke test;

@@ -13,7 +13,8 @@ non-technical reader can understand and judge.
 
 The Output Phraser changes presentation, not behaviour. It issues no release verdict, does not approve
 its own claims and does not mark the engagement `handed-over`. Discovery to Deliverable invokes the
-persona, real owner and Validator B after this playbook returns its candidate package.
+persona, real owner, Validator B and operational acceptance after this playbook returns its candidate
+package.
 
 ## What this playbook does not claim
 

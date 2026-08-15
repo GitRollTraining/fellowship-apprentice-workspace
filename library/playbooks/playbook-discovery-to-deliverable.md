@@ -23,10 +23,10 @@ No Fellow has run this procedure on a client engagement. The rules below make ar
 traceability and stage gates explicit; they are not evidence that following the procedure improves a
 solution. Record the first real run before changing that claim.
 
-This playbook does not conduct the discovery interview, phrase the stakeholder handoff or deploy
-production access. Those belong to the Interview, Output Phraser and deployment work respectively. It
-does own the order of the final gates and invokes the specialised validators rather than asking those
-playbooks to call one another.
+This playbook does not conduct the discovery interview, phrase the stakeholder handoff or itself operate
+production access. Those belong to the Interview, Output Phraser and client-authorised deployment work
+respectively. It does own the order of the final gates, including operational acceptance, and invokes
+the specialised validators rather than asking those playbooks to call one another.
 
 ## Required artifact chain
 
@@ -47,7 +47,8 @@ Paths are relative to `engagements/<client-slug>/`.
 | `verification/handoff-source-map.md` | Internal claim-to-authority and render/package derivation chain | Output Phraser |
 | `verification/persona-preflight.md` | Mandatory constrained non-technical-reader result | This playbook invoking the persona |
 | `verification/owner-acceptance.md` | The real owner's comprehension and acceptance against exact candidate bytes | This playbook and owner |
-| `verification/handoff-report.md` | Validator B's verdict for the final owner-accepted package | Validate Handoff playbook |
+| `verification/handoff-report.md` | Validator B's verdict for the comprehension-accepted candidate package | Validate Handoff playbook |
+| `verification/operational-acceptance.md` | Client deployment and one independent owner run of the unchanged B-passed package | This playbook, deployment operator and owner |
 | `progress-log.md` | When work or a decision changed and why | Every stage, append-only |
 
 The chain is not optional:
@@ -63,12 +64,13 @@ session evidence
   -> Validator A pass
   -> owner-facing phrasing and comprehension gates
   -> Validator B pass
+  -> client-authorised deployment and independent owner run
   -> handed-over
 ```
 
-Validator A, Output Phraser, persona preflight, real-owner acceptance and Validator B run in that order.
-Each component owns its specialised work; this playbook owns their order, invalidation routes and final
-status transition. No earlier pass permits a later gate to be skipped.
+Validator A, Output Phraser, persona preflight, real-owner acceptance, Validator B and operational
+acceptance run in that order. Each component owns its specialised work; this playbook owns their order,
+invalidation routes and final status transition. No earlier pass permits a later gate to be skipped.
 
 ## Who decides what
 
@@ -367,7 +369,7 @@ This is a hard gate. `rejected`, unanswered or materially corrected output retur
 and leaves the engagement `running`. Rebuild the package and repeat both persona and owner checks after
 any owner-facing byte changes. A delivery-file change returns further to Validator A.
 
-### 14. Run Validator B and transition status
+### 14. Run Validator B and release the package for operational acceptance
 
 After owner `accepted`, run `library/playbooks/playbook-validate-handoff.md` against the unchanged
 candidate archive. Validator B verifies Validator A integrity, package inventory and boundary, claim
@@ -384,10 +386,38 @@ Route a `blocked` result to the stage that owns it:
 | Owner acceptance does not match exact bytes | Real-owner check |
 | Archive-only assembly or boundary defect | Output Phraser package assembly, then affected comprehension gates |
 
-Only a Validator B `pass` against an `accepted` package may change the Decision Register's engagement
-status to `handed-over`. In the same working session, record the package path and hash, acceptance and B
-report in `progress-log.md`, update affected INDEX files and review retention, revocation and delivery
-positions. A status field changed without those sources is not a completed handoff.
+Validator B `pass` makes the unchanged package release-ready for the deployment and independent-owner
+run below. It does **not** by itself change engagement status to `handed-over`. Record the package path,
+hash, owner acceptance and B report in `progress-log.md` before leaving this stage.
+
+### 15. Deploy with client authority, obtain operational acceptance and transition status
+
+Start `verification/operational-acceptance.md` from
+`library/templates/operational-acceptance.md`. An authorised client operator follows the packaged
+`deliverable/deployment.md` in the intended client runtime. The owner then completes one safe,
+representative run from the packaged operating instructions without the Fellow taking over or filling
+an undocumented gap.
+
+Before extraction, convey Validator B's approved archive SHA-256 through the authorised out-of-band
+route named by the deployment contract, such as the delivery message or client portal record. The
+operator computes the received archive hash and compares it. Never embed the expected archive hash in
+the archive it authenticates.
+
+Use the exact package and B-report hashes. Do not change package bytes during this check and never put
+secret values in the record. A delivery or canonical-instruction defect returns to Build and Validator
+A; an owner-facing or package-only defect returns to Output Phraser and repeats its affected gates; an
+environment or authorisation constraint returns to its owning PRD, automation or deployment decision.
+
+Only `accepted` operational evidence for the unchanged B-passed package permits `handed-over`. In the
+same working session:
+
+1. update the engagement status in both `notes.md` and the Decision Register;
+2. record the package hash, B report and operational-acceptance record in `progress-log.md`;
+3. update affected INDEX files; and
+4. confirm the retention, revocation, delivery and ongoing-ownership positions.
+
+The status update records an already-proven transition; it does not create the proof. A package that
+was merely sent, explained or validated is not yet handed over under this workspace contract.
 
 ## Stop conditions
 
@@ -405,4 +435,5 @@ Stop and report rather than filling a gap when:
 - a material handoff claim has no authoritative source;
 - persona preflight is blocked or used prohibited context;
 - real-owner acceptance is missing, rejected or tied to different bytes; or
-- Validator B is not a current `pass` for the final package hash.
+- Validator B is not a current `pass` for the final package hash; or
+- client deployment or the independent owner run is rejected, missing or tied to different bytes.

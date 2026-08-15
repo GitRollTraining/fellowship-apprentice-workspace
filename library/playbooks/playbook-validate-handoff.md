@@ -148,16 +148,19 @@ the client-visible open, render or verification path from the extracted copy.
 
 Write the report against the final package hash. Append the run and disposition to `progress-log.md`.
 Return the verdict to Discovery to Deliverable. Validator B does not change engagement status itself;
-the orchestrator may mark `handed-over` only when this report says `pass` and the owner acceptance record
-still applies to the same package bytes. A rejection or later invalidation returns to the owning stage
-and leaves the engagement running.
+this report says only whether the unchanged package is release-ready for client deployment and an
+independent owner run. Discovery to Deliverable may mark `handed-over` only after a later
+`verification/operational-acceptance.md` says `accepted` for the same package and B-report hashes. A
+rejection or later invalidation returns to the owning stage and leaves the engagement running.
 
 ## Invalidation and disagreement
 
 Invalidate B when any package byte, owner-facing output, source-map entry, comprehension record or
 delivery-boundary decision changes. A delivery-file change invalidates both A and B. A presentation-only
 change invalidates B and normally the persona and owner checks, but not A while the delivery manifest is
-unchanged.
+unchanged. Invalidating or superseding B also invalidates any operational acceptance tied to its report
+hash. If the engagement had already been marked `handed-over`, supersede that acceptance and return both
+`notes.md` and the Decision Register to `running` before distributing changed bytes.
 
 Resolve disagreement by comparing the package, source chain and recorded acceptance. If a checker is
 wrong, repair it, retain a minimal failing fixture and issue a superseding report. If a material claim

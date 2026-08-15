@@ -39,6 +39,7 @@ common delivery shape, not the only one.
 | template | `process-confirmation` | Grounding and confirmation | `library/templates/process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
 | template | `process-inventory` | Coverage and boundary elicitation | `library/templates/process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
 | template | `process-reconstruction` | Process reconstruction in context | `library/templates/process-reconstruction.md` | A per-step input/output, decision-rule, approval and system capture form that converts interview answers into detail the specification and agreed deliverable need. |
+| template | `operational-acceptance` | Client operation | `library/templates/operational-acceptance.md` | Records client-authorised deployment and one owner-operated representative case before handed-over status. |
 | template | `requirements-gathering` | Coverage and boundary elicitation | `library/templates/requirements-gathering.md` | Produces the PRD-like owner-sign-off artifact: desired outcomes, scope, user stories, requirements, acceptance criteria, constraints and feasibility inputs traced to confirmed discovery. |
 | template | `specification` | Specification writing for AI delegation | `library/templates/specification.md` | Joins the signed PRD and current automation decisions into the traceable build contract; defaults to one skill but includes the extension shape for a larger solution. |
 | renderer | `build-document-pdf` | Owner handover explanation | `library/renderers/build-document-pdf.py` | Turns one markdown file into an A4 PDF a business owner can open; this is the whole answer to turning finished work into a file the owner opens |
@@ -100,7 +101,7 @@ client's data is the wrong answer even when it works.
 | Gap | What it means for you |
 |---|---|
 | Packaging the finished deliverable into an installer a non-technical owner double-clicks | The default versioned zip preserves the exact delivery tree and gives the owner a start-here account, but it does not install the system. The private installer is still unavailable, so deployment follows the delivered instructions |
-| Evidence that the finished deliverable and handoff work on a real engagement | Validator A/B, the constrained persona and real-owner gate now define the evidence chain, but none has been run on a client engagement. Treat them as authored procedures, not proof that they improve outcomes |
+| Evidence that the finished deliverable and handoff work on a real engagement | Validator A/B, the constrained persona, real-owner comprehension and operational acceptance define the evidence chain, but none has run on a real client engagement; treat them as authored procedures, not proof that they improve outcomes |
 
 These are the honest edges of this toolbox. The first has transport but no installer; the second has a
 complete draft procedure but no real-use evidence. Nothing here pretends to close either gap further.

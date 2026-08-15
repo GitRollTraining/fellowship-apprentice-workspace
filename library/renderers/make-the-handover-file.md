@@ -156,6 +156,6 @@ Tables of four rows or fewer are held together across page breaks where possible
 | Blank, box or replacement glyph | Replace the unsupported character and rebuild |
 | Hidden `.owner-account.html` remains | The builder crashed before cleanup; report the failed build and remove the generated residue before retrying |
 
-Any owner-account edit invalidates its persona preflight, real-owner acceptance and Validator B report.
-Rebuild, recheck, reinspect and return to those gates. A deliverable-file edit additionally invalidates
-Validator A.
+Any owner-account edit invalidates its persona preflight, real-owner acceptance, Validator B report and
+any operational acceptance tied to that report. Rebuild, recheck, reinspect and return to those gates.
+A deliverable-file edit additionally invalidates Validator A.

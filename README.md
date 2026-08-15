@@ -18,8 +18,9 @@ already in place.
 3. Run `library/playbooks/playbook-environment-setup.md`, then run
    `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
 4. After current-state confirmation, run `library/playbooks/playbook-discovery-to-deliverable.md`. It
-   owns PRD sign-off, automation choice, build, both validators, owner-facing phrasing, comprehension
-   gates and final handoff. The Output Phraser invokes the renderer for the owner account.
+   owns PRD sign-off, automation choice, build, both validators, owner-facing phrasing, comprehension,
+   operational acceptance and final handoff. The Output Phraser invokes the renderer for the owner
+   account.
 
 ## Setup
 

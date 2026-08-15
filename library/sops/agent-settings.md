@@ -109,7 +109,7 @@ owner account, package manifest and canonical `deployment.md` and `operations.md
 the deployment instructions install the whole bundle into the client's runtime — including companion
 references/scripts — and name its required runtime entry filename. Do not hand over one flattened
 `skill.md` and assume it is installable. Keep the manual installation step and its owner visible in the
-handoff.
+handoff and prove it during operational acceptance.
 
 ## Making the skills visible to the agent
 

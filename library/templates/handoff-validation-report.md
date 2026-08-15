@@ -116,6 +116,9 @@ supersedes: none
 comprehension record or delivery-boundary decision change; any delivery-file change also invalidates
 Validator A.
 
-**Status transition or return path:**
+**Release to operational acceptance or return path:**
+
+A `pass` releases these exact package bytes to client-authorised deployment and the independent-owner
+run. It does not itself permit an engagement status change to `handed-over`.
 
 --- COPY ENDS HERE ---

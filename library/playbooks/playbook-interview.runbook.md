@@ -84,7 +84,8 @@ are the numbered steps of `playbook-interview.md`.
 | after Validator A | `playbook-output-phraser.md` | `library/playbooks/` | Creates the owner-facing account, source map and candidate package without changing validated behaviour |
 | after Output Phraser | `non-technical-owner` persona | `library/personas/` | Mandatory cold-reader preflight constrained to what the owner actually knew from discovery |
 | after persona pass | `owner-acceptance.md` | `library/templates/` | Records the real owner's comprehension and acceptance against the exact candidate bytes |
-| final release gate | `playbook-validate-handoff.md` | `library/playbooks/` | Checks fidelity, package boundary, rendering, comprehension evidence and final archive integrity |
+| package release gate | `playbook-validate-handoff.md` | `library/playbooks/` | Checks fidelity, package boundary, rendering, comprehension evidence and final archive integrity |
+| after Validator B | `operational-acceptance.md` | `library/templates/` | Records client deployment and one independent owner run before status becomes handed-over |
 | Render the final account | `make-the-handover-file.md` | `library/renderers/` | Builds and checks only the owner account; executable delivery files remain separate and installable |
 | throughout | `planning-with-files` plugin | installed, see `library/sops/agent-settings.md` | The session spans days. State that is not on disk is state that is lost |
 | throughout | `kb-restructure` skill | `library/skills/` | An engagement directory that grows will need renaming and re-nesting without breaking its own references |
@@ -92,8 +93,9 @@ are the numbered steps of `playbook-interview.md`.
 The last row of the interview playbook is not the last step of the engagement. After step 21 confirms
 the current state, work continues through `library/playbooks/playbook-discovery-to-deliverable.md`:
 signed requirements, automation approach, specification, implementation, Validator A, Output Phraser,
-the constrained persona, real owner acceptance and Validator B. The engagement ends only when Validator
-B passes the exact owner-accepted package and the orchestrator records `handed-over`.
+the constrained persona, real owner acceptance, Validator B, client-authorised deployment and one
+independent owner run. The engagement ends only when operational acceptance records that the owner ran
+the unchanged B-passed package in the intended environment and the orchestrator records `handed-over`.
 
 ## Stop conditions this workspace adds
 

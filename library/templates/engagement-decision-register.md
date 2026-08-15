@@ -28,6 +28,10 @@ style: descriptive
 **Engagement status:** not-started | running | handed-over | dropped
 **Last reviewed:** {YYYY-MM-DD}
 
+`handed-over` requires a current `verification/operational-acceptance.md` with `status: accepted` for
+the unchanged Validator-B-passed package. Update this field and `notes.md` together; neither status field
+is evidence by itself.
+
 ## Field definitions
 
 ### Scope

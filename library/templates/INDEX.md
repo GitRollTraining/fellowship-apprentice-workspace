@@ -33,6 +33,7 @@ ignores it renders wrongly without raising an error.
 | `process-reconstruction.md` | A per-step input/output, decision-rule, approval and system capture form that converts interview answers into detail the specification and agreed deliverable need. |
 | `persona-preflight.md` | Internal exact-input record for the constrained non-technical-owner cold-reader run |
 | `owner-acceptance.md` | Internal hard-gate record of the real owner's comprehension and acceptance against exact package bytes |
+| `operational-acceptance.md` | Internal final-gate record of client deployment and one independent owner run against the unchanged B-passed package |
 | `requirements-gathering.md` | PRD-like document for owner sign-off: desired outcomes, scope, user stories, requirements, acceptance criteria, operational constraints and feasibility inputs, all traced to confirmed discovery. |
 | `specification.md` | The default build-contract shape, joining the signed PRD and automation decisions to the deliverable while preserving a resolvable evidence chain. |
 | `brief-design/` | A design system for a single-page HTML brief: tokens, components, composition rules and a starter file |
@@ -41,4 +42,4 @@ ignores it renders wrongly without raising an error.
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 20 items | 2026-08-15 | Instruction | Deployment and operations templates added and registered |
+| all 21 items | 2026-08-15 | Instruction | Full discovery-to-operational-acceptance artifact set; deployment and operations templates added |
