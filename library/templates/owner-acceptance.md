@@ -62,7 +62,8 @@ explaining or completing their answer, ask them to show or tell:
 
 ## Acceptance
 
-**Status:** `pending` / `accepted` / `rejected` / `superseded`
+**Canonical verdict:** the frontmatter `status` field (`pending`, `accepted`, `rejected` or
+`superseded`). Change it there only; do not maintain a second status in the body.
 
 **Owner's recorded statement or action:**
 

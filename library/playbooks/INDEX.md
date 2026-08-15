@@ -24,8 +24,9 @@ those engagement assumptions, it belongs under `skills/` instead.
 
 No stubs remain. Environment Setup, Discovery to Deliverable, Output Phraser and both Validators are
 complete draft contracts. Environment Setup's file and gate transitions passed a disposable smoke test;
-the other four have not had even that narrower run. The final orchestration and artifact contracts are
-now present, but none has been run by a Fellow on a real engagement or claims outcome validation.
+a novice-agent walkthrough has now exercised the full artifact wiring and runnable command examples,
+but the other four have not run with a real Fellow and owner. The final orchestration and artifact
+contracts are present; none claims outcome validation.
 
 ## A warning about the word
 

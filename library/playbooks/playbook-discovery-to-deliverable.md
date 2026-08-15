@@ -329,19 +329,20 @@ The Phraser's exit means `ready for comprehension testing`. It is not a release 
 ### 12. Run the mandatory non-technical-owner preflight
 
 Start `verification/persona-preflight.md` from `library/templates/persona-preflight.md`, then invoke
-`library/personas/non-technical-owner.md` in a fresh context against the exact candidate client-readable
-documents.
+`library/personas/non-technical-owner.md` in a fresh context against the client-visible views rendered
+from the exact candidate-package documents.
 
 The persona receives only:
 
-- the client-readable material in the candidate package, including canonical deployment and operations
-  instructions; and
+- the rendered client-visible material from the candidate package, including canonical deployment and
+  operations instructions but excluding invisible comments and anchors; and
 - direct `H*` owner statements and later owner corrections, copied with durable pointers into the
   report's Allowed prior knowledge table.
 
-It must not receive Fellow conclusions, the PRD, specification, unpresented implementation source or
-configuration, source map, Validator reports or prior answers. Record every supplied document and hash,
-then check that boundary. A contaminated run is `blocked`, not reusable evidence.
+Record each packaged-byte hash, render/export method and supplied-view hash. It must not receive Fellow
+conclusions, the PRD, specification, unpresented implementation source or configuration, source map,
+Validator reports or prior answers. Record every supplied document and hash, then check that boundary.
+A contaminated run is `blocked`, not reusable evidence.
 
 Persona preflight is mandatory but never substitutes for the real owner. On `blocked`, return to Output
 Phraser, revise the account or navigation, rebuild the package and run the persona again. Preserve the

@@ -37,7 +37,7 @@ style: descriptive
 > Session log. One entry per working session. Appended, not rewritten.
 
 **Engagement:** `engagements/{client-slug}/`
-**Status:** running
+**Log state:** append-only
 
 ---
 

@@ -106,9 +106,11 @@ Run the applicable deterministic renderers, link checkers, schema checks and cli
 Record each command, runtime, exit code and output. Then visually inspect every rendered page, chart and
 diagram for clipping, overlap, unreadable text, missing glyphs, broken hierarchy and placeholder content.
 
-Confirm deployment, operations and client-verification instructions are present and reachable from the
-owner-facing account. Visual inspection supplements deterministic checks; it never replaces them.
-Search rendered text for `handoff-source-map` and `HC-*`; either appearing to the owner is blocking.
+Confirm deployment and operations instructions are present and reachable from the owner-facing account.
+When a proportionate client-verification command exists, confirm it is also present and reachable; when
+it does not, confirm the owner account states why one is impractical. Visual inspection supplements
+deterministic checks; it never replaces them. Search rendered text for `handoff-source-map` and `HC-*`;
+either appearing to the owner is blocking.
 
 ### 5. Verify comprehension evidence
 
@@ -136,13 +138,116 @@ new temporary directory. At minimum reject:
 For example:
 
 ```sh
-unzip -t <client>-handover-v<n>.zip
-zipinfo -1 <client>-handover-v<n>.zip
-shasum -a 256 <client>-handover-v<n>.zip
+ARCHIVE=handover/<client>-handover-v<n>.zip
+EXPECTED_ROOT=<client>-handover-v<n>
+unzip -t "$ARCHIVE" || exit 1
+python3 - "$ARCHIVE" "$EXPECTED_ROOT" <<'PY' || exit 1
+import re
+import stat
+import sys
+import zipfile
+
+archive, expected_root = sys.argv[1:]
+if not expected_root or "/" in expected_root or "\\" in expected_root:
+    raise SystemExit("unsafe expected package root")
+
+seen = set()
+seen_folded = {}
+file_count = 0
+with zipfile.ZipFile(archive) as package:
+    for entry in package.infolist():
+        raw = entry.filename
+        path = raw[:-1] if raw.endswith("/") else raw
+        if not path or "\\" in raw or raw.startswith(("/", "//")) or re.match(r"^[A-Za-z]:", raw):
+            raise SystemExit(f"unsafe archive path: {raw!r}")
+        parts = path.split("/")
+        if any(part in ("", ".", "..") for part in parts):
+            raise SystemExit(f"non-canonical archive path: {raw!r}")
+        if parts[0] != expected_root:
+            raise SystemExit(f"path outside expected package root: {raw!r}")
+        if len(parts) == 1 and not entry.is_dir():
+            raise SystemExit(f"package root is a file, not a directory: {raw!r}")
+        if any(part.startswith(".") or part in {"__MACOSX", "Thumbs.db", "desktop.ini"} for part in parts):
+            raise SystemExit(f"hidden or operating-system residue: {raw!r}")
+        if path in seen:
+            raise SystemExit(f"duplicate archive path: {raw!r}")
+        folded = path.casefold()
+        if folded in seen_folded:
+            raise SystemExit(f"case-colliding archive paths: {seen_folded[folded]!r}, {raw!r}")
+        mode = entry.external_attr >> 16
+        file_type = stat.S_IFMT(mode)
+        if stat.S_ISLNK(mode):
+            raise SystemExit(f"symlink in archive: {raw!r}")
+        if file_type not in {0, stat.S_IFREG, stat.S_IFDIR}:
+            raise SystemExit(f"special file in archive: {raw!r}")
+        if not entry.is_dir() and file_type == stat.S_IFDIR:
+            raise SystemExit(f"directory metadata on file entry: {raw!r}")
+        seen.add(path)
+        seen_folded[folded] = raw
+        if not entry.is_dir():
+            file_count += 1
+if file_count == 0:
+    raise SystemExit("archive contains no files")
+print(f"CLEAN: {file_count} files under {expected_root}/")
+PY
+shasum -a 256 "$ARCHIVE" || exit 1
 ```
 
-Record the exact final archive hash in the report. Extract only after the path list passes, then rerun
-the client-visible open, render or verification path from the extracted copy.
+This check is fail-closed: a path-policy finding exits non-zero before extraction. Record the exact
+final archive hash in the report. Extract only after the integrity and path checks pass, into a fresh
+directory whose location is permitted by the Data & Credential Boundary. Clean it on success or
+failure; use a sentinel so cleanup cannot target an unrelated directory. For example:
+
+```bash
+# Set VALIDATION_TMP_PARENT to an approved directory when the system temp area is not permitted.
+if [[ -n "${VALIDATION_TMP_PARENT:-}" ]]; then
+  mkdir -p "$VALIDATION_TMP_PARENT" || exit 1
+  EXTRACT="$(mktemp -d "$VALIDATION_TMP_PARENT/handoff-check.XXXXXX")" || exit 1
+else
+  EXTRACT="$(mktemp -d)" || exit 1
+fi
+: > "$EXTRACT/.validator-b-owned" || {
+  rmdir -- "$EXTRACT" 2>/dev/null || true
+  exit 1
+}
+cleanup_extract() {
+  if [[ -n "${EXTRACT:-}" && -f "$EXTRACT/.validator-b-owned" ]]; then
+    rm -rf -- "$EXTRACT"
+  else
+    printf 'refusing to clean unowned extraction path: %s\n' "${EXTRACT:-<unset>}" >&2
+    return 1
+  fi
+}
+on_extract_signal() {
+  cleanup_extract || true
+  trap - EXIT HUP INT TERM
+  exit 130
+}
+trap cleanup_extract EXIT
+trap on_extract_signal HUP INT TERM
+if unzip -q "$ARCHIVE" -d "$EXTRACT"; then
+  :
+else
+  EXTRACT_STATUS=$?
+  cleanup_extract || true
+  trap - EXIT HUP INT TERM
+  exit "$EXTRACT_STATUS"
+fi
+run_client_checks() {
+  # Replace this fail-closed sentinel with the selected deterministic open, render or verification
+  # commands, rooted at "$EXTRACT/$EXPECTED_ROOT". Leaving it unchanged must not produce a pass.
+  false
+}
+if run_client_checks; then
+  cleanup_extract || { trap - EXIT HUP INT TERM; exit 1; }
+  trap - EXIT HUP INT TERM
+else
+  CLIENT_CHECK_STATUS=$?
+  cleanup_extract || true
+  trap - EXIT HUP INT TERM
+  exit "$CLIENT_CHECK_STATUS"
+fi
+```
 
 ### 7. Issue the verdict and return to the orchestrator
 

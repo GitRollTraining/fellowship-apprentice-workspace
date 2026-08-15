@@ -12,6 +12,11 @@ written to be read without any other document, and it names no tool, no director
 correct for a playbook and insufficient for running one. This file supplies the missing half: where each
 step's output goes, and which shipped tool it uses.
 
+For execution in this workspace, this wrapper governs artifact destinations and stage timing wherever
+the verbatim record differs. In particular, steps 20 and 21 confirm the **current-state process**; they
+do not create the post-build owner account or end the engagement. Keep the original wording as programme
+provenance, but do not use its “finished process” language as permission to skip the PRD, build or gates.
+
 ## Read this first: what "validated" means here, and what it does not
 
 The playbook carries `status: draft — never executed`, and that stamp is still true. **No fellow has run

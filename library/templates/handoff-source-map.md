@@ -46,6 +46,7 @@ element ID — enough to find the claim after nearby prose changes.
 | Claim ID | Owner-facing artifact and locator | Claim in plain words | Authority | Exact source pointer | Transformation and limits |
 |---|---|---|---|---|---|
 | HC-001 | `handover/owner-account.md` — `## What it does`, “…” | | | | direct / paraphrase / calculated / inferred; state any limit |
+| HC-008 | `handover/package-manifest.md` — `## Package contents`, “…” | | | | direct / paraphrase; keep IDs unique across both files |
 
 ## Invisible pointers
 

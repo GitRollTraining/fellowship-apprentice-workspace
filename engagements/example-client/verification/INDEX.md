@@ -41,6 +41,28 @@ The persona report records its restricted prior knowledge; the owner record name
 owner-facing hashes accepted or rejected. Operational acceptance names the same B-passed package and
 records whether it was deployed and operated independently in the intended client environment.
 
+The paths above are the **current** records. Before replacing one, snapshot the complete mutable run set
+it cites — not only the report — under `history/<stage>-<YYYYMMDDTHHMMSSZ>/`, retaining every copied
+artifact's original engagement-relative path. Verification artifacts therefore land in that snapshot's
+`verification/` child; cited `spec/`, `process/` or other engagement authorities keep those paths too.
+For Validator A this includes its report, deliverable manifest and cited evidence; for later gates it
+includes the report or acceptance record plus the source map, package hashes and every otherwise
+mutable local authority needed to resolve its retained pointers. If the Data & Credential Boundary
+forbids copying an authority, record a durable, immutable, access-controlled external pointer instead.
+Hash and inventory the snapshot in `history/INDEX.md`. Put the full engagement-relative archived record
+path, for example
+`verification/history/validator-a-20260815T041500Z/verification/deliverable-report.md`, in the new
+record's `supersedes` field. Never edit an archived run or a failed/passed current run into a different
+verdict.
+
+Treat each `history/<stage>-<timestamp>/` directory as a synthetic engagement root. An
+engagement-relative pointer retained inside an archived report, such as
+`verification/deliverable-manifest.tsv`, resolves below that snapshot root, never against the current
+engagement files. Put `snapshot-manifest.tsv` at the snapshot root with the original
+engagement-relative path, archived path and SHA-256 for every copied artifact; inventory that manifest
+in `history/INDEX.md`. A reviewer starts from the archived record named by `supersedes`, finds its
+snapshot root, verifies `snapshot-manifest.tsv`, and resolves all retained pointers inside that root.
+
 Do not put this directory, either validation report or internal evidence into the client package.
 
 ## Freshness

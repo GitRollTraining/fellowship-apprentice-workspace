@@ -142,9 +142,11 @@ Place an invisible claim anchor before each material block, for example:
 <!-- claim: HC-001 -->
 ```
 
-The identifiers are for internal traceability and must not appear in rendered prose. If the final
-format cannot carry comments safely, keep the pointer and anchors in its authoring source. Record the
-source hash and rendered-output hash in the source map; never hand-edit a PDF to add metadata.
+Continue one unique `HC-*` sequence across the owner account and `handover/package-manifest.md`; both
+authoring files carry the invisible map pointer and anchors. The identifiers are for internal
+traceability and must not appear in rendered prose. If the final format cannot carry comments safely,
+keep the pointer and anchors in its authoring source. Record the source hash and rendered-output hash in
+the source map; never hand-edit a PDF to add metadata.
 
 ### 5. Render and inspect the owner-facing output
 
@@ -167,13 +169,16 @@ A render failure returns to the authoring source. It does not change the validat
 the owner account, every top-level delivery component, canonical deployment and operations files,
 known limitations and the client-runnable smoke or health check when one exists.
 
-Do not copy internal hashes, `HC-*` identifiers or verification findings into this file. It helps the
-owner navigate the package; Validator B holds the integrity evidence.
+Do not render or display internal hashes, `HC-*` identifiers or verification findings in this file.
+Its source does retain the required invisible map pointer and claim anchors. It helps the owner navigate
+the package; Validator B holds the integrity evidence.
 
 ### 7. Assemble the default candidate zip
 
 Resolve package contents against the current `DP-*` decision before copying anything. Use a fresh
-temporary staging directory and fail if the versioned archive already exists. From the repository root,
+temporary staging directory and fail if the versioned archive already exists. Before running the
+example, resolve the staging location against `EW-001` and `EW-003`; use an approved ignored directory
+instead of the operating-system temp area when those decisions require it. From the repository root,
 adapt this example only for the selected owner-account extension:
 
 ```bash
@@ -185,15 +190,55 @@ ARCHIVE="$ENGAGEMENT/handover/$PACKAGE_ROOT.zip"
 REPO_ROOT="$(pwd -P)"
 
 test ! -e "$ARCHIVE" || { printf 'archive already exists: %s\n' "$ARCHIVE" >&2; exit 1; }
-STAGE="$(mktemp -d)"
-mkdir -p "$STAGE/$PACKAGE_ROOT/deliverable"
-cp "$ENGAGEMENT/handover/owner-account.pdf" "$STAGE/$PACKAGE_ROOT/"
-cp "$ENGAGEMENT/handover/package-manifest.md" "$STAGE/$PACKAGE_ROOT/"
-cp -R "$ENGAGEMENT/deliverable/." "$STAGE/$PACKAGE_ROOT/deliverable/"
-(cd "$STAGE" && zip -X -r "$REPO_ROOT/$ARCHIVE" "$PACKAGE_ROOT")
+# Set PHRASER_TMP_PARENT to an approved directory when the system temp area is not permitted.
+if [[ -n "${PHRASER_TMP_PARENT:-}" ]]; then
+  mkdir -p "$PHRASER_TMP_PARENT" || exit 1
+  STAGE="$(mktemp -d "$PHRASER_TMP_PARENT/output-phraser.XXXXXX")" || exit 1
+else
+  STAGE="$(mktemp -d)" || exit 1
+fi
+: > "$STAGE/.output-phraser-owned" || {
+  rmdir -- "$STAGE" 2>/dev/null || true
+  exit 1
+}
+cleanup_stage() {
+  if [[ -n "${STAGE:-}" && -f "$STAGE/.output-phraser-owned" ]]; then
+    rm -rf -- "$STAGE"
+  else
+    printf 'refusing to clean unowned staging path: %s\n' "${STAGE:-<unset>}" >&2
+    return 1
+  fi
+}
+on_stage_signal() {
+  rm -f -- "$ARCHIVE"
+  cleanup_stage || true
+  trap - EXIT HUP INT TERM
+  exit 130
+}
+trap cleanup_stage EXIT HUP INT TERM
+trap on_stage_signal HUP INT TERM
+build_archive() {
+  mkdir -p "$STAGE/$PACKAGE_ROOT/deliverable" &&
+    cp "$ENGAGEMENT/handover/owner-account.pdf" "$STAGE/$PACKAGE_ROOT/" &&
+    cp "$ENGAGEMENT/handover/package-manifest.md" "$STAGE/$PACKAGE_ROOT/" &&
+    cp -R "$ENGAGEMENT/deliverable/." "$STAGE/$PACKAGE_ROOT/deliverable/" &&
+    (cd "$STAGE" && zip -X -r "$REPO_ROOT/$ARCHIVE" "$PACKAGE_ROOT")
+}
+if build_archive; then
+  cleanup_stage || { trap - EXIT HUP INT TERM; exit 1; }
+  trap - EXIT HUP INT TERM
+else
+  BUILD_STATUS=$?
+  rm -f -- "$ARCHIVE"
+  cleanup_stage || true
+  trap - EXIT HUP INT TERM
+  exit "$BUILD_STATUS"
+fi
 ```
 
-The staging directory is disposable. The archive is not approved merely because `zip` exited zero.
+The owned staging directory is removed on success, interruption or command failure; leftover staged
+client bytes are blocking and must be removed through the recorded retention route. The archive is not
+approved merely because `zip` exited zero.
 Discovery to Deliverable next runs the persona and real-owner checks against this exact version, then
 hands the unchanged archive to Validator B.
 

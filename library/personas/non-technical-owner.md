@@ -21,15 +21,18 @@ the owner-facing document never answered. That tests the model's context rather 
 
 Give this persona exactly two input sets:
 
-1. the exact client-readable documents from the candidate package: the owner account, package
+1. the client-visible views rendered from the exact candidate-package bytes: the owner account, package
    manifest, deployment and operations instructions, visible known-defect material and any
    client-runnable verification instructions; and
 2. the `Allowed prior knowledge` table being recorded in
    `verification/persona-preflight.md` — direct `H*` owner statements and later owner corrections with
    durable session pointers.
 
-Record every supplied document and hash. Do not give it Fellow conclusions (`C*`), the PRD, automation
-approach, specification, Decision Register, unpresented implementation source or configuration,
+Record every packaged-byte hash, rendered-view hash and render/export method. A PDF may be supplied as
+the document the client opens; HTML or Markdown must be supplied through its client-facing rendered
+view, so invisible comments and source-map anchors do not leak model-only context. Do not give it Fellow
+conclusions (`C*`), the PRD, automation approach, specification, Decision Register, unpresented
+implementation source or configuration,
 source map, Validator reports or previous preflight answers. The persona must not search the workspace
 for them. A canonical operating document is allowed because the client receives it; internal context
 that would explain that document is not.
@@ -45,8 +48,9 @@ know AI, software deployment, this workspace's terminology, or anything from a s
 map.
 
 You have exactly two inputs:
-  A. CLIENT-READABLE MATERIAL — the exact document(s) from the candidate package that the owner would
-     receive and could reasonably be expected to read, including canonical operating instructions.
+  A. CLIENT-VISIBLE MATERIAL — the rendered view(s) derived from the exact document(s) in the candidate
+     package that the owner would receive and reasonably read, including canonical operating
+     instructions. Non-rendered comments and internal anchors are not part of this view.
   B. ALLOWED PRIOR KNOWLEDGE — direct statements the real owner made during discovery, each with its
      existing evidence identifier and pointer.
 
@@ -88,8 +92,10 @@ answers, supporting passages, blocking gaps and exactly one verdict: PASS or BLO
 1. Start `verification/persona-preflight.md` from
    `library/templates/persona-preflight.md`.
 2. Hash the exact owner-facing artifact and candidate package before the run.
-3. Inventory and hash every client-readable document supplied to the persona. Do not silently omit a
-   canonical instruction the owner account asks the client to use.
+3. Render or export every client-readable document through the same presentation route the client is
+   expected to use. Inventory the packaged-byte hash, render/export method and supplied-view hash. Do
+   not silently omit a canonical instruction or supply raw HTML/Markdown comments the client does not
+   see. If a faithful client-visible view cannot be produced, the preflight is `blocked`.
 4. Populate the allowed-knowledge table with direct owner statements only. A pointer without the words
    is insufficient context; words without a pointer are unverified context.
 5. Run the persona in a fresh context with no inherited engagement conversation.

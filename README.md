@@ -39,5 +39,6 @@ First cut shipped 2026-08-11; the automation-approach skill was added 2026-08-13
 wrapper and complete Environment Setup draft followed on 2026-08-14. Every layer remains thinly
 populated on purpose: five authored playbook drafts with no remaining stubs, eleven skills and two
 personas. Only Environment Setup has had a disposable structural smoke test; none of the full engagement
-chain has been run by a Fellow with a real owner. It is built to be extended, and evidence limits are
-written down rather than assumed.
+chain has been run by a Fellow with a real owner. A disposable novice-agent walkthrough has exercised
+the artifact wiring and command examples; it is not outcome evidence. The workspace is built to be
+extended, and evidence limits are written down rather than assumed.

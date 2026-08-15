@@ -36,16 +36,17 @@ supersedes: none
 
 ## Client-readable inputs
 
-List every document supplied to the persona, using the exact packaged bytes. Include canonical
-deployment, operations, known-defect and client-verification instructions when present. Do not let the
-persona search the package or workspace for unlisted context.
+List every document supplied to the persona. Pin the exact packaged bytes, then supply only the
+client-visible view produced by the intended renderer/application. Include canonical deployment,
+operations, known-defect and client-verification instructions when present. Do not expose invisible
+comments/claim anchors or let the persona search the package or workspace for unlisted context.
 
-| Packaged path | SHA-256 | Why the client reads it | Supplied exactly? |
-|---|---|---|---|
-| `owner-account.pdf` | | Primary explanation | yes / no |
-| `package-manifest.md` | | Package navigation | yes / no |
-| `deliverable/deployment.md` | | Canonical deployment instructions | yes / no |
-| `deliverable/operations.md` | | Canonical operating instructions | yes / no |
+| Packaged path | Packaged SHA-256 | Client-view render/export method | Supplied-view SHA-256 | Why the client reads it |
+|---|---|---|---|---|
+| `owner-account.pdf` | | direct PDF view | | Primary explanation |
+| `package-manifest.md` | | intended Markdown renderer; comments invisible | | Package navigation |
+| `deliverable/deployment.md` | | intended Markdown renderer | | Canonical deployment instructions |
+| `deliverable/operations.md` | | intended Markdown renderer | | Canonical operating instructions |
 
 ## Allowed prior knowledge
 
@@ -85,12 +86,14 @@ requirements, specification content, implementation facts or validation results.
 
 ## Verdict
 
-**Status:** `pass` / `blocked` / `superseded`
+**Canonical verdict:** the frontmatter `status` field (`pass`, `blocked` or `superseded`). Change it
+there only; do not maintain a second verdict in the body.
 
 **Reason:**
 
 **Next action:** proceed to real-owner check / return to Output Phraser
 
-Any supplied client-readable or package byte change invalidates this preflight.
+Any packaged byte, render/export method or supplied client-visible view change invalidates this
+preflight.
 
 --- COPY ENDS HERE ---

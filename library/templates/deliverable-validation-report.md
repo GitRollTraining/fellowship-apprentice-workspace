@@ -106,7 +106,8 @@ supersedes: none
 
 ## Verdict
 
-**Status:** `pass` / `blocked` / `superseded`
+**Canonical verdict:** the frontmatter `status` field (`pass`, `blocked` or `superseded`). Change it
+there only; do not maintain a second verdict in the body.
 
 **Reason:**
 
