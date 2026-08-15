@@ -22,8 +22,8 @@ belongs to one client — so it is filed as a unit and can be deleted as a unit 
 |---|---|
 | `interview/` | Transcripts, session notes, the pre-session note, the discovery record, the ambiguity list |
 | `process/` | The reconstructed process, its boundaries, its exceptions, what happens when it breaks |
-| `spec/` | The specification under construction |
-| `deliverable/` | The agent-executable `skill.md` the business receives, and its known-defects list |
+| `spec/` | The signed PRD, automation decision brief and technical specification under construction |
+| `deliverable/` | The agreed client-operated files, canonical deployment/operations instructions and known defects; one agent skill is the common default |
 | `handover/` | The owner-facing account, client package manifest and final versioned handoff archive |
 | `verification/` | Internal Validator reports, source map, comprehension records, candidate manifest and permitted evidence; never included in the client package |
 

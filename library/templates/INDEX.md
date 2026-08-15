@@ -20,6 +20,8 @@ ignores it renders wrongly without raising an error.
 | `engagement-notes.md` | Generic two-mode project-notes pattern (objective, success criteria, context, decision-register pointer, materials) a fellow working alone across sessions can use to re-enter the engagement. |
 | `engagement-progress-log.md` | Companion running session-log so a fellow with no reviewer keeps a verifiable record of what was done, verified, and next across multiple sessions with the owner. |
 | `deliverable-validation-report.md` | Internal Validator A record: candidate manifest, acceptance evidence, behavioural cases, operating checks, findings and exact verdict |
+| `deliverable-deployment.md` | Canonical client-package instructions for prerequisites, install/configure/start, verification, upgrade, rollback and removal |
+| `deliverable-operations.md` | Canonical client-package instructions for normal use, signals, recovery, credentials, maintenance, escalation and retirement |
 | `handoff-package-manifest.md` | Plain client-facing start-here inventory placed at the root of the default handoff package |
 | `handoff-source-map.md` | Internal `HC-*` claim-to-authority map joining owner-facing source, rendered output and candidate package hashes |
 | `handover.md` | Owner-account shape: what was delivered, what it will not do, what to check and where canonical operating instructions live |
@@ -39,4 +41,4 @@ ignores it renders wrongly without raising an error.
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 18 items | 2026-08-15 | Instruction | Output Phraser, source-map, comprehension and package contracts added; nonexistent brief-design alias removed |
+| all 20 items | 2026-08-15 | Instruction | Deployment and operations templates added and registered |

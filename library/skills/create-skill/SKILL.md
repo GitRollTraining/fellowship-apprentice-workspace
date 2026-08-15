@@ -53,11 +53,17 @@ If args missing, ask user.
 
 3. **Resolve target dir.**
    - ours, reusable across engagements → propose it for `library/skills/{slug}/`
-   - this client's, part of the deliverable → `engagements/<client-slug>/deliverable/`
+   - this client's only skill → `engagements/<client-slug>/deliverable/`; for a multi-skill delivery,
+     use the component directory selected by the specification
    - resolve the root with `git rev-parse --show-toplevel`, and if that fails, ask for an explicit root rather than guessing
-   - If target dir already exists, halt and ask user (overwrite vs. abort vs. rename).
+   - for a library skill, halt if the proposed skill directory already exists
+   - for an engagement skill, the scaffolded `deliverable/` directory is expected to exist; halt only
+     if the intended `skill.md` or a generated companion path would overwrite client work
 
-4. **Run interview.** Ask the user the questions in `references/questions.md`. Capture answers — do not infer silently. Required answers:
+4. **Resolve the build interview.** Read `references/questions.md`. If the caller supplied an accepted
+   build contract or an answered questionnaire, bind and cite its answers first, then ask only for a
+   genuinely absent answer. Otherwise ask the user each question. Do not make the user repeat an
+   accepted decision, and do not infer a missing one silently. Required answers:
    - One-sentence purpose / trigger condition (becomes `description`)
    - Argument contract (becomes `argument-hint`) — **and for each proposed flag, justify it against preference #17 or drop it**
    - Scope: user vs. project — decided in step 2 by the criterion, not by preference
@@ -67,18 +73,33 @@ If args missing, ask user.
    - Known gotchas at creation time (>=1 if any can be named)
 
 5. **Scaffold files.**
-   - Read `references/skeleton.md` → fill placeholders w/ interview answers → write to `{target-dir}/SKILL.md` for a library skill, or `{target-dir}/skill.md` for an engagement deliverable - every consumer of the deliverable names it lowercase, and on a case-sensitive filesystem the mismatch is silent
-   - Create `{target-dir}/references/` dir
-   - If interview produced ≥3 known gotchas, also create `{target-dir}/references/gotchas.md` (empty markdown stub w/ heading + interview gotchas pre-filled)
-   - If high-stakes, also create `{target-dir}/eval/` dir w/ `baseline.md` stub (canonical input + acceptance criteria placeholders)
+   - Read `references/skeleton.md` → fill placeholders w/ interview answers → write to
+     `{skill-dir}/SKILL.md` for a library skill, or `{skill-dir}/skill.md` for an engagement deliverable.
+     The lowercase name is this workspace's client-content convention, not necessarily the target
+     runtime's entry filename
+   - Create `{skill-dir}/references/` dir
+   - If interview produced ≥3 known gotchas, also create `{skill-dir}/references/gotchas.md` (empty markdown stub w/ heading + interview gotchas pre-filled)
+   - If high-stakes, also create `{skill-dir}/eval/baseline-input.md` and
+     `{skill-dir}/eval/baseline-output.md` from the supplied companion skeletons
+   - For an engagement deliverable, remove or rewrite the skeleton's `Quality Guidelines` footer unless
+     those `library/reference/` files are intentionally included in the client package. No shipped skill
+     may rely on a workspace-only path the client will not receive
+   - Update `deliverable/INDEX.md`. Ensure `deliverable/deployment.md` installs the complete bundle into
+     the selected client runtime and names its required entry filename — commonly
+     `<skill-slug>/SKILL.md` — while preserving all companion relative paths
 
-6. **Run antipattern checklist.** Read `references/checklist.md` and run each grep/check against newly-written files. Report pass/fail per check.
+6. **Run antipattern checklist.** Read `references/checklist.md`, set its `SKILL_DIR` and `SKILL_FILE`
+   for the selected scope, and run each check against the newly written files. Report pass/fail per
+   check. For an engagement skill, also test a disposable copy installed exactly as
+   `deliverable/deployment.md` instructs.
 
 7. **Report.** Output:
    - Files written (full paths)
    - Antipattern checklist results
-   - Remaining TODOs for the user (e.g., "fill `eval/baseline.md` with canonical input")
-   - Reminder: test the skill by invoking `/{slug}` with a real input before relying on it
+   - Remaining TODOs for the user (e.g., "fill `eval/baseline-input.md` and
+     `eval/baseline-output.md` with the canonical pair")
+   - Reminder: test a library skill by invoking `/{slug}` with a real input; test an engagement skill
+     from its disposable installed form before relying on it
 
 ## Gotchas
 
@@ -114,8 +135,8 @@ If args missing, ask user.
 End-of-run report:
 
 ```
-Created skill: {scope}/.claude/skills/{slug}/
-  SKILL.md (frontmatter + body)
+Created skill: {actual skill directory}
+  {SKILL.md or skill.md} (frontmatter + body)
   references/skeleton-companion-files-as-needed.md
 
 Antipattern checklist: {N pass} / {M total}
@@ -124,7 +145,7 @@ Antipattern checklist: {N pass} / {M total}
   ...
 
 Next:
-  1. Test: invoke /{slug} with canonical input
+  1. Test: {invoke /{slug}, or install a disposable copy per deployment.md and invoke it}
   2. Fill: {any TODO refs}
   3. Iterate: refine based on first real-use feedback
 ```

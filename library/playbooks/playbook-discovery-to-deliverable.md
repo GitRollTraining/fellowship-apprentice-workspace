@@ -132,6 +132,11 @@ Invoke `choose-automation-approach` with the PRD draft, confirmed process, bound
 current Decision Register in context. Do not ask the Fellow to repeat information already on disk. Save
 the decision brief to `spec/automation-approach.md`.
 
+At the top of the saved engagement brief, add an **Engagement basis** section naming the exact
+`spec/requirements.md` version and status, current-state confirmation version, Decision Register review
+date, preparer and review date. The reusable skill owns the analysis shape; this playbook owns these
+engagement-specific provenance fields. Update them whenever the brief is revised.
+
 Treat this first pass as provisional. Its purpose before PRD sign-off is to find material conflicts such
 as an unavailable operation, an unacceptable data crossing, an unsupported runtime assumption or a
 human approval that the proposed workflow removed.
@@ -219,7 +224,16 @@ multi-hop pointer is valid only when every hop resolves.
 
 ### 8. Build the agreed deliverable
 
-For the default single-skill shape, invoke `create-skill` and write `deliverable/skill.md`. The build is
+Before invoking a builder, copy only the marked `COPY` blocks from
+`library/templates/deliverable-deployment.md` and `library/templates/deliverable-operations.md` into
+`deliverable/deployment.md` and `deliverable/operations.md`. Draft the selected runtime, required entry
+filename, client roles and whole-bundle install contract from the signed specification and current
+decisions. This gives the builder's installation test a real target; fill exact commands, signals and
+recovery as implementation makes them knowable.
+
+For the default single-skill shape, invoke `create-skill` with the signed PRD, specification and
+Decision Register as its answered build interview, then write `deliverable/skill.md`. Ask the owner or
+Fellow only for a genuinely missing build input; do not reopen signed requirements. The build is
 transcription from the specification plus target-specific implementation work, not a new requirements
 session.
 
@@ -227,12 +241,16 @@ For a larger solution, adapt the same template and inventory the components unde
 The template's larger-system example names the common concerns; this playbook does not attempt to teach
 an experienced Fellow how to architect every possible system.
 
-For every delivery shape, write the canonical operating instructions inside the delivery boundary:
+For every delivery shape, complete the canonical operating instructions inside the delivery boundary:
 
-- `deliverable/deployment.md` covers prerequisites, installation, configuration, start, upgrade or
-  replacement, rollback and uninstall where applicable; and
+- `deliverable/deployment.md` covers prerequisites, installation, configuration, start, verification,
+  upgrade or replacement, rollback and uninstall where applicable; and
 - `deliverable/operations.md` covers normal use, monitoring, failure response, recovery, credential
   rotation or revocation, maintenance and escalation.
+
+For a skill, run `create-skill`'s mandatory checklist only after these instructions contain the exact
+disposable installation path. For another delivery shape, run its equivalent clean-environment install
+check. Never ship the template wrapper or `COPY` markers.
 
 Keep detailed technical choice rationale in `spec/automation-approach.md`. Later handover material may
 summarise and point to the two operating files, but must not create a conflicting second authority. Add
@@ -242,6 +260,12 @@ No deliverable component may introduce new business behaviour. If implementation
 return to the PRD or technical-decision step that owns it.
 
 ### 9. Run adversarial review and dispose every finding
+
+For every delivered agent skill, first run `library/skills/scan-agent-skill/` against the complete
+installable unit, including companion scripts and references. Record the scanner version, command,
+input hash, report and disposition in `progress-log.md` or permitted verification evidence. A clean
+scan is triage, not proof of safety. If the scanner cannot run in the authorised environment, record
+`not run`, the reason and the manual inspection used; do not imply it passed.
 
 Run `library/personas/adversarial-reviewer.md` on every delivered skill with its applicable checklist.
 The existing persona is specific to `skill.md`; do not claim that it reviewed a service or larger system

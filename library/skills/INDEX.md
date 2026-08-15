@@ -23,7 +23,7 @@ than silent.
 | Skill | You reach for it when | What it does |
 |---|---|---|
 | `choose-automation-approach/` | you are choosing how an automation reaches systems, runs and acts | Runs an adaptive interview and recommends a proportionate deployment, integration, credential and high-stakes-control design while preserving the Fellow's overrides and accepted trade-offs. |
-| `create-skill/` | you are writing the deliverable | Runs a guided interview and scaffolds a SKILL.md with frontmatter, gotchas, and an eval baseline — the direct mechanism for engagement step 4, build an agent-executable skill.md. |
+| `create-skill/` | you are writing an agent skill | Runs a guided interview, scaffolds the skill and companions, checks the explicit authoring path and requires a client-delivered skill to be tested from its documented installed form. |
 | `digest-doc/` | the business hands you a document | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
 | `drive-portal/` | the process runs through an old web form | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |
 | `explain/` | you are writing for the owner | Shapes plain-language explanation for a reader unfamiliar with a field — usable both while the fellow makes sense of an unfamiliar business domain during the interview/reconstruction steps and when writing handover material the owner (unfamiliar with AI) can actually read. |

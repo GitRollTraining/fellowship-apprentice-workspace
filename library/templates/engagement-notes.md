@@ -58,7 +58,8 @@ style: descriptive
 ## Objective    (both modes)
 
 {What this engagement produces, concretely. Name the process, name who runs it today, and name the
-file that gets handed over: the agent-executable skill.md in deliverable/.}
+agreed delivery shape under `deliverable/`. One agent-executable skill is the common default, not the
+only valid result.}
 
 ## How you will know it worked    (lined up: rough is fine; running: firm and checkable)
 
@@ -71,8 +72,8 @@ file that gets handed over: the agent-executable skill.md in deliverable/.}
 ## First runnable slice    (running)
 
 {The smallest version of the deliverable that does one real step of the real process on one real case,
-and how you will know it worked. Build this before widening. A slice the owner has run beats a
-specification nobody has tested.}
+and how you will know it worked. Define this early; build it once the PRD and specification gates permit
+implementation, then prove it before widening. A slice the owner has run beats an untested broad build.}
 
 ## Context    (running)
 

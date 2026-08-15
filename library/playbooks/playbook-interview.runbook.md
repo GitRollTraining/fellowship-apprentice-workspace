@@ -79,6 +79,7 @@ are the numbered steps of `playbook-interview.md`.
 | Test the PRD for feasibility | `choose-automation-approach` | `library/skills/` | Makes runtime, integration, credential and high-stakes-control decisions without owning engagement bookkeeping |
 | Write the technical specification | `specification.md` | `library/templates/` | Joins the signed PRD to the technical decisions in the build contract |
 | Build the default single-skill deliverable | `create-skill` | `library/skills/` | Loads the standard and scaffolds `deliverable/skill.md`; larger agreed solutions adapt the build shape |
+| before reviewing a delivered skill | `scan-agent-skill` | `library/skills/` | Runs pinned local security analyzers against the complete installable unit; clean is evidence, not certification |
 | after the draft | `adversarial-reviewer` persona | `library/personas/` | Nobody grades their own work, and on a solo engagement there is nobody else in the room |
 | after Validator A | `playbook-output-phraser.md` | `library/playbooks/` | Creates the owner-facing account, source map and candidate package without changing validated behaviour |
 | after Output Phraser | `non-technical-owner` persona | `library/personas/` | Mandatory cold-reader preflight constrained to what the owner actually knew from discovery |

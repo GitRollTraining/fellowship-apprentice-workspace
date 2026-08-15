@@ -1,13 +1,15 @@
 # SKILL.md Skeleton
 
-Copy-paste this template into `{target-dir}/SKILL.md`, then fill the `{{placeholders}}`. Do not include this file's `# SKILL.md Skeleton` heading in the output — it's metadata for the creator, not the skill.
+Copy-paste this template into `{skill-dir}/SKILL.md` for a library skill or `{skill-dir}/skill.md` for
+an engagement deliverable, then fill the `{{placeholders}}`. Do not include this file's
+`# SKILL.md Skeleton` heading in the output — it is metadata for the creator, not the skill.
 
 ## Standard Skeleton
 
 ```markdown
 ---
 name: {{slug}}
-description: {{one-sentence purpose, action-oriented, ≤200 chars, tells router when to fire}}
+description: "{{one-sentence purpose, action-oriented, ≤200 chars, tells router when to fire; escape backslashes and double quotes}}"
 argument-hint: {{<required-arg> [optional-arg=default]}}
 ---
 
@@ -40,7 +42,7 @@ If args missing, ask user.
 
 | Key | Value |
 |---|---|
-| Skill location | `library/skills/{{slug}}/` |
+| Skill location | `{{actual workspace-relative authoring path}}` |
 | Companion refs | `references/{{ref-name}}.md` |
 
 ## Output
@@ -67,6 +69,10 @@ Adhere to:
 - `library/reference/agent-quality-guidelines.md` (runtime behavior)
 - `library/reference/skill-architecture.md` (structural principles)
 ```
+
+The Quality Guidelines footer is required for a library skill. For a client deliverable, omit it or
+rewrite it to point only to guidance that deliberately ships inside the skill bundle; a client skill
+must not depend on `library/` paths absent from the package.
 
 ## Companion Ref Skeletons
 
@@ -177,7 +183,9 @@ NO frontmatter on either eval file. Plain markdown.
 
 ## Filling Notes
 
-- **Description field:** action-oriented. "Use when X" or "When the user asks Y" pattern fires the picker reliably. Avoid "This skill is for...". Avoid examples.
+- **Description field:** action-oriented. "Use when X" or "When the user asks Y" pattern fires the
+  picker reliably. Keep the generated YAML value double-quoted and escape `\` and `"` inside it. Avoid
+  "This skill is for..." and avoid examples.
 - **Workflow steps:** numbered, terse imperatives. If a step needs >5 lines of detail, the detail belongs in a ref.
 - **Gotchas:** at least 1 even if you have to brainstorm one. A skill with no gotchas is usually a skill where the author hasn't yet discovered them.
 - **Style section:** omit entirely if no voice is prescribed. Don't write "Style: neutral" — that's noise.

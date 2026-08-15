@@ -21,10 +21,11 @@ traceability and records each delivered component in this INDEX.
 
 Every populated deliverable includes:
 
-- `deployment.md`: prerequisites, installation, configuration, start, upgrade or replacement, rollback
-  and uninstall where applicable; and
-- `operations.md`: normal use, monitoring, failure response, recovery, credential rotation or revocation,
-  maintenance and escalation.
+- `deployment.md`, copied from `library/templates/deliverable-deployment.md`: prerequisites,
+  installation, configuration, start, verification, upgrade or replacement, rollback and uninstall
+  where applicable; and
+- `operations.md`, copied from `library/templates/deliverable-operations.md`: normal use, monitoring,
+  failure response, recovery, credential rotation or revocation, maintenance and escalation.
 
 These files, not a handover summary, are the canonical operating instructions. Add a client-runnable
 smoke or health check when practical and inventory it here.
