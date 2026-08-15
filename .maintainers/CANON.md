@@ -57,6 +57,7 @@ even when the underlying tools work; those local repairs are called out below.
 | `library/templates/brief-design/SKILL.md` | writes the HTML owner account to the canonical Output Phraser filename instead of an unreferenced alternate name |
 | `library/templates/engagement-notes.md` | keeps the inherited planning shape while making its objective delivery-shape-neutral, placing implementation after the accepted requirements/specification gates and tying `handed-over` to current operational evidence |
 | `library/templates/engagement-progress-log.md` | preserves the inherited append-only log while removing a second mutable engagement-status field that could drift from Notes and the Decision Register |
+| `library/templates/index-manifest.md` | aligns the inherited recursive “every directory” rule with the shipped repository by defining governed work areas and a parent-inventoried companion/generated/evidence-directory exception |
 | `library/templates/process-reconstruction.md` | makes the current-state diagram default and the delivery-shape-neutral specification language agree with the engagement playbooks |
 
 These corrections make existing instructions executable; they do not replace the renderer or redesign
@@ -116,7 +117,7 @@ library/reference/deliverable-review-checklist.md	authored	-	-	8c5af4709f25fed8f
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
 library/reference/terminology.md	authored	-	-	b3972b4bd96a8a2248e92f7825a2bbc549db122e8818233f7d517805f145549f	reference	-
-library/reference/tool-inventory.md	authored	-	-	cfb2e9b6bd79650881360aeea2ad767ed8f579022ad5575c01bbd26c4a2007c4	reference	-
+library/reference/tool-inventory.md	authored	-	-	e998c7849f50f17137fc21a2fe0f808763fb095882e8fe6ba4114f93b9382508	reference	-
 library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2bd32580519aaef7b83ba6b76e	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
@@ -196,7 +197,7 @@ library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4
 library/sops/INDEX.md	authored	-	-	639706f4ff9a8d02c21e88de68ed402875e1eac9edc1bf137ada0780999065f3	sops	-
 library/sops/agent-settings.md	authored	-	-	1089dac694ca2b6cba0c2d5567aa278b1c62e4d7663b8bde9d334cd6f2e8d0a0	sops	-
 library/sops/working-standards.md	authored	-	-	654626a30723e6c01d582ae074f252b63be54221abe941d4123cabfa094d30b4	sops	-
-library/templates/INDEX.md	authored	-	-	da99b63334400b33c7287685263ba88e2ec1a05ada67017724454db68718634b	templates	-
+library/templates/INDEX.md	authored	-	-	1d0d791e437602dd4f7006ea3acec670a618c6111b96ef8490619d5435f58609	templates	-
 library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	672a4c831ab64da77845cd0916008ec1b49bcb3e1d8d4e58ec000180211671fc	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
 library/templates/brief-design/reference/anti-patterns.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/anti-patterns.md	-	6ad4aaea116cdce6f05fa78987236a0ad7a9c1e02e3a72b095c052c2a53ce1ba	templates	f07bc3d7606fedb198e725c17adc0506bb6c10242adbe335ee103cbcc76bbcb4
 library/templates/brief-design/reference/base.html	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/base.html	-	52010bf038b5aced0bfd8f4f1b84f00e8c4fd9f02fd1b83f7505f9630259e2a4	templates	09f76303513684fdf480d758e5df6ae8f04a2e3eafd6bdbe8af276bfccf5a002
@@ -214,7 +215,7 @@ library/templates/handoff-package-manifest.md	authored	-	-	7b803decfffd9bc915eb2
 library/templates/handoff-source-map.md	authored	-	-	049f647ee79e10e6b83aff09d9d8d2ef804b010d099bcb79f289fed49e5b6e3e	templates	-
 library/templates/handoff-validation-report.md	authored	-	-	17b7127e6e13082e5b9e020b4f5701353f19d61dfb4ba9eea0d61c88f7a8df7e	templates	-
 library/templates/handover.md	authored	-	-	cdfb76f0329c995e9c82db951fc3bd34c76ffd07bef49a223267329925927e70	templates	-
-library/templates/index-manifest.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-index-manifest.md	-	2a606eb4c7b1dba287bc2876bed9db688033651fcd44ea0268857f8544b9911d	templates	65c45b79453eb8912d174b33bbac4814c6e429090ed3d2ae235628a57fa8368a
+library/templates/index-manifest.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-index-manifest.md	-	95cdf121dcfc7e98a4a4ed736f0fdda22a3042d049512270052409f0180203c3	templates	65c45b79453eb8912d174b33bbac4814c6e429090ed3d2ae235628a57fa8368a
 library/templates/interview-record.md	authored	-	-	63134e3f01cf7e77d3ab6faa5bd31e32d2ebcb0e20bff03c52cc0fd78bee8370	templates	-
 library/templates/operational-acceptance.md	authored	-	-	24ffcd668f3d4b424221bc677356956fec67fce4f6758d13717e7aa2944fb0dc	templates	-
 library/templates/owner-acceptance.md	authored	-	-	88afb87aa9b02abc8803f0c22c892c19f79cd59605b1209cc12c25f95c58e5f8	templates	-

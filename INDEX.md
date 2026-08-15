@@ -34,6 +34,6 @@ curated library of skills, playbooks, personas and standards they work with.
 
 ## Conventions
 
-Set out in `CLAUDE.md`. In short: `library/` is read-only, every directory carries an `INDEX.md`,
+Set out in `CLAUDE.md`. In short: `library/` is read-only, every governed work area carries an `INDEX.md`,
 `UPPERCASE.md` means a workflow requires the file, and client material lives under `engagements/` so it
 can be deleted as a unit.

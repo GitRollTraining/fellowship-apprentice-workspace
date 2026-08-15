@@ -53,7 +53,8 @@ Hash and inventory the snapshot in `history/INDEX.md`. Put the full engagement-r
 path, for example
 `verification/history/validator-a-20260815T041500Z/verification/deliverable-report.md`, in the new
 record's `supersedes` field. Never edit an archived run or a failed/passed current run into a different
-verdict.
+verdict. Run directories are evidence bundles inventoried by `history/INDEX.md`; they do not each need
+another nested INDEX.
 
 Treat each `history/<stage>-<timestamp>/` directory as a synthetic engagement root. An
 engagement-relative pointer retained inside an archived report, such as

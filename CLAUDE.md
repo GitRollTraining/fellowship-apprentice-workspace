@@ -31,12 +31,19 @@ for a sequence — a session fills `interview/` and `process/` in the same after
 receives more material after `process/` has. File as you go; an engagement you file at the end is an
 engagement you reconstruct from memory.
 
-## Every directory carries an INDEX.md
+## Every work area carries an INDEX.md
 
-One per directory, at every depth: **Purpose** in one or two sentences, an **Inventory** table listing
-every item with a one-line description, and a **Freshness** table. When you create a file or a
-directory, update the parent `INDEX.md` in the same operation. A sweep to fix this later is a sweep
-that does not happen.
+Every repository layer, engagement root, six structural engagement directories and independently
+navigated human-maintained work area carries one: **Purpose** in one or two sentences, an **Inventory**
+table listing every item with a one-line description, and a **Freshness** table. When you create a file
+or directory, update the governing `INDEX.md` in the same operation. A sweep to fix this later is a
+sweep that does not happen.
+
+Companion implementation directories such as `references/`, `scripts/`, `assets/` and `eval/`, and
+generated/session/evidence bundles, do not need a nested INDEX when their complete contents are
+inventoried by the nearest governed parent or component entrypoint. Give one its own INDEX as soon as it
+becomes an independently navigated work area. This exception avoids recursive manifest paperwork; it
+does not permit an unlisted directory.
 
 Spoke manifests declare their parent on line 1: `<!-- upstream: path/to/parent/INDEX.md -->`.
 

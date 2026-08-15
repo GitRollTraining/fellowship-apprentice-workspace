@@ -26,7 +26,7 @@ ignores it renders wrongly without raising an error.
 | `handoff-source-map.md` | Internal `HC-*` claim-to-authority map joining owner-facing source, rendered output and candidate package hashes |
 | `handover.md` | Owner-account shape: what was delivered, what it will not do, what to check and where canonical operating instructions live |
 | `handoff-validation-report.md` | Internal Validator B record: passed-candidate integrity, package inventory, claim fidelity, comprehension gates, rendering and archive integrity |
-| `index-manifest.md` | Defines the INDEX.md manifest the toolbox mandates in every directory - Purpose, Inventory, Freshness, upstream pointer |
+| `index-manifest.md` | Defines the INDEX manifest required for governed work areas, including companion-directory inventory rules, Purpose, Inventory, Freshness and upstream pointer |
 | `interview-record.md` | What was heard kept visibly apart from what was concluded, one statement per entry in the owner's own words, and a required pointer per load-bearing statement |
 | `process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
 | `process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
