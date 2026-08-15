@@ -62,8 +62,11 @@ that `interview/`, `process/`, `spec/`, `deliverable/`, `handover/` and `verific
 `INDEX.md`.
 
 Edit the copied root `INDEX.md` so its title, purpose and freshness describe the real engagement. Add
-the client directory to `engagements/INDEX.md` in the same operation. Do not leave `example-client` as
-the title of a live engagement.
+the client directory to `engagements/INDEX.md` in the same operation. In every copied child `INDEX.md`,
+replace the first-line upstream pointer with
+`<!-- upstream: engagements/<client-slug>/INDEX.md -->`. Then search the copied tree for
+`example-client`; no live title, upstream pointer or example-only status may remain. Do not leave
+`example-client` as the title of a live engagement.
 
 ### 3. Initialise the control files
 

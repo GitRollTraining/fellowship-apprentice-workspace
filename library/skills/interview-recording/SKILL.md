@@ -1,6 +1,6 @@
 ---
 name: interview-recording
-description: Use when an interview recording must become a session record: transcribe with speaker labels, refine, reduce to key points, decisions, open questions. Fires on transcribe this interview.
+description: "Use when an interview recording must become a session record: transcribe with speaker labels, refine, reduce to key points, decisions, open questions. Fires on transcribe this interview."
 argument-hint: <path/to/audio> [attendee-count] [session title]
 ---
 

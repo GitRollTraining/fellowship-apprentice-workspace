@@ -76,23 +76,51 @@ symlink in the candidate is blocking unless the signed specification explicitly 
 case, define and record a deterministic manifest representation that includes the link and target text
 before validation begins. The example below is only for a regular-file candidate.
 
-For example, from the engagement root:
+For example, from the engagement root, this Python implementation is portable across the macOS and
+Linux shells supported by the workspace. It fails on symlinks, tab/newline path names and an empty
+candidate instead of allowing a broken pipeline to write a plausible empty manifest:
 
-```sh
+```bash
 DELIVERABLE=deliverable
 VERIFICATION=verification
 mkdir -p "$VERIFICATION/evidence/commands" \
   "$VERIFICATION/evidence/fixtures" \
   "$VERIFICATION/evidence/observed-results"
-find "$DELIVERABLE" -type f -print0 | LC_ALL=C sort -z |
-  while IFS= read -r -d '' file; do
-    digest="$(shasum -a 256 "$file" | awk '{print $1}')"
-    printf '%s\t%s\n' "$digest" "${file#"$DELIVERABLE"/}"
-  done > "$VERIFICATION/deliverable-manifest.tsv"
+python3 - "$DELIVERABLE" "$VERIFICATION/deliverable-manifest.tsv" <<'PY'
+import hashlib
+import pathlib
+import sys
+
+root = pathlib.Path(sys.argv[1])
+out = pathlib.Path(sys.argv[2])
+if not root.is_dir():
+    raise SystemExit(f"missing deliverable directory: {root}")
+
+files = []
+for path in root.rglob("*"):
+    if path.is_symlink():
+        raise SystemExit(f"symlink requires an explicit manifest contract: {path}")
+    if path.is_file():
+        rel = path.relative_to(root).as_posix()
+        if "\t" in rel or "\n" in rel:
+            raise SystemExit(f"path cannot be represented safely in TSV: {rel!r}")
+        files.append((rel, path))
+
+if not files:
+    raise SystemExit("deliverable contains no regular files")
+
+rows = []
+for rel, path in sorted(files):
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    rows.append(f"{digest}\t{rel}\n")
+out.write_text("".join(rows), encoding="utf-8")
+print(f"wrote {len(rows)} manifest rows to {out}")
+PY
 ```
 
 If this command is not supported by the engagement runtime, choose an equivalent deterministic command
-and record the exact command, runtime and exit code. Do not silently hand-edit the manifest.
+and record the exact command, runtime and exit code. Assert the recorded row count equals the number of
+regular candidate files. Do not silently hand-edit the manifest.
 
 ### 2. Build the acceptance-evidence matrix
 

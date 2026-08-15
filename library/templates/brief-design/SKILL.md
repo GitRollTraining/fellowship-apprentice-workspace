@@ -83,7 +83,7 @@ maintaining the same content twice.
 
 ```
 cp library/templates/brief-design/reference/base.html \
-   engagements/<client-slug>/handover/handover.html
+   engagements/<client-slug>/handover/owner-account.html
 ```
 
 Then replace every `<!-- REPLACE: ... -->` block. Anything you do not use, delete — an unused component

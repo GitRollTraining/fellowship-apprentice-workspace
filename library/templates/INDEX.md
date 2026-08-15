@@ -28,7 +28,7 @@ ignores it renders wrongly without raising an error.
 | `interview-record.md` | What was heard kept visibly apart from what was concluded, one statement per entry in the owner's own words, and a required pointer per load-bearing statement |
 | `process-confirmation.md` | Near-direct match for reconstructing the owner's process: step-by-step, systems/data, pain points, and open items written for the owner to mark up and correct. |
 | `process-inventory.md` | Extracts every workflow/process surfaced during an interview into a table plus per-item verbatim-quote evidence — the core technique for reconstructing a business owner's process from what they actually said. |
-| `process-reconstruction.md` | A per-step input/output schema-plus-sample, decision-criteria, human-approval-point, and systems-table capture form that converts interview answers directly into the granular detail a spec and an agent-executable skill.md need. |
+| `process-reconstruction.md` | A per-step input/output, decision-rule, approval and system capture form that converts interview answers into detail the specification and agreed deliverable need. |
 | `persona-preflight.md` | Internal exact-input record for the constrained non-technical-owner cold-reader run |
 | `owner-acceptance.md` | Internal hard-gate record of the real owner's comprehension and acceptance against exact package bytes |
 | `requirements-gathering.md` | PRD-like document for owner sign-off: desired outcomes, scope, user stories, requirements, acceptance criteria, operational constraints and feasibility inputs, all traced to confirmed discovery. |

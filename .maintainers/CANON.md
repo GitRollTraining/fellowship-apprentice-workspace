@@ -34,9 +34,9 @@ the patched files with one comparison. Where they are equal, the file is byte-id
 > Illustrative, not exhaustive. The authoritative divergence list is the block below:
 > every row whose column 5 differs from column 7 carries a deliberate local patch.
 
-Every one was patched for the same class of reason — the upstream file instructed the agent to read
-something that lives in a private GitRoll repository and does not ship here, so the instruction resolved
-to nothing for the person the copy was given to.
+The original patches replaced instructions that resolve only inside private GitRoll repositories. A
+literal pre-pilot walkthrough also found a few invocation and filename mismatches that stop a new Fellow
+even when the underlying tools work; those local repairs are called out below.
 
 | Component | Why it diverges from its source |
 |---|---|
@@ -46,12 +46,16 @@ to nothing for the person the copy was given to.
 | `library/skills/create-skill/references/checklist.md` | same repoint; two checks looked in a home directory |
 | `library/skills/create-skill/references/questions.md` | the scope question offered a choice that does not exist here |
 | `library/skills/create-skill/references/skeleton.md` | same repoint; the skill-location row named a home directory |
-| `library/skills/digest-doc/SKILL.md` | same repoint; its step-0 probe recognised exactly two GitRoll repositories and halted here; the govdoc family and both eval baselines were built from federal contract documents and were not shipped |
+| `library/skills/digest-doc/SKILL.md` | same repoint; its step-0 probe recognised exactly two GitRoll repositories and halted here; the govdoc family and both eval baselines were built from federal contract documents and were not shipped; its colon-bearing YAML description is quoted so the skill loader can parse it |
 | `library/skills/digest-doc/references/routing.md` | the destination table named GitRoll's two repositories; rewritten for this workspace |
 | `library/skills/explain/SKILL.md` | routed to a doctrine file that did not ship; repointed to `library/reference/` |
-| `library/skills/flowchart/SKILL.md` | same repoint; its first workflow step copied its own scripts out of the author's home directory; its eval fixture was a named client's delivery architecture and was not shipped |
+| `library/skills/flowchart/SKILL.md` | same repoint; its first workflow step copied its own scripts out of the author's home directory; its eval fixture was a named client's delivery architecture and was not shipped; the documented render and check commands now pass the paths their shipped scripts require, and the sample defines every referenced node |
+| `library/skills/interview-recording/SKILL.md` | quotes a colon-bearing YAML description so the skill loader can parse the already-vendored skill |
+| `library/templates/brief-design/SKILL.md` | writes the HTML owner account to the canonical Output Phraser filename instead of an unreferenced alternate name |
+| `library/templates/process-reconstruction.md` | makes the current-state diagram default and the delivery-shape-neutral specification language agree with the engagement playbooks |
 
-Nothing here was patched to change what a skill teaches.
+These corrections make existing instructions executable; they do not replace the renderer or redesign
+the inherited skills.
 
 ## Checking what has moved
 
@@ -95,18 +99,18 @@ library/personas/adversarial-reviewer.md	authored	-	-	d21a47a2d37774928e7de26798
 library/personas/non-technical-owner.md	authored	-	-	8ce2d9e4213d6644366ead7e23d191254135adf70ce73510b70804fdb4aaeaa7	personas	-
 library/playbooks/INDEX.md	authored	-	-	07493d740971e6a691d84a6fc9ac03b4075f46f3d8ee8b22152ff5b893930f65	playbooks	-
 library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	10e81a749ae48ef1c5be3d7306db27fa789530a5c6d089e34a55d43c0a41c31e	playbooks	-
-library/playbooks/playbook-environment-setup.md	authored	-	-	1fe06f1872d1845baaa1b20baf2a16ad7f7e4de10de1dc73219688c9cc0a4fdc	playbooks	-
+library/playbooks/playbook-environment-setup.md	authored	-	-	de8e486bf8640d4243225b534f939affea4ae5f8c578d70df169f7a04061e0ff	playbooks	-
 library/playbooks/playbook-interview.md	gitroll-dev/curriculum	~/Documents/jobs/gitroll/tasks/gitroll-curriculum.nosync/programs/ai-fellowship/playbooks/playbook-interview.md	2c97511	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815	playbooks	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815
 library/playbooks/playbook-interview.runbook.md	authored	-	-	62d3ab1a54df2139fc0f980c25576a49891cf90c37db66bde469dc9afd99ab9f	playbooks	-
 library/playbooks/playbook-output-phraser.md	authored	-	-	971687ef16d5c0e91ca71bf0adbb53c5f08a580fb6496a3b4b056760a9805c8a	playbooks	-
-library/playbooks/playbook-validate-deliverable.md	authored	-	-	46de357bb38ef3816f289006e0a9ce4064246702fadb323c1eef699fcf45c6c4	playbooks	-
+library/playbooks/playbook-validate-deliverable.md	authored	-	-	af0d61d56b5a952a02c54354b48d899154c2071e51ef4e5f33e0e99960eb64a3	playbooks	-
 library/playbooks/playbook-validate-handoff.md	authored	-	-	77e5166b87e02fa4639745614ec7ce4f6031fe6ae25c238d963eea0c10f9b6dd	playbooks	-
 library/reference/INDEX.md	authored	-	-	805245f551328307178e8170ece1184751ab6833d5e9d0cc73e4f2468ea84b90	reference	-
 library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/references/agent-quality-guidelines.md	41bf600	1d456ebac204b7d969b5066a9e2c1035b6cbaaaa9f10ed0d7be944d4b666c812	reference	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce
 library/reference/deliverable-review-checklist.md	authored	-	-	8c5af4709f25fed8f8b6f42956d75edb1952908871b6fa8a0f2402f64da18cab	reference	-
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
-library/reference/terminology.md	authored	-	-	c7812179def840844c31bf86c9e0b14f62acfa9f43b2a03312f5c3e3f1ea3d37	reference	-
+library/reference/terminology.md	authored	-	-	b3972b4bd96a8a2248e92f7825a2bbc549db122e8818233f7d517805f145549f	reference	-
 library/reference/tool-inventory.md	authored	-	-	31b52cfc6fa87431e0240efb57c087ce2ab0b1813798101d717cd04a1a8baef0	reference	-
 library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2bd32580519aaef7b83ba6b76e	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
@@ -130,7 +134,7 @@ library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-cr
 library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	8ae68ae8b7a7fe85cccbdcaa43d6734f02805f88aa8d3ea92ec68e10b9841446	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	a61e97e4b61d25a33533a1ebeeac6176e4a77ceb05f0aafe248231cc8381d470	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc
 library/skills/create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	0376dfc8a5235c473963267f7070a402d3ec7ada861c496653923a60e26ec612	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
-library/skills/digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	c94e865160cbc3905c8dae58ddf093ed5124b41516746da9dec70e3481ec2511	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
+library/skills/digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	2be2038e881ac675b76da0b465c693c1fbf9eaa1057231b5f1b1e49ce1675da9	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
 library/skills/digest-doc/references/article-gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-gotchas.md	41bf600	46075a9478c892e6bbba32fd8c2235181eb21a46e3642e71e1aeef3b2a1c9515	skills	b243c178d8977f3ca050270a8071a335ca251f01ef559f8504107e8d72bb62fa
 library/skills/digest-doc/references/article-importance-rules.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-importance-rules.md	41bf600	17b853b9d6da4ffe56e4ce1522b66f6c1838c48da81d61495007bd2509c40025	skills	bb8fc7a34b631e5d4ba40260b2dd6a38ffd3743974217bfaea6d421b40df8cf6
 library/skills/digest-doc/references/article-schemas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-schemas.md	41bf600	60e4e3ba77a3ad1d7dc630b94336a87cf7fb79cc913a67195c83b5826f5eccde	skills	149ced42e4f73ae93a20e5b2a998bcf6cba317598a05640e4a5acd5c3f9bf7e5
@@ -143,7 +147,7 @@ library/skills/drive-portal/references/reconnaissance.md	WeiKuoWei/dotclaude	~/.
 library/skills/drive-portal/references/upload-and-frames.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/upload-and-frames.md	-	9ba0503297910bb223e8f93c5724b2149d8594c8921847be358592b1520c4c2f	skills	b737f888bd456963ebe9c6c3fbdc7f04f525a60c0121ec0f3c3bd4d93043df11
 library/skills/drive-portal/references/verify-save.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/verify-save.md	-	f6bf156e3419968098007aed841eca8a0fb665ecd9285512f0aed51c11162023	skills	e0637a925f1ca8a627327e7b619c32d1ebdd4cdf0f861e54b699c0005db760f9
 library/skills/explain/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-explain/SKILL.md	41bf600	bd3ab2293e88cfcb0a3e01fc9ee38e461d84df532a54ab2b7f8a39d8c92b85ce	skills	fd9137c2f1e4460a2040ac51453babf0f901a8c225f2117c3d4bec9f48751ce4
-library/skills/flowchart/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/SKILL.md	41bf600	9185d66e38a1bddcf504f81f8796cea5fcb3942d2fb98756f794b289ec94c903	skills	5f373e652193a5a67b1a61971e691562957faa2f660dd7e02a6a4bed0f799894
+library/skills/flowchart/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/SKILL.md	41bf600	284b2a27825847065417646aa92dd0a4baaec7acdac0555ffa7f1888191ea83b	skills	5f373e652193a5a67b1a61971e691562957faa2f660dd7e02a6a4bed0f799894
 library/skills/flowchart/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/gotchas.md	41bf600	375ed2910c37b012d7c7a067bcbc576afaa8fd9e0e735601d34fa977fdd75265	skills	375ed2910c37b012d7c7a067bcbc576afaa8fd9e0e735601d34fa977fdd75265
 library/skills/flowchart/references/layout.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/layout.md	41bf600	5278c7a798b883e579cd434fa544eb9368123d231a9a325b2906b619a5b89e48	skills	5278c7a798b883e579cd434fa544eb9368123d231a9a325b2906b619a5b89e48
 library/skills/flowchart/references/symbols.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/symbols.md	41bf600	d326852be81c84f5491f9a868b3aac96a4b7eeadfecae13f5a363edf9a56c6c3	skills	d326852be81c84f5491f9a868b3aac96a4b7eeadfecae13f5a363edf9a56c6c3
@@ -152,7 +156,7 @@ library/skills/flowchart/scripts/layout.py	WeiKuoWei/dotclaude	~/.claude/skills/
 library/skills/flowchart/scripts/render.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/scripts/render.py	41bf600	a3cd8cc799b83d243db9c982a3ae085e9056af31e0e0aa1ab4dbdca9812eb322	skills	a3cd8cc799b83d243db9c982a3ae085e9056af31e0e0aa1ab4dbdca9812eb322
 library/skills/flowchart/scripts/render_to.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/scripts/render_to.py	41bf600	82c7f4fd89c83a37edc223369d3e52c4f499bd12b9f38053c66da39132638429	skills	82c7f4fd89c83a37edc223369d3e52c4f499bd12b9f38053c66da39132638429
 library/skills/flowchart/scripts/shapes.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/scripts/shapes.py	41bf600	c93dd10fa42512ce294d8f77727f74e12a4f816dc01d92c739029f901bfcaa7c	skills	c93dd10fa42512ce294d8f77727f74e12a4f816dc01d92c739029f901bfcaa7c
-library/skills/interview-recording/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/SKILL.md	-	6d0f9e69194405cbfd33a14b3cf22c8fa75a7d75d98561494bbaaa266139fd2c	skills	304b61f4cc5f4dec22965b6dce6e736a43ea3b7472194bd6c568dfa03ae8ac4f
+library/skills/interview-recording/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/SKILL.md	-	94cc7af01ccaade50421b0d8be3916dd72f6e75dfbc46e7f1fd2804fdccb0559	skills	304b61f4cc5f4dec22965b6dce6e736a43ea3b7472194bd6c568dfa03ae8ac4f
 library/skills/interview-recording/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/references/gotchas.md	-	fe7e7b9b068ae28524c6d1b4ac96f96c7bef051786c50c5834bcd5ceb0d417c9	skills	5de84867e8715dfcbe7fac306918016b3dd11a30359ed39fb2515e6107ec08ca
 library/skills/interview-recording/references/refine-and-breakdown.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/references/refine-and-breakdown.md	-	b6f409611668559d17056a5856472a97ecde4f40ab7a4331c347708bfef5ab9f	skills	c3e2b0b3768e3a7bba9cc0d4002f7619d66af91cdd760e3dddb86d8040c2323b
 library/skills/kb-restructure/SKILL.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/SKILL.md	9e51feb6	f967a2183f789ce49f694843d524497b2ac6347b710a5c37806a2599d3ef3d7d	skills	9860d9bba894f0c6b94d7ebfc8975b5f27efe5808751283b0d9c890ed9a8a750
@@ -187,8 +191,8 @@ library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4
 library/sops/INDEX.md	authored	-	-	639706f4ff9a8d02c21e88de68ed402875e1eac9edc1bf137ada0780999065f3	sops	-
 library/sops/agent-settings.md	authored	-	-	890ed829d286e93fdf18e44dba7801ec9121f39f8cbe8bc333dc678c7ad1a997	sops	-
 library/sops/working-standards.md	authored	-	-	654626a30723e6c01d582ae074f252b63be54221abe941d4123cabfa094d30b4	sops	-
-library/templates/INDEX.md	authored	-	-	449c7c121ca067d3df01eae3e8370b22e209b88ab5705a610b8db3b0a1d1d4f7	templates	-
-library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	e2a0abf1a6e881d293c348e08bf8ee95357575671b54a18139611f3a7fbec9d4	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
+library/templates/INDEX.md	authored	-	-	d0ce3d202fd1ee089bf0aa5c314a2f004cc99d0f34579933a1a89bb3b93f8996	templates	-
+library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	672a4c831ab64da77845cd0916008ec1b49bcb3e1d8d4e58ec000180211671fc	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
 library/templates/brief-design/reference/anti-patterns.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/anti-patterns.md	-	6ad4aaea116cdce6f05fa78987236a0ad7a9c1e02e3a72b095c052c2a53ce1ba	templates	f07bc3d7606fedb198e725c17adc0506bb6c10242adbe335ee103cbcc76bbcb4
 library/templates/brief-design/reference/base.html	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/base.html	-	52010bf038b5aced0bfd8f4f1b84f00e8c4fd9f02fd1b83f7505f9630259e2a4	templates	09f76303513684fdf480d758e5df6ae8f04a2e3eafd6bdbe8af276bfccf5a002
 library/templates/brief-design/reference/components.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/components.md	-	dbd6b05780916f7df6daddcb4c5d50e07005047da8b7794ad590ab2f860a5b05	templates	c860e9de2f367c6b24a4fc8898e2296b5df8f0745dc20cc025ebb24330e2a464
@@ -209,7 +213,7 @@ library/templates/owner-acceptance.md	authored	-	-	7c3a40bd35db2f5acfeddcd57a269
 library/templates/persona-preflight.md	authored	-	-	ec1fa04bfa68009397d29dab5fbbe1e6dd9330be1c314e00986d4474521fd002	templates	-
 library/templates/process-confirmation.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/comm/comm-client-workflow-confirmation.md	-	cc68c45009a1b871580945d320d57e77ed37e1e85559be86033603ca162d3749	templates	9083831b9957ebc0c091dc488c05e9c70b0a49464ab830f0ea34c843cef5183b
 library/templates/process-inventory.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/research/research-workflow-inventory.md	-	70f2b8ab854c34dd303dcd4e257b3c5face8d38e59a25b9c676ddc833c177e38	templates	b5ada5e67b77a359a1f8876a8cce869c6267a5c22b7576eda69ed12ce6886be5
-library/templates/process-reconstruction.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/research/research-workflow-step-worksheet.md	-	ace0957e922b2ef0a2fb2f76e30c3d235358cdfdd2c2b7bd85796e00119baca1	templates	3d4c117da58f122ecd4b287fef0b1d02183c4a483b0ee32ca55e2d23fe71bd1b
+library/templates/process-reconstruction.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/research/research-workflow-step-worksheet.md	-	68a74ea5544f3f299884c410935ee5671b0c675ea74090d1b0988b9db762c5a0	templates	3d4c117da58f122ecd4b287fef0b1d02183c4a483b0ee32ca55e2d23fe71bd1b
 library/templates/requirements-gathering.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/comm/comm-client-requirements-gathering.md	-	5792420e6f0091169851dc1f1bda55cf5ac82c45299be931eca976c4ed80efdd	templates	3ea47825b28b62190fdd489bbb3670e873ce8d5720008cdd60679efb78bbc042
 library/templates/specification.md	authored	-	-	ac0c31d72a29e7e8614c25c35c923c13d6492435f4f1dd190720775fbdad8fd7	templates	-
 ```

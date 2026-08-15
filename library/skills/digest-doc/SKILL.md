@@ -1,6 +1,6 @@
 ---
 name: digest-doc
-description: Digest a document the business already has into a page-sourced fact-sheet. One family: article - anything written down, from a supplier agreement to a printed procedure to a web page. Use on digest this, summarize this document, or a document the owner hands you.
+description: "Digest a document the business already has into a page-sourced fact-sheet. One family: article - anything written down, from a supplier agreement to a printed procedure to a web page. Use on digest this, summarize this document, or a document the owner hands you."
 argument-hint: <file-path-or-url-or-pasted-text>
 ---
 
