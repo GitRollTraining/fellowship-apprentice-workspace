@@ -16,14 +16,14 @@ first section.
 ```html
 <header class="header">
   <div class="kicker">Handover</div>
-  <h1 class="title">Wholesale order intake, running on its own</h1>
+  <h1 class="title">Wholesale order intake, prepared for owner review</h1>
   <p class="subtitle">What it does, how to run it, and what to check each week · 2026-03-04</p>
 
   <dl class="props">
     <dt>Business</dt><dd>Riverside Bakery</dd>
     <dt>Contact</dt><dd><span class="mention">Dana</span> · owner</dd>
     <dt>Process</dt><dd>Wholesale orders arriving by email, Monday to Friday</dd>
-    <dt>Status</dt><dd><span class="tag green">Handed over</span> &nbsp; run by the shop since 2026-03-01</dd>
+    <dt>Package version</dt><dd>v1 candidate · handed-over status requires later operational acceptance</dd>
     <dt>Last checked</dt><dd>2026-03-04</dd>
   </dl>
 </header>

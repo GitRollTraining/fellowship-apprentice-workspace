@@ -6,7 +6,8 @@ The regressions to prevent. Each one happens by default unless you push against 
 
 Never:
 
-- **Inter, Roboto, Arial or the system default as the chosen face.** Geist, with those only as fallback.
+- **A remote web font in a supposedly portable one-file brief.** Use the supplied local system stack;
+  do not create a network request or an unstated client-data disclosure merely for typography.
 - **Monospace as decoration.** `<code>` is for a real file path, a real identifier, a real command.
 - **Bold and italic and uppercase and colored** on the same words. Pick one form of emphasis.
 - **All-caps headings.** Uppercase belongs on small tracked labels and nowhere else.
