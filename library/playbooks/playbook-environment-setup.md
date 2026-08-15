@@ -90,7 +90,8 @@ initial decision surface, not answers to copy from one client to another.
 Resolve `EW-001`, `EW-002` and `EW-003` in `decision-register.md` before importing client material or
 connecting client systems. Record:
 
-- which data categories may enter the fork;
+- which data categories may enter the fork or leave it for an external discovery processor, for what
+  purpose and under which authorised provider;
 - which may be Git-tracked, which must use an ignored `*.local.*` path, and which must remain in a
   client-owned system;
 - which client-owned identities may be used, their permission scope and storage mechanism;

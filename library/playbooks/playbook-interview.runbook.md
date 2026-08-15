@@ -67,7 +67,7 @@ are the numbered steps of `playbook-interview.md`.
 
 | Step | Tool | Where it is | Why this one |
 |---|---|---|---|
-| 1 Record the session | `interview-recording` | `library/skills/` | The conversation becomes a transcript a process can be reconstructed from |
+| 3–14 Record the session | `interview-recording` | `library/skills/` | The in-room conversation becomes a transcript a process can be reconstructed from |
 | between 19 and 21 Confirm the reconstruction | `flowchart` | `library/skills/` | A checked diagram is the default confirmation view when sequence, branching, a loop or handoff gives the owner a relationship to inspect |
 | 7, 8, 12, 13 Reconstruct | `process-reconstruction.md` | `library/templates/` | Per-step capture, exceptions as named cases, the three boundary questions, and what happens when it breaks |
 | 15 to 17 Write the record | `interview-record.md` | `library/templates/` | Heard kept visibly apart from concluded, with a required pointer column |

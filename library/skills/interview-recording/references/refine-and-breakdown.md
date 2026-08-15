@@ -3,7 +3,7 @@
 Loaded by workflow step 5. Two outputs from one input: a transcript a person can read, and a one-page
 reduction of what was said.
 
-## Frontmatter, on all three files
+## Frontmatter, on the raw transcript and both derived files
 
 ```yaml
 ---
@@ -16,9 +16,11 @@ audio: audio.local.m4a
 ---
 ```
 
-## Refine, into refined.md
+## Refine, into the permitted refined transcript path
 
-Input: `original.md`. Goal: a readable transcript with every turn attributed and the language intact.
+Input: `original.local.md`. Output: tracked `refined.md`, ignored `refined.local.md` or a
+client-system record, exactly as `EW-001` permits. Goal: a readable transcript with every turn
+attributed and the language intact.
 
 1. **Clean the artifacts.** Remove duplicated lines, filler stutters that obscure the meaning, obvious
    mis-segmentation. Do not paraphrase and do not summarise — a refined transcript is still a transcript.
@@ -38,9 +40,11 @@ Input: `original.md`. Goal: a readable transcript with every turn attributed and
 
 If the source was already a clean human transcript, refine is light: labels and artifact cleanup only.
 
-## Reduce, into breakdown.md
+## Reduce, into the permitted breakdown path
 
-Input: `refined.md`. Style: descriptive fact-sheet. Three sections, in this order, none omitted.
+Input: the permitted refined transcript path. Output: tracked `breakdown.md`, ignored
+`breakdown.local.md` or a client-system record, exactly as `EW-001` permits. Style: descriptive
+fact-sheet. Three sections, in this order, none omitted.
 
 ```markdown
 # {session title} — breakdown
@@ -76,7 +80,8 @@ Filled, from a first session with the owner of a small bakery:
 Rules:
 
 - One sentence per point. No narrative, no persuasion, no adjective that grades the business.
-- **Every point carries a pointer into `refined.md`** — a timestamp, a short quotation, or both. A
+- **Every point carries a pointer into the permitted refined transcript** — a timestamp, a short
+  quotation, or both. A
   breakdown you cannot trace back is a set of claims you authored (`library/sops/working-standards.md`,
   rule 1: facts are sourced, the agent does not author them).
 - Names, not roles, wherever the transcript gives you a name.

@@ -82,7 +82,7 @@ pass. `superseded` passes only when it names a live replacement ID.
 
 | ID | Scope | Decision point | Status | Current position | Owner | Source | Required before | Revisit trigger |
 |---|---|---|---|---|---|---|---|---|
-| EW-001 | engagement-workspace | What client data may enter the workspace, where may it live and may it be Git-tracked? | open | — | — | — | data-ingest | A new data category, source or sensitivity appears |
+| EW-001 | engagement-workspace | What client data may enter or leave the workspace, where may it live, may it be Git-tracked and which external discovery processors may receive it? | open | — | — | — | data-ingest | A new data category, source, destination, processor or sensitivity appears |
 | EW-002 | engagement-workspace | Which identities may access client systems during the engagement, with what scope and storage mechanism? | open | — | — | — | data-ingest | A connector, identity, permission or owner changes |
 | EW-003 | engagement-workspace | Who owns retention, deletion and access revocation for engagement material? | open | — | — | — | data-ingest | Retention terms change or the engagement approaches handover |
 | EW-004 | engagement-workspace | Which action classes may run autonomously and which require approval? | open | — | — | — | interview | A new external or consequential action appears |

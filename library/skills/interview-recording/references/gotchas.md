@@ -61,19 +61,21 @@ and infer nothing about the speaker from it.
 
 **Trigger:** the conversation switches between two languages, which is common.
 **Wrong default:** "translate it to English for readability."
-**Correct behavior:** preserve the code-switching verbatim in both `original.md` and `refined.md`. An
-English gloss goes in `[brackets]` only where a term is genuinely ambiguous. Section headings may be in
-your working language.
+**Correct behavior:** preserve the code-switching verbatim in `original.local.md` and the permitted
+refined transcript path. An English gloss goes in `[brackets]` only where a term is genuinely ambiguous.
+Section headings may be in your working language.
 
-## The audio and any identity-grade numbers are the only never-commit items
+## The engagement boundary decides every recording artifact's placement
 
-**Trigger:** the owner reads an account, card or identity number aloud, or the audio file is sitting in
-the session directory.
-**Wrong default:** commit everything, because the repository is yours.
-**Correct behavior:** keep the audio out of git (workflow step 2, verified with `git check-ignore`, never
-assumed). In the committed transcript replace the digits with `[redacted — account number]`; if you need
-the digits, keep them beside the file under the same stem plus `.local.md`, covered by the same ignore
-rule. A number in a git history is a number you cannot take back.
+**Trigger:** audio, the raw provider JSON, a transcript or reduction is sitting in the session directory.
+**Wrong default:** assume only audio and identity numbers are sensitive, then commit every derived text
+file because it is easier to read.
+**Correct behavior:** `EW-001` decides whether each derived artifact is Git-tracked, stored under an
+ignored `*.local.*` name or retained in a client-controlled system. Audio, raw provider JSON and the
+verbatim raw transcript use ignored names by default. A permitted tracked derivative still redacts
+identity-grade values as `[redacted — account number]`; if an authorised workflow needs the digits,
+retain them only at the permitted ignored/client-system location and record a pointer. A value in Git
+history cannot be taken back.
 
 ## Ask about recording before the session, not at the start of it
 
@@ -100,5 +102,6 @@ anything else. Keep the key in your shell environment; a key committed to git is
 
 ## The raw transcript is not a deliverable
 
-Nothing raw reaches the reader (`library/sops/working-standards.md`, rule 2). `original.md` is evidence,
-not output. What the owner sees is written for the owner; `breakdown.md` is what you work from.
+Nothing raw reaches the reader (`library/sops/working-standards.md`, rule 2). `original.local.md` is
+evidence, not output. What the owner sees is written for the owner; the permitted breakdown path is what
+you work from.
