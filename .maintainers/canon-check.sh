@@ -15,9 +15,12 @@ while IFS= read -r line; do
   [[ -z "$line" ]] && continue
   comp=$(cut -f1 <<<"$line"); repo=$(cut -f2 <<<"$line"); src=$(cut -f3 <<<"$line")
   shipped=$(cut -f5 <<<"$line"); at_src=$(cut -f7 <<<"$line")
-  [[ "$repo" == "authored" ]] && continue
   if [[ "$(h "$ROOT/$comp")" != "$shipped" ]]; then
     echo "LOCAL    $comp   edited here since the cut"; local_=$((local_+1))
+  fi
+  if [[ "$repo" == "authored" ]]; then
+    [[ "$(h "$ROOT/$comp")" == "$shipped" ]] && ok=$((ok+1))
+    continue
   fi
   src="${src/#\~\//$HOME/}"
   if [[ ! -e "$src" ]]; then

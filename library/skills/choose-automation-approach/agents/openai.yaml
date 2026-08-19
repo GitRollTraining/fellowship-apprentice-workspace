@@ -1,0 +1,4 @@
+interface:
+  display_name: "Choose Automation Approach"
+  short_description: "Choose a proportionate automation design"
+  default_prompt: "Use $choose-automation-approach to help me choose a practical deployment and integration design for this automation."

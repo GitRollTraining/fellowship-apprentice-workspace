@@ -54,7 +54,7 @@ stands alone — write the thing, and bracket the code after it if it helps with
 
 ## What the agent has
 
-Nine skills in `library/skills/` (reached through the `.claude/skills` symlink), document shapes in
+Ten skills in `library/skills/` (reached through the `.claude/skills` symlink), document shapes in
 `library/templates/`, the renderers that turn finished work into a file the owner opens in
 `library/renderers/`, four plugins you install yourself, three MCP servers on by default and three
 more you connect per engagement with the client's own credentials — never ours. The full list with
