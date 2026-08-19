@@ -6,14 +6,15 @@ produces: INDEX.md
 
 # INDEX.md — the directory manifest
 
-`CLAUDE.md` requires one `INDEX.md` in every directory, at every depth. This file gives the format and
-defines the words in it.
+`CLAUDE.md` requires one `INDEX.md` in every governed work area. This file gives the format, defines the
+words in it and preserves the same companion-directory exception.
 
 ## When it is written
 
 | Event | What happens to the manifest |
 |---|---|
-| You create a directory | Create its `INDEX.md` in the same operation |
+| You create an independently navigated work area | Create its `INDEX.md` in the same operation |
+| You create a companion implementation, generated, session or evidence directory | Inventory it in the nearest governed INDEX or component entrypoint; add its own INDEX only if it becomes independently navigated |
 | You add, rename or delete a file | Update that directory's `INDEX.md` in the same operation |
 | You move a directory | Update the upstream pointer on line 1, and the manifest of the directory it now sits under |
 
@@ -73,7 +74,11 @@ answers that, and it changes weekly.
 
 ## Inventory
 
-Every file and every subdirectory appears, one row each. No exceptions.
+Every file and every direct subdirectory governed by this manifest appears, one row each. A companion
+implementation directory (`references/`, `scripts/`, `assets/`, `eval/`) or generated/session/evidence
+bundle may be inventoried as one directory by its nearest governed parent or component entrypoint; its
+children do not each require another nested INDEX unless the directory becomes an independently
+navigated work area. The directory itself is never omitted.
 
 | Column | What goes in it |
 |---|---|
@@ -115,7 +120,8 @@ report it rather than adding one locally.
 
 ## Rules
 
-1. Every file and subdirectory is listed. A file nobody catalogued is a file nobody finds.
+1. Every governed file and direct subdirectory is listed. Companion-directory contents follow the
+   explicit exception above. A file nobody catalogued is a file nobody finds.
 2. Descriptions are one line. The manifest is a way of finding things, not documentation of them.
 3. Hidden and tool-owned directories are left out: `.git/`, `.claude/`.
 4. Bump the dates on the rows you touched, and only those.

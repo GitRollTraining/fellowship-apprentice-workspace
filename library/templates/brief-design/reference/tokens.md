@@ -52,17 +52,12 @@ The same three colors mean the same three things in every brief. Do not remap th
 ## Typography
 
 ```css
---sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 ```
 
-Load Geist in `<head>`:
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-```
-
-If the machine is offline the fallback takes over and the layout is unaffected. Nothing in the system
-depends on a specific glyph existing.
+Use the system stack exactly as shown. The brief makes no font-network request, opens offline and does
+not disclose the client opening the file to a third-party font host. Nothing in the system depends on a
+specific glyph existing.
 
 ### Type scale
 
@@ -78,10 +73,6 @@ depends on a specific glyph existing.
 | Small uppercase labels | `10.5-11px` | `600` | `0.05-0.14em`, uppercase |
 
 ### Font features
-
-```css
-font-feature-settings: "cv11";  /* Geist alternate letterforms, more distinctive */
-```
 
 For numbers in tables and charts:
 

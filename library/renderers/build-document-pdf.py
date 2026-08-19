@@ -7,9 +7,10 @@ Writes <path/to/doc.pdf>. The markdown is the source of truth; the PDF is
 compiled. Never hand-edit the PDF, and never let the two diverge.
 
 Document STRUCTURE (which sections, in what order, at what length) is not this
-script's business. This file only decides how the result looks. The sequence
-that assembles a handover document out of two pieces, builds it and checks it is
-`library/renderers/make-the-handover-file.md`.
+script's business. This file only decides how one owner-account source looks.
+The sequence that checks, builds and inspects that account is
+`library/renderers/make-the-handover-file.md`; client-package assembly belongs
+to `library/playbooks/playbook-output-phraser.md`.
 
 Conventions this relies on:
   - one `# H1` at the top; it becomes the title block

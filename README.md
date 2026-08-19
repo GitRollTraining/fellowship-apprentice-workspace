@@ -15,9 +15,12 @@ already in place.
 
 1. Read `CLAUDE.md` — how to work in this repository.
 2. Read `library/sops/working-standards.md` — the four rules.
-3. Run `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
-4. When the work is written, follow `library/renderers/make-the-handover-file.md` — it turns your
-   markdown into the one file the owner opens.
+3. Run `library/playbooks/playbook-environment-setup.md`, then run
+   `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
+4. After current-state confirmation, run `library/playbooks/playbook-discovery-to-deliverable.md`. It
+   owns PRD sign-off, automation choice, build, both validators, owner-facing phrasing, comprehension,
+   operational acceptance and final handoff. The Output Phraser invokes the renderer for the owner
+   account.
 
 ## Setup
 
@@ -32,6 +35,10 @@ are in `library/sops/agent-settings.md`.
 
 ## Status
 
-First cut shipped 2026-08-11; the automation-approach skill was added 2026-08-13. Every layer remains
-thinly populated on purpose: one worked playbook, four stubs, ten skills, one persona. It is built to be
-extended, and what each extension must contain is written down rather than assumed.
+First cut shipped 2026-08-11; the automation-approach skill was added 2026-08-13, and the security-scan
+wrapper and complete Environment Setup draft followed on 2026-08-14. Every layer remains thinly
+populated on purpose: five authored playbook drafts with no remaining stubs, eleven skills and two
+personas. Only Environment Setup has had a disposable structural smoke test; none of the full engagement
+chain has been run by a Fellow with a real owner. A disposable novice-agent walkthrough has exercised
+the artifact wiring and command examples; it is not outcome evidence. The workspace is built to be
+extended, and evidence limits are written down rather than assumed.

@@ -5,8 +5,8 @@ style: descriptive
 
 # renderers
 
-Turning finished markdown into one file a business owner opens. A written specification the owner
-cannot read is not a handover.
+Turning a finished owner-account source into the file a business owner opens. The executable deliverable
+travels beside it unchanged; it is not flattened into prose.
 
 Start at `make-the-handover-file.md`; it is the runbook and it names the order.
 
@@ -26,7 +26,7 @@ and the other two still run.
 |---|---|
 | `build-document-pdf.py` | Turns one markdown file into an A4 PDF a business owner can open; this is the whole answer to turning finished work into a file the owner opens |
 | `check-document-pdf.py` | Proves the PDF actually rendered - catches a table that silently became prose and a character that silently vanished, neither of which changes the page count or the exit code |
-| `make-the-handover-file.md` | The runbook that joins the two scripts: strip, concatenate, build, check, and read it yourself before the owner does of the specification instead of raw markdown. |
+| `make-the-handover-file.md` | The runbook that checks the owner-account source, builds its PDF, runs deterministic checks and requires page inspection without concatenating delivery files |
 
 A clean build is not evidence the document rendered correctly. Run the checker: a table can
 silently become plain prose without changing the page count or the build's exit code.
@@ -35,4 +35,4 @@ silently become plain prose without changing the page count or the build's exit 
 
 | File set | Last updated | Class | Status |
 |---|---|---|---|
-| all 3 files | 2026-08-11 | Instruction | first cut |
+| all 3 files | 2026-08-15 | Instruction | owner-account-only rendering contract; delivery files remain installable siblings |

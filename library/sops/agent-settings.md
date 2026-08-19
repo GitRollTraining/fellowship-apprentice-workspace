@@ -104,10 +104,12 @@ There is a tool that packages a finished skill into an installer a non-technical
 It lives in a private repository, and the marketplace-add returns 404 for anyone outside the
 organisation that owns it. It is therefore not part of this toolbox.
 
-What you do instead: hand over the `skill.md` file itself alongside the written account, and walk the
-owner through dropping it into their agent's skills directory once. It works. It costs the owner one
-step they would not otherwise take, and you should say so in the handover rather than leaving them to
-discover it.
+What you do instead: ship the exact validated delivery tree in the versioned handoff zip, with the
+owner account, package manifest and canonical `deployment.md` and `operations.md`. For an agent skill,
+the deployment instructions install the whole bundle into the client's runtime — including companion
+references/scripts — and name its required runtime entry filename. Do not hand over one flattened
+`skill.md` and assume it is installable. Keep the manual installation step and its owner visible in the
+handoff and prove it during operational acceptance.
 
 ## Making the skills visible to the agent
 

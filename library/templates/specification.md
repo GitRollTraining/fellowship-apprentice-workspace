@@ -9,15 +9,24 @@ serves: D-06, D-28
 Destination: `engagements/<client-slug>/spec/specification.md`, one file per process specified. Copy
 the block below out of this file; `library/` is read-only.
 
-Three artifacts, in this order:
+This template uses one `deliverable/skill.md` as the default delivery shape because that is the expected
+common case. It does not require the final deliverable to be a single skill. Adapt or extend the
+specification and deliverable structure when the agreed solution contains multiple skills, scripts,
+integrations, services or a larger system; preserve the same traceability, boundary, acceptance and
+review requirements.
+
+The required chain, in this order:
 
 | Artifact | File | Who reads it |
 |---|---|---|
 | The discovery record — what was heard, kept apart from what was concluded from it | `interview/discovery-record.md` | You, and anyone checking your work without you |
+| The signed PRD — future behaviour, user stories, requirements and acceptance criteria | `spec/requirements.md` | The owner, the assessment engine, and you when you design |
+| The automation decision brief — technical recommendation, Fellow decision and residual risk | `spec/automation-approach.md` | You, and anyone checking the design trade-offs |
 | The specification — what will be built | `spec/specification.md` | The assessment engine, and you when you build |
-| The deliverable — the thing that runs | `deliverable/skill.md` | The business |
+| The deliverable — the thing that runs | `deliverable/skill.md` by default; the agreed package otherwise | The business |
 
-Writing straight from the record to the deliverable skips the middle artifact, which is the graded one.
+Writing straight from the record or PRD to the deliverable skips the specification, which is the graded
+build contract.
 The assessment engine — the instrument that grades a fellow's work at a gate — reads the specification
 as the evidence for nine of the twenty-five technical competencies. A competency is something a fellow
 can be watched doing on a real task, producing an artifact you can point at. One of the nine has an
@@ -27,12 +36,11 @@ evidence entry that reads, in full, "the specification file".
 
 | Owed here | Owed elsewhere |
 |---|---|
-| The document shape: which sections, in what order, what belongs in each, and the traceability column that carries each statement back to the record | The procedure for turning a heard statement into a specified instruction without the instruction acquiring precision nobody stated |
+| The default document shape: which sections, in what order, what belongs in each, and the traceability chain that carries each statement back through the signed PRD to its source | The procedure for confirming the current process, obtaining PRD sign-off, resolving automation trade-offs and deciding when the work may advance |
 
-That procedure is owed by `library/playbooks/playbook-elicitation-to-sop.md`, which is a **stub**: its
-contents are specified, it is not written.
+That procedure is in `library/playbooks/playbook-discovery-to-deliverable.md`.
 
-**Filling this shape does not close that stub.** A specification can be correctly shaped, complete in
+**Filling this shape does not prove that procedure was followed.** A specification can be correctly shaped, complete in
 every section, every cell filled, and still assert a threshold, a deadline or a rule the owner never
 gave. Nothing in this file detects that. The traceability column below makes the invention visible to a
 reader who checks the pointer; it does not stop you writing it.
@@ -57,6 +65,16 @@ transcription rather than a second act of authorship.
 | How the owner checks it | The `Eval` section |
 | Open questions | Nowhere. They stay here |
 
+For a larger agreed solution, keep this default as the behavioural core and add a component table rather
+than inventing a new template family:
+
+| Component | Responsibility | Interface or handoff | PRD/spec responsibilities | Operator and deployment | Recovery or rollback | Verification |
+|---|---|---|---|---|---|---|
+| `<service, skill, script or integration>` | `<what this component alone owns>` | `<input/output or dependency>` | `<US/R/AC IDs and spec section>` | `<who runs and maintains it, and where>` | `<how a failed change is contained or reversed>` | `<test or check>` |
+
+Extend the example only as the solution requires. It is a reminder about component boundaries,
+deployment, ownership, recovery and test evidence, not a complete system-architecture method.
+
 ## Where the mapping is not one to one
 
 Four places. Each is a decision, not an oversight.
@@ -67,9 +85,10 @@ Four places. Each is a decision, not an oversight.
    approval step in the workflow, and a named value among the constants. Keep them as one section here
    anyway. They are elicited as one thing, and splitting them across three sections of the deliverable
    is how a boundary goes missing.
-2. **Open questions travel nowhere.** They stay in the specification and, unresolved, in
-   `interview/ambiguities.md`. An open question written into `skill.md` becomes an instruction with a
-   hole in it that nothing marks.
+2. **Open questions travel nowhere.** A current-state ambiguity stays in `interview/ambiguities.md`, a
+   desired-behaviour question stays in `spec/requirements.md`, and a technical question stays in
+   `spec/automation-approach.md` and the Decision Register. An open question written into `skill.md`
+   becomes an instruction with a hole in it that nothing marks.
 3. **A section that outgrows the page moves to a companion file.** The skeleton's rule is that detail
    running past five to ten lines belongs in `references/<name>.md` beside the `SKILL.md`, not in it.
    Exceptions overflow first, into `references/gotchas.md`. The specification is not subject to that
@@ -80,27 +99,30 @@ Four places. Each is a decision, not an oversight.
 
 ## The traceability column
 
-Every table ends with a `Trace` column holding two things: which entry of the discovery record the
-statement came from, and one of four words.
+Every behavioural table ends with a `Trace` column. It names the signed PRD item and its origin, for
+example `R-004 <- H17`. A technical choice also names the current decision, for example
+`R-004; AA-003`. Pure display or routing wording that asserts no business fact may say `authored`.
 
-| Word | What it means | May it reach the deliverable |
-|---|---|---|
-| heard | The owner said it, and the discovery record points at the turn, the timestamp or the document it came from | Yes |
-| concluded | You worked it out from what was heard, and the discovery record marks it as concluded rather than heard | Yes, once the owner has confirmed it, at which point the confirmation is itself a new heard entry with its own pointer |
-| open | Nobody has settled it | No. It belongs in Open questions until it becomes one of the two above |
-| authored | Wording you wrote yourself — the display name, the one-sentence trigger. It asserts no fact about the business | Yes |
+The full chain is:
 
-Four rules govern the column.
+```text
+session pointer -> discovery H/C row -> PRD US/R/AC item
+  -> specification section -> deliverable component -> verification
+```
 
-- **Point at the discovery record entry, not at the session.** The record is what carries the session
-  pointer and what keeps heard apart from concluded. Two hops, each of which resolves.
-- **A pointer that does not resolve is worse than no pointer.** Step 16 of `library/playbooks/playbook-interview.md`
-  makes that a fail rather than a blemish, and filing the specification here makes it checkable.
-- **A row with an empty trace is a conclusion wearing a heard statement's clothes.** Mark it
-  `concluded` and confirm it, or delete the row.
-- **A number is the most likely thing to be invented.** Thresholds, deadlines, counts and prices carry
-  the highest risk of arriving in the specification more precise than anything the owner said. Check
-  each one against its pointer before the build.
+Five rules govern it.
+
+- **Every hop resolves.** The discovery row carries the session pointer; the PRD item carries the
+  discovery or durable-confirmation source; the specification carries the PRD ID. A long chain with one
+  broken hop is not traceability.
+- **The signed PRD is the behavioural authority.** A specification may not point at a raw statement to
+  bypass a requirement the owner rejected or changed during sign-off.
+- **A Fellow conclusion cannot cross the sign-off gate alone.** A `C*` origin reaches the specification
+  only through a PRD version that records the owner's confirmation.
+- **Open questions do not become instructions.** Resolve them before their named gate or keep them out of
+  the specification.
+- **Check every number against its origin.** Thresholds, deadlines, counts and prices are the most likely
+  details to acquire precision nobody stated.
 
 ## The template
 
@@ -110,6 +132,8 @@ style: descriptive
 client: <client-slug>
 process: <the owner's name for the process>
 status: draft
+requirements: spec/requirements.md v<n>, signed-off YYYY-MM-DD
+automation-approach: spec/automation-approach.md, reviewed YYYY-MM-DD
 ---
 
 # <The owner's name for the process>
@@ -121,50 +145,50 @@ becomes the paragraph under the title of skill.md.>
 
 | Field | Value | Trace |
 |---|---|---|
-| Fires when | <the event that starts it> | <record entry>, heard |
-| Fires how often | <a count and a period, or on demand> | <record entry>, heard |
+| Fires when | <the event that starts it> | <US/R ID> <- <H row or confirmation> |
+| Fires how often | <a count and a period, or on demand> | <R ID> <- <H row or confirmation> |
 | One sentence for the router | <Use when ..., 200 characters or fewer> | authored |
 
 ## Inputs
 
 | Input | Where it comes from | Required | If it is missing | Trace |
 |---|---|---|---|---|
-| <name> | <person, inbox, system, file> | yes | <ask, halt, or a named default> | <record entry>, heard |
+| <name> | <person, inbox, system, file> | yes | <ask, halt, or a named default> | <US/R ID> <- <source> |
 
 ## Steps
 
 | # | Step | Done when | Trace |
 |---|---|---|---|
-| 1 | <one action, imperative> | <a result the owner can see without you> | <record entry>, heard |
+| 1 | <one action, imperative> | <a result the owner can see without you> | <US/R ID>; <AA ID if technical> |
 | 2 | | | |
 
 ## Exceptions
 
 | Case | How you know it is this case | What to do | Trace |
 |---|---|---|---|
-| <the owner's name for the case> | <the observable sign> | <the action> | <record entry>, heard |
+| <the owner's name for the case> | <the observable sign> | <the action> | <R/AC ID> <- <source> |
 
 ## Boundaries
 
 | Boundary | Statement | Trace |
 |---|---|---|
-| Must not be automated | <what stays a person's job, and whose> | <record entry>, heard |
-| Needs approval | <what needs it, and who gives it> | <record entry>, heard |
-| Must not leave the business | <what, and where it may go instead> | <record entry>, heard |
+| Must not be automated | <what stays a person's job, and whose> | <R ID>; <AA-005> |
+| Needs approval | <what needs it, and who gives it> | <R ID>; <AA-005> |
+| Must not leave the business | <what, and where it may go instead> | <R ID>; <DR-001/AA-002> |
 
 ## Fixed values
 
 | Key | Value | Trace |
 |---|---|---|
-| <threshold, deadline, address, name> | <the value, as the owner stated it> | <record entry>, heard |
+| <threshold, deadline, address, name> | <the signed value> | <R ID> <- <source> |
 
 ## Output
 
 | Field | Value | Trace |
 |---|---|---|
-| What comes out | <the artifact, named as the owner names it> | <record entry>, heard |
-| Where it goes | <file, inbox, system, person> | <record entry>, heard |
-| What good looks like | <the observable> | <record entry>, heard |
+| What comes out | <the artifact, named as the owner names it> | <US/R ID> <- <source> |
+| Where it goes | <file, inbox, system, person> | <R ID>; <AA/DR ID if technical> |
+| What good looks like | <the observable> | <AC ID> <- <source> |
 
 ## Wording
 
@@ -172,36 +196,47 @@ Delete this section if nothing outside the business reads the output.
 
 | Rule | Statement | Trace |
 |---|---|---|
-| Words that must appear | <the words> | <record entry>, heard |
-| Words that must not appear | <the words> | <record entry>, heard |
-| Greeting and sign-off | <as the owner writes them> | <record entry>, heard |
+| Words that must appear | <the words> | <R ID> <- <source> |
+| Words that must not appear | <the words> | <R ID> <- <source> |
+| Greeting and sign-off | <as the owner writes them> | <R ID> <- <source> |
 
 ## How the owner checks it
 
 | Check | Right looks like | Wrong looks like | Trace |
 |---|---|---|---|
-| <what the owner looks at> | <observable> | <observable> | <record entry>, heard |
+| <what the owner looks at> | <observable> | <observable> | <AC ID> <- <source> |
+
+## Traceability matrix
+
+Every signed PRD item appears once. `Disposition` is `implemented`, `deferred — owner accepted`, or
+`not-applicable — <reason>`.
+
+| PRD item | Origin | Disposition | Specification section | Deliverable component | Verification |
+|---|---|---|---|---|---|
+| <US/R/AC ID> | <H/C row or durable confirmation> | <controlled value> | <heading or step> | <file/component/responsibility> | <AC ID, test or check> |
 
 ## Open questions
 
-| Question | Who settles it | Blocks the build |
-|---|---|---|
-| <the unsettled item, carried from interview/ambiguities.md> | <the owner, you, nobody yet> | yes |
+| Question ID and source | Who settles it | Blocks before | Status |
+|---|---|---|---|
+| <OQ ID from PRD, or technical question from the brief> | <owner, Fellow or named role> | <specification/build/deploy/none> | <open/resolved/deferred> |
 ```
 
 ## Before the build
 
-- Every table has a `Trace` column and no cell in it is empty.
-- No row traces to `open`. Each of those is a row in Open questions instead.
+- The PRD version in frontmatter is signed off and the automation brief is current against it.
+- Every behavioural table has a `Trace` column and no cell in it is empty.
+- Every signed PRD item appears in the traceability matrix with a disposition.
+- Every pointer resolves through the PRD to discovery evidence or durable owner confirmation.
+- No open question has reached the gate it blocks.
 - Every step's "Done when" is observable by the owner without you in the room.
 - Every exception is a case the owner named. An exception you imagined is a conclusion, and it is
   traced as one or it is cut.
 - Every number has been checked against its pointer for precision the owner did not give.
 - The section order matches the table above, so the build is transcription.
 - The draft `skill.md` goes through the adversarial reviewer persona
-  (`library/personas/adversarial-reviewer.md`) before it goes anywhere near the owner. What to do with
-  each finding, by severity, belongs to `library/playbooks/playbook-elicitation-to-sop.md` and is not
-  settled here.
+  (`library/personas/adversarial-reviewer.md`) before it goes anywhere near the owner. Finding disposition
+  is defined in `library/playbooks/playbook-discovery-to-deliverable.md`.
 
 If this file is ever rendered to a PDF, the renderer's input contract is in
 `library/templates/handover.md`.

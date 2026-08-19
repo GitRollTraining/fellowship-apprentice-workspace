@@ -13,15 +13,13 @@ it is tinted away from pure neutral. A brief should read like a considered page,
 The reading width is calibrated to roughly 80 characters at 16px. Wider makes scanning harder; narrower
 wastes the screen. The table-of-contents sidebar sits outside that column and disappears below 1100px.
 
-## 3. Geist, and typographic markers rather than icons
+## 3. Local system type, and typographic markers rather than icons
 
-Geist is distinctive without being strange. Inter is everywhere, and using it says "I took the default".
+The local system sans stack opens without a network request, travels with no font asset and respects the
+client's data boundary. Distinction comes from hierarchy and spacing, not a hidden web-font dependency.
 Markers are typographic: an uppercase tracked label, a two-digit section number, a colored status pill.
 No emoji and no icon set — an icon stacked above every heading is a template fingerprint, and an emoji
 renders differently on the owner's machine than on yours, or prints as an empty box.
-
-If the font fails to load — no network, a blocked font host — the fallback stack takes over and every
-rule in this system still holds. Nothing here depends on a glyph being present.
 
 ## 4. Earned callouts
 

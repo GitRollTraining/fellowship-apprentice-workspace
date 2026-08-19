@@ -5,9 +5,10 @@ style: descriptive
 
 # playbooks
 
-A playbook is a procedure the fellow runs, repeatedly, across engagements. A deliverable is one SOP for
-one business process, written for one client. They are the same artifact type — the fellow learns the
-form by running ours before writing their own.
+Playbooks are guidance and procedures tightly coupled to running an AI Fellowship engagement. They may
+assume the engagement stages, workspace structure, required artifacts, stakeholder interactions or
+handoff process, and may compose multiple skills. If a procedure remains meaningful and usable without
+those engagement assumptions, it belongs under `skills/` instead.
 
 ## Inventory
 
@@ -15,18 +16,21 @@ form by running ours before writing their own.
 |---|---|---|
 | `playbook-interview.md` | shipped verbatim, **never executed** | Eliciting an undocumented process from the person who runs it. Twenty-one numbered steps |
 | `playbook-interview.runbook.md` | authored here | Where each step's output goes in this workspace, and which shipped tool it uses |
-| `playbook-environment-setup.md` | **STUB** | Specified, not written |
-| `playbook-elicitation-to-sop.md` | **STUB** | Specified, not written |
-| `playbook-validator.md` | **STUB** | Specified, not written |
-| `playbook-output-phraser.md` | **STUB** | Specified, not written |
+| `playbook-environment-setup.md` | authored here, **disposable smoke test only** | Creates or resumes a bounded engagement, initialises its control files and gates safe discovery without deciding the final automation |
+| `playbook-discovery-to-deliverable.md` | authored here, **never executed** | Turns confirmed discovery into a signed-off PRD, proportionate automation decisions, a traceable specification and the agreed deliverable |
+| `playbook-validate-deliverable.md` | authored here, **never executed** | Validator A: freezes the candidate, reviews it and collects behavioural, deployment and operational evidence against the signed contract |
+| `playbook-output-phraser.md` | authored here, **never executed** | Turns the A-passed candidate into a traced, owner-facing account and versioned package without changing delivery behaviour |
+| `playbook-validate-handoff.md` | authored here, **never executed** | Validator B: checks that the comprehension-accepted candidate faithfully contains the A-passed deliverable and releases exact bytes to operational acceptance |
 
-Four stubs is deliberate. One worked example that has been checked end to end is worth more than five
-drafts nobody has read, and each stub names exactly what it must contain so the next author does not
-re-derive the scope.
+No stubs remain. Environment Setup, Discovery to Deliverable, Output Phraser and both Validators are
+complete draft contracts. Environment Setup's file and gate transitions passed a disposable smoke test;
+a novice-agent walkthrough has now exercised the full artifact wiring and runnable command examples,
+but the other four have not run with a real Fellow and owner. The final orchestration and artifact
+contracts are present; none claims outcome validation.
 
 ## A warning about the word
 
-"Playbook" means two incompatible things in GitRoll's repositories. Here it is a procedure the fellow
-runs. In the cross-programme curriculum standard it is a self-serve reference document for a subject
-the course does not teach — content only, no steps. Material written for one sense is wrong for the
-other, and the conflict has never been reconciled.
+"Playbook" means two incompatible things in GitRoll's repositories. In this workspace it means
+engagement-bound guidance or procedure. In the cross-programme curriculum standard it is a self-serve
+reference document for a subject the course does not teach — content only, no steps. Material written
+for one sense is wrong for the other, and the conflict has never been reconciled.

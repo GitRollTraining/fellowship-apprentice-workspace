@@ -26,14 +26,14 @@ curated library of skills, playbooks, personas and standards they work with.
 
 | Item | Last updated | Class | Status |
 |---|---|---|---|
-| `library/` | 2026-08-13 | Instruction | automation-approach skill added after first cut |
-| `engagements/example-client/` | 2026-08-11 | Mutable | empty example, safe to delete |
+| `library/` | 2026-08-15 | Instruction | Output Phraser, handoff trace/comprehension system and final gate orchestration added |
+| `engagements/example-client/` | 2026-08-15 | Mutable | empty directory shape includes the internal verification boundary |
 | `training/` | 2026-08-11 | Mutable | empty until Stage 1 starts |
 | `reference/` | 2026-08-11 | Mutable | first cut |
-| `.maintainers/` | 2026-08-13 | Record | automation-approach design added |
+| `.maintainers/` | 2026-08-15 | Record | handoff conflicts and their resolutions recorded; provenance updated |
 
 ## Conventions
 
-Set out in `CLAUDE.md`. In short: `library/` is read-only, every directory carries an `INDEX.md`,
+Set out in `CLAUDE.md`. In short: `library/` is read-only, every governed work area carries an `INDEX.md`,
 `UPPERCASE.md` means a workflow requires the file, and client material lives under `engagements/` so it
 can be deleted as a unit.

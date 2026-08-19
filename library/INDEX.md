@@ -17,9 +17,9 @@ this material.
 
 | Item | What it is | Class |
 |---|---|---|
-| `playbooks/` | Procedures a fellow reruns on every engagement. One worked, four stubbed | Instruction |
-| `skills/` | Ten curated agent skills: nine vendored from source repositories and one authored here, all recorded in the provenance manifest | Instruction |
-| `personas/` | Agent personas. One shipped, a second named | Instruction |
+| `playbooks/` | Engagement-bound procedures: two interview documents and five authored drafts; no stubs remain | Instruction |
+| `skills/` | Eleven curated agent skills: nine vendored from source repositories and two authored here, all recorded in the provenance manifest | Instruction |
+| `personas/` | Agent personas. Two authored, plus an interview-practice simulator named but not built | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |
 | `templates/` | The shapes an engagement's documents are written into, and the design system for a brief | Instruction |
 | `renderers/` | Turning finished markdown into one file a business owner opens, and the check that proves it rendered | Instruction |

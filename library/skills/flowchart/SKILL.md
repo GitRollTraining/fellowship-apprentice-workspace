@@ -24,12 +24,15 @@ boxes — which is what `scripts/` removes.
 1. **Copy the toolkit** into the caller's working directory:
    `mkdir -p <target>/flowchart && cp library/skills/flowchart/scripts/*.py <target>/flowchart/`
    (run from the repository root; the scripts travel with this repository, not with a home directory)
-2. **Write the spec** — one file, the ONLY file that states content. Start from
-   `references/symbols.md` to pick a symbol per node.
-3. **Render**: `python3 <target>/flowchart/render_to.py` — or write four lines that call
-   `render(SPEC)` and save the SVG. `render()` returns `(svg, res)`.
-4. **Check**: `python3 flowchart/check_map.py <spec>.py` — must print `CLEAN`. It self-tests
-   first: three charts broken on purpose, each must make a check fire.
+2. **Write the spec** as `<target>/flowchart/<name>-spec.py` — one file, the ONLY file that states
+   content. Start from `references/symbols.md` to pick a symbol per node.
+3. **Render**, passing both the spec and the intended output path:
+   `python3 <target>/flowchart/render_to.py <target>/flowchart/<name>-spec.py <target>/<name>.svg`.
+   `render_to.py` requires the spec argument; running it with no argument is an error.
+4. **Check from the repository root**, using the same target paths:
+   `python3 <target>/flowchart/check_map.py <target>/flowchart/<name>-spec.py` — it must print
+   `CLEAN`. From another working directory, use absolute paths for both arguments. It self-tests first:
+   three charts broken on purpose, each must make a check fire.
 5. **LOOK AT THE RENDERED PAGE.** Not the SVG source. Every defect in the source list of
    `references/gotchas.md` was invisible in the markup and obvious on screen.
 6. Iterate on the SPEC, never on coordinates.
@@ -46,9 +49,13 @@ node that should not be on this chart.
 SPEC = {
   "title": "...",
   "vars": {"Client": "Client", "client": "client"},   # every party the chart names
-  "nodes": [{"id": "a", "kind": "process", "title": "{Client} review", "subs": ["line"]}],
+  "nodes": [
+    {"id": "a", "kind": "terminator", "title": "Request arrives", "subs": []},
+    {"id": "b", "kind": "manual", "title": "{Client} review", "subs": ["check one case"]},
+    {"id": "c", "kind": "document", "title": "Result recorded", "subs": []},
+  ],
   "edges": [("a", "b"), ("b", "c", "label on the edge")],
-  "feedback": [("c", "a")],        # edges YOU know close a loop -> connector circles
+  "feedback": [],                    # list only edges YOU know close a loop
 }
 ```
 
@@ -113,8 +120,8 @@ coordinate assignment. Background and the research it comes from: `references/la
 
 ## Output
 
-`{target}/flowchart/` with the toolkit plus one spec file, and an SVG that `check_map.py`
-reports CLEAN on. The SVG is pasted inline into the document that needs it.
+`{target}/flowchart/` with the toolkit plus one spec file, and the explicitly named SVG output that
+`check_map.py` reports CLEAN on. The SVG is pasted inline into the document that needs it.
 
 ## Eval
 

@@ -37,7 +37,8 @@ and cite that case name from `failure-modes.md`. Do not write it twice.
 1. **Everything traces back.** Each block names the rows in `engagements/<client-slug>/interview/discovery-record.md` it was built from — the heard rows are numbered `H1`, `H2` and the concluded rows `C1`, `C2` in that file. A block citing nothing is a block you wrote from memory.
 2. **Marked inference only.** Anything you worked out rather than heard cites a concluded row. If it has no concluded row, write one there first.
 3. **Gaps are visible, not blank.** Write `unknown — ask in the next session`. A blank field reads as "not applicable" to whoever picks this up.
-4. **Push past "an experienced person decides".** The decision rules field is what the deliverable is built from. A step with no decision rules cannot be written into a `skill.md`.
+4. **Push past "an experienced person decides".** The decision rules field is what the specification
+   and deliverable are built from. A step with no decision rules cannot become executable behaviour.
 5. **One real example, scrubbed.** A field shape with no example value is half the value. Remove names of people and customers; keep the numbers consistent with each other.
 6. **Nothing you were told must not leave the business gets pasted in.** Record that the constraint exists and where the information lives — see the third boundary table.
 
@@ -74,8 +75,10 @@ built-from: interview/discovery-record.md
 | Built from | rows in the discovery record. *H1, H4, H7* |
 | Confirmed with the owner on | date, or `not yet` |
 
-A process is confirmed by an owner looking at a diagram of it, not by having prose read back at them.
-`library/skills/flowchart/SKILL.md` renders one from the step blocks below.
+A process is confirmed by the owner inspecting and correcting the current-state confirmation materials,
+not by the Fellow reading their own prose back and accepting a generic yes. A checked diagram is the
+default when sequence, decisions, loops or handoffs matter; an atomic process may omit it with the reason
+recorded under `library/templates/process-confirmation.md`.
 
 ### Step block — copy once per step
 
