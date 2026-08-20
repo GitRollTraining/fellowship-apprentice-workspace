@@ -163,6 +163,10 @@ Use representative fixtures that are permitted by the Data & Credential Boundary
 commands, observed outputs and exit codes. If a required case cannot safely be executed, mark the report
 `blocked`; do not convert inability to test into a pass by inspection.
 
+A pass counts as evidence only when the check meets `library/reference/gate-evidence-standard.md`:
+chosen for a failure that would otherwise be invisible, and watched going red on a known-bad input at
+least once. Record that input beside the pass.
+
 ### 5. Verify deployment and rollback
 
 From an environment that does not depend on the builder's unstated local state, follow
@@ -190,8 +194,10 @@ A finding is blocking when it demonstrates any of the following:
 - an in-scope case cannot be tested safely or reproducibly; or
 - a claimed pass is contradicted by observed evidence.
 
-Fix blocking implementation defects and rerun the affected checks. If the signed requirement itself is
-wrong or infeasible, return to the PRD and technical-decision loop; the Validator may not override it.
+Fix blocking implementation defects, rerun the affected checks, and rerun one case that never
+triggered the defect — a fix verified only against the input that reported it is not verified.
+If the signed requirement itself is wrong or infeasible, return to the PRD and technical-decision
+loop; the Validator may not override it.
 Move an accepted non-blocking limitation into `deliverable/known-defects.md`, then confirm the owner-facing
 material will expose it before handoff.
 

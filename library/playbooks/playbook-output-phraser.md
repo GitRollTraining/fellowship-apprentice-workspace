@@ -158,8 +158,15 @@ For every route:
 
 - scan for placeholders, internal codes rendered as prose and broken links;
 - confirm the source-map pointer and claim anchors do not render;
-- inspect diagrams rather than trusting clean SVG markup; and
+- inspect diagrams rather than trusting clean SVG markup;
+- confirm every sentence that asserts a fact about the data was computed from that data, not carried
+  over from an earlier draft; and
 - record commands, exit codes and rendered hashes in the source map or progress log.
+
+The check on computed sentences is the one that fails silently. In one round a whole section of a brief was
+written once from one day's data and printed unchanged on every later run: on a backfilled date the
+same page said no revenue rows existed and then asserted both dates were present. Every number on that
+page was correct, and nothing that checks numbers could have noticed.
 
 A render failure returns to the authoring source. It does not change the validated deliverable.
 

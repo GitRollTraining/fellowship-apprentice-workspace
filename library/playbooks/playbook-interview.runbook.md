@@ -40,6 +40,19 @@ playbook says so on its own face, citing the one controlled study of teaching an
 novices, which found no significant difference in output quality and a significant difference only in how
 confident the taught group felt.
 
+## If you did not run the session yourself
+
+The playbook assumes you ran the interview. When you inherit a recording or transcript you cannot
+re-run, the chain still applies with four changes:
+
+1. Steps 1 and 2 produce nothing. Say so in `interview/pre-session-note.md` rather than writing the
+   questions you would have asked.
+2. Step 19 is impossible — you cannot audit questioning you did not do. Write `not applicable —
+   inherited transcript` in `interview/self-audit-<date>.md` rather than leaving the file absent.
+3. Every gap the session did not cover is a row in `interview/ambiguities.md`, not an assumption.
+4. Steps 20 and 21 still run. Confirming the reconstruction with the owner is the only repair
+   available for a question nobody asked.
+
 ## Where each step's output goes
 
 Paths are relative to `engagements/<client-slug>/`.
@@ -64,6 +77,9 @@ Paths are relative to `engagements/<client-slug>/`.
 
 Steps 3 to 6, 9, 10, 11 and 14 are conducted in the room and produce no separate file — their output is
 the session record itself.
+
+Step 17's "ambiguity list" is the file named `interview/ambiguities.md` above. The playbook uses the
+prose name; every other file in this workspace uses the filename.
 
 ## Which shipped tool serves which step
 
@@ -112,3 +128,7 @@ The playbook's own stop conditions still hold. Two more apply because the work i
 2. **A load-bearing statement in the discovery record with no pointer back at the session.** Step 16
    makes this a rule; filing makes it checkable. If it cannot be pointed at, it is a conclusion, and it
    belongs in the concluded half.
+
+   A pointer is acceptable when a reader can find the same passage without you: a timestamp, a
+   transcript line number, or a quoted phrase long enough to be unique in the file. A speaker name
+   alone, or a date alone, is not a pointer.

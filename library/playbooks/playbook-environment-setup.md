@@ -55,6 +55,11 @@ Normalise the slug to kebab-case and inspect `engagements/<client-slug>/`.
 - If it exists without a readable `INDEX.md`, identifies another engagement or contains unrelated
   material, stop. Never merge or overwrite it based on the slug alone.
 
+If the same engagement also has material outside `engagements/<client-slug>/` — a task directory, a
+scratch checkout, a second clone — name `engagements/<client-slug>/` as the authoritative tree in its
+`INDEX.md` and record where the other copy is and what it holds. Two trees are allowed. Two
+authoritative trees are not.
+
 ### 2. Create the engagement structure
 
 For a new setup, copy the directory shape in `engagements/example-client/` to the resolved slug. Confirm
@@ -113,6 +118,9 @@ Resolve the decisions required before the first interview:
 - `EW-005`: time, spend and iteration ceilings plus the person who may raise them.
 - `EW-006`: whether discovery needs client systems or connectors. If not, mark it `not-applicable`. If
   it does, name only the minimum current access.
+- `EW-007`: the environment the work is recorded in — where the record is captured, what counts as a
+  checkpoint, and what counts as submitted. Verify it the same way as step 6: capture one throwaway
+  entry and confirm it is still there afterwards.
 
 Do not use this step to choose the final automation. Keep `AA-001` through `AA-005` as candidates for
 the later `choose-automation-approach` workflow. In particular, lifecycle is a path: record the current

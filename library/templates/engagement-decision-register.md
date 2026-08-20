@@ -88,6 +88,7 @@ pass. `superseded` passes only when it names a live replacement ID.
 | EW-004 | engagement-workspace | Which action classes may run autonomously and which require approval? | open | — | — | — | interview | A new external or consequential action appears |
 | EW-005 | engagement-workspace | What are the current time, spend and iteration ceilings, and who may raise them? | open | — | — | — | interview | Scope changes or a ceiling is approached |
 | EW-006 | engagement-workspace | Which client systems or connectors are needed for discovery? | candidate | — | — | — | interview | Discovery requires a new source or operation |
+| EW-007 | engagement-workspace | Where is the work recorded, what counts as a checkpoint and what counts as submitted? | open | — | — | — | interview | The recording location, tool or submission rule changes |
 | DP-001 | deliverable-package | What data, examples, fixtures, configuration and documentation may the delivered package contain? | candidate | — | — | — | package | Packaging begins or a new artifact is proposed |
 | DR-001 | deliverable-runtime | What may the installed deliverable read, store or send, and across which boundaries? | candidate | — | — | — | build | A new runtime data flow or destination appears |
 | AA-001 | automation-approach | What is the current lifecycle stage, intended trajectory and evidence required for promotion? | candidate | — | — | — | build | A promotion gate is reached or usage changes materially |

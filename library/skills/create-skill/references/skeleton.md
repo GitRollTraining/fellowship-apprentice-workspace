@@ -74,6 +74,10 @@ The Quality Guidelines footer is required for a library skill. For a client deli
 rewrite it to point only to guidance that deliberately ships inside the skill bundle; a client skill
 must not depend on `library/` paths absent from the package.
 
+`argument-hint` is a Claude Code field. The Agent Skills format does not read it. Keep it for a skill
+that runs in Claude Code; drop the line from a deliverable built for Agent Skills rather than ship a
+field its runtime ignores.
+
 ## Companion Ref Skeletons
 
 ### `references/gotchas.md` (when ≥3 known gotchas exist)

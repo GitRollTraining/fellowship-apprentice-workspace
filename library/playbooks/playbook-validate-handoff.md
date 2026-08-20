@@ -53,6 +53,9 @@ There is no conditional pass.
 
 ## Procedure
 
+Every check below is subject to `library/reference/gate-evidence-standard.md`: a check that has
+never been watched fail is not evidence.
+
 ### 1. Re-establish Validator A integrity
 
 Confirm the A report says `pass`. Recompute the current deliverable manifest with Validator A's recorded

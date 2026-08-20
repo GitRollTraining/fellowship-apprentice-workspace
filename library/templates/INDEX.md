@@ -35,6 +35,7 @@ ignores it renders wrongly without raising an error.
 | `owner-acceptance.md` | Internal hard-gate record of the real owner's comprehension and acceptance against exact package bytes |
 | `operational-acceptance.md` | Internal final-gate record of client deployment and one independent owner run against the unchanged B-passed package |
 | `requirements-gathering.md` | PRD-like document for owner sign-off: desired outcomes, scope, user stories, requirements, acceptance criteria, operational constraints and feasibility inputs, all traced to confirmed discovery. |
+| `source-data-survey.md` | What the data the deliverable reads actually contains: fields and their empty cases, rules visible in the data that nobody stated, and where the data contradicts the confirmed process. |
 | `specification.md` | The default build-contract shape, joining the signed PRD and automation decisions to the deliverable while preserving a resolvable evidence chain. |
 | `brief-design/` | A design system for a single-page HTML brief: tokens, components, composition rules and a starter file |
 
@@ -43,3 +44,4 @@ ignores it renders wrongly without raising an error.
 | File set | Last updated | Class | Status |
 |---|---|---|---|
 | all 21 items | 2026-08-15 | Instruction | Full discovery-to-operational-acceptance artifact set; deployment and operations templates added |
+| `source-data-survey.md` | 2026-08-20 | Instruction | New; output of step 7 of the discovery-to-deliverable playbook |

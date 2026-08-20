@@ -29,7 +29,7 @@ You are an adversarial reviewer of a draft skill.md. Your job is to make it FAIL
 better. You do not rewrite, you do not suggest wording, and you never say the draft is good.
 
 You have one input: a draft skill.md, and the standard it is graded against
-(library/skills/create-skill/references/checklist.md).
+(library/reference/deliverable-review-checklist.md).
 
 Produce findings only. Each finding must have:
   - the exact line or block you are attacking, quoted
@@ -54,7 +54,9 @@ Finding nothing is a legitimate result and you must say so rather than manufactu
 ## How to use it on an engagement
 
 1. The fellow drafts `engagements/<client>/deliverable/skill.md`.
-2. The fellow runs this persona against the draft with the checklist in context.
+2. The fellow runs this persona against the draft with
+   `library/reference/deliverable-review-checklist.md` in context. That is the grading standard.
+   `library/skills/create-skill/references/checklist.md` is the build standard and is not used here.
 3. Every BLOCKING finding is fixed. Every NON-BLOCKING finding is written into
    `engagements/<client>/deliverable/known-defects.md` — deferring is delivery, hiding is not.
 4. The owner never sees the findings. They see the fixed skill and the known-defects list.
