@@ -5,8 +5,12 @@ style: descriptive
 # The nineteen checks
 
 One row per checklist item: what verifies it, what a pass looks like, and what the apprentice sees
-when it fails. Eight items have a real command, three are partial, and eight cannot be checked from
-a shell at all.
+when it fails. Some have a real command, some are answerable only by the apprentice, and several are
+partial — a command narrows the question without settling it.
+
+**Do not count them into a summary and do not repeat a total.** Which items are checkable depends on
+the apprentice's machine and on which agent they are using, so any fixed tally is wrong for
+somebody.
 
 **Say which kind you are doing.** A reminder confirmed by the apprentice and a check run by a
 command are different evidence, and the record keeps them apart.
@@ -33,19 +37,38 @@ has no git. `git --version` on that machine opens a **graphical dialog** asking 
 tools, and the terminal blocks until a human clicks it. To the agent this looks like a hang. If a
 version check appears to stall, tell the apprentice to look at their screen.
 
-**Git identity — test for an empty string, not for an exit code.** With nothing set,
-`git config --global --get user.email` prints nothing and exits 1, with no message. "No error text"
-reads as success to a beginner and to a careless agent. The failure surfaces much later, at their
-first commit, as `Author identity unknown`.
+**Git identity — a non-empty answer is not a passing answer.** Two different failures hide here and
+the second is the dangerous one.
+
+*Empty.* With nothing set, `git config --global --get user.email` prints nothing and exits 1, with
+no message. "No error text" reads as success to a beginner and to a careless agent. It surfaces much
+later, at their first commit, as `Author identity unknown`.
+
+*Somebody else's.* On a shared or borrowed machine — or any machine another person set up — these
+commands return a real name and a real address belonging to **the wrong person**. That passes an
+empty-string test perfectly, and the apprentice's commits then carry someone else's identity.
 
 ```bash
 git config --global --get user.name
 git config --global --get user.email
+gh auth status
 ```
 
-Both must print a non-empty line. Empty output is a fail even though nothing looked wrong.
+**Show the apprentice the values and ask whether they are theirs. Do not decide it yourself.**
 
-**The skills symlink — use `test -L`, not `ls`.** The link is tracked in git as mode `120000`. On a
+- Empty output — fail.
+- A name or address the apprentice does not recognise as their own — fail, and say which value you
+  saw. Do not record it as verified because a command exited zero.
+- `gh auth status` naming a GitHub account that is not the username they gave you earlier — fail,
+  and the same rule applies.
+
+This is the one place in the whole checklist where a green command is weaker evidence than the
+apprentice's own eyes.
+
+**The skills symlink — use `test -L`, not `ls`.** This one belongs to the workspace step, not the
+machine step: there is nothing to test until the repository has been cloned. It sits here because it
+fails in the same silent way as the two above, and it is the third of the three. Run it after the
+clone, not before. The link is tracked in git as mode `120000`. On a
 Windows checkout without symlink support git writes a **17-byte ordinary text file** containing the
 text `../library/skills`. Nothing errors, and the agent then loads **zero skills** — an empty skills
 directory is not an error condition. The apprentice can work for a week without the skills this
@@ -58,6 +81,11 @@ test -L .claude/skills && echo "symlink OK" || { echo "NOT a symlink; contents:"
 If it is not a symlink, `library/sops/agent-settings.md` gives the fallback: copy the directory
 instead — and re-copy after every `git pull`, or what the agent loads and what the library holds
 drift apart silently.
+
+**If you take the copy fallback, `test -L` will fail forever after**, correctly and permanently. Do
+not keep re-running it and do not record the item as failed. Record it as verified with the note
+`copied, not linked — re-copy after every git pull`, so the next session knows the check no longer
+applies and knows what the apprentice now owes on every pull.
 
 ### The rest
 
@@ -78,7 +106,7 @@ Run the roster in a loop, not as an `&&` chain. A chain stops at the first missi
 beginner round three separate install-and-rerun cycles; the loop reports everything in one pass.
 
 ```bash
-for c in "git --version" "gh --version" "node --version" "python3 --version" "brew --version"; do
+for c in "git --version" "gh --version" "node --version" "python3 --version" "brew --version" "code --version"; do
   out=$(sh -c "$c" 2>&1); rc=$?
   printf '%-14s %-4s %s\n' "${c%% *}" "$([ $rc -eq 0 ] && echo PASS || echo FAIL)" "$(printf '%s' "$out" | head -1)"
 done
@@ -108,13 +136,16 @@ Clone, then check the symlink with `test -L` as above. Then the plugins.
 
 **The plugin block does not behave the way its own introduction describes.** The introduction in
 `library/sops/agent-settings.md` says three of the four plugins live in third-party marketplaces
-that must be added first. The command block below it gives **two** marketplace-add commands, and
-issues `/plugin install superpowers` with no marketplace added for it. An apprentice running the
-block top to bottom may hit a plugin-not-found failure on the very first command, and the page
-offers no recovery line.
+that must be added first. The command block below it contains **five** install commands and only
+**two** marketplace-add commands, so three installs run with no marketplace added ahead of them.
 
-Treat that as expected rather than as the apprentice's mistake. Record what failed and tell them to
-report it — this repository asks for library problems to be reported, not repaired in place.
+**Do not predict which one will fail.** Some of those three resolve from a marketplace that is
+already present; which ones do is a property of the apprentice's machine, not of this page. Run the
+block in order, one at a time as the page instructs, and record what actually failed.
+
+Treat a failure as expected rather than as the apprentice's mistake. Record what failed and tell
+them to report it — this repository asks for library problems to be reported, not repaired in
+place.
 
 **Checking what actually installed.** The page says the install "cannot be scripted", and the
 interactive part is genuinely interactive. The *verification* is not: at Claude Code 2.1.238 a
@@ -125,8 +156,15 @@ and `scope`.
 claude plugin list --json
 ```
 
-Read `enabled`, not just presence. An installed-but-disabled plugin is a real state, and a check
-that only looks for the name passes it.
+Two traps in reading that output.
+
+**It lists plugins from every project on the machine, not this one.** Each row carries a `scope`
+alongside `id` and `enabled`, and the same plugin can appear more than once at different scopes with
+*different* `enabled` values. A grep for the plugin name will match a row belonging to some other
+project and report a pass. Filter, and say which row you used.
+
+**Read `enabled`, not presence.** Installed-but-disabled is a real state, and a check that only
+looks for the name passes it.
 
 **In Codex none of this applies.** These are Claude Code plugins and there is no equivalent. Record
 the step as not applicable and move on; nothing else in this skill depends on it.

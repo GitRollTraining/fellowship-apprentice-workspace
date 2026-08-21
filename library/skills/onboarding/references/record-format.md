@@ -4,7 +4,19 @@ style: descriptive
 
 # The setup record
 
-`training/onboarding/setup-record.md`, in the apprentice's own fork, committed.
+`training/onboarding/setup-record.md`, in the apprentice's own fork.
+
+**Committing it is a step, not an assumption.** Writing the file is covered by the permission list;
+`git add` and `git commit` are not, so both raise an approval prompt. At the end of a session, show
+the apprentice what changed and offer to commit it:
+
+```bash
+git add training/onboarding/
+git commit -m "Onboarding: record setup progress"
+```
+
+If they decline, say plainly that the record still exists on disk and the next session will find it,
+but nothing is backed up until it is committed and pushed.
 
 It exists so a second session knows what a first session settled. Without it every session re-drives
 nineteen items, and the eight that only the apprentice can confirm get re-asked forever.
@@ -17,21 +29,32 @@ apprentice's agent may write — `engagements/`, `training/` and `reference/`. W
 agent that needs to write it.
 
 `training/INDEX.md` says one directory per module. `onboarding/` is not a module, so it is admitted
-by an explicit row in that manifest rather than by the naming convention. When you create
-`training/onboarding/`, give it an `INDEX.md` whose first line is the upstream pointer:
+by an explicit row in that manifest rather than by the naming convention.
 
-```
-<!-- upstream: training/INDEX.md -->
-```
+**The directory and its `INDEX.md` already ship with the repository.** Do not create them; they are
+there in a fresh clone. What you owe is the manifest update that `CLAUDE.md` requires of anyone who
+adds a file: when you write `setup-record.md` for the first time, set its Freshness row in
+`training/onboarding/INDEX.md` from `—` to the date. One line, in the same operation as the write.
 
 ## The four states
 
 | State | Means | Re-ask next session? |
 |---|---|---|
-| `verified` | a command checked it and passed | no |
+| `verified` | a command checked it and passed, and any value it printed belongs to this apprentice | no |
 | `confirmed` | the apprentice said so; no command can check it | no |
-| `outstanding` | not done, or the apprentice could not confirm it | **yes** |
+| `outstanding` | not done, and the apprentice can do it themselves | **yes** |
+| `blocked` | not done, and they cannot proceed until someone else acts — the trainer sends a link, grants access, answers | **yes, and name who is blocking** |
+| `contradicted` | the apprentice said one thing and a command showed another | **yes — resolve it, do not average it** |
 | `not applicable` | genuinely does not apply, with the reason written down | no |
+
+**`blocked` and `outstanding` look identical in a table and are not the same thing.** Four items on
+this list depend on the trainer sending something. An apprentice reading a list of eight
+`outstanding` rows cannot tell which four they could clear tonight. Separate them.
+
+**`contradicted` exists because it happens.** An apprentice gives a GitHub username; the lookup
+returns 404. An identity check prints a name that is not theirs. Recording either as `verified`
+because the command exited zero is the failure this state prevents. Write both values down — what
+they said and what the command returned — and leave it for the next session or the trainer.
 
 `not applicable` is for one real case — the plugin install when the apprentice is using Codex.
 Do not use it to retire something inconvenient.
@@ -50,7 +73,7 @@ Last session: YYYY-MM-DD
 |---|---|---|---|
 | Read: version control systems | confirmed | 2026-08-21 | |
 | Read: Git and GitHub | outstanding | | |
-| GitHub account | verified | 2026-08-21 | username resolves |
+| GitHub account | contradicted | 2026-08-21 | they said `sam-demo`; the lookup returned 404 |
 | GitHub username sent to Ray | confirmed | 2026-08-21 | |
 | Codex application | confirmed | 2026-08-21 | in Codex mode, not chat |
 | Package manager | verified | 2026-08-21 | 4.x |
@@ -61,21 +84,28 @@ Last session: YYYY-MM-DD
 | Git name and email | verified | 2026-08-21 | both non-empty |
 | Signed in to GitHub from the terminal | verified | 2026-08-21 | account named |
 | Whole machine, one pass | verified | 2026-08-21 | every row PASS |
-| Session logging on entire.io | outstanding | | |
-| Joined Google Classroom | outstanding | | needs the link from the trainer |
-| Joined Discord | outstanding | | needs the invite from the trainer |
+| Session logging on entire.io | blocked | 2026-08-21 | trainer: setup page not sent yet |
+| Joined Google Classroom | blocked | 2026-08-21 | trainer: join link not sent yet |
+| Joined Discord | blocked | 2026-08-21 | trainer: invite not sent yet |
 | Workspace cloned and skills symlink resolving | verified | 2026-08-21 | test -L passed |
 | Workspace plugins installed | not applicable | 2026-08-21 | using Codex; no plugin mechanism |
-| Opened Classroom and read one subject | outstanding | | |
+| Opened Classroom and read one subject | blocked | 2026-08-21 | trainer: cannot open until they are in Classroom |
 | Office hours in the calendar | outstanding | | |
 
-## Still outstanding
+## You can do these now
 
 - Read: Git and GitHub
-- Session logging on entire.io
-- Joined Google Classroom, Joined Discord — both need the link the trainer sends privately
-- Opened Classroom and read one subject
 - Office hours in the calendar
+
+## Waiting on the trainer
+
+- Session logging on entire.io — needs the setup page
+- Joined Google Classroom, Joined Discord — both need the link, sent privately
+- Opened Classroom and read one subject — follows from Classroom
+
+## Needs sorting out
+
+- GitHub account — the username given does not resolve. Check the spelling, or the account
 ```
 
 ## Rules
@@ -90,8 +120,18 @@ nothing distinguishes "confirmed last week" from a guess.
 string, the account the sign-in named. `confirmed` with no note is weaker than `confirmed` with the
 subject name beside it, and the difference matters when a trainer reads the record.
 
-**Keep the "Still outstanding" list in step with the table.** It is what the apprentice reads and
-what the next session re-asks from. Rewrite it whenever the table changes.
+**Keep the three lists under the table in step with it.** They are what the apprentice actually
+reads, and what the next session re-asks from. Rewrite them whenever the table changes.
 
-**Two rows can be added, and only two:** an extra line under `Evidence or note`, and a new row if
-the checklist itself grows. Do not restructure the table — a later session parses it.
+Keeping them separate is the point: an apprentice who can see that only two of eight items are
+theirs to clear tonight will clear those two. One undifferentiated list of eight reads as a wall and
+gets nothing done.
+
+**The table has more rows than the checklist has items, and that is deliberate.** Setting up the
+workspace is two independent jobs with two different outcomes — cloning with a working skills link,
+and installing the plugins — and under Codex the second is `not applicable` while the first is
+`verified`. One row cannot hold two states, so it gets two.
+
+**Do not remove or rename a row.** A later session reads this table by its row labels. Adding a row
+when the checklist grows is fine; adding a line under `Evidence or note` is fine. Renaming
+`Joined Discord` to something tidier is what breaks the next session.

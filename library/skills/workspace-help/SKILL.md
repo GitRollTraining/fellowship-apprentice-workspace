@@ -34,6 +34,7 @@ file — not knowing the name is usually why they are asking.
 
 | They asked | Go to |
 |---|---|
+| "I'm new — where do I even start" | Filing first, then Skills. Show them the tree and the four top-level directories before naming any tool |
 | "what can this thing do", "which skill should I use" | Skills |
 | "how do I run an engagement", "what is a playbook" | Playbooks |
 | "where do I put this" | Filing |
@@ -41,6 +42,8 @@ file — not knowing the name is usually why they are asking.
 | "am I allowed to edit that" | Permissions |
 | "what have I got so far" | Their own work |
 | "what does <word> mean" | Terms |
+| "how many X are there" | Counts — count them, never quote a number from prose |
+| "what personas / renderers are there" | Personas, references, renderers |
 
 The commands for each are in `references/enumeration.md`. Run the one that matches, from the
 repository root.
@@ -61,12 +64,24 @@ never been reconciled. Say which one you mean the first time it comes up in a co
 > In this workspace a playbook is a step-by-step procedure you actually run on a client engagement,
 > not the read-it-yourself reference document the course calls a playbook.
 
-**And none of them has been run for real.** Check each one's state before routing — the state is in
-the manifest's own table and, for most of them, in the file's own frontmatter. Say it out loud:
+**Three files in this repository define the word, and they do not agree.** When you have to pick,
+`library/playbooks/INDEX.md` wins: it is the manifest governing the directory the files live in.
+`library/reference/terminology.md` says a playbook is run *across* engagements, which reads as the
+opposite of the manifest's *engagement-bound*; both are defensible and the difference is real, so
+say which one you are using rather than blending them. Do not silently prefer the glossary because
+it is shorter.
 
-> These are complete drafts, not tested ones — one has had a throwaway structure test, the others
-> have never been run by a person with a real business owner, so expect gaps and report them rather
-> than fixing the library yourself.
+**And say what state it is in**, from the file you just read — never from a sentence remembered
+here. Read the `status:` line in the playbook's own frontmatter, fall back to the State column in
+`library/playbooks/INDEX.md`, and repeat what it says.
+
+The shape of the sentence, with the state filled in from what you actually read:
+
+> `<name>` is `<the state its own frontmatter or the manifest gives>`. Expect gaps, and report them
+> rather than fixing the library yourself.
+
+A count of how many have been run belongs in neither this file nor your answer. If the apprentice
+asks how many, count them — the recipe is under Counts in `references/enumeration.md`.
 
 Then check one more thing the manifest does not tell you: **does this playbook need a real client?**
 Most of them do, and an apprentice in week one does not have one. `references/enumeration.md` shows

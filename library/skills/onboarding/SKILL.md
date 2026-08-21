@@ -69,8 +69,16 @@ record it. It changes exactly one step, the plugin install, and it is better kno
 | Have you **sent your GitHub username to Ray**? | their answer |
 
 Only the third can be checked at all, and only loosely: `gh api users/<name> --jq .login` proves
-the account exists, not that it is theirs. Sending the username to Ray gates repository *access*
-later, not the clone — so do not treat it as a blocker for the rest of this session.
+the account exists, not that it is theirs.
+
+**That command needs the GitHub tool, which is installed and signed in two sections later.** Do not
+stop here to install it. Take the username, record it as `confirmed`, and come back to check it
+after the sign-in step — then upgrade the row to `verified`, or to `contradicted` if the lookup
+returns 404 for the name they gave you.
+
+Sending the username to Ray gates repository *access* later, not the clone, so it does not block the
+rest of this session. It does block their own fork later, so record it as `blocked` on the trainer
+rather than as merely outstanding.
 
 ### 3. Your machine — nine items, and these come first
 
@@ -95,6 +103,11 @@ practice rather than from a house standard.
 programme and anything done before it is set up is not recorded. This repository says nothing about
 entire.io at all, so ask the apprentice to follow the setup page their trainer gave them and tell
 you when it is running.
+
+**If they do not have that page yet, do not stall the session.** Record it as `blocked` on the
+trainer, say once and plainly that this session's work will not appear in their log, and carry on.
+The alternative is an apprentice who does nothing at all while waiting — worse on every axis, and
+the machine section does not depend on it.
 
 Then: **join Google Classroom** and **join Discord**, both using the links you asked for at the
 start. Then **set up the workspace**. Then **open Classroom, open one subject and read the first

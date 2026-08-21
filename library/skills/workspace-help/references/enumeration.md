@@ -52,14 +52,30 @@ A file printing no status has none in its frontmatter; fall back to the State co
 `library/playbooks/INDEX.md`, and if it is in neither, say it is undocumented.
 
 **Does it need a real client?** This is the question that decides whether an apprentice can run it
-at all, and no manifest answers it. Look in the file's own preconditions:
+at all, and no manifest answers it. It lives in the playbook's own entry section — but **the
+heading is not the same in every file**, so list the headings first and then read the one that
+holds entry requirements:
 
 ```bash
-sed -n '/^## Preconditions/,/^## /p' library/playbooks/playbook-<name>.md
+grep -n '^## ' library/playbooks/playbook-<name>.md | head -5
 ```
 
-A precondition naming a client, an owner, or a person authorised to approve access means the
-apprentice cannot run it without one. Say that plainly instead of routing them into it.
+Headings seen carrying entry requirements include `## Preconditions`, `## Inputs`,
+`## Entry gate and inputs`, `## Inputs and outputs`, `## Inputs and output` and
+`## Required artifact chain`. That list is a hint, not a closed set — read what `grep` returned,
+not what is written here. Then print the section you picked:
+
+```bash
+sed -n '/^## <the heading you picked>/,/^## /p' library/playbooks/playbook-<name>.md
+```
+
+That range prints the following heading as its last line. Ignore it.
+
+**If no section names entry requirements, say so** rather than concluding the playbook needs
+nothing. A missing precondition section is missing documentation, not an open door.
+
+A requirement naming a client, an owner, a signed document, or a person authorised to approve
+access means the apprentice cannot run it alone. Say that plainly instead of routing them into it.
 
 The word itself, and the warning about its two senses, is in `library/playbooks/INDEX.md` under its
 own heading. Read it once and carry the one-sentence definition into the conversation.
@@ -88,6 +104,10 @@ find . -name INDEX.md -not -path './.git/*' | sort
 ```bash
 ls -1 library/templates/
 ```
+
+That listing contains directories as well as files — a template can be a bundle with its own
+`SKILL.md` and reference set, not just one markdown file. Do not filter to `*.md` and then report a
+count; you will drop the bundles.
 
 The filenames say what they are; `library/templates/INDEX.md` says when to reach for each. For
 templates the manifest is the only source of meaning, so read it — but list first, because a
