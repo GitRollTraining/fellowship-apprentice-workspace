@@ -138,10 +138,12 @@ manager**, a **code editor**, **Git**, the **GitHub command-line tool**, **Node.
 then **your Git name and email**, then **signing in to GitHub from the terminal**, and finally one
 pass that shows a version number for every tool with no errors.
 
-Two of these nine have a wrong-looking obvious form, and both fail *silently*: the Git name and
-email, and the terminal sign-in. `references/checks.md` gives the right form for each and says why;
-use it rather than improvising. It carries a third check of the same shape — the skills symlink —
-but that one belongs to the workspace step in section 4, because there is nothing to test until the
+Two of these nine have a wrong-looking obvious form, and both fail *silently*: **Git** itself — use
+`git --version`, never `command -v git`, which succeeds on a Mac that cannot actually run git — and
+**your Git name and email**, where a non-empty answer is not a passing answer, because the values
+can belong to somebody else. `references/checks.md` gives the right form for each and says why; use
+it rather than improvising. It carries a third check of the same shape — the skills symlink — but
+that one belongs to the workspace step in section 4, because there is nothing to test until the
 repository has been cloned.
 
 If the apprentice is on Windows, say plainly that this repository takes no position on Windows
