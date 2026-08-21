@@ -84,9 +84,11 @@ Read `training/onboarding/setup-record.md` in the apprentice's own copy of the r
   **The lists under the table outrank the table.** If an item appears under "Needs sorting out" or
   "Waiting on the trainer", treat it as unsettled whatever its row says.
 
-  **Re-confirm the two identity rows every session, even when they read `verified`.** It costs one
-  question and no commands: show the apprentice the name, email and GitHub account currently in
-  effect and ask whether they are theirs. Machines get borrowed, reimaged and shared, and this is
+  **Re-confirm the two identity rows every session, even when they read `verified`.** They are
+  `Git name and email` and `Signed in to GitHub from the terminal`. It costs one question and the
+  three commands those two rows already use in `references/checks.md` — `git config --global --get
+  user.name`, the same for `user.email`, and `gh auth status`. Show the apprentice what those three
+  print and ask whether the name, email and account are theirs. Machines get borrowed, reimaged and shared, and this is
   the one setting whose failure is both silent and expensive — every commit they make carries it.
 
 Ask which agent they are using — Claude Code or the ChatGPT desktop application in Codex mode — and
@@ -108,10 +110,14 @@ onto rather than assuming the row applies.
 Only the third can be checked at all, and only loosely: `gh api users/<name> --jq .login` proves
 the account exists, not that it is theirs.
 
-**That command needs the GitHub tool, which is installed and signed in two sections later.** Do not
-stop here to install it. Take the username, record it as `confirmed`, and come back to check it
-after the sign-in step — then upgrade the row to `verified`, or to `contradicted` if the lookup
-returns 404 for the name they gave you.
+**That command needs the GitHub tool, which is installed and signed in in the very next section.**
+Do not stop here to install it. Take the username, record the row as `outstanding` with the username
+in the note, and come back to check it after the sign-in step — then set the row to `verified`, or to
+`contradicted` if the lookup returns 404 for the name they gave you.
+
+Not `confirmed`. That state means no command can check the item, and it is never re-asked; a command
+can check this one. A session that ended here with the row marked `confirmed` would bury an unchecked
+name that every later step trusts.
 
 **The lookup runs under whichever account the terminal is signed in as, which may not be theirs.**
 It resolves a public profile, so the answer is the same either way — but say which account you used,
@@ -132,8 +138,11 @@ manager**, a **code editor**, **Git**, the **GitHub command-line tool**, **Node.
 then **your Git name and email**, then **signing in to GitHub from the terminal**, and finally one
 pass that shows a version number for every tool with no errors.
 
-Three of those checks have a wrong-looking obvious form. `references/checks.md` gives the right one
-and says why; use it rather than improvising, because two of the three fail *silently*.
+Two of these nine have a wrong-looking obvious form, and both fail *silently*: the Git name and
+email, and the terminal sign-in. `references/checks.md` gives the right form for each and says why;
+use it rather than improvising. It carries a third check of the same shape — the skills symlink —
+but that one belongs to the workspace step in section 4, because there is nothing to test until the
+repository has been cloned.
 
 If the apprentice is on Windows, say plainly that this repository takes no position on Windows
 tooling — it names no package manager for it anywhere — and that you are working from general

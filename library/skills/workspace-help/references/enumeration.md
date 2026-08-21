@@ -169,9 +169,12 @@ they describe. Count what is there:
 ```bash
 ls -1 library/skills/*/SKILL.md | wc -l
 ls -1 library/playbooks/playbook-*.md | wc -l
-ls -1 library/templates | wc -l
+ls -1 library/templates | grep -v '^INDEX\.md$' | wc -l
 ```
 
-The template line counts directory entries, not `*.md`. Filtering to `*.md` there drops the template
-bundles — the same mistake this file warns about under Templates, and it happens to return a
-plausible number, which is why it survives review.
+The template line counts directory entries rather than `*.md`, because a template can be a bundle:
+`brief-design/` is a directory, and filtering to `*.md` drops it — the same mistake this file warns
+about under Templates, and it returns a plausible number, which is why it survives review. It then
+excludes `INDEX.md`, which is the directory's own manifest and not a template. Without that
+exclusion the line returns one more than there are templates, and disagrees with the count
+`library/templates/INDEX.md` gives for itself.

@@ -30,11 +30,12 @@ repository succeeds. Do not hold up the rest of the session for it.
 
 ## Your machine
 
-### Three checks whose obvious form is wrong — two fail silently, one fails permanently
+### Three checks whose obvious form is wrong — all three fail silently, and the third also sticks
 
-The first two below pass on a broken machine without printing anything wrong. The third is
-different: it belongs to the workspace step rather than the machine step, and once the copy fallback
-is taken it fails forever by design. Read all three before running any of them.
+All three pass on a broken machine without printing anything wrong. The third differs in two further
+ways: it belongs to the workspace step rather than the machine step, and once the copy fallback is
+taken it stays broken by design rather than repairing itself. Read all three before running any of
+them.
 
 **Git — use `git --version`, never `command -v git`.** On a Mac with no Xcode command line tools
 `/usr/bin/git` exists as a shim, so `command -v git` succeeds and prints a path for a machine that
@@ -93,7 +94,7 @@ item is about. Record it as `verified` with the note `copied, not linked — re-
 pull`.
 
 That note describes *how* it passed, which is allowed. It is not a caveat on the pass, which is not
-— see `record-format.md` § The six states.
+— see `record-format.md` § Rules, "Never write a caveat into the note of a `verified` row".
 
 ### The rest
 

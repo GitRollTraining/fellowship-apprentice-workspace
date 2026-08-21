@@ -86,7 +86,7 @@ Last session: YYYY-MM-DD, session <n>
 | Item | State | Date | Evidence or note |
 |---|---|---|---|
 | Read: version control systems | confirmed | 2026-08-21 | |
-| Read: Git and GitHub | outstanding | | |
+| Read: Git and GitHub | outstanding | 2026-08-21 | asked; not read yet |
 | GitHub account | contradicted | 2026-08-21 | they said `sam-demo`; the lookup returned 404 |
 | GitHub username sent to Ray | confirmed | 2026-08-21 | |
 | Codex application | confirmed | 2026-08-21 | in Codex mode, not chat |
@@ -104,7 +104,7 @@ Last session: YYYY-MM-DD, session <n>
 | Workspace cloned and skills symlink resolving | verified | 2026-08-21 | test -L passed |
 | Workspace plugins installed | not applicable | 2026-08-21 | using Codex; no plugin mechanism |
 | Opened Classroom and read one subject | blocked | 2026-08-21 | trainer: cannot open until they are in Classroom |
-| Office hours in the calendar | outstanding | | |
+| Office hours in the calendar | outstanding | 2026-08-21 | asked; not added yet |
 
 ## You can do these now
 
