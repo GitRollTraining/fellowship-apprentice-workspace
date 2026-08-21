@@ -21,5 +21,5 @@ authored components work as they do and what needs revalidation.
 
 | Item | Last updated | Status |
 |---|---|---|
-| Provenance and cut records | 2026-08-15 | Updated for the final handoff system, owner persona, package contracts and renderer clarification |
+| Provenance and cut records | 2026-08-22 | Rehashed for the `argument-hint` compatibility clarification |
 | `design/` | 2026-08-15 | Output Phraser/handoff conflicts and rulings added |
