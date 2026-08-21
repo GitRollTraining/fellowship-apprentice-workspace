@@ -8,9 +8,10 @@ One row per checklist item: what verifies it, what a pass looks like, and what t
 when it fails. Some have a real command, some are answerable only by the apprentice, and several are
 partial — a command narrows the question without settling it.
 
-**Do not count them into a summary and do not repeat a total.** Which items are checkable depends on
-the apprentice's machine and on which agent they are using, so any fixed tally is wrong for
-somebody.
+**The nineteen is fixed; every other number here is not.** The checklist is a frozen roster, so
+saying "nineteen items" is safe. How many of them a command can check is not — it depends on the
+apprentice's machine and on which agent they are using, so any fixed tally of *checkable* items is
+wrong for somebody. Count what is in front of you and do not carry a number between apprentices.
 
 **Say which kind you are doing.** A reminder confirmed by the apprentice and a check run by a
 command are different evidence, and the record keeps them apart.
@@ -29,7 +30,11 @@ repository succeeds. Do not hold up the rest of the session for it.
 
 ## Your machine
 
-### The three that fail silently — use these forms, not the obvious ones
+### Three checks whose obvious form is wrong — two fail silently, one fails permanently
+
+The first two below pass on a broken machine without printing anything wrong. The third is
+different: it belongs to the workspace step rather than the machine step, and once the copy fallback
+is taken it fails forever by design. Read all three before running any of them.
 
 **Git — use `git --version`, never `command -v git`.** On a Mac with no Xcode command line tools
 `/usr/bin/git` exists as a shim, so `command -v git` succeeds and prints a path for a machine that
@@ -83,9 +88,12 @@ instead — and re-copy after every `git pull`, or what the agent loads and what
 drift apart silently.
 
 **If you take the copy fallback, `test -L` will fail forever after**, correctly and permanently. Do
-not keep re-running it and do not record the item as failed. Record it as verified with the note
-`copied, not linked — re-copy after every git pull`, so the next session knows the check no longer
-applies and knows what the apprentice now owes on every pull.
+not keep re-running it and do not record the item as failed — the skills load, which is what the
+item is about. Record it as `verified` with the note `copied, not linked — re-copy after every git
+pull`.
+
+That note describes *how* it passed, which is allowed. It is not a caveat on the pass, which is not
+— see `record-format.md` § The six states.
 
 ### The rest
 
@@ -169,4 +177,6 @@ which one you used and why.
 looks for the name passes it.
 
 **In Codex none of this applies.** These are Claude Code plugins and there is no equivalent. Record
-the step as not applicable and move on; nothing else in this skill depends on it.
+the step as not applicable and move on. Nothing else in this skill depends on it — but
+`library/playbooks/playbook-environment-setup.md` will later refuse to start on missing base
+plugins, so flag it to the trainer rather than leaving it as a silent gap.

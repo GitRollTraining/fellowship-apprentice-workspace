@@ -57,7 +57,7 @@ prefer the command. Say what each one said and leave it visible.
 
 ### 1. Open the record before anything else
 
-Read `training/onboarding/setup-record.md` in the apprentice's fork.
+Read `training/onboarding/setup-record.md` in the apprentice's own copy of the repository.
 
 - **It does not exist** — this is a first session. Create it from `references/record-format.md`,
   then work the whole list.
@@ -90,16 +90,20 @@ Read `training/onboarding/setup-record.md` in the apprentice's fork.
   the one setting whose failure is both silent and expensive — every commit they make carries it.
 
 Ask which agent they are using — Claude Code or the ChatGPT desktop application in Codex mode — and
-record it. It changes exactly one step, the plugin install, and it is better known at the start.
+record it. It is better known at the start: it changes what the plugin step means, and it decides
+which of the two applications the machine checklist is actually asking them to install. The
+checklist names the ChatGPT desktop application by name; if they are working in Claude Code, that
+row is about a second application they may or may not have, so ask which they are being onboarded
+onto rather than assuming the row applies.
 
 ### 2. Before day one — four items
 
 | Ask | What to record |
 |---|---|
-| Have you read the notes on **version control systems**? | their answer, with the date |
-| Have you read the notes on **Git and GitHub**? | their answer, with the date |
+| Have you read the notes on **version control systems** your trainer sent? | their answer, with the date |
+| Have you read the notes on **Git and GitHub** your trainer sent? | their answer, with the date |
 | Do you have a **GitHub account**? | the username, which the next step needs |
-| Have you **sent your GitHub username to Ray**? | their answer |
+| Have you **sent your GitHub username to your trainer**? | their answer. The checklist names Ray; confirm who their trainer actually is rather than assuming |
 
 Only the third can be checked at all, and only loosely: `gh api users/<name> --jq .login` proves
 the account exists, not that it is theirs.
@@ -113,7 +117,7 @@ returns 404 for the name they gave you.
 It resolves a public profile, so the answer is the same either way — but say which account you used,
 because a 404 under somebody else's sign-in invites the wrong conclusion.
 
-Sending the username to Ray gates repository *access* later, not the clone, so it does not hold up
+Sending the username to their trainer gates repository *access* later, not the clone, so it does not hold up
 the rest of this session. It is `outstanding`, not `blocked` — sending a message is the apprentice's
 own action, and `blocked` is reserved for waiting on somebody else. Say plainly that access will not
 arrive until they send it.
@@ -160,7 +164,10 @@ your calendar**.
    rather than from a count remembered here — its prose and its command block disagree about how
    many there are. These are Claude Code plugins. **In Codex there is no equivalent** —
    record the step as not applicable, say so plainly, and move on. It is not the apprentice's
-   fault and nothing later in this skill depends on it.
+   fault, and nothing later in *this skill* depends on it. Say the rest out loud though: the
+   engagement playbook they will eventually run treats missing base plugins as an onboarding
+   problem and stops. So a Codex-only apprentice is set up for this skill and not yet set up for
+   that one, and their trainer needs to know.
 
 For a Claude Code apprentice, the install is interactive: the commands are in
 `library/sops/agent-settings.md`. Two of them add a marketplace first. Read

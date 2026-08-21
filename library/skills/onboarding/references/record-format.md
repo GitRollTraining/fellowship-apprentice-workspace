@@ -4,7 +4,13 @@ style: descriptive
 
 # The setup record
 
-`training/onboarding/setup-record.md`, in the apprentice's own fork.
+`training/onboarding/setup-record.md`, in the apprentice's own copy of the repository.
+
+**Their copy, not necessarily a fork, and not necessarily pushable.** The setup step is a clone; no
+step in this skill creates a fork, and an apprentice with no write access who tries to push to the
+shared repository gets a permission error rather than a backup. Ask whether they have their own fork
+or write access before suggesting a push. If they do not, say plainly that the record is local until
+their trainer sorts access out, and leave it committed locally.
 
 **Committing it is a step, not an assumption.** Writing the file is covered by the permission list;
 `git add` and `git commit` are not, so both raise an approval prompt. At the end of a session, show
@@ -15,8 +21,8 @@ git add training/onboarding/
 git commit -m "Onboarding: record setup progress"
 ```
 
-If they decline, say plainly that the record still exists on disk and the next session will find it,
-but nothing is backed up until it is committed and pushed.
+If they decline, say plainly that the record still exists on disk and the next session will find
+it. Do not tell them to push unless you have established they have somewhere to push to.
 
 It exists so a second session knows what a first session settled. Without it every session re-drives
 all nineteen items, and the ones only the apprentice can confirm get re-asked forever.
@@ -50,8 +56,9 @@ it looks maintained.
 | `not applicable` | genuinely does not apply, with the reason written down | no |
 
 **`blocked` and `outstanding` look identical in a table and are not the same thing.** Several items
-on this list cannot start until the trainer sends something. An apprentice reading a list of eight
-`outstanding` rows cannot tell which four they could clear tonight. Separate them.
+on this list cannot start until the trainer sends something. An apprentice reading one long
+`outstanding` list cannot tell which of those rows they could clear tonight and which will sit there
+until somebody replies. Separate them.
 
 **When one row changes, check the rows that depended on it.** Correcting a mistyped GitHub username
 silently falsifies "GitHub username sent to Ray" — they sent the wrong one. Resolving a
@@ -88,7 +95,7 @@ Last session: YYYY-MM-DD, session <n>
 | Git | verified | 2026-08-21 | 2.x |
 | GitHub command-line tool | verified | 2026-08-21 | 2.x |
 | Node.js and Python | verified | 2026-08-21 | both present |
-| Git name and email | verified | 2026-08-21 | both non-empty |
+| Git name and email | verified | 2026-08-21 | apprentice confirmed both values are theirs |
 | Signed in to GitHub from the terminal | verified | 2026-08-21 | account named |
 | Whole machine, one pass | verified | 2026-08-21 | every row PASS |
 | Session logging on entire.io | blocked | 2026-08-21 | trainer: setup page not sent yet |
@@ -123,8 +130,10 @@ joined, never *how* to join. The repository is public.
 **Every non-empty state carries a date.** A row with a state and no date cannot be resumed, because
 nothing distinguishes "confirmed last week" from a guess.
 
-**Never write a caveat into the note of a `verified` row.** If the note needs the word "but", the
-state is wrong — use `contradicted`. A row reading `verified` with a note saying the value belongs
+**Never write a caveat into the note of a `verified` row.** A note recording *how* something passed
+is fine — `copied, not linked` is a method, not a doubt. A note that undercuts the pass is not: if it
+needs the word "but", or names a value belonging to someone else, the state is wrong — use
+`contradicted`. A row reading `verified` with a note saying the value belongs
 to somebody else is the worst artifact this format can produce: it looks settled to a later session,
 to a trainer skimming the table, and to the apprentice. Downgrade the state instead of qualifying
 it.
@@ -136,9 +145,8 @@ subject name beside it, and the difference matters when a trainer reads the reco
 **Keep the three lists under the table in step with it.** They are what the apprentice actually
 reads, and what the next session re-asks from. Rewrite them whenever the table changes.
 
-Keeping them separate is the point: an apprentice who can see that only two of eight items are
-theirs to clear tonight will clear those two. One undifferentiated list of eight reads as a wall and
-gets nothing done.
+Keeping them separate is the point: an apprentice who can see which rows are actually theirs to
+clear tonight will clear them. One undifferentiated list reads as a wall and gets nothing done.
 
 **The table has more rows than the checklist has items, and that is deliberate.** Setting up the
 workspace is two independent jobs with two different outcomes — cloning with a working skills link,

@@ -177,10 +177,10 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
-library/skills/onboarding/SKILL.md	authored	-	-	ab79a211654da507b32dfdedb0ded6e94be5d4fea17ec58d2f1bee5b60f62962	skills	-
+library/skills/onboarding/SKILL.md	authored	-	-	8c71d547b0eeb5cb7d6e129f0bf92d916b687fc4d61a9a3d8fe7dae6f0335dc1	skills	-
 library/skills/onboarding/agents/openai.yaml	authored	-	-	e93135e9cbda606502c6295e0d44978a91c2bf3bbe0a96e6d6b0328f0b889278	skills	-
-library/skills/onboarding/references/checks.md	authored	-	-	1d32040befaf2f3f67c56ade3e8cdb68580217058c41f9c63ec32151445de575	skills	-
-library/skills/onboarding/references/record-format.md	authored	-	-	fd98fcc58de2661ac8cc7582fdd654af3056b1fbc0d68c2b1d9b1ca6d80e4e72	skills	-
+library/skills/onboarding/references/checks.md	authored	-	-	cc386f9271793b22cc2b1a554c7d6548f4b9f9a38ffdb2028b2bf61fb89f2149	skills	-
+library/skills/onboarding/references/record-format.md	authored	-	-	6ffc6d33756facdaa5cda81b684ad8e1e25de5c92bdd774f4d812937f2de65c9	skills	-
 library/skills/scan-agent-skill/SKILL.md	authored	-	-	86dda943037583a8fa8f66432d7fe0c4fc10802ca8762034fa77f13f8fdbcf79	skills	-
 library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
 library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	7eb56cc04b4eddcf0e7d4016c4216c63ccff97ad1fc0249f624569a37e0938ef	skills	-
@@ -202,7 +202,7 @@ library/skills/video-to-markdown/scripts/srt_to_transcript.py	WeiKuoWei/dotclaud
 library/skills/video-to-markdown/scripts/transcribe_timed.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/transcribe_timed.py	-	0aaa08a501abe26d0a34736e7b92469ecb88794372b7589b8301296b4cbd1c7b	skills	eda2f978e342e1200c0049941279f6981cf55a98b062f679d206e1924b968ab1
 library/skills/workspace-help/SKILL.md	authored	-	-	be47bb5951933932362e532b0210e9d7dd5be69d4b25244ed7dfd4b74ccf101a	skills	-
 library/skills/workspace-help/agents/openai.yaml	authored	-	-	1ce00af0130218e327348e3c0f6e8308e71c9c126ae805b0d1d08a3d96d72dea	skills	-
-library/skills/workspace-help/references/enumeration.md	authored	-	-	9f813806256925ca44b28ec9d7f00930e74271c9c56197abb513dc61769202f8	skills	-
+library/skills/workspace-help/references/enumeration.md	authored	-	-	49c01f6f0ad9bc613dcb69acd14d25a50e7dfdacb55c5c6e4e2ef74687cc1b3d	skills	-
 library/skills/youtube-transcript/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/SKILL.md	-	9485207343cd2e0af1208ca14828edd1058fd9c585aed45d3c33fcd5bf86477a	skills	38a0212abae861066238938ec0f16c8013fc76ba5840cb161ffbc50c2b92a879
 library/skills/youtube-transcript/references/setup.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/references/setup.md	-	bd6ab06fdbddabd6961b4d47f0218464c87460e15d8437d326c252070300f010	skills	b2f56954807229da0e5783e929b71b24c9bf832cedb42f03c8ec794b07873ba7
 library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4085dcc4903788139fe5db37797ac064e0a5ce26d862c12e7aaf1	skills	-

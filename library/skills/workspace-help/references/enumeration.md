@@ -169,5 +169,9 @@ they describe. Count what is there:
 ```bash
 ls -1 library/skills/*/SKILL.md | wc -l
 ls -1 library/playbooks/playbook-*.md | wc -l
-ls -1 library/templates/*.md | wc -l
+ls -1 library/templates | wc -l
 ```
+
+The template line counts directory entries, not `*.md`. Filtering to `*.md` there drops the template
+bundles — the same mistake this file warns about under Templates, and it happens to return a
+plausible number, which is why it survives review.
