@@ -177,7 +177,7 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
-library/skills/onboarding/SKILL.md	authored	-	-	8c71d547b0eeb5cb7d6e129f0bf92d916b687fc4d61a9a3d8fe7dae6f0335dc1	skills	-
+library/skills/onboarding/SKILL.md	authored	-	-	407540be7f891f47298a5861fc06f2d0d09e008e053789dd44e6bbb8b01381fe	skills	-
 library/skills/onboarding/agents/openai.yaml	authored	-	-	e93135e9cbda606502c6295e0d44978a91c2bf3bbe0a96e6d6b0328f0b889278	skills	-
 library/skills/onboarding/references/checks.md	authored	-	-	cc386f9271793b22cc2b1a554c7d6548f4b9f9a38ffdb2028b2bf61fb89f2149	skills	-
 library/skills/onboarding/references/record-format.md	authored	-	-	6ffc6d33756facdaa5cda81b684ad8e1e25de5c92bdd774f4d812937f2de65c9	skills	-

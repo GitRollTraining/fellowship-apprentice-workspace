@@ -186,8 +186,10 @@ Then point them at the next thing:
 
 ## The record
 
-`training/onboarding/setup-record.md`, in the apprentice's own fork, committed. Shape and the rules
-for resuming: `references/record-format.md`.
+`training/onboarding/setup-record.md`, in the apprentice's own copy of the repository. Whether it
+can be pushed anywhere depends on access they may not have yet, so committing it is a step you offer
+rather than an outcome you assume. Shape, the six states and the rules for resuming:
+`references/record-format.md`.
 
 It lives under `training/` because that is where work-before-a-client belongs and because it is one
 of the three trees the apprentice's own agent is allowed to write. `library/` is denied outright,
