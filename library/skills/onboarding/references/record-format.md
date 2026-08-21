@@ -19,7 +19,7 @@ If they decline, say plainly that the record still exists on disk and the next s
 but nothing is backed up until it is committed and pushed.
 
 It exists so a second session knows what a first session settled. Without it every session re-drives
-nineteen items, and the eight that only the apprentice can confirm get re-asked forever.
+all nineteen items, and the ones only the apprentice can confirm get re-asked forever.
 
 ## Where it lives, and why there
 
@@ -47,8 +47,8 @@ adds a file: when you write `setup-record.md` for the first time, set its Freshn
 | `contradicted` | the apprentice said one thing and a command showed another | **yes — resolve it, do not average it** |
 | `not applicable` | genuinely does not apply, with the reason written down | no |
 
-**`blocked` and `outstanding` look identical in a table and are not the same thing.** Four items on
-this list depend on the trainer sending something. An apprentice reading a list of eight
+**`blocked` and `outstanding` look identical in a table and are not the same thing.** Several items
+on this list cannot start until the trainer sends something. An apprentice reading a list of eight
 `outstanding` rows cannot tell which four they could clear tonight. Separate them.
 
 **`contradicted` exists because it happens.** An apprentice gives a GitHub username; the lookup

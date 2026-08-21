@@ -39,9 +39,13 @@ allow-list covers only `git status`, `git diff` and `git log`. Every version che
 command, even `ls -l`, raises an approval prompt. Tell the apprentice this once, up front:
 approving those prompts is the intended path, not a warning sign.
 
-**Say which items you cannot check.** Eight of the nineteen are things happening somewhere this
-agent cannot see — a browser tab, a calendar, a Discord membership. Ask, believe the answer, write
-it down with the date, and move on. Do not perform a check you cannot actually perform.
+**Say which items you cannot check.** Several of the nineteen happen somewhere this agent cannot
+see — a browser tab, a calendar, a chat membership. Ask, record the answer with the date, and move
+on. Do not perform a check you cannot actually perform, and do not imply you did.
+
+**Where a command CAN check something the apprentice also told you, compare the two.** If they
+disagree, that is its own recorded state — not a tie to break in your head, and not a reason to
+prefer the command. Say what each one said and leave it visible.
 
 ## Workflow
 
@@ -52,9 +56,17 @@ Read `training/onboarding/setup-record.md` in the apprentice's fork.
 - **It does not exist** — this is a first session. Create it from `references/record-format.md`,
   then work the whole list.
 - **It exists** — this is a later session. Read it, tell the apprentice in one line what is already
-  done, and work only the items whose state is not `confirmed` or `verified`. Re-ask every
-  outstanding reminder. Do not re-run machine checks that already passed unless the apprentice says
-  something broke.
+  done, and work only the rows whose state is **not** `verified`, `confirmed` or `not applicable`.
+  Do not re-run machine checks that already passed unless the apprentice says something broke.
+
+  Take the remaining rows in this order, because it is the order that respects their time:
+  `contradicted` first — something is wrong and they can fix it now; then `outstanding` — theirs to
+  do; then `blocked` — read these out so they know what to chase, but do not make them sit through
+  each one.
+
+  A record written before this skill gained the `blocked` and `contradicted` states will have
+  everything filed as `outstanding`. Read the note column, sort them yourself, and rewrite the
+  states as you go.
 
 Ask which agent they are using — Claude Code or the ChatGPT desktop application in Codex mode — and
 record it. It changes exactly one step, the plugin install, and it is better known at the start.
@@ -118,7 +130,9 @@ your calendar**.
 
 1. Clone the repository and confirm the skills symlink resolves. This is a filesystem check and
    works identically under either agent.
-2. Install the four plugins. These are Claude Code plugins. **In Codex there is no equivalent** —
+2. Install the plugins listed in `library/sops/agent-settings.md`. Run the commands from that page
+   rather than from a count remembered here — its prose and its command block disagree about how
+   many there are. These are Claude Code plugins. **In Codex there is no equivalent** —
    record the step as not applicable, say so plainly, and move on. It is not the apprentice's
    fault and nothing later in this skill depends on it.
 

@@ -34,7 +34,7 @@ file — not knowing the name is usually why they are asking.
 
 | They asked | Go to |
 |---|---|
-| "I'm new — where do I even start" | Filing first, then Skills. Show them the tree and the four top-level directories before naming any tool |
+| "I'm new — where do I even start" | Filing first, then Skills. List the top-level directories and show them the tree before naming any tool |
 | "what can this thing do", "which skill should I use" | Skills |
 | "how do I run an engagement", "what is a playbook" | Playbooks |
 | "where do I put this" | Filing |
@@ -112,7 +112,9 @@ breaks a provenance record that hashes every file in that tree.
 ## Gotchas
 
 - **Reciting an inventory.** The single failure this skill is built to prevent. If you find yourself
-  about to say "there are eleven skills", stop and run the listing instead. There were eleven once.
+  about to say "there are eleven skills", stop and run the listing instead. That sentence was true
+  when this file was written and was false within the same change that added it — the two skills you
+  are reading right now are the two that broke it.
 - **Reading the manifest instead of the directory.** A file with no row is invisible that way. List
   both and reconcile.
 - **Trusting a count written in prose.** Several counts in this repository disagree with the files
