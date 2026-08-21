@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workspace Help"
+  short_description: "Answer how-do-I questions about this workspace"
+  default_prompt: "Use $workspace-help to tell me how this workspace works and where my work should go."

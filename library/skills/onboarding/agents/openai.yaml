@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onboarding"
+  short_description: "Set up a new apprentice's machine and workspace"
+  default_prompt: "Use $onboarding to walk me through setting up my machine and this workspace, and record what I have finished."

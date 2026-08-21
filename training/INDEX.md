@@ -21,8 +21,9 @@ the one namespace the whole layout depends on being real.
 | Item | What it is | Class |
 |---|---|---|
 | `<module-id>/` | One directory per module, named for the module — `m-00`, `m-01`, and so on | Mutable |
+| `onboarding/` | The record of your own setup — what is done, what is outstanding. Written by the `onboarding` skill. Not a module, and the only directory here that is not named for one | Mutable |
 
-Nothing here yet. Create the module directory when you start the module, with its own `INDEX.md`.
+No module directories yet. Create one when you start the module, with its own `INDEX.md`.
 
 ## Freshness
 
