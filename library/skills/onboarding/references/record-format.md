@@ -33,10 +33,12 @@ by an explicit row in that manifest rather than by the naming convention.
 
 **The directory and its `INDEX.md` already ship with the repository.** Do not create them; they are
 there in a fresh clone. What you owe is the manifest update that `CLAUDE.md` requires of anyone who
-adds a file: when you write `setup-record.md` for the first time, set its Freshness row in
-`training/onboarding/INDEX.md` from `—` to the date. One line, in the same operation as the write.
+adds a file: set the Freshness row for `setup-record.md` in `training/onboarding/INDEX.md` to
+today's date — **every session that writes the record, not only the first.** A freshness row that is
+only ever set once is stale from the second session onward, which is worse than an empty one because
+it looks maintained.
 
-## The four states
+## The six states
 
 | State | Means | Re-ask next session? |
 |---|---|---|
@@ -50,6 +52,11 @@ adds a file: when you write `setup-record.md` for the first time, set its Freshn
 **`blocked` and `outstanding` look identical in a table and are not the same thing.** Several items
 on this list cannot start until the trainer sends something. An apprentice reading a list of eight
 `outstanding` rows cannot tell which four they could clear tonight. Separate them.
+
+**When one row changes, check the rows that depended on it.** Correcting a mistyped GitHub username
+silently falsifies "GitHub username sent to Ray" — they sent the wrong one. Resolving a
+`contradicted` row is the usual trigger. Re-ask the neighbour rather than leaving a `confirmed` row
+that is now false.
 
 **`contradicted` exists because it happens.** An apprentice gives a GitHub username; the lookup
 returns 404. An identity check prints a name that is not theirs. Recording either as `verified`
@@ -67,7 +74,7 @@ Do not use it to retire something inconvenient.
 Apprentice: <name>
 Agent: Claude Code | ChatGPT desktop application, Codex mode
 Started: YYYY-MM-DD
-Last session: YYYY-MM-DD
+Last session: YYYY-MM-DD, session <n>
 
 | Item | State | Date | Evidence or note |
 |---|---|---|---|
@@ -116,6 +123,12 @@ joined, never *how* to join. The repository is public.
 **Every non-empty state carries a date.** A row with a state and no date cannot be resumed, because
 nothing distinguishes "confirmed last week" from a guess.
 
+**Never write a caveat into the note of a `verified` row.** If the note needs the word "but", the
+state is wrong — use `contradicted`. A row reading `verified` with a note saying the value belongs
+to somebody else is the worst artifact this format can produce: it looks settled to a later session,
+to a trainer skimming the table, and to the apprentice. Downgrade the state instead of qualifying
+it.
+
 **Record the small piece of evidence where one exists** — the subject name they opened, the version
 string, the account the sign-in named. `confirmed` with no note is weaker than `confirmed` with the
 subject name beside it, and the difference matters when a trainer reads the record.
@@ -135,3 +148,8 @@ and installing the plugins — and under Codex the second is `not applicable` wh
 **Do not remove or rename a row.** A later session reads this table by its row labels. Adding a row
 when the checklist grows is fine; adding a line under `Evidence or note` is fine. Renaming
 `Joined Discord` to something tidier is what breaks the next session.
+
+**That rule is about the table only.** The lists underneath are rewritten every session by design —
+replace them wholesale to match the table as it now stands. A record written before this format had
+three lists will have one, possibly under a heading that no longer appears here. Replace it. Nothing
+is lost: the table is the record, and the lists are a reading of it.

@@ -159,9 +159,11 @@ claude plugin list --json
 Two traps in reading that output.
 
 **It lists plugins from every project on the machine, not this one.** Each row carries a `scope`
-alongside `id` and `enabled`, and the same plugin can appear more than once at different scopes with
-*different* `enabled` values. A grep for the plugin name will match a row belonging to some other
-project and report a pass. Filter, and say which row you used.
+alongside `id` and `enabled`, and the same plugin id can appear more than once — at different
+scopes, and also **twice at the same scope with different `enabled` values**. A grep for the plugin
+name will match a row belonging to some other project, or the wrong one of a duplicated pair, and
+report a pass either way. Filter on the rows, look at every match rather than the first, and say
+which one you used and why.
 
 **Read `enabled`, not presence.** Installed-but-disabled is a real state, and a check that only
 looks for the name passes it.

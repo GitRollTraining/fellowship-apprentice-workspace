@@ -177,10 +177,10 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
-library/skills/onboarding/SKILL.md	authored	-	-	2a425fa6894b7e377ed74b801544699202845dfb3ad17007962237f4a47ef9a2	skills	-
+library/skills/onboarding/SKILL.md	authored	-	-	ab79a211654da507b32dfdedb0ded6e94be5d4fea17ec58d2f1bee5b60f62962	skills	-
 library/skills/onboarding/agents/openai.yaml	authored	-	-	e93135e9cbda606502c6295e0d44978a91c2bf3bbe0a96e6d6b0328f0b889278	skills	-
-library/skills/onboarding/references/checks.md	authored	-	-	55e5037c664e4fd40fce7af8195093ddcfa65215151a1ed70f3641b2cdac4e39	skills	-
-library/skills/onboarding/references/record-format.md	authored	-	-	fc047f7e9f836c0943833a6d595ba35a9ff8ffa3d4ddcd0232b6e3413d62510d	skills	-
+library/skills/onboarding/references/checks.md	authored	-	-	1d32040befaf2f3f67c56ade3e8cdb68580217058c41f9c63ec32151445de575	skills	-
+library/skills/onboarding/references/record-format.md	authored	-	-	fd98fcc58de2661ac8cc7582fdd654af3056b1fbc0d68c2b1d9b1ca6d80e4e72	skills	-
 library/skills/scan-agent-skill/SKILL.md	authored	-	-	86dda943037583a8fa8f66432d7fe0c4fc10802ca8762034fa77f13f8fdbcf79	skills	-
 library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
 library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	7eb56cc04b4eddcf0e7d4016c4216c63ccff97ad1fc0249f624569a37e0938ef	skills	-

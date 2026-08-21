@@ -5,9 +5,13 @@ description: Walk a new AI Fellowship apprentice from a fresh machine to a worki
 
 # Onboarding — get an apprentice to working state
 
-Nineteen things have to be true before an apprentice can do the work. This skill walks them, checks
-what a command can check, and writes down what only the apprentice can confirm so the next session
-knows what is still outstanding.
+A fixed list of nineteen things has to be true before an apprentice can do the work. This skill
+walks that list, checks what a command can check, and writes down what only the apprentice can
+confirm, so the next session knows what is still outstanding.
+
+The nineteen are a frozen roster and it is safe to say so. Anything else countable here — how many
+are machine-checkable, how many are outstanding, how many plugins exist — depends on the machine and
+the agent in front of you. Count those when asked and never quote them from memory.
 
 **Where this sits.** `library/playbooks/playbook-environment-setup.md` sets up a *client
 engagement* and assumes a working machine; it says in its own preconditions that missing base
@@ -34,10 +38,12 @@ to ask their trainer. Never search for, reconstruct, or store either value in th
 matters, then do it. Apprentices are expected to ask, and when they ask, explain properly — as long
 as they want. Do not pre-empt with a tutorial nobody requested.
 
-**Expect permission prompts, and say so before the first one.** Inside this repository the agent's
-allow-list covers only `git status`, `git diff` and `git log`. Every version check, every `gh`
-command, even `ls -l`, raises an approval prompt. Tell the apprentice this once, up front:
-approving those prompts is the intended path, not a warning sign.
+**Expect permission prompts, and say so before the first one.** Inside this repository the only
+shell commands on the allow-list are `git status`, `git diff` and `git log`, so every version check,
+every `gh` command and even `ls -l` raises an approval prompt. Reading files and writing under
+`training/`, `engagements/` and `reference/` are allowed and raise nothing — so the record itself
+saves without a prompt, while `git add` and `git commit` do not. Tell the apprentice this once, up
+front: approving those prompts is the intended path, not a warning sign.
 
 **Say which items you cannot check.** Several of the nineteen happen somewhere this agent cannot
 see — a browser tab, a calendar, a chat membership. Ask, record the answer with the date, and move
@@ -68,6 +74,21 @@ Read `training/onboarding/setup-record.md` in the apprentice's fork.
   everything filed as `outstanding`. Read the note column, sort them yourself, and rewrite the
   states as you go.
 
+  **Read the note on every row, including the ones marked `verified`.** A state is what a previous
+  session concluded; the note is what it actually saw. Where they disagree, the note wins and the
+  row is not settled. This is not hypothetical — a session can record `verified` beside a note
+  reading *"both non-empty, but they read someone else's name"*, and a rule that reads only the
+  State column will skip straight past it. A wrongly-`verified` row is invisible to every other rule
+  here, so this sentence is the only thing that catches it.
+
+  **The lists under the table outrank the table.** If an item appears under "Needs sorting out" or
+  "Waiting on the trainer", treat it as unsettled whatever its row says.
+
+  **Re-confirm the two identity rows every session, even when they read `verified`.** It costs one
+  question and no commands: show the apprentice the name, email and GitHub account currently in
+  effect and ask whether they are theirs. Machines get borrowed, reimaged and shared, and this is
+  the one setting whose failure is both silent and expensive — every commit they make carries it.
+
 Ask which agent they are using — Claude Code or the ChatGPT desktop application in Codex mode — and
 record it. It changes exactly one step, the plugin install, and it is better known at the start.
 
@@ -88,9 +109,14 @@ stop here to install it. Take the username, record it as `confirmed`, and come b
 after the sign-in step — then upgrade the row to `verified`, or to `contradicted` if the lookup
 returns 404 for the name they gave you.
 
-Sending the username to Ray gates repository *access* later, not the clone, so it does not block the
-rest of this session. It does block their own fork later, so record it as `blocked` on the trainer
-rather than as merely outstanding.
+**The lookup runs under whichever account the terminal is signed in as, which may not be theirs.**
+It resolves a public profile, so the answer is the same either way — but say which account you used,
+because a 404 under somebody else's sign-in invites the wrong conclusion.
+
+Sending the username to Ray gates repository *access* later, not the clone, so it does not hold up
+the rest of this session. It is `outstanding`, not `blocked` — sending a message is the apprentice's
+own action, and `blocked` is reserved for waiting on somebody else. Say plainly that access will not
+arrive until they send it.
 
 ### 3. Your machine — nine items, and these come first
 
