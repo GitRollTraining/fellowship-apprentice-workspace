@@ -88,9 +88,9 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 127 |
+| Rows | 134 |
 | Vendored from a source repository | 75 |
-| Written for this workspace (`authored`) | 52 |
+| Written for this workspace (`authored`) | 59 |
 | Vendored files carrying a local patch | 52 |
 | Original cut date | 2026-08-11 |
 | Last manifest update | 2026-08-22 |
@@ -104,7 +104,7 @@ automatically is being designed separately; this manifest is deliberately usable
 ## The manifest
 
 ```tsv
-library/INDEX.md	authored	-	-	5bbb86ff097fa5c3873787da11082fe3d132cca88356718e91d2e49adc5aa623	library	-
+library/INDEX.md	authored	-	-	389f9bc31c767557a58423bb11d5ecc5b6705415010d3eac88171419b073172e	library	-
 library/personas/INDEX.md	authored	-	-	6e7e6c3fa33d56d760fbac679546fb4aeb9191406b6c63f140fcad4182aa23ff	personas	-
 library/personas/adversarial-reviewer.md	authored	-	-	d21a47a2d37774928e7de26798698d0121aa8401ecf4af56199a358ff5f181b3	personas	-
 library/personas/non-technical-owner.md	authored	-	-	c7800098fb0dffc484b5b8c681aa09e8f977dcf191e581da8f0bf48e5e6f4152	personas	-
@@ -127,7 +127,7 @@ library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2b
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
 library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	3d7027bd970033ddd2dbf4bcdb3cf89ab32fc3ff2515a559bda33a56fc19b49e	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
-library/skills/INDEX.md	authored	-	-	c09ff45efd3f1268454ec2616243bd4706a590231d9abdb8edcfbd929e444bab	skills	-
+library/skills/INDEX.md	authored	-	-	959091744f6d1fa6ecffe9fe27941b3e83fe662fdaabd84793decf57869e69ce	skills	-
 library/skills/choose-automation-approach/SKILL.md	authored	-	-	572fafef397512f6be7aa44a0d995e55b0da2c7abfb62cf8ae5e37255f4944e1	skills	-
 library/skills/choose-automation-approach/agents/openai.yaml	authored	-	-	108a51c4d4a184bd0478b05ca8aa9d1685dd3111109c468396daa4ac1f22ffcb	skills	-
 library/skills/choose-automation-approach/eval/acceptance-criteria.md	authored	-	-	582f5a639b51e5fa6ed10b7833b341702ef27312b6bee10d76921b801d00001d	skills	-
@@ -177,6 +177,10 @@ library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-op
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
+library/skills/onboarding/SKILL.md	authored	-	-	458886da8e6bf9b34b65f519d5c261e8fb1518f81b3c38c853d9a398a2d1b986	skills	-
+library/skills/onboarding/agents/openai.yaml	authored	-	-	e93135e9cbda606502c6295e0d44978a91c2bf3bbe0a96e6d6b0328f0b889278	skills	-
+library/skills/onboarding/references/checks.md	authored	-	-	09cf5a46be07533a380579624b84a5005184b9ff8e82f954e6d6ab2a1d386998	skills	-
+library/skills/onboarding/references/record-format.md	authored	-	-	34921769b9601c19fd74a3bdb74e587ddd1e5ab31c68fb0e8b5ab470ea11e333	skills	-
 library/skills/scan-agent-skill/SKILL.md	authored	-	-	86dda943037583a8fa8f66432d7fe0c4fc10802ca8762034fa77f13f8fdbcf79	skills	-
 library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
 library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	7eb56cc04b4eddcf0e7d4016c4216c63ccff97ad1fc0249f624569a37e0938ef	skills	-
@@ -196,6 +200,9 @@ library/skills/video-to-markdown/scripts/run_session.sh	WeiKuoWei/dotclaude	~/.c
 library/skills/video-to-markdown/scripts/sanitize_transcript.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/sanitize_transcript.py	-	69907129bea8f725ee9c635928f73d7c07ed8ef3a25df5f343614237018a4c54	skills	4598df7b4f0500f76bc4341fc75eb35ffb326c2d72aa837bb0a2c4b40769b036
 library/skills/video-to-markdown/scripts/srt_to_transcript.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/srt_to_transcript.py	-	0483c6670282984b6ef73aa3acd35826d4d4a727b154f95186af11fbaf99640c	skills	049c81526de1add046c6fab43cc81c2366351101fcb3bec782292424574de3f7
 library/skills/video-to-markdown/scripts/transcribe_timed.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/transcribe_timed.py	-	0aaa08a501abe26d0a34736e7b92469ecb88794372b7589b8301296b4cbd1c7b	skills	eda2f978e342e1200c0049941279f6981cf55a98b062f679d206e1924b968ab1
+library/skills/workspace-help/SKILL.md	authored	-	-	70d4519c54ed55dd045897155396e05f6407933d6ba63440ca380e2c1abd3b2d	skills	-
+library/skills/workspace-help/agents/openai.yaml	authored	-	-	1ce00af0130218e327348e3c0f6e8308e71c9c126ae805b0d1d08a3d96d72dea	skills	-
+library/skills/workspace-help/references/enumeration.md	authored	-	-	5873083e3ecdb33c88599a77a822156a60158a1e3dfbb49fe221d98cda45126b	skills	-
 library/skills/youtube-transcript/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/SKILL.md	-	9485207343cd2e0af1208ca14828edd1058fd9c585aed45d3c33fcd5bf86477a	skills	38a0212abae861066238938ec0f16c8013fc76ba5840cb161ffbc50c2b92a879
 library/skills/youtube-transcript/references/setup.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/references/setup.md	-	bd6ab06fdbddabd6961b4d47f0218464c87460e15d8437d326c252070300f010	skills	b2f56954807229da0e5783e929b71b24c9bf832cedb42f03c8ec794b07873ba7
 library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4085dcc4903788139fe5db37797ac064e0a5ce26d862c12e7aaf1	skills	-
