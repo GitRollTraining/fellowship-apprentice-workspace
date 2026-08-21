@@ -119,8 +119,9 @@ breaks a provenance record that hashes every file in that tree.
   both and reconcile.
 - **Trusting a count written in prose.** Several counts in this repository disagree with the files
   they describe, today, before anything else changes. Count the files yourself.
-- **Routing a beginner into a 21-step procedure that needs a business owner.** Check what the
-  playbook requires before naming it as their next step.
+- **Routing a beginner into a long procedure that needs a business owner.** Most of these playbooks
+  do, and a beginner in week one has no client. Check what the playbook requires before naming it as
+  their next step, and say so when it needs one.
 - **Answering "what is in my engagement" from a manifest.** Those manifests describe the empty shape
   the directory ships with. Use the filesystem.
 - **Using a code without the thing.** Write the thing, and bracket the code after it if it helps.
