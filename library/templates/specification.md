@@ -102,6 +102,9 @@ Four places. Each is a decision, not an oversight.
 Every behavioural table ends with a `Trace` column. It names the signed PRD item and its origin, for
 example `R-004 <- H17`. A technical choice also names the current decision, for example
 `R-004; AA-003`. Pure display or routing wording that asserts no business fact may say `authored`.
+A business rule visible in source data that nobody stated keeps both its signed PRD ID and data origin,
+for example `R-004; in-data <- orders.xlsx / Priority`, and only after owner confirmation. Marking it
+`concluded` hides that its evidence is a data field rather than a statement.
 
 The full chain is:
 
@@ -110,7 +113,7 @@ session pointer -> discovery H/C row -> PRD US/R/AC item
   -> specification section -> deliverable component -> verification
 ```
 
-Five rules govern it.
+Six rules govern it.
 
 - **Every hop resolves.** The discovery row carries the session pointer; the PRD item carries the
   discovery or durable-confirmation source; the specification carries the PRD ID. A long chain with one
@@ -123,6 +126,9 @@ Five rules govern it.
   the specification.
 - **Check every number against its origin.** Thresholds, deadlines, counts and prices are the most likely
   details to acquire precision nobody stated.
+- **Say where each pointer resolves.** These chains resolve inside the workspace, and the specification
+  stays there. Anything that leaves — the deliverable, the owner account, the package — may not cite a
+  `library/` or `engagements/` path, because its reader will not have that tree.
 
 ## The template
 

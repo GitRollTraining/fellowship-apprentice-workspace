@@ -40,6 +40,7 @@ Paths are relative to `engagements/<client-slug>/`.
 | `spec/requirements.md` | The signed-off future behaviour, scope, user stories, requirements and acceptance criteria | This playbook |
 | `spec/automation-approach.md` | Detailed technical recommendation, Fellow decision, assumptions and residual risk | `choose-automation-approach` |
 | `decision-register.md` | Canonical current position and stage status for engagement decisions | This playbook and every later decision owner |
+| `spec/source-data-survey.md` | What the data the deliverable reads actually contains | This playbook |
 | `spec/specification.md` | The build contract joining the signed PRD to the technical decisions | This playbook |
 | `deliverable/` | The thing the business will operate | The builder selected by this playbook |
 | `verification/deliverable-report.md` | Validator A's evidence and verdict for the exact delivery manifest | Validate Deliverable playbook |
@@ -59,6 +60,7 @@ session evidence
   -> PRD draft
   <-> automation feasibility and approach
   -> owner-signed PRD
+  -> source data survey
   -> technical specification
   -> deliverable
   -> Validator A pass
@@ -207,7 +209,23 @@ the same working session:
 Keep comparisons and rationale in the brief rather than copying them into the register. Never record a
 secret value in the PRD, brief, register or log.
 
-### 7. Write the technical specification
+### 7. Read the source data before writing the specification
+
+Open the data the automation will operate on: the spreadsheet, the export, the inbox, the folder. Record
+what you find in `spec/source-data-survey.md` using `library/templates/source-data-survey.md`:
+
+- every field the deliverable will read, the values actually present and what an empty one means;
+- every rule visible in the data that nobody stated in the interview; and
+- every place the data contradicts the confirmed process.
+
+A rule found here is neither a discovery finding nor an invention. Take it to the owner before the
+specification is written. Confirmed, it enters the PRD and its specification row keeps the PRD ID and
+adds `in-data <- <source and field>`. Unconfirmed, it becomes a row in `interview/ambiguities.md` and
+does not reach the specification.
+
+If the deliverable reads no existing data, write the survey file with one line saying so.
+
+### 8. Write the technical specification
 
 Use `library/templates/specification.md`. The default shape maps to one skill; adapt it when the signed
 solution requires more. The specification may choose components and interfaces, but it may not change a
@@ -224,7 +242,11 @@ Technical choices additionally cite the relevant `AA-*`, `DP-*` or `DR-*` decisi
 traceability matrix gives every signed PRD item an explicit disposition and verification target. A
 multi-hop pointer is valid only when every hop resolves.
 
-### 8. Build the agreed deliverable
+These pointers resolve inside this workspace, and the specification stays here. Nothing that ships to
+the client — the deliverable, the owner account, the package — may cite a `library/` or `engagements/`
+path.
+
+### 9. Build the agreed deliverable
 
 Before invoking a builder, copy only the marked `COPY` blocks from
 `library/templates/deliverable-deployment.md` and `library/templates/deliverable-operations.md` into
@@ -261,7 +283,7 @@ a client-runnable smoke or health check when practical and inventory it with the
 No deliverable component may introduce new business behaviour. If implementation reveals one, stop and
 return to the PRD or technical-decision step that owns it.
 
-### 9. Run adversarial review and dispose every finding
+### 10. Run adversarial review and dispose every finding
 
 For every delivered agent skill, first run `library/skills/scan-agent-skill/` against the complete
 installable unit, including companion scripts and references. Record the scanner version, command,
@@ -281,7 +303,7 @@ it was not designed to inspect.
 
 Final behavioural testing belongs to Validate Deliverable (Validator A), not this review.
 
-### 10. Run Validator A
+### 11. Run Validator A
 
 After the structural checks below pass, run
 `library/playbooks/playbook-validate-deliverable.md`. That playbook applies the reusable whole-deliverable
@@ -314,7 +336,7 @@ Do not declare this playbook complete until all of the following hold:
 These checks establish structural consistency, not that the deliverable works. Hand the result to the
 Validate Deliverable playbook for behavioural evidence.
 
-### 11. Run Output Phraser
+### 12. Run Output Phraser
 
 After Validator A passes, run `library/playbooks/playbook-output-phraser.md`. It writes one owner-facing
 authoring source, its rendered output where applicable, an internal handoff source map, a plain package
@@ -326,7 +348,7 @@ blocks here until its governing source is corrected or the claim is removed.
 
 The Phraser's exit means `ready for comprehension testing`. It is not a release verdict.
 
-### 12. Run the mandatory non-technical-owner preflight
+### 13. Run the mandatory non-technical-owner preflight
 
 Start `verification/persona-preflight.md` from `library/templates/persona-preflight.md`, then invoke
 `library/personas/non-technical-owner.md` in a fresh context against the client-visible views rendered
@@ -348,7 +370,7 @@ Persona preflight is mandatory but never substitutes for the real owner. On `blo
 Phraser, revise the account or navigation, rebuild the package and run the persona again. Preserve the
 old report as superseded; do not edit a failed run into a pass.
 
-### 13. Obtain real-owner comprehension and acceptance
+### 14. Obtain real-owner comprehension and acceptance
 
 Only after persona pass, start `verification/owner-acceptance.md` from
 `library/templates/owner-acceptance.md` and give the real owner the exact candidate version named in the
@@ -370,7 +392,7 @@ This is a hard gate. `rejected`, unanswered or materially corrected output retur
 and leaves the engagement `running`. Rebuild the package and repeat both persona and owner checks after
 any owner-facing byte changes. A delivery-file change returns further to Validator A.
 
-### 14. Run Validator B and release the package for operational acceptance
+### 15. Run Validator B and release the package for operational acceptance
 
 After owner `accepted`, run `library/playbooks/playbook-validate-handoff.md` against the unchanged
 candidate archive. Validator B verifies Validator A integrity, package inventory and boundary, claim
@@ -391,7 +413,7 @@ Validator B `pass` makes the unchanged package release-ready for the deployment 
 run below. It does **not** by itself change engagement status to `handed-over`. Record the package path,
 hash, owner acceptance and B report in `progress-log.md` before leaving this stage.
 
-### 15. Deploy with client authority, obtain operational acceptance and transition status
+### 16. Deploy with client authority, obtain operational acceptance and transition status
 
 Start `verification/operational-acceptance.md` from
 `library/templates/operational-acceptance.md`. An authorised client operator follows the packaged

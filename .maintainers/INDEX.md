@@ -21,5 +21,5 @@ authored components work as they do and what needs revalidation.
 
 | Item | Last updated | Status |
 |---|---|---|
-| Provenance and cut records | 2026-08-22 | Rehashed for the `argument-hint` compatibility clarification |
+| Provenance and cut records | 2026-08-22 | Rehashed for the `argument-hint` clarification, source-data survey and traceability rules |
 | `design/` | 2026-08-15 | Output Phraser/handoff conflicts and rulings added |

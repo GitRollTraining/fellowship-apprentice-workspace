@@ -88,9 +88,9 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 126 |
+| Rows | 127 |
 | Vendored from a source repository | 75 |
-| Written for this workspace (`authored`) | 51 |
+| Written for this workspace (`authored`) | 52 |
 | Vendored files carrying a local patch | 52 |
 | Original cut date | 2026-08-11 |
 | Last manifest update | 2026-08-22 |
@@ -109,7 +109,7 @@ library/personas/INDEX.md	authored	-	-	6e7e6c3fa33d56d760fbac679546fb4aeb9191406
 library/personas/adversarial-reviewer.md	authored	-	-	d21a47a2d37774928e7de26798698d0121aa8401ecf4af56199a358ff5f181b3	personas	-
 library/personas/non-technical-owner.md	authored	-	-	c7800098fb0dffc484b5b8c681aa09e8f977dcf191e581da8f0bf48e5e6f4152	personas	-
 library/playbooks/INDEX.md	authored	-	-	dfa844ecc106fb335912c85c79860c25c2478ec67fcee246281a5001b70d1db8	playbooks	-
-library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	ef3bfd098bec70a55df22b58eaad80e28daaf4b319089463957db20ff6285f97	playbooks	-
+library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	f3a9a7065d873159f84c471997c3b03135a28c3b188a5d9621ce942ed73b82f4	playbooks	-
 library/playbooks/playbook-environment-setup.md	authored	-	-	a3d4105e7f3791f9b4db4b74c56882418f3330d398f59c0b9e97656f888902d4	playbooks	-
 library/playbooks/playbook-interview.md	gitroll-dev/curriculum	~/Documents/jobs/gitroll/tasks/gitroll-curriculum.nosync/programs/ai-fellowship/playbooks/playbook-interview.md	2c97511	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815	playbooks	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815
 library/playbooks/playbook-interview.runbook.md	authored	-	-	7d5cefeb8e451df1340e588de9e7a7293290d55070513677b63587455a2c92ca	playbooks	-
@@ -202,7 +202,7 @@ library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4
 library/sops/INDEX.md	authored	-	-	639706f4ff9a8d02c21e88de68ed402875e1eac9edc1bf137ada0780999065f3	sops	-
 library/sops/agent-settings.md	authored	-	-	1089dac694ca2b6cba0c2d5567aa278b1c62e4d7663b8bde9d334cd6f2e8d0a0	sops	-
 library/sops/working-standards.md	authored	-	-	654626a30723e6c01d582ae074f252b63be54221abe941d4123cabfa094d30b4	sops	-
-library/templates/INDEX.md	authored	-	-	1d0d791e437602dd4f7006ea3acec670a618c6111b96ef8490619d5435f58609	templates	-
+library/templates/INDEX.md	authored	-	-	beec750355669ab13ac482384401259e732b0c16716145c11cbf02a93fb69553	templates	-
 library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	672a4c831ab64da77845cd0916008ec1b49bcb3e1d8d4e58ec000180211671fc	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
 library/templates/brief-design/reference/anti-patterns.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/anti-patterns.md	-	b6d9020749299b0c3edbc3e7a5dba70deb1ad6ab722313662fec5d74619e4424	templates	f07bc3d7606fedb198e725c17adc0506bb6c10242adbe335ee103cbcc76bbcb4
 library/templates/brief-design/reference/base.html	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/base.html	-	af6c7db1c95e48fb09426d1c74c6cd060734c774cdcc42a6367f5714e650207b	templates	09f76303513684fdf480d758e5df6ae8f04a2e3eafd6bdbe8af276bfccf5a002
@@ -229,5 +229,6 @@ library/templates/process-confirmation.md	WeiKuoWei/gitroll-operations	/Users/we
 library/templates/process-inventory.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/research/research-workflow-inventory.md	-	70f2b8ab854c34dd303dcd4e257b3c5face8d38e59a25b9c676ddc833c177e38	templates	b5ada5e67b77a359a1f8876a8cce869c6267a5c22b7576eda69ed12ce6886be5
 library/templates/process-reconstruction.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/research/research-workflow-step-worksheet.md	-	68a74ea5544f3f299884c410935ee5671b0c675ea74090d1b0988b9db762c5a0	templates	3d4c117da58f122ecd4b287fef0b1d02183c4a483b0ee32ca55e2d23fe71bd1b
 library/templates/requirements-gathering.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/comm/comm-client-requirements-gathering.md	-	5792420e6f0091169851dc1f1bda55cf5ac82c45299be931eca976c4ed80efdd	templates	3ea47825b28b62190fdd489bbb3670e873ce8d5720008cdd60679efb78bbc042
-library/templates/specification.md	authored	-	-	ac0c31d72a29e7e8614c25c35c923c13d6492435f4f1dd190720775fbdad8fd7	templates	-
+library/templates/source-data-survey.md	authored	-	-	45873613ac71daa6b0408c4a39c670037aa2d020c9402f97bc20061bde5bbf4b	templates	-
+library/templates/specification.md	authored	-	-	c22e6b833f0b30d715100b155144782c2a689a849ab7a9b917250c8be178a478	templates	-
 ```
