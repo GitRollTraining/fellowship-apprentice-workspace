@@ -74,6 +74,11 @@ The Quality Guidelines footer is required for a library skill. For a client deli
 rewrite it to point only to guidance that deliberately ships inside the skill bundle; a client skill
 must not depend on `library/` paths absent from the package.
 
+`argument-hint` is a Claude Code autocomplete field, not an Agent Skills specification field. Keep it
+when Claude Code is a target. For another runtime, verify support rather than treating the line as a
+portable interface: Codex CLI 0.148.0 loads a skill that contains it, but does not expose the value
+through `skills/list`.
+
 ## Companion Ref Skeletons
 
 ### `references/gotchas.md` (when ≥3 known gotchas exist)

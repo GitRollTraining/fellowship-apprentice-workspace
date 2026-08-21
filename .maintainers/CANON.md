@@ -46,7 +46,7 @@ even when the underlying tools work; those local repairs are called out below.
 | `library/skills/create-skill/SKILL.md` | routed to two doctrine files that did not ship; its scope, workspace probe and promotion machinery addressed GitRoll's repositories; the engagement route now tolerates its scaffold, distinguishes authoring from runtime filenames and verifies the installed whole bundle |
 | `library/skills/create-skill/references/checklist.md` | repoints unavailable home-directory checks, accepts an explicit library or engagement authoring file and tests a client skill from the documented installed bundle |
 | `library/skills/create-skill/references/questions.md` | the scope question offered a choice that does not exist here |
-| `library/skills/create-skill/references/skeleton.md` | repoints the home-directory location, distinguishes library and engagement filenames, and prevents a client skill from citing workspace-only guidance that does not ship |
+| `library/skills/create-skill/references/skeleton.md` | repoints the home-directory location, distinguishes library and engagement filenames, prevents a client skill from citing workspace-only guidance that does not ship, and documents the verified portability boundary of `argument-hint` |
 | `library/skills/digest-doc/SKILL.md` | same repoint; its step-0 probe recognised exactly two GitRoll repositories and halted here; the govdoc family and both eval baselines were built from federal contract documents and were not shipped; its colon-bearing YAML description is quoted so the skill loader can parse it |
 | `library/skills/digest-doc/references/routing.md` | the destination table named GitRoll's two repositories; rewritten for this workspace |
 | `library/skills/explain/SKILL.md` | routed to a doctrine file that did not ship; repointed to `library/reference/` |
@@ -93,7 +93,7 @@ not "the source was deleted".
 | Written for this workspace (`authored`) | 51 |
 | Vendored files carrying a local patch | 52 |
 | Original cut date | 2026-08-11 |
-| Last manifest update | 2026-08-15 |
+| Last manifest update | 2026-08-22 |
 
 ## What this file does NOT do
 
@@ -144,7 +144,7 @@ library/skills/choose-automation-approach/references/principles.md	authored	-	-	
 library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	4cd79972d80aaeefc9f99435f17f07100d10defd47b744745923c6b3e88f3cb9	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
 library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	6b15ba1a875f07abebab71ad94548480f1035cb4b60ce8a89bab0d8704f9017a	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	a61e97e4b61d25a33533a1ebeeac6176e4a77ceb05f0aafe248231cc8381d470	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc
-library/skills/create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	a35878a279f0a2966ac2cab4ca320350aea9c42900514b3d489da260bb52be62	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
+library/skills/create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	4acac9a2ee8b5656d89fe63ce763d615fa71cfb02b9d09a34eb6cf232e6994e9	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
 library/skills/digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	2be2038e881ac675b76da0b465c693c1fbf9eaa1057231b5f1b1e49ce1675da9	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
 library/skills/digest-doc/references/article-gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-gotchas.md	41bf600	46075a9478c892e6bbba32fd8c2235181eb21a46e3642e71e1aeef3b2a1c9515	skills	b243c178d8977f3ca050270a8071a335ca251f01ef559f8504107e8d72bb62fa
 library/skills/digest-doc/references/article-importance-rules.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-importance-rules.md	41bf600	17b853b9d6da4ffe56e4ce1522b66f6c1838c48da81d61495007bd2509c40025	skills	bb8fc7a34b631e5d4ba40260b2dd6a38ffd3743974217bfaea6d421b40df8cf6
