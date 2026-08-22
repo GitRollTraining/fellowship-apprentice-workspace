@@ -44,4 +44,4 @@ than silent.
 | original nine skills | 2026-08-11 | Instruction | current at the commit recorded per file |
 | `choose-automation-approach/` | 2026-08-13 | Instruction | authored for this workspace; eval baseline included |
 | `scan-agent-skill/` | 2026-08-14 | Instruction | authored wrapper; pins Cisco AI Skill Scanner 2.0.13 |
-| `onboarding/`, `workspace-help/` | 2026-08-21 | Instruction | authored for this workspace; apprentice-facing. Neither has been run by a real apprentice yet |
+| `onboarding/`, `workspace-help/` | 2026-08-22 | Instruction | authored for this workspace; apprentice-facing. Both were driven end to end for the first time on 2026-08-22, in the ChatGPT desktop application in Codex mode, against a throwaway clone. The onboarding run surfaced the gap this update closes: the four reading topics were explained nowhere the agent could reach, so it answered from the public web. Neither has yet been run by an apprentice who is not also a maintainer |
