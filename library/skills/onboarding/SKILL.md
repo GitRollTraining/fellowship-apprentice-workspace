@@ -102,10 +102,15 @@ onto rather than assuming the row applies.
 
 | Ask | What to record |
 |---|---|
-| Have you read the notes on **version control systems** your trainer sent? | their answer, with the date |
-| Have you read the notes on **Git and GitHub** your trainer sent? | their answer, with the date |
+| Have you read the notes on **version control systems**? | their answer, with the date. The notes are in this repository — `library/reference/setup-reading/version-control-systems.md` |
+| Have you read the notes on **Git and GitHub**? | their answer, with the date. Also in this repository — `library/reference/setup-reading/git-and-github.md` |
 | Do you have a **GitHub account**? | the username, which the next step needs |
 | Have you **sent your GitHub username to your trainer**? | their answer. The checklist names Ray; confirm who their trainer actually is rather than assuming |
+
+**Where each reading topic is explained, and what to do when they have not read it:**
+`references/reading.md`. Read that before answering any "what is X?" question about setup. Two of
+the four topics are mirrored into this repository and one is published in Google Classroom, so
+searching the public web is a last resort, not a first move — and if you do search, say so.
 
 Only the third can be checked at all, and only loosely: `gh api users/<name> --jq .login` proves
 the account exists, not that it is theirs.
@@ -153,9 +158,14 @@ practice rather than from a house standard.
 ### 4. Day one — six items
 
 **Session logging on entire.io comes first**, before the other five, because it records the whole
-programme and anything done before it is set up is not recorded. This repository says nothing about
-entire.io at all, so ask the apprentice to follow the setup page their trainer gave them and tell
-you when it is running.
+programme and anything done before it is set up is not recorded. The setup steps are mirrored at
+`library/reference/setup-reading/entire-io-session-logging.md`; the programme's own Notion page is
+the original and wins on any disagreement, so ask the apprentice to follow the page their trainer
+gave them and tell you when it is running.
+
+**Read the "Known open question" section of that mirror before enabling anything.** The published
+Entire documentation describes the Codex command-line tool, not the ChatGPT desktop application, so
+for a desktop-application apprentice this is a question for the trainer rather than a step to run.
 
 **If they do not have that page yet, do not stall the session.** Record it as `blocked` on the
 trainer, say once and plainly that this session's work will not appear in their log, and carry on.
