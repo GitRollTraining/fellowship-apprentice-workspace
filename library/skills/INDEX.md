@@ -24,6 +24,7 @@ than silent.
 | Skill | You reach for it when | What it does |
 |---|---|---|
 | `choose-automation-approach/` | you are choosing how an automation reaches systems, runs and acts | Runs an adaptive interview and recommends a proportionate deployment, integration, credential and high-stakes-control design while preserving the Fellow's overrides and accepted trade-offs. |
+| `command-failed/` | a command or setup step failed and you are stuck | Four things to gather before asking anyone, and three not to do. Written for the day-one case, where `diagnosing-bugs` is the deep end. |
 | `create-skill/` | you are writing an agent skill | Runs a guided interview, scaffolds the skill and companions, checks the explicit authoring path and requires a client-delivered skill to be tested from its documented installed form. |
 | `digest-doc/` | the business hands you a document | Turns a document the business already has in writing into a sourced fact-sheet, which is how coverage and boundary elicitation starts |
 | `drive-portal/` | the process runs through an old web form | Generic operating procedure for driving legacy/government web forms through the Chrome browser extension (popups, framesets, derived fields) — exactly what a beginner needs if the owner's process to automate involves filling an old or government web portal, feeding both process reconstruction and the resulting skill.md. |
