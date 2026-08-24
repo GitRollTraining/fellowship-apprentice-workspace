@@ -143,14 +143,13 @@ as proof that the whole machine section is done.
 
 Clone, then check the symlink with `test -L` as above. Then the plugins.
 
-**The plugin block does not behave the way its own introduction describes.** The introduction in
-`library/sops/agent-settings.md` says three of the four plugins live in third-party marketplaces
-that must be added first. The command block below it contains **five** install commands and only
-**two** marketplace-add commands, so three installs run with no marketplace added ahead of them.
+`library/sops/agent-settings.md` lists **two** plugins: `planning-with-files`, which needs its
+marketplace added first, and `plugin-dev@claude-plugins-official`, which does not. Its introduction
+and its command block agree on that count.
 
-**Do not predict which one will fail.** Some of those three resolve from a marketplace that is
-already present; which ones do is a property of the apprentice's machine, not of this page. Run the
-block in order, one at a time as the page instructs, and record what actually failed.
+**Do not predict which one will fail.** Whether a marketplace is already present is a property of
+the apprentice's machine, not of this page. Run the block in order, one at a time as the page
+instructs, and record what actually failed.
 
 Treat a failure as expected rather than as the apprentice's mistake. Record what failed and tell
 them to report it — this repository asks for library problems to be reported, not repaired in
