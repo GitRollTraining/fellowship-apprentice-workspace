@@ -55,9 +55,10 @@ credentials in the environment, never in the file.
 
 ## Installing the plugins
 
-The install is interactive and cannot be scripted. **Three of the four live in third-party
-marketplaces that have to be added first**, and the marketplace name is not guessable from the plugin
-name. Run these in a live session, one at a time, and confirm each loads before moving on:
+The install is interactive and cannot be scripted. There are **five plugins, and two of them live in
+third-party marketplaces that have to be added first** — `planning-with-files` and `smart-ralph`. The
+marketplace name is not guessable from the plugin name, which is why both `marketplace add` lines are
+written out below. Run these in a live session, one at a time, and confirm each loads before moving on:
 
 ```text
 /plugin install superpowers
