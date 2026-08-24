@@ -132,7 +132,25 @@ as proof that the whole machine section is done.
 
 | Item | Check | Notes |
 |---|---|---|
-| Set up session logging on entire.io | none this repository describes — it is named nowhere in the tracked tree | Ask the apprentice to follow the page their trainer gave them and confirm it is running. Do this **first**: it records the whole programme |
+| Set up session logging on entire.io | `entire status`, run inside the project repository | Do this **first**: it records the whole programme. `entire status` is the only check that runs on the apprentice's machine, and it answers one question, whether logging is wired up. It does not answer whether anything is being recorded. See the note below the table |
+**Session logging needs a second check, later, and not on this machine.**
+
+`entire enable` wires logging up and pushes nothing. The branch it writes to,
+`entire/checkpoints/v1`, only appears once the apprentice has actually worked with the
+agent and pushed. So on day one, a missing branch proves nothing.
+
+That makes "I set it up" unverifiable at onboarding time, and it is one of the three
+kinds of evidence the programme assesses. The trainer closes it after the apprentice's
+first real working session:
+
+```bash
+gh api repos/<their-github-username>/financial-health-brief/branches --jq '[.[].name]'
+```
+
+`entire/checkpoints/v1` present means it is recording. Only `main` means the sessions so
+far were not captured, and **session logs cannot be reconstructed after the fact**. The
+GitHub username is on their row in the Apprentices roster.
+
 | Join Google Classroom | none — joining changes state on Google's servers, not the laptop | Ask for the link the trainer sent. Never store it |
 | Join Discord | none — same shape | Ask for the invite the trainer sent. Never store it |
 | Set up your workspace | see below | |
