@@ -119,6 +119,11 @@ Normalising the owner's words into a user-story or requirement shape may change 
 Every material clause retains its origin. Do not turn a usual practice into a rule, a hoped-for benefit
 into a guaranteed outcome, or a vague quantity into a number.
 
+`/to-spec` drafts this from the conversation you have already had, without re-interviewing you. Use it
+for the first pass and then check every clause against the discovery record yourself: it synthesises
+what was said in the session, and the rule above is yours to enforce, not the skill's. It only runs
+when you type it.
+
 Use these identifiers:
 
 - `US-001` onward for user stories;

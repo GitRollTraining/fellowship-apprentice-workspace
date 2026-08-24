@@ -38,7 +38,7 @@ instructions resolved to nothing.
 | `terminology.md` | 2026-08-15 | Instruction | engagement and handoff claim identifier prefixes defined; provenance updated |
 | `tool-inventory.md` | 2026-08-15 | Instruction | handoff transport, renderer and real-use evidence gaps updated; provenance recorded |
 | `deliverable-review-checklist.md` | 2026-08-15 | Instruction | first draft; no client review yet |
-| `setup-reading/` | 2026-08-22 | Immutable | three mirrors cut; the Codex manual deliberately not mirrored, see its INDEX |
+| `setup-reading/` | 2026-08-23 | Mixed | two third-party mirrors plus `entire-io-session-logging.md`, authored here since the Notion page was archived; the Codex manual deliberately not mirrored, see its INDEX |
 
 ## Where the apprentice's own reference material goes
 

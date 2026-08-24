@@ -182,18 +182,17 @@ your calendar**.
 1. Clone the repository and confirm the skills symlink resolves. This is a filesystem check and
    works identically under either agent.
 2. Install the plugins listed in `library/sops/agent-settings.md`. Run the commands from that page
-   rather than from a count remembered here — its prose and its command block disagree about how
-   many there are. These are Claude Code plugins. **In Codex there is no equivalent** —
-   record the step as not applicable, say so plainly, and move on. It is not the apprentice's
-   fault, and nothing later in *this skill* depends on it. Say the rest out loud though: the
-   engagement playbook they will eventually run treats missing base plugins as an onboarding
-   problem and stops. So a Codex-only apprentice is set up for this skill and not yet set up for
-   that one, and their trainer needs to know.
+   rather than from a count remembered here. These are Claude Code plugins. **In Codex there is no
+   equivalent** — record the step as not applicable, say so plainly, and move on. It is not the
+   apprentice's fault, and nothing later in *this skill* depends on it. Say the rest out loud
+   though: the engagement playbook they will eventually run treats missing base plugins as an
+   onboarding problem and stops. So a Codex-only apprentice is set up for this skill and not yet
+   set up for that one, and their trainer needs to know.
 
 For a Claude Code apprentice, the install is interactive: the commands are in
-`library/sops/agent-settings.md`. Two of them add a marketplace first. Read
-`references/checks.md` before running them — the block does not behave the way its own
-introduction describes, and knowing that in advance turns a confusing failure into a known one.
+`library/sops/agent-settings.md`. One of them adds a marketplace first. Read
+`references/checks.md` before running them — verifying what actually installed has traps, and
+knowing them in advance turns a confusing failure into a known one.
 
 ### 5. Close
 

@@ -133,6 +133,12 @@ as proof that the whole machine section is done.
 | Item | Check | Notes |
 |---|---|---|
 | Set up session logging on entire.io | `entire status`, run inside the project repository | Do this **first**: it records the whole programme. `entire status` is the only check that runs on the apprentice's machine, and it answers one question, whether logging is wired up. It does not answer whether anything is being recorded. See the note below the table |
+| Join Google Classroom | none — joining changes state on Google's servers, not the laptop | Ask for the link the trainer sent. Never store it |
+| Join Discord | none — same shape | Ask for the invite the trainer sent. Never store it |
+| Set up your workspace | see below | |
+| Open Classroom, open one subject, read the first page | none | Record **which subject** — the name is the evidence they got in |
+| Put office hours in your calendar | none | Ask; record the date |
+
 **Session logging needs a second check, later, and not on this machine.**
 
 `entire enable` wires logging up and pushes nothing. The branch it writes to,
@@ -151,24 +157,17 @@ gh api repos/<their-github-username>/financial-health-brief/branches --jq '[.[].
 far were not captured, and **session logs cannot be reconstructed after the fact**. The
 GitHub username is on their row in the Apprentices roster.
 
-| Join Google Classroom | none — joining changes state on Google's servers, not the laptop | Ask for the link the trainer sent. Never store it |
-| Join Discord | none — same shape | Ask for the invite the trainer sent. Never store it |
-| Set up your workspace | see below | |
-| Open Classroom, open one subject, read the first page | none | Record **which subject** — the name is the evidence they got in |
-| Put office hours in your calendar | none | Ask; record the date |
-
 ### Setting up the workspace
 
 Clone, then check the symlink with `test -L` as above. Then the plugins.
 
-**The plugin block does not behave the way its own introduction describes.** The introduction in
-`library/sops/agent-settings.md` says three of the four plugins live in third-party marketplaces
-that must be added first. The command block below it contains **five** install commands and only
-**two** marketplace-add commands, so three installs run with no marketplace added ahead of them.
+`library/sops/agent-settings.md` lists **two** plugins: `planning-with-files`, which needs its
+marketplace added first, and `plugin-dev@claude-plugins-official`, which does not. Its introduction
+and its command block agree on that count.
 
-**Do not predict which one will fail.** Some of those three resolve from a marketplace that is
-already present; which ones do is a property of the apprentice's machine, not of this page. Run the
-block in order, one at a time as the page instructs, and record what actually failed.
+**Do not predict which one will fail.** Whether a marketplace is already present is a property of
+the apprentice's machine, not of this page. Run the block in order, one at a time as the page
+instructs, and record what actually failed.
 
 Treat a failure as expected rather than as the apprentice's mistake. Record what failed and tell
 them to report it — this repository asks for library problems to be reported, not repaired in
