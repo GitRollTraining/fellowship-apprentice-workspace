@@ -272,6 +272,11 @@ An empty list after a real conversation means you did not look, and counts as a 
 run. Ambiguity is the normal state of an undocumented process; the list is the honest output, and the
 still-open items are the agenda for next time.
 
+Where a still-open item is a decision the owner could not make in the room, run `/to-questionnaire`
+on it. It turns the question into something they, or whoever actually owns the answer, can fill in
+between sessions, so an unanswered question leaves as a document rather than as a gap you carry.
+The skill only runs when you type it; nothing will offer it to you.
+
 ### 18. Close the loop on the pre-session note  (competency: marking after the session which unknowns closed and which did not)
 
 Return to step 1. Mark each unknown closed or still unknown, and each assumption confirmed, corrected or
