@@ -9,7 +9,9 @@ style: descriptive
 
 Copies of the material the onboarding checklist tells an apprentice to read, so an agent can answer
 "what is version control?" or "what is entire.io?" from programme material instead of searching the
-public web. Every file here is a mirror of something authored elsewhere; the original always wins.
+public web. Two of the three files here are mirrors of third-party material, and for those the
+original always wins. `entire-io-session-logging.md` is not a mirror: it is authored here and is
+the source.
 
 ## Inventory
 
@@ -17,7 +19,7 @@ public web. Every file here is a mirror of something authored elsewhere; the ori
 |---|---|---|
 | `version-control-systems.md` | What a version control system is and why developers use one. Mirror of a third-party course note, GNU General Public License v3 | Immutable |
 | `git-and-github.md` | Git and GitHub in practice — repositories, commits, branches, remotes. Mirror of a third-party course note, GNU General Public License v3 | Immutable |
-| `entire-io-session-logging.md` | Installing and enabling Entire so AI sessions are captured. Mirror of the programme's own Notion page, plus one recorded open question about the ChatGPT desktop application | Immutable |
+| `entire-io-session-logging.md` | Installing and enabling Entire so AI sessions are captured, with a per-platform install line. Authored here since 2026-08-23, when the Notion page it began as a copy of was archived. Carries one open question about the ChatGPT desktop application | Mutable |
 
 The fourth checklist reading topic, the Codex application manual, is deliberately **not** here. It is
 marked internal and this repository is public, so apprentices reach it through Google Classroom
@@ -25,10 +27,12 @@ instead. The routing for all four topics is `library/skills/onboarding/reference
 
 ## Conventions
 
-- **A mirror is never edited.** Editing one makes it a fork nobody is tracking, and `library/` is
-  read-only in any case. If a mirror is wrong or stale, re-cut it from its source and record the new
-  hash in `.maintainers/CANON.md`.
-- Each file states its source URL, the date it was taken, and its licence in a block at the top.
+- **A mirror is never edited.** This applies to the two third-party notes below. Editing one makes
+  it a fork nobody is tracking, and `library/` is read-only in any case. If a mirror is wrong or
+  stale, re-cut it from its source and record the new hash in `.maintainers/CANON.md`.
+- `entire-io-session-logging.md` is exempt: it is authored here, so it is edited in place and
+  re-hashed in `.maintainers/CANON.md` in the same commit.
+- Each mirror states its source URL, the date it was taken, and its licence in a block at the top.
   Keep that block if you quote the file elsewhere.
 - The two third-party notes are shared under the GNU General Public License, Version 3, from
   `github.com/bloombar/knowledge-kitchen`. They are mirrored unmodified and kept as separate files,
@@ -40,4 +44,4 @@ instead. The routing for all four topics is `library/skills/onboarding/reference
 |---|---|---|---|
 | `version-control-systems.md` | 2026-08-22 | Immutable | first cut; unmodified mirror |
 | `git-and-github.md` | 2026-08-22 | Immutable | first cut; unmodified mirror |
-| `entire-io-session-logging.md` | 2026-08-22 | Immutable | first cut; carries one open question on the ChatGPT desktop application, unresolved |
+| `entire-io-session-logging.md` | 2026-08-23 | Mutable | now the source, not a mirror; per-platform install added; carries one open question on the ChatGPT desktop application, unresolved |

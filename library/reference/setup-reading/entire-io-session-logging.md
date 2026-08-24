@@ -1,14 +1,12 @@
-<!-- MIRROR: do not edit. Re-cut from the source instead. -->
 ---
 style: descriptive
 ---
 
 # Setting up entire.io session logging
 
-> **This is a copy.** The original is the programme's own Notion page, "Set up AI Session Log
-> collection", and it is authoritative; if the two disagree, the original wins. Fetched 2026-08-22.
-> It is mirrored here so an agent working offline in this repository can answer the question from
-> house material instead of searching the web. GitRoll's own material, no third-party licence.
+> **This file is the source.** It began as a copy of the Notion page "Set up AI Session Log
+> collection", which was archived on 2026-08-23 when this became authoritative. Edit here.
+> GitRoll's own material, no third-party licence.
 
 ---
 
@@ -17,9 +15,33 @@ can be reviewed later. You set it up once per repository.
 
 ## 1. Install Entire
 
+Pick the line for your machine.
+
+**macOS**
+
 ```bash
-curl -fsSL https://entire.io/install.sh | bash
+brew tap entireio/tap && brew trust entireio/tap && brew install --cask entire
 ```
+
+**Windows**
+
+```bash
+scoop bucket add entire https://github.com/entireio/scoop-bucket.git && scoop install entire/cli
+```
+
+**Linux**
+
+```bash
+curl -LO https://github.com/entireio/cli/releases/latest/download/entire-linux-amd64.tar.gz
+tar -xzf entire-linux-amd64.tar.gz
+sudo mv entire /usr/local/bin/
+```
+
+There is also a one-line installer, `curl -fsSL https://entire.io/install.sh | bash`. It works, and
+it is the Linux build. It also fetches a script off the network and runs it in the same breath, so
+**an agent will usually decline to run it for you**. That refusal is the agent behaving correctly,
+not you doing something wrong. Use the line for your platform above and the agent can install it,
+or run the one-liner yourself.
 
 Other installation methods: <https://docs.entire.io/cli/installation>
 

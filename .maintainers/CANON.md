@@ -116,12 +116,12 @@ library/playbooks/playbook-interview.runbook.md	authored	-	-	7d5cefeb8e451df1340
 library/playbooks/playbook-output-phraser.md	authored	-	-	bc6f3f814e77729901adb63fb5e23561128b630d9fd0ebfa9defaafb87596cbd	playbooks	-
 library/playbooks/playbook-validate-deliverable.md	authored	-	-	af0d61d56b5a952a02c54354b48d899154c2071e51ef4e5f33e0e99960eb64a3	playbooks	-
 library/playbooks/playbook-validate-handoff.md	authored	-	-	71f41e02241ddde4d5a3e838b8c70dd718217f0c69675423c28b818bd7e30931	playbooks	-
-library/reference/INDEX.md	authored	-	-	3bdf3e12333801938f2c211f89019048a2ec16d588b18f3f98061d8055fd3847	reference	-
+library/reference/INDEX.md	authored	-	-	bf530da4c4fbfde66368ee308605b8fbfc6601d78ea0b5144838c9118ce03e35	reference	-
 library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/references/agent-quality-guidelines.md	41bf600	1d456ebac204b7d969b5066a9e2c1035b6cbaaaa9f10ed0d7be944d4b666c812	reference	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce
 library/reference/deliverable-review-checklist.md	authored	-	-	8c5af4709f25fed8f8b6f42956d75edb1952908871b6fa8a0f2402f64da18cab	reference	-
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
-library/reference/setup-reading/INDEX.md	authored	-	-	b2e68131e65ba69865fc853f2abf6b0eba9809abc193c4fbbf620a3d363a4520	reference	-
-library/reference/setup-reading/entire-io-session-logging.md	notion/gitroll	https://app.notion.com/p/Set-up-AI-Session-Log-collection-37c0b700541e803d9b55e1a6893cba4d	2026-08-22	910bf8d3ec0cf0b78f57a10931ebc8933f223566619baeca8a9579e5548f32fc	reference	-
+library/reference/setup-reading/INDEX.md	authored	-	-	328e111597d94becb85f20f3a3d815114683b2b7e4f338e46af43465b9e4e475	reference	-
+library/reference/setup-reading/entire-io-session-logging.md	authored	-	-	b0c83fbaf3891e2236282ba70a6c8942d737496ee7e6ab3fd0563c46587f2c81	reference	-
 library/reference/setup-reading/git-and-github.md	bloombar/knowledge-kitchen	https://knowledge.kitchen/content/courses/software-engineering/notes/git-and-github/	2026-08-22	0f823d75eb173092ba8a231624ad7916ba910d3802c4fcd65750eebc4ef80c8d	reference	8d999108d34dd73cacaa4e77204a20273c9fd66c3b867dd187a4baf5a581fb79
 library/reference/setup-reading/version-control-systems.md	bloombar/knowledge-kitchen	https://knowledge.kitchen/content/courses/software-engineering/notes/version-control-systems/	2026-08-22	2e7dab8bdb878b4bdbceabfed7186cb9300223251d92c30d85f9e61ec8c51be7	reference	813108c3df8608926412032a11a4a60860aaf0540e5242879509e762151f2c99
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
