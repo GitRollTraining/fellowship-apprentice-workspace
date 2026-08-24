@@ -55,23 +55,33 @@ credentials in the environment, never in the file.
 
 ## Installing the plugins
 
-The install is interactive and cannot be scripted. There are **five plugins, and two of them live in
-third-party marketplaces that have to be added first** — `planning-with-files` and `smart-ralph`. The
-marketplace name is not guessable from the plugin name, which is why both `marketplace add` lines are
-written out below. Run these in a live session, one at a time, and confirm each loads before moving on:
+The install is interactive and cannot be scripted. **Two plugins, one of which lives in a third-party
+marketplace that has to be added first.** Run these in a live session, one at a time, and confirm each
+loads before moving on:
 
 ```text
-/plugin install superpowers
-
 /plugin marketplace add OthmanAdi/planning-with-files
 /plugin install planning-with-files@planning-with-files
 
-/plugin marketplace add tzachbon/smart-ralph
-/plugin install ralph-specum@smart-ralph
-
 /plugin install plugin-dev@claude-plugins-official
-/plugin install skill-creator@claude-plugins-official
 ```
+
+Codex and Copilot CLI install the same plugins with `codex plugin add` and `copilot plugin install`.
+
+**Three plugins were removed from this list on 2026-08-23 and should not be re-added without a
+decision.**
+
+`superpowers` is a drag on current harnesses, and the ten skills it was listed for are engineering
+practice — test-driven development, subagent-driven development, dispatching parallel agents — for an
+audience this programme defines as having no technical background.
+
+`ralph-specum` was here for one skill, `interview-framework`. `library/playbooks/playbook-interview.md`
+covers the same ground with the programme's own questions.
+
+`skill-creator` duplicates the house `create-skill` for the part an apprentice needs, and its own
+addition — an eval harness, benchmarking with variance analysis, description tuning — is 485 lines and
+seventeen files including seven Python scripts. That is scale tooling. What the assessment asks for is
+the skill run against real data and observed, which is an execution record, not an eval loop.
 
 ## Which skills earn each plugin
 
@@ -81,20 +91,8 @@ are not expected to use it.
 
 | Plugin | Skill | What you do with it |
 |---|---|---|
-| `superpowers` | `using-superpowers` | How the session finds and invokes the rest of them |
-| `superpowers` | `brainstorming` | Turns interview answers into two or three approaches instead of the first one you thought of |
-| `superpowers` | `writing-plans` | Turns the specification into a step-by-step build with no placeholders |
-| `superpowers` | `writing-skills` | The guide for authoring the `skill.md` itself |
-| `superpowers` | `subagent-driven-development` | Builds the `skill.md` in tasks with a fresh reviewer per task |
-| `superpowers` | `dispatching-parallel-agents` | The mechanism the two skills above rely on |
-| `superpowers` | `verification-before-completion` | Requires actually running the thing before calling it ready |
-| `superpowers` | `systematic-debugging` | When the built `skill.md` misbehaves on a real case |
-| `superpowers` | `test-driven-development` | For any helper script bundled with the deliverable |
-| `superpowers` | `receiving-code-review` | How to weigh feedback on the draft, including the owner's |
 | `planning-with-files` | `planning-with-files` | Keeps the engagement's state on disk across days |
-| `smart-ralph` | `interview-framework` | A dialogue algorithm for the questioning phase; the concrete questions are in `library/playbooks/playbook-interview.md` |
 | `claude-plugins-official` | `skill-development` | The reference for what a `SKILL.md` must contain |
-| `claude-plugins-official` | `skill-creator` | The build-and-test loop for writing one |
 | `claude-plugins-official` | `agent-development` | How to install a persona as a subagent, which this repository asks you to do |
 | `claude-plugins-official` | `mcp-integration` | How to author a project-scoped `.mcp.json` for a server the client runs |
 | `claude-plugins-official` | `command-development` | How to give the owner a simple explicit trigger for the finished automation |
