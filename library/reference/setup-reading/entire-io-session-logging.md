@@ -52,7 +52,15 @@ cd your-repo
 entire enable
 ```
 
-Follow the prompts and choose the agent you use — Codex, Claude Code, or OpenCode.
+Follow the prompts and choose **the agent you actually work in** — Codex, Claude Code, or
+OpenCode. Codex is this programme's default and most apprentices choose it; the other two are
+allowed and work the same way.
+
+**Choose the one you really use, and do not skip the prompt.** Naming an agent you do not use is a
+silent failure: the command succeeds, `entire status` reports the repository enabled, and nothing
+is ever captured. Session logs are one of the three kinds of evidence this programme assesses, and
+they cannot be reconstructed afterwards. If you are unsure which agent you are in, ask your trainer
+before running this rather than guessing.
 
 ## 3. Work as usual
 
