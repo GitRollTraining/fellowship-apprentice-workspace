@@ -19,7 +19,7 @@ this material.
 |---|---|---|
 | `playbooks/` | Engagement-bound procedures: two interview documents and five authored drafts; no stubs remain | Instruction |
 | `skills/` | Thirteen curated agent skills: nine vendored from source repositories and four authored here, all recorded in the provenance manifest | Instruction |
-| `personas/` | Agent personas. Three authored, plus an interview-practice simulator named but not built | Instruction |
+| `personas/` | Agent personas. Two authored and one vendored, plus an interview-practice simulator named but not built | Instruction |
 | `sops/` | Working standards and agent settings | Instruction |
 | `templates/` | The shapes an engagement's documents are written into, and the design system for a brief | Instruction |
 | `renderers/` | Turning finished markdown into one file a business owner opens, and the check that proves it rendered | Instruction |

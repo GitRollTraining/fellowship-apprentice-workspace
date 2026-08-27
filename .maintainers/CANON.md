@@ -63,6 +63,7 @@ even when the underlying tools work; those local repairs are called out below.
 | `library/templates/engagement-notes.md` | keeps the inherited planning shape while making its objective delivery-shape-neutral, placing implementation after the accepted requirements/specification gates and tying `handed-over` to current operational evidence |
 | `library/templates/engagement-progress-log.md` | preserves the inherited append-only log while removing a second mutable engagement-status field that could drift from Notes and the Decision Register |
 | `library/templates/index-manifest.md` | aligns the inherited recursive “every directory” rule with the shipped repository by defining governed work areas and a parent-inventoried companion/generated/evidence-directory exception |
+| `library/personas/socratic-tutor.md` | ships the Study Partner tutor prompt inside a persona document, and patches the four lines that assume the reader is a schoolchild — grade level in principle 4, in step 1a twice and in step 1b — plus one added principle forbidding it to write the student's files, which the source did not need because it had no filesystem |
 | `library/templates/process-reconstruction.md` | makes the current-state diagram default and the delivery-shape-neutral specification language agree with the engagement playbooks |
 
 These corrections make existing instructions executable; they do not replace the renderer or redesign
@@ -89,9 +90,9 @@ not "the source was deleted".
 | | |
 |---|---|
 | Rows | 165 |
-| Vendored from a source repository | 101 |
-| Written for this workspace (`authored`) | 64 |
-| Vendored files carrying a local patch | 57 |
+| Vendored from a source repository | 102 |
+| Written for this workspace (`authored`) | 63 |
+| Vendored files carrying a local patch | 58 |
 | Original cut date | 2026-08-11 |
 | Last manifest update | 2026-08-27 |
 
@@ -110,11 +111,11 @@ automatically is being designed separately; this manifest is deliberately usable
 ## The manifest
 
 ```tsv
-library/INDEX.md	authored	-	-	77f2ac5ff1aecaabdd66a7a88c834d86bd98a797daf83185fc589cc94f76e49c	library	-
-library/personas/INDEX.md	authored	-	-	a42575f162a1903c11bc0c03ee3ed9e26bc731058632e486fb04b2ae5a2c0bd1	personas	-
+library/INDEX.md	authored	-	-	251e0c332010df0b29d10d541be0c55ce3d7ab1b975b69ad6f3adc03cd1f26d6	library	-
+library/personas/INDEX.md	authored	-	-	ebc10d4322b6d6d5198768db88ea1272da48fd0cca39be898f84e0a1b64e7463	personas	-
 library/personas/adversarial-reviewer.md	authored	-	-	d21a47a2d37774928e7de26798698d0121aa8401ecf4af56199a358ff5f181b3	personas	-
 library/personas/non-technical-owner.md	authored	-	-	c7800098fb0dffc484b5b8c681aa09e8f977dcf191e581da8f0bf48e5e6f4152	personas	-
-library/personas/socratic-tutor.md	authored	-	-	a58ef1e2e77ce2f25d586933c0cfb5387bdb60d8384427b7876bc6bd6e540882	personas	-
+library/personas/socratic-tutor.md	google/notebooklm	.maintainers/sources/gem-prompt.md	2026-08-27	cc498a785dd04f04c4a50ec6a5e5c0bfbe166ed833417b46adcbb4e38308eb05	personas	806f80be8ee39aa506a2ae6769959c25ecdd0156e97c17c496c475ec55121d22
 library/playbooks/INDEX.md	authored	-	-	dfa844ecc106fb335912c85c79860c25c2478ec67fcee246281a5001b70d1db8	playbooks	-
 library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	c7e54a1744bad405bbb0306e38b992992ff6704d520ffa95838f3c02483f7f0a	playbooks	-
 library/playbooks/playbook-environment-setup.md	authored	-	-	a3d4105e7f3791f9b4db4b74c56882418f3330d398f59c0b9e97656f888902d4	playbooks	-
