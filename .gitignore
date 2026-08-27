@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .claude/compact/
 *.local.*
+
+# Third-party source text vendored into library/, kept locally so a maintainer can diff a
+# shipped file against what it was copied from. Not ours to redistribute.
+.maintainers/sources/

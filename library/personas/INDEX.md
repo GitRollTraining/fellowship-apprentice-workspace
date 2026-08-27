@@ -14,7 +14,7 @@ it get the same behaviour.
 |---|---|---|
 | `adversarial-reviewer.md` | verifying output and knowing how it fails [D-05], specification writing [D-06] | shipped, persona #1 |
 | `non-technical-owner.md` | constrained cold-reader handoff preflight [D-05, D-29] | authored, persona #2; not yet compared with a real owner |
-| `socratic-tutor.md` | tutoring the fellow through their own Stage 1 training work; demonstrates non-directive questioning [D-22] and answer-directed follow-up [D-25] | authored, persona #3; not yet run against a module |
+| `socratic-tutor.md` | tutoring the fellow through their own Stage 1 training work; demonstrates non-directive questioning [D-22] and answer-directed follow-up [D-25] | vendored from NotebookLM's Study Partner and patched in four lines, persona #3; not yet run against a module |
 | business-owner simulator | interview domains [D-21 to D-27] | **named, not built** — it needs a case bank, and no case bank exists |
 
 The non-technical-owner persona tests a finished handoff under a strict knowledge boundary; it is not
