@@ -88,12 +88,18 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 139 |
-| Vendored from a source repository | 75 |
-| Written for this workspace (`authored`) | 61 |
-| Vendored files carrying a local patch | 52 |
+| Rows | 165 |
+| Vendored from a source repository | 101 |
+| Written for this workspace (`authored`) | 64 |
+| Vendored files carrying a local patch | 57 |
 | Original cut date | 2026-08-11 |
-| Last manifest update | 2026-08-22 |
+| Last manifest update | 2026-08-27 |
+
+Every figure above is derived from the manifest block below rather than carried forward by hand.
+They were last carried forward by hand and had drifted: the table read 139 rows, 75 vendored, 61
+authored and 52 patched against an actual 164, 101, 63 and 57. The change that corrected them added
+one row.
+
 
 ## What this file does NOT do
 
@@ -104,10 +110,11 @@ automatically is being designed separately; this manifest is deliberately usable
 ## The manifest
 
 ```tsv
-library/INDEX.md	authored	-	-	389f9bc31c767557a58423bb11d5ecc5b6705415010d3eac88171419b073172e	library	-
-library/personas/INDEX.md	authored	-	-	6e7e6c3fa33d56d760fbac679546fb4aeb9191406b6c63f140fcad4182aa23ff	personas	-
+library/INDEX.md	authored	-	-	77f2ac5ff1aecaabdd66a7a88c834d86bd98a797daf83185fc589cc94f76e49c	library	-
+library/personas/INDEX.md	authored	-	-	a42575f162a1903c11bc0c03ee3ed9e26bc731058632e486fb04b2ae5a2c0bd1	personas	-
 library/personas/adversarial-reviewer.md	authored	-	-	d21a47a2d37774928e7de26798698d0121aa8401ecf4af56199a358ff5f181b3	personas	-
 library/personas/non-technical-owner.md	authored	-	-	c7800098fb0dffc484b5b8c681aa09e8f977dcf191e581da8f0bf48e5e6f4152	personas	-
+library/personas/socratic-tutor.md	authored	-	-	a58ef1e2e77ce2f25d586933c0cfb5387bdb60d8384427b7876bc6bd6e540882	personas	-
 library/playbooks/INDEX.md	authored	-	-	dfa844ecc106fb335912c85c79860c25c2478ec67fcee246281a5001b70d1db8	playbooks	-
 library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	c7e54a1744bad405bbb0306e38b992992ff6704d520ffa95838f3c02483f7f0a	playbooks	-
 library/playbooks/playbook-environment-setup.md	authored	-	-	a3d4105e7f3791f9b4db4b74c56882418f3330d398f59c0b9e97656f888902d4	playbooks	-
@@ -126,7 +133,7 @@ library/reference/setup-reading/git-and-github.md	bloombar/knowledge-kitchen	htt
 library/reference/setup-reading/version-control-systems.md	bloombar/knowledge-kitchen	https://knowledge.kitchen/content/courses/software-engineering/notes/version-control-systems/	2026-08-22	2e7dab8bdb878b4bdbceabfed7186cb9300223251d92c30d85f9e61ec8c51be7	reference	813108c3df8608926412032a11a4a60860aaf0540e5242879509e762151f2c99
 library/reference/skill-architecture.md	WeiKuoWei/dotclaude	~/.claude/references/skill-architecture.md	41bf600	7bbe590050fdd4e833c3e6c9b56938e49ad7a50f0157162f227cd1cb7d852d4b	reference	87fab4d6d0aba33b1f0ca99f3f0fe0fdb1cfaaa5608da47470cbfdd4d994a566
 library/reference/terminology.md	authored	-	-	b3972b4bd96a8a2248e92f7825a2bbc549db122e8818233f7d517805f145549f	reference	-
-library/reference/tool-inventory.md	authored	-	-	e998c7849f50f17137fc21a2fe0f808763fb095882e8fe6ba4114f93b9382508	reference	-
+library/reference/tool-inventory.md	authored	-	-	3d87cd3d5d12e547dc8e6573f983a39c40e9cb151cf7f0cb0c102162a6a39bad	reference	-
 library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2bd32580519aaef7b83ba6b76e	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
