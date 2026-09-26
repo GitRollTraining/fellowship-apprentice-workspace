@@ -75,7 +75,8 @@ it only if you agree, and changes nothing else.
 The clone keeps working as it is. Do not pull it: the folders you wrote in have moved, so a pull
 can stop with a conflict. To switch: install the plugin, start `setup` in the repository where you
 work, and move anything you wrote under the clone's `training/`, `engagements/` or `reference/` into
-the same place under that repository's `apprentice-workspace/`. Then the clone can go.
+the same place under that repository's `apprentice-workspace/`, before you run `onboarding` there, so
+it picks up your existing setup record instead of starting a new one. Then the clone can go.
 
 ## What is in the plugin
 
