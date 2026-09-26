@@ -30,8 +30,9 @@ says to.
    `cp -R -n "<this skill's folder>/template/apprentice-workspace" "<root>/"`. Anywhere else, or if
    that command is not available, create each missing file with the template file's exact text.
    One exception: if `<root>/apprentice-workspace/AGENTS.md` already exists and differs from the
-   template's, it is an older copy of the plugin's rules. Say so, and replace that one file with the
-   template's only if the apprentice agrees. Never replace any other file that exists.
+   template's, it is either an older copy of the plugin's rules or was edited in this repository.
+   Show the apprentice the difference, and replace that one file with the template's only if they
+   agree. Never replace any other file that exists.
 3. **Add the root blocks.** For `<root>/AGENTS.md` and `<root>/CLAUDE.md`, follow
    `references/root-blocks.md`: add the block only if the file does not already contain
    `<!-- apprentice-workspace: start -->`, append it at the end, and never change anything else in

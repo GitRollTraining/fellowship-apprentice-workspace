@@ -66,9 +66,9 @@ Then install the plugins `library/sops/agent-settings.md` lists; `onboarding` wa
 | Codex command-line tool | `codex plugin marketplace upgrade fellowship-apprentice-workspace` |
 
 Updating never touches `apprentice-workspace/` in your repositories: that folder is yours. After an
-update, start `setup` again in each repository you work in: it adds anything new, offers to replace
-the rules file `apprentice-workspace/AGENTS.md` if yours is older than the plugin's, and changes
-nothing else.
+update, start `setup` again in each repository you work in: it adds anything new, shows you how
+the rules file `apprentice-workspace/AGENTS.md` differs from the plugin's current one and replaces
+it only if you agree, and changes nothing else.
 
 ## Already cloned this repository?
 

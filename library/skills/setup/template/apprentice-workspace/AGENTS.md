@@ -85,7 +85,7 @@ Code type `/apprentice-workspace:` and its name; ask `workspace-help` for the cu
 trusting a count — the skill list a session starts with leaves out the skills that start only when
 the apprentice names them, so it is never the whole plugin), document shapes in `library/templates/`, the renderers that turn finished work into
 a file the owner opens in `library/renderers/`, the plugins `library/sops/agent-settings.md` asks you
-to install yourself, three MCP servers on by default and three more you connect per engagement with
+to install yourself, three MCP servers in the base set and three more you connect per engagement with
 the client's own credentials — never ours. The full list with
 reasons: `library/reference/tool-inventory.md`.
 

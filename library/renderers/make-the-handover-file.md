@@ -73,11 +73,11 @@ and must not appear in rendered prose.
 
 ## 2. Build
 
-From the `apprentice-workspace/` folder, with `library/` resolved to the plugin's library as
-`apprentice-workspace/AGENTS.md` says:
+From the `apprentice-workspace/` folder, where `<library>` is the plugin's library folder
+(`apprentice-workspace/AGENTS.md` says how to find it):
 
 ```bash
-python3 library/renderers/build-document-pdf.py "$ACCOUNT"
+python3 "<library>/renderers/build-document-pdf.py" "$ACCOUNT"
 # wrote engagements/<client-slug>/handover/owner-account.pdf (... bytes)
 ```
 
@@ -87,7 +87,7 @@ into a paragraph of vertical bars without making the build fail.
 ## 3. Run deterministic checks
 
 ```bash
-python3 library/renderers/check-document-pdf.py "$ACCOUNT"
+python3 "<library>/renderers/check-document-pdf.py" "$ACCOUNT"
 ```
 
 Pass the markdown path; the checker derives the PDF beside it. It checks:

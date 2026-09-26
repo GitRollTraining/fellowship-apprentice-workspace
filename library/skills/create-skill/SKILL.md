@@ -100,7 +100,8 @@ If args missing, ask user.
    - Antipattern checklist results
    - Remaining TODOs for the user (e.g., "fill `eval/baseline-input.md` and
      `eval/baseline-output.md` with the canonical pair")
-   - Reminder: test a library skill by invoking `/{slug}` with a real input; test an engagement skill
+   - Reminder: test a proposed library skill by asking the agent to read and follow its draft
+     `SKILL.md` with a real input (no agent loads skills from `apprentice-workspace/`); test an engagement skill
      from its disposable installed form before relying on it
 
 ## Gotchas

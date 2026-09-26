@@ -144,8 +144,8 @@ library/reference/tool-inventory.md	authored	-	-	3d87cd3d5d12e547dc8e6573f983a39
 library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2bd32580519aaef7b83ba6b76e	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
-library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	9382847f16424130098050443372a18d6f1affcb06c19d006be14e5c87d10e8a	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
-library/skills/INDEX.md	authored	-	-	28c1b992297c13c2cf6449224d0afe5d3adf2b4b15a441e01d4ab16caadd7324	skills	-
+library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	784c4ff30105dceadf00a4df935e52eb4d2a0f26735e827ea831720b2f08d51e	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
+library/skills/INDEX.md	authored	-	-	e26459dd2709ace3007a01761db0abdd72ad3e62be980f48283b71c0049963e0	skills	-
 library/skills/choose-automation-approach/SKILL.md	authored	-	-	21c8d50ac9e25d197747e0ab94e668f75fb569c5f68123bda82a9882624928cf	skills	-
 library/skills/choose-automation-approach/agents/openai.yaml	authored	-	-	108a51c4d4a184bd0478b05ca8aa9d1685dd3111109c468396daa4ac1f22ffcb	skills	-
 library/skills/choose-automation-approach/eval/acceptance-criteria.md	authored	-	-	582f5a639b51e5fa6ed10b7833b341702ef27312b6bee10d76921b801d00001d	skills	-
@@ -160,7 +160,7 @@ library/skills/choose-automation-approach/references/interview.md	authored	-	-	4
 library/skills/choose-automation-approach/references/output-template.md	authored	-	-	8cd067289851f679a1813da842e614226243b7ff6add1600123295cd9e5352e5	skills	-
 library/skills/choose-automation-approach/references/principles.md	authored	-	-	6bcd2c045ccd7884bba1929418355ce93383f00c2bad9c172059d0fc11742651	skills	-
 library/skills/command-failed/SKILL.md	authored	-	-	9fdd502ac21928e7f1756b33742fa64d0f7794cbdcbf3acb3bde8075dc1f259f	skills	-
-library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	90146c9e02527be8e3aaf1acee0b2df188e19ab095c54c6036bc1a03d014e130	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
+library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	3d956e3df88a9fe347c04c1f99c54a4b80a9fc69bc8f2e230e9502e86d741142	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
 library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	f23f89f722206c7fe6658d0a64e458ea5a336ec2f563207ea026c9878c698970	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	a61e97e4b61d25a33533a1ebeeac6176e4a77ceb05f0aafe248231cc8381d470	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc
 library/skills/create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	4acac9a2ee8b5656d89fe63ce763d615fa71cfb02b9d09a34eb6cf232e6994e9	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
@@ -213,13 +213,13 @@ library/skills/onboarding/references/record-format.md	authored	-	-	8702cd79bffed
 library/skills/scan-agent-skill/SKILL.md	authored	-	-	011ffe18c693ffa7c60dc32963aacfbdfde3730a151bb355f057956b7407d40a	skills	-
 library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
 library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	7eb56cc04b4eddcf0e7d4016c4216c63ccff97ad1fc0249f624569a37e0938ef	skills	-
-library/skills/setup/SKILL.md	authored	-	-	0ad6360fe3a69452b954b5cca89a6111d952d35f7d36a08f8e2e149b4015fb1c	skills	-
+library/skills/setup/SKILL.md	authored	-	-	bf5adf394ca6e306ba5c3bb09b587c38038277dcb31769019e70fec3dd596799	skills	-
 library/skills/setup/agents/openai.yaml	authored	-	-	6f5fc6f29ece159ee66fb601cf712407b2093bb24f4ce7506f75b590fa62f579	skills	-
 library/skills/setup/eval/baseline-input.md	authored	-	-	4447d870ccfc4deecd990ab8ea8df752832abdfbc703e0a36aee14c11a5e7f78	skills	-
 library/skills/setup/eval/baseline-output.md	authored	-	-	d8e00833fa7bdbc33bd869aba64e8108d34bc3cc7fc485d4d4da637173ab449c	skills	-
 library/skills/setup/references/root-blocks.md	authored	-	-	492d8e6698492704c98196bae15f948820cd8506f91f10db68771838726a75dd	skills	-
 library/skills/setup/template/apprentice-workspace/.gitignore	authored	-	-	cd1ed456b93069292793b8c5a189a970953b52888c7d80aa7aad97041a6380f7	skills	-
-library/skills/setup/template/apprentice-workspace/AGENTS.md	authored	-	-	d7052ed4c6d3db51333f8133cd74b5637d6d7ee559696aa5692d4861ae76a6e4	skills	-
+library/skills/setup/template/apprentice-workspace/AGENTS.md	authored	-	-	51b3e1daaad04f2adb227f2f4c6f369039a30c1aec6f329dfc4fc818643f95ca	skills	-
 library/skills/setup/template/apprentice-workspace/INDEX.md	authored	-	-	983ecdd7cd5b5b5af2d0e1d4d86c5461fea18f42592c8350800ab4f144cb1c36	skills	-
 library/skills/setup/template/apprentice-workspace/engagements/INDEX.md	authored	-	-	b544789175a30fd37bf9a9e35663046ca5978d73ff15bdc5b6944f3caa924776	skills	-
 library/skills/setup/template/apprentice-workspace/engagements/example-client/INDEX.md	authored	-	-	cbf7ce77fdd34d1f57f6ee4dc3a7075a8363f902d295811f7f56ee868200f976	skills	-
