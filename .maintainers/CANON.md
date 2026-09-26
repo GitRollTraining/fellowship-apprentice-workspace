@@ -69,6 +69,12 @@ even when the underlying tools work; those local repairs are called out below.
 These corrections make existing instructions executable; they do not replace the renderer or redesign
 the inherited skills.
 
+On 2026-09-26 the workspace became an installable plugin, which added one patch on top of the ones
+above. Every file that reached skills through the `.claude/skills` symlink, cited `.claude/settings.json`,
+or wrote `engagements/`, `training/` or `reference/` at the repository root now says that `library/` is
+the installed plugin's library and that the apprentice's own work goes in `apprentice-workspace/`. The
+former root folders and `CLAUDE.md` ship as `library/skills/setup/template/apprentice-workspace/`.
+
 ## Checking what has moved
 
 Run from the repository root, on a machine that has the source repositories checked out:
@@ -89,12 +95,12 @@ not "the source was deleted".
 
 | | |
 |---|---|
-| Rows | 165 |
+| Rows | 186 |
 | Vendored from a source repository | 102 |
-| Written for this workspace (`authored`) | 63 |
-| Vendored files carrying a local patch | 58 |
+| Written for this workspace (`authored`) | 84 |
+| Vendored files carrying a local patch | 59 |
 | Original cut date | 2026-08-11 |
-| Last manifest update | 2026-08-27 |
+| Last manifest update | 2026-09-26 |
 
 Every figure above is derived from the manifest block below rather than carried forward by hand.
 They were last carried forward by hand and had drifted: the table read 139 rows, 75 vendored, 61
@@ -118,13 +124,13 @@ library/personas/non-technical-owner.md	authored	-	-	c7800098fb0dffc484b5b8c681a
 library/personas/socratic-tutor.md	google/notebooklm	.maintainers/sources/gem-prompt.md	2026-08-27	cc498a785dd04f04c4a50ec6a5e5c0bfbe166ed833417b46adcbb4e38308eb05	personas	806f80be8ee39aa506a2ae6769959c25ecdd0156e97c17c496c475ec55121d22
 library/playbooks/INDEX.md	authored	-	-	dfa844ecc106fb335912c85c79860c25c2478ec67fcee246281a5001b70d1db8	playbooks	-
 library/playbooks/playbook-discovery-to-deliverable.md	authored	-	-	c7e54a1744bad405bbb0306e38b992992ff6704d520ffa95838f3c02483f7f0a	playbooks	-
-library/playbooks/playbook-environment-setup.md	authored	-	-	a3d4105e7f3791f9b4db4b74c56882418f3330d398f59c0b9e97656f888902d4	playbooks	-
+library/playbooks/playbook-environment-setup.md	authored	-	-	3a4e5d5e3dce6bbc0d0eea0faa022246254ebdac1d5540fee51827d41f5230f2	playbooks	-
 library/playbooks/playbook-interview.md	gitroll-dev/curriculum	~/Documents/jobs/gitroll/tasks/gitroll-curriculum.nosync/programs/ai-fellowship/playbooks/playbook-interview.md	2c97511	ceeaa90d953bdd35f58010acb160d87948c27e63a9e74e19f66b7b492a519e77	playbooks	f4bce3af1552284d2c212fae554f5b1220e101018a7d23b0ee06776556ba5815
-library/playbooks/playbook-interview.runbook.md	authored	-	-	7d5cefeb8e451df1340e588de9e7a7293290d55070513677b63587455a2c92ca	playbooks	-
-library/playbooks/playbook-output-phraser.md	authored	-	-	bc6f3f814e77729901adb63fb5e23561128b630d9fd0ebfa9defaafb87596cbd	playbooks	-
+library/playbooks/playbook-interview.runbook.md	authored	-	-	de1ea49e4c996ebddccea6685596f6950d9c417788ddeb856e61fddef88b568c	playbooks	-
+library/playbooks/playbook-output-phraser.md	authored	-	-	b069ebde1d3bdaa501ea828117757a2b153b89a2fd49134afdc239a3200b8fc0	playbooks	-
 library/playbooks/playbook-validate-deliverable.md	authored	-	-	af0d61d56b5a952a02c54354b48d899154c2071e51ef4e5f33e0e99960eb64a3	playbooks	-
 library/playbooks/playbook-validate-handoff.md	authored	-	-	71f41e02241ddde4d5a3e838b8c70dd718217f0c69675423c28b818bd7e30931	playbooks	-
-library/reference/INDEX.md	authored	-	-	bf530da4c4fbfde66368ee308605b8fbfc6601d78ea0b5144838c9118ce03e35	reference	-
+library/reference/INDEX.md	authored	-	-	b05fe3bf3cfc02ea32860b6267c7789ed660ecf6b78bfa91ead0f3bf1ccf41b1	reference	-
 library/reference/agent-quality-guidelines.md	WeiKuoWei/dotclaude	~/.claude/references/agent-quality-guidelines.md	41bf600	1d456ebac204b7d969b5066a9e2c1035b6cbaaaa9f10ed0d7be944d4b666c812	reference	2858e976ea40f034e99c6553ef4a20e7260d87bc5a74aaa713fc0cea9742e9ce
 library/reference/deliverable-review-checklist.md	authored	-	-	8c5af4709f25fed8f8b6f42956d75edb1952908871b6fa8a0f2402f64da18cab	reference	-
 library/reference/explanation-style.md	WeiKuoWei/dotclaude	~/.claude/references/explanation-style.md	41bf600	5235a4d6fd52a2de4c5632b5f2ac33ed9f13421099ce822986203fd97bbaf9f9	reference	707357542cbd78e128d171bd3455f3f03b183bdd7b7aa46bbb9d94e14545e885
@@ -138,9 +144,9 @@ library/reference/tool-inventory.md	authored	-	-	3d87cd3d5d12e547dc8e6573f983a39
 library/renderers/INDEX.md	authored	-	-	214260a5cc6a828a27e84b2aee188347818b9e2bd32580519aaef7b83ba6b76e	renderers	-
 library/renderers/build-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/build_formal_pdf.py	-	6e4adebfd987fe8c092c49cdaa0afecaa381936d158bd2a7689d8b82d7aa8b4e	renderers	155d4a173a4246494f74b2c1c339e8ab48396db045ba5433e9789bc90d38eb3d
 library/renderers/check-document-pdf.py	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/_styles/check_formal_pdf.py	-	995a7810a55f4d65384c50bc123a300ef412789b75cc713064baf3b222c4c8c0	renderers	68ac7d1335f877afbca723fd6cbdbdc906bceda02ae8609f512c5623846f2448
-library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	3d7027bd970033ddd2dbf4bcdb3cf89ab32fc3ff2515a559bda33a56fc19b49e	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
-library/skills/INDEX.md	authored	-	-	cf0a294a36aac95fa395bc72b505e2cf2dbaeaf2186e091b19ea0bda3d4a8407	skills	-
-library/skills/choose-automation-approach/SKILL.md	authored	-	-	572fafef397512f6be7aa44a0d995e55b0da2c7abfb62cf8ae5e37255f4944e1	skills	-
+library/renderers/make-the-handover-file.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-md-to-docx-conversion.md	-	784c4ff30105dceadf00a4df935e52eb4d2a0f26735e827ea831720b2f08d51e	renderers	8ea65890d45262db6935b0e9c76691280dd5ef53be3a663c7199b72a2d757fd7
+library/skills/INDEX.md	authored	-	-	e26459dd2709ace3007a01761db0abdd72ad3e62be980f48283b71c0049963e0	skills	-
+library/skills/choose-automation-approach/SKILL.md	authored	-	-	21c8d50ac9e25d197747e0ab94e668f75fb569c5f68123bda82a9882624928cf	skills	-
 library/skills/choose-automation-approach/agents/openai.yaml	authored	-	-	108a51c4d4a184bd0478b05ca8aa9d1685dd3111109c468396daa4ac1f22ffcb	skills	-
 library/skills/choose-automation-approach/eval/acceptance-criteria.md	authored	-	-	582f5a639b51e5fa6ed10b7833b341702ef27312b6bee10d76921b801d00001d	skills	-
 library/skills/choose-automation-approach/eval/baseline-input.md	authored	-	-	dda0f4b0316448c94e5b11b9dc9f027642d872370555395b6d9327711c968cf1	skills	-
@@ -154,27 +160,27 @@ library/skills/choose-automation-approach/references/interview.md	authored	-	-	4
 library/skills/choose-automation-approach/references/output-template.md	authored	-	-	8cd067289851f679a1813da842e614226243b7ff6add1600123295cd9e5352e5	skills	-
 library/skills/choose-automation-approach/references/principles.md	authored	-	-	6bcd2c045ccd7884bba1929418355ce93383f00c2bad9c172059d0fc11742651	skills	-
 library/skills/command-failed/SKILL.md	authored	-	-	9fdd502ac21928e7f1756b33742fa64d0f7794cbdcbf3acb3bde8075dc1f259f	skills	-
-library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	4cd79972d80aaeefc9f99435f17f07100d10defd47b744745923c6b3e88f3cb9	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
-library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	6b15ba1a875f07abebab71ad94548480f1035cb4b60ce8a89bab0d8704f9017a	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
+library/skills/create-skill/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/SKILL.md	41bf600	3d956e3df88a9fe347c04c1f99c54a4b80a9fc69bc8f2e230e9502e86d741142	skills	63d75b392243b5a58103eecb14baa6c12038c9d7f180770b163c27524b9a6ea0
+library/skills/create-skill/references/checklist.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/checklist.md	41bf600	f23f89f722206c7fe6658d0a64e458ea5a336ec2f563207ea026c9878c698970	skills	c5e4c08834fa5cfc3a3e35b290b9e1476cb9a51ee311dea7c85d6ff85d52a7b5
 library/skills/create-skill/references/questions.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/questions.md	41bf600	a61e97e4b61d25a33533a1ebeeac6176e4a77ceb05f0aafe248231cc8381d470	skills	69db3e6543310ec1d2a8499c9f9f09ec519ea87e84059841afe8df37bc9ad2cc
 library/skills/create-skill/references/skeleton.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-create-skill/references/skeleton.md	41bf600	4acac9a2ee8b5656d89fe63ce763d615fa71cfb02b9d09a34eb6cf232e6994e9	skills	146ee961c50c929380737ee909df1ddfd3423dea79fc5ace39583ffab9053221
 library/skills/diagnosing-bugs/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs	2026-08-23	bca66b7141da7d225b7dfd1abf6f2bee657b8044d3897604055e760749c71724	skills	bca66b7141da7d225b7dfd1abf6f2bee657b8044d3897604055e760749c71724
 library/skills/diagnosing-bugs/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs	2026-08-23	167ab1659754b8c53706ecca7502ccc7fb219ff14f0c36bfb1db05ae31a8ac58	skills	167ab1659754b8c53706ecca7502ccc7fb219ff14f0c36bfb1db05ae31a8ac58
 library/skills/diagnosing-bugs/scripts/hitl-loop.template.sh	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs	2026-08-23	063ef14e7212113c7778258172e7c76e963926963e448934048f505d6e576e8f	skills	063ef14e7212113c7778258172e7c76e963926963e448934048f505d6e576e8f
-library/skills/digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	2be2038e881ac675b76da0b465c693c1fbf9eaa1057231b5f1b1e49ce1675da9	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
+library/skills/digest-doc/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/SKILL.md	41bf600	819ad99c03f35524696ef48d1a866f4a18c351020faa2971b1207e74942c7461	skills	b8e4182c92a7908021364fa92249175925e58685cf6eef4d104c2b2fdf033bc6
 library/skills/digest-doc/references/article-gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-gotchas.md	41bf600	46075a9478c892e6bbba32fd8c2235181eb21a46e3642e71e1aeef3b2a1c9515	skills	b243c178d8977f3ca050270a8071a335ca251f01ef559f8504107e8d72bb62fa
 library/skills/digest-doc/references/article-importance-rules.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-importance-rules.md	41bf600	17b853b9d6da4ffe56e4ce1522b66f6c1838c48da81d61495007bd2509c40025	skills	bb8fc7a34b631e5d4ba40260b2dd6a38ffd3743974217bfaea6d421b40df8cf6
 library/skills/digest-doc/references/article-schemas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/article-schemas.md	41bf600	60e4e3ba77a3ad1d7dc630b94336a87cf7fb79cc913a67195c83b5826f5eccde	skills	149ced42e4f73ae93a20e5b2a998bcf6cba317598a05640e4a5acd5c3f9bf7e5
-library/skills/digest-doc/references/routing.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/routing.md	41bf600	735a0a2292921547b5841bfd20853a4f55751376c5954fe8dbd69b4088a010f6	skills	57f1b164f83ca7bd15b9b95c5c2f96053417f0f35baf0b097a9bf9eafda18ee4
-library/skills/drive-portal/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/SKILL.md	-	18fafdc50188d66f6c7f407c3562146d6de440c196857b485f0a579e7f386171	skills	f5c3565ff73ef79f7016ff37713a903ae26a7dc705ce69e86ca7df8c7f09d21b
+library/skills/digest-doc/references/routing.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-digest-doc/references/routing.md	41bf600	d58ce68441d0dda7228f957479cfb58892db5672d54329ee9ec0327dea188460	skills	57f1b164f83ca7bd15b9b95c5c2f96053417f0f35baf0b097a9bf9eafda18ee4
+library/skills/drive-portal/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/SKILL.md	-	823340c511bd993a59eeafce834a02f04a05f83ceceee8da63f8fc6d5c9354ba	skills	f5c3565ff73ef79f7016ff37713a903ae26a7dc705ce69e86ca7df8c7f09d21b
 library/skills/drive-portal/references/diagnosis.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/diagnosis.md	-	dea9ff86ff59eb5c8de94f62b64a4e0b7a36c8997fe3d5db4d7f8091333183a2	skills	cd00bc90ebe5c386da292f229fa247c659acdc5c377b2630e4d9f06e072ca7ac
 library/skills/drive-portal/references/form-fill.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/form-fill.md	-	b43e2d99ee6471eb5d02fbdcc062b7b04eeebd382a030142232a123c9c8096b1	skills	9da1d43c8fc1cd42647b53297dba951a21f1b88ca95cb7b328ff6ea87194d122
 library/skills/drive-portal/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/gotchas.md	-	53ebbc2c3c747543f34fa8e47d17b23ab7fc3b08769d5851a17c2dbe6d629544	skills	d1067df85b6477949d356b59e2263597bd3ce3d26077959d05b5e06cd1984203
 library/skills/drive-portal/references/reconnaissance.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/reconnaissance.md	-	e316d282306c66169707216f11b5afbaf41f26380e6080339a9538a8eec35233	skills	e316d282306c66169707216f11b5afbaf41f26380e6080339a9538a8eec35233
 library/skills/drive-portal/references/upload-and-frames.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/upload-and-frames.md	-	9ba0503297910bb223e8f93c5724b2149d8594c8921847be358592b1520c4c2f	skills	b737f888bd456963ebe9c6c3fbdc7f04f525a60c0121ec0f3c3bd4d93043df11
 library/skills/drive-portal/references/verify-save.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-drive-portal/references/verify-save.md	-	f6bf156e3419968098007aed841eca8a0fb665ecd9285512f0aed51c11162023	skills	e0637a925f1ca8a627327e7b619c32d1ebdd4cdf0f861e54b699c0005db760f9
-library/skills/explain/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-explain/SKILL.md	41bf600	bd3ab2293e88cfcb0a3e01fc9ee38e461d84df532a54ab2b7f8a39d8c92b85ce	skills	fd9137c2f1e4460a2040ac51453babf0f901a8c225f2117c3d4bec9f48751ce4
-library/skills/flowchart/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/SKILL.md	41bf600	284b2a27825847065417646aa92dd0a4baaec7acdac0555ffa7f1888191ea83b	skills	5f373e652193a5a67b1a61971e691562957faa2f660dd7e02a6a4bed0f799894
+library/skills/explain/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-explain/SKILL.md	41bf600	eae429ebf9d8dd46610be31b46b509d86430f2f3a4e12c5de809733be1019ece	skills	fd9137c2f1e4460a2040ac51453babf0f901a8c225f2117c3d4bec9f48751ce4
+library/skills/flowchart/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/SKILL.md	41bf600	c620a816e8dc7f61419db0a2294190f8dfed480924913a6faad21d723e6742bd	skills	5f373e652193a5a67b1a61971e691562957faa2f660dd7e02a6a4bed0f799894
 library/skills/flowchart/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/gotchas.md	41bf600	375ed2910c37b012d7c7a067bcbc576afaa8fd9e0e735601d34fa977fdd75265	skills	375ed2910c37b012d7c7a067bcbc576afaa8fd9e0e735601d34fa977fdd75265
 library/skills/flowchart/references/layout.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/layout.md	41bf600	5278c7a798b883e579cd434fa544eb9368123d231a9a325b2906b619a5b89e48	skills	5278c7a798b883e579cd434fa544eb9368123d231a9a325b2906b619a5b89e48
 library/skills/flowchart/references/symbols.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-flowchart/references/symbols.md	41bf600	d326852be81c84f5491f9a868b3aac96a4b7eeadfecae13f5a363edf9a56c6c3	skills	d326852be81c84f5491f9a868b3aac96a4b7eeadfecae13f5a363edf9a56c6c3
@@ -189,35 +195,56 @@ library/skills/grilling/SKILL.md	mattpocock/skills	https://github.com/mattpocock
 library/skills/grilling/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling	2026-08-23	ad75163922ff8263acdd25ebc37420e8fcf1fccb93483fd5742e9bd26f5c45f6	skills	ad75163922ff8263acdd25ebc37420e8fcf1fccb93483fd5742e9bd26f5c45f6
 library/skills/handoff/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff	2026-08-23	96f8045f01f569daa3737150d918b7201ccd090905fb10cefedd326e4001f551	skills	96f8045f01f569daa3737150d918b7201ccd090905fb10cefedd326e4001f551
 library/skills/handoff/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff	2026-08-23	deb645c801764579994bd23d1954aa991ef1d0d55bf30043d47ada631fcff5f4	skills	deb645c801764579994bd23d1954aa991ef1d0d55bf30043d47ada631fcff5f4
-library/skills/interview-recording/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/SKILL.md	-	ae936db52390e6ca4d1893a611eb03453976e3b18331a2cd174c1f1c98359957	skills	304b61f4cc5f4dec22965b6dce6e736a43ea3b7472194bd6c568dfa03ae8ac4f
-library/skills/interview-recording/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/references/gotchas.md	-	e1aca92eb41addc87fe18511d5e1b13ac2423d87c7e4c68d56bc76b26103caf5	skills	5de84867e8715dfcbe7fac306918016b3dd11a30359ed39fb2515e6107ec08ca
+library/skills/interview-recording/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/SKILL.md	-	da3f385f19a295e7dadcb81bf077c8607f75fca6d055b9c8f16059cd8942575e	skills	304b61f4cc5f4dec22965b6dce6e736a43ea3b7472194bd6c568dfa03ae8ac4f
+library/skills/interview-recording/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/references/gotchas.md	-	07aef15573026feb150401c9e763136ce7ea945540bd9403bfedc29aabf5ac8e	skills	5de84867e8715dfcbe7fac306918016b3dd11a30359ed39fb2515e6107ec08ca
 library/skills/interview-recording/references/refine-and-breakdown.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-meeting-plaud/references/refine-and-breakdown.md	-	fd848f2c1261c7af356c1495fff14874fcc02cad65de7fd36274a49e70f066f0	skills	c3e2b0b3768e3a7bba9cc0d4002f7619d66af91cdd760e3dddb86d8040c2323b
-library/skills/kb-restructure/SKILL.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/SKILL.md	9e51feb6	f967a2183f789ce49f694843d524497b2ac6347b710a5c37806a2599d3ef3d7d	skills	9860d9bba894f0c6b94d7ebfc8975b5f27efe5808751283b0d9c890ed9a8a750
+library/skills/kb-restructure/SKILL.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/SKILL.md	9e51feb6	eb097bd5236e267eb96a14614aae964206a2e2f3ccaf956740611b9da4a9a678	skills	9860d9bba894f0c6b94d7ebfc8975b5f27efe5808751283b0d9c890ed9a8a750
 library/skills/kb-restructure/references/classification.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/references/classification.md	9e51feb6	32d7e10ce0439a59824e7560d90f565531f49829cdb35cbc1c023f473e48b311	skills	32d7e10ce0439a59824e7560d90f565531f49829cdb35cbc1c023f473e48b311
 library/skills/kb-restructure/references/playbook-archive.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/references/playbook-archive.md	9e51feb6	95faf9d6fbe63da86e6a8978a665727a7b8d12bfec1c3268114d1cd20d502d5f	skills	95faf9d6fbe63da86e6a8978a665727a7b8d12bfec1c3268114d1cd20d502d5f
-library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/references/playbook-rename.md	9e51feb6	f9e8f20039ce85b6161a25e5192230634f2dde968c6ccf892aefbe05e4e58e7a	skills	f9e8f20039ce85b6161a25e5192230634f2dde968c6ccf892aefbe05e4e58e7a
+library/skills/kb-restructure/references/playbook-rename.md	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/references/playbook-rename.md	9e51feb6	d54e8634dce4f10ad3ae3d08b676567901b332cd95f66f17c790f617fe674aca	skills	f9e8f20039ce85b6161a25e5192230634f2dde968c6ccf892aefbe05e4e58e7a
 library/skills/kb-restructure/scripts/linkcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/linkcheck.sh	9e51feb6	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f	skills	37b4564ba3b3813eb74df41196b2280ea22b5fc05d697475c9a0b21b23e8270f
 library/skills/kb-restructure/scripts/refscan.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/refscan.sh	9e51feb6	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18	skills	5eb49ae2fdd727090bd675a6fb392b08171fcb9f8e119fdbf9ed1256005c4c18
 library/skills/kb-restructure/scripts/symcheck.sh	WeiKuoWei/gitroll-operations	~/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/kb-restructure/scripts/symcheck.sh	9e51feb6	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8	skills	350f65ab1679fdfa49c6b30f768810da079768934996c313445b77bab19924d8
-library/skills/onboarding/SKILL.md	authored	-	-	f875a47488b7a945949d9ad3e2d867cc4c2c5dbb42b7196afc28dd04caca7306	skills	-
+library/skills/onboarding/SKILL.md	authored	-	-	2d39a4db8b865948d900e528b60d7cc47f8cd592bed12c53781e9a446369ceeb	skills	-
 library/skills/onboarding/agents/openai.yaml	authored	-	-	e93135e9cbda606502c6295e0d44978a91c2bf3bbe0a96e6d6b0328f0b889278	skills	-
-library/skills/onboarding/references/checks.md	authored	-	-	c780cc0ad15c9e68fd96cf998ac83e5d7a7ee2c46fe03b37377b8f790cf3747d	skills	-
+library/skills/onboarding/references/checks.md	authored	-	-	7c31010f4760f42708f058ea455aaf3451825049d93b9ae85c45158045b6a786	skills	-
 library/skills/onboarding/references/reading.md	authored	-	-	276355d5b36ebb2acc855deda8d9da897a7e59562f18831475f62694aaccdcb7	skills	-
-library/skills/onboarding/references/record-format.md	authored	-	-	d4e0d4af9da6338ea940490127760483c3684461baaa90e78d417066f34b594a	skills	-
-library/skills/scan-agent-skill/SKILL.md	authored	-	-	86dda943037583a8fa8f66432d7fe0c4fc10802ca8762034fa77f13f8fdbcf79	skills	-
+library/skills/onboarding/references/record-format.md	authored	-	-	8702cd79bffeda59ad52ccc4001d3b4d75a252f08103ecde0bf96e7b01b32f73	skills	-
+library/skills/scan-agent-skill/SKILL.md	authored	-	-	011ffe18c693ffa7c60dc32963aacfbdfde3730a151bb355f057956b7407d40a	skills	-
 library/skills/scan-agent-skill/agents/openai.yaml	authored	-	-	fb413c417dbc9906f22973354aa159136d9aae2cb184dba7854205ae6e6fa672	skills	-
 library/skills/scan-agent-skill/scripts/scan.sh	authored	-	-	7eb56cc04b4eddcf0e7d4016c4216c63ccff97ad1fc0249f624569a37e0938ef	skills	-
+library/skills/setup/SKILL.md	authored	-	-	bf5adf394ca6e306ba5c3bb09b587c38038277dcb31769019e70fec3dd596799	skills	-
+library/skills/setup/agents/openai.yaml	authored	-	-	6f5fc6f29ece159ee66fb601cf712407b2093bb24f4ce7506f75b590fa62f579	skills	-
+library/skills/setup/eval/baseline-input.md	authored	-	-	4447d870ccfc4deecd990ab8ea8df752832abdfbc703e0a36aee14c11a5e7f78	skills	-
+library/skills/setup/eval/baseline-output.md	authored	-	-	d8e00833fa7bdbc33bd869aba64e8108d34bc3cc7fc485d4d4da637173ab449c	skills	-
+library/skills/setup/references/root-blocks.md	authored	-	-	492d8e6698492704c98196bae15f948820cd8506f91f10db68771838726a75dd	skills	-
+library/skills/setup/template/apprentice-workspace/.gitignore	authored	-	-	cd1ed456b93069292793b8c5a189a970953b52888c7d80aa7aad97041a6380f7	skills	-
+library/skills/setup/template/apprentice-workspace/AGENTS.md	authored	-	-	51b3e1daaad04f2adb227f2f4c6f369039a30c1aec6f329dfc4fc818643f95ca	skills	-
+library/skills/setup/template/apprentice-workspace/INDEX.md	authored	-	-	983ecdd7cd5b5b5af2d0e1d4d86c5461fea18f42592c8350800ab4f144cb1c36	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/INDEX.md	authored	-	-	b544789175a30fd37bf9a9e35663046ca5978d73ff15bdc5b6944f3caa924776	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/INDEX.md	authored	-	-	cbf7ce77fdd34d1f57f6ee4dc3a7075a8363f902d295811f7f56ee868200f976	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/deliverable/INDEX.md	authored	-	-	84847ff9584a415cdd52cb7ba92b4737d2f8915831a5406e5f441c0ccebd7baa	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/handover/INDEX.md	authored	-	-	b1a0c0bece26a66ae08a6adc016db0a0696792dd36406c24f8452ca5c6449f13	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/interview/INDEX.md	authored	-	-	165e5dd4b721a8e41bfd0f15bdfe71aa5d8868c999a74a819aa9d6857ec54ddd	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/process/INDEX.md	authored	-	-	b6a2ed513d86311123aed35b8ac35b6d3340624480a9ab283e9370cafc5faee9	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/spec/INDEX.md	authored	-	-	5757c371596b65601044e79d3dd82bd707c33bde2a8fbe21a06249f355f1e239	skills	-
+library/skills/setup/template/apprentice-workspace/engagements/example-client/verification/INDEX.md	authored	-	-	70e08a8ae81a5ef0552caa87e3d45683e06fe7e7ef2579e2e6ef77dcfee02b2d	skills	-
+library/skills/setup/template/apprentice-workspace/reference/INDEX.md	authored	-	-	de404b22445b73621bbb59eda297b12d218e495002e1439c4636a34fd90e98ae	skills	-
+library/skills/setup/template/apprentice-workspace/reference/question-bank.md	authored	-	-	6a55f8764b1bf7e0aaeb9a1f58384cbc6dc1da3d7a9d3889a59edb882a05d3c6	skills	-
+library/skills/setup/template/apprentice-workspace/reference/self-audit-log.md	authored	-	-	942bf53a75949de24c20b08416f4fce7da27eaeac0c1da75d12cc9bab3b168ac	skills	-
+library/skills/setup/template/apprentice-workspace/training/INDEX.md	authored	-	-	2e8db5c189e0684e0ca070c86603cb1564091069cacde2ee91bf3c6b40cdccb8	skills	-
+library/skills/setup/template/apprentice-workspace/training/onboarding/INDEX.md	authored	-	-	a2600c2b87a6ef8157751b211af54862215b287170272537575c58d080d338fb	skills	-
 library/skills/teach/GLOSSARY-FORMAT.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	22f851b265a3bec5a333937cc7ff1250136c9b6512787ae2eb51a2a14e35c341	skills	22f851b265a3bec5a333937cc7ff1250136c9b6512787ae2eb51a2a14e35c341
 library/skills/teach/LEARNING-RECORD-FORMAT.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	d49c754ea416a075534d0ba1428a0beba1327ae527c2d1af0333908d08e25d05	skills	d49c754ea416a075534d0ba1428a0beba1327ae527c2d1af0333908d08e25d05
 library/skills/teach/MISSION-FORMAT.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	44ea82d5f57a626086bde99c70cd229cdef67998e8502c1cbcd50504f57f989a	skills	44ea82d5f57a626086bde99c70cd229cdef67998e8502c1cbcd50504f57f989a
 library/skills/teach/RESOURCES-FORMAT.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	377e70f83d41fdc2623037410600194655a2f7df41000925c24cc437da074ab5	skills	377e70f83d41fdc2623037410600194655a2f7df41000925c24cc437da074ab5
-library/skills/teach/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	73b6a040b4a82999ce3e78d82196720afa823c9b5f06c36f195d292fe7788851	skills	3377485cbb1d62782122c1cc8cab4ceb37d5457c0543889784f3d7d9ca359e04
+library/skills/teach/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	6cd9520024eb1a407949d34a658801ac4f3e99627f7020f177dd1a9d5283b7d9	skills	3377485cbb1d62782122c1cc8cab4ceb37d5457c0543889784f3d7d9ca359e04
 library/skills/teach/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/teach	2026-08-23	80e96a4d492ad8538e609672361e8543b69e7b22ce83be0efc2e5532472ede69	skills	80e96a4d492ad8538e609672361e8543b69e7b22ce83be0efc2e5532472ede69
 library/skills/to-questionnaire/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/to-questionnaire	2026-08-23	77825120815c21400f82e2794faf342d1d1a4ab1493be3fe061857885d26b768	skills	77825120815c21400f82e2794faf342d1d1a4ab1493be3fe061857885d26b768
 library/skills/to-questionnaire/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/to-questionnaire	2026-08-23	0b5ed84d805809777a15371c946a70f98321e3c6400fce5fcd74df71d40e860b	skills	0b5ed84d805809777a15371c946a70f98321e3c6400fce5fcd74df71d40e860b
 library/skills/to-spec/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec	2026-08-23	7993e165216be27731b1de4809128a1f8e67388002b04cd85ef5cf4978dab046	skills	c73a2250beac0479e384f5466e834bb54ce6e30b7f8705e9999ba840d9d59b36
 library/skills/to-spec/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec	2026-08-23	55037139831219743dda1f716fe69eab3366e922529f69cc988fea3b1d34c74a	skills	55037139831219743dda1f716fe69eab3366e922529f69cc988fea3b1d34c74a
-library/skills/video-to-markdown/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/SKILL.md	-	a124c6ff83c406152fb867b914c14d7e6c2f87e28c9234e9556970b770def918	skills	d31ae309c860953ba8247307507e856669ba3bad8a7193ff921aa14045d0235e
+library/skills/video-to-markdown/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/SKILL.md	-	b63809e174ecfb1026704d72e8014a59ba3c77950f3c1966e48e1bf8c76bd037	skills	d31ae309c860953ba8247307507e856669ba3bad8a7193ff921aa14045d0235e
 library/skills/video-to-markdown/references/gotchas.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/references/gotchas.md	-	307a14571903202f41c7087d6c1eb315750734d8734450519964eeac171bbf4d	skills	873e981206644202220734a31925137c8267a0c2e4fc372c061fb2090a118260
 library/skills/video-to-markdown/references/methodology.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/references/methodology.md	-	6fc6fff17278f0a8ba6f670ee023069b4ab8d70d7ad432961d056d7e9ce2abd1	skills	93590fcf40c73b1d17b8baf88ce1c082e25c072b6be48612dcf1a4cc9f20efd9
 library/skills/video-to-markdown/references/pipeline.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/references/pipeline.md	-	cdfb0124f6e1a11f90d890855bed8f6f5ce7d11796f30447ceb94d1b9fea0212	skills	d3ce569678e675774aac20a35a5d9b60e39e79a92cd3859d60ff4426f664f033
@@ -235,20 +262,20 @@ library/skills/video-to-markdown/scripts/srt_to_transcript.py	WeiKuoWei/dotclaud
 library/skills/video-to-markdown/scripts/transcribe_timed.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/transcribe_timed.py	-	0aaa08a501abe26d0a34736e7b92469ecb88794372b7589b8301296b4cbd1c7b	skills	eda2f978e342e1200c0049941279f6981cf55a98b062f679d206e1924b968ab1
 library/skills/wait-what/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what	2026-08-23	dcaa44ef972d5a3f9bda65a69442fb11e36eb41b7e9bb0dc8b63031ba0582fdb	skills	dcaa44ef972d5a3f9bda65a69442fb11e36eb41b7e9bb0dc8b63031ba0582fdb
 library/skills/wait-what/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what	2026-08-23	e0d9beddf0093b3cf05de2722699affab5d240e5950469e208d59c1f0ed91bef	skills	e0d9beddf0093b3cf05de2722699affab5d240e5950469e208d59c1f0ed91bef
-library/skills/workspace-help/SKILL.md	authored	-	-	be47bb5951933932362e532b0210e9d7dd5be69d4b25244ed7dfd4b74ccf101a	skills	-
+library/skills/workspace-help/SKILL.md	authored	-	-	fe9dae80febc4f56d5c6f603f7196007790e20fcc8c7456b11b7ecd0327d51de	skills	-
 library/skills/workspace-help/agents/openai.yaml	authored	-	-	1ce00af0130218e327348e3c0f6e8308e71c9c126ae805b0d1d08a3d96d72dea	skills	-
-library/skills/workspace-help/references/enumeration.md	authored	-	-	5ddb675076b9fcf9f9e87546d80e38b01393df4ac750781ccce98b8a8e01ab89	skills	-
+library/skills/workspace-help/references/enumeration.md	authored	-	-	ac1539a9d50e83cd18bb2a7bbd22cb3d25d2f1f805409acab1ba8ffbf76bd0bd	skills	-
 library/skills/writing-for-agents/SKILL-MECHANICS.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents	2026-08-23	86f112c08d785cc224c13dcda75c0724b74bd62622cc61d4b7ab3dbbaf37f6fc	skills	86f112c08d785cc224c13dcda75c0724b74bd62622cc61d4b7ab3dbbaf37f6fc
 library/skills/writing-for-agents/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents	2026-08-23	1c0c4ebf2d221917591144f0ced4fe46dae13301cb3d6d93fc88ecf0dda6aed2	skills	1c0c4ebf2d221917591144f0ced4fe46dae13301cb3d6d93fc88ecf0dda6aed2
 library/skills/writing-for-agents/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents	2026-08-23	486c388ed1babac6ea25001147b41d3ff6c8892b0128ae1b0bef8feea6363428	skills	486c388ed1babac6ea25001147b41d3ff6c8892b0128ae1b0bef8feea6363428
-library/skills/youtube-transcript/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/SKILL.md	-	9485207343cd2e0af1208ca14828edd1058fd9c585aed45d3c33fcd5bf86477a	skills	38a0212abae861066238938ec0f16c8013fc76ba5840cb161ffbc50c2b92a879
-library/skills/youtube-transcript/references/setup.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/references/setup.md	-	bd6ab06fdbddabd6961b4d47f0218464c87460e15d8437d326c252070300f010	skills	b2f56954807229da0e5783e929b71b24c9bf832cedb42f03c8ec794b07873ba7
+library/skills/youtube-transcript/SKILL.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/SKILL.md	-	a5137796f4adcbf748103f004efe32ce0a3b2dd57b3f98608ec9c6b0b6988748	skills	38a0212abae861066238938ec0f16c8013fc76ba5840cb161ffbc50c2b92a879
+library/skills/youtube-transcript/references/setup.md	WeiKuoWei/dotclaude	~/.claude/skills/wei-youtube/references/setup.md	-	2407aa349d64a7e64c5efff67802a87f19d55938c81adba8a5fff2c589f0a4d8	skills	b2f56954807229da0e5783e929b71b24c9bf832cedb42f03c8ec794b07873ba7
 library/skills/youtube-transcript/scripts/clean_vtt.py	authored	-	-	534fbfda46a4085dcc4903788139fe5db37797ac064e0a5ce26d862c12e7aaf1	skills	-
-library/sops/INDEX.md	authored	-	-	639706f4ff9a8d02c21e88de68ed402875e1eac9edc1bf137ada0780999065f3	sops	-
-library/sops/agent-settings.md	authored	-	-	3e5a93f6929936311451924ba1547609243d1acf5bb04835806aa5cce063c155	sops	-
+library/sops/INDEX.md	authored	-	-	26b24af7538a4ef597c5ec1b89a65c7ff0f381b8ad3562db22aafeecfd65d170	sops	-
+library/sops/agent-settings.md	authored	-	-	95c0378704e51665cd67e00de1fd5552367d567272010fb9b7daaeeb3bf4b4fa	sops	-
 library/sops/working-standards.md	authored	-	-	654626a30723e6c01d582ae074f252b63be54221abe941d4123cabfa094d30b4	sops	-
 library/templates/INDEX.md	authored	-	-	beec750355669ab13ac482384401259e732b0c16716145c11cbf02a93fb69553	templates	-
-library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	672a4c831ab64da77845cd0916008ec1b49bcb3e1d8d4e58ec000180211671fc	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
+library/templates/brief-design/SKILL.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/SKILL.md	-	81cd73f288d688a1d8706c39fb2ef498db97d40e26cda5a89a39ede74e5a8619	templates	392615b778d97fe937d8cc7721308b9121dcac4252d5252cd23805aafd7670ad
 library/templates/brief-design/reference/anti-patterns.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/anti-patterns.md	-	b6d9020749299b0c3edbc3e7a5dba70deb1ad6ab722313662fec5d74619e4424	templates	f07bc3d7606fedb198e725c17adc0506bb6c10242adbe335ee103cbcc76bbcb4
 library/templates/brief-design/reference/base.html	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/base.html	-	af6c7db1c95e48fb09426d1c74c6cd060734c774cdcc42a6367f5714e650207b	templates	09f76303513684fdf480d758e5df6ae8f04a2e3eafd6bdbe8af276bfccf5a002
 library/templates/brief-design/reference/components.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/.claude/skills/ray-notion-brief/reference/components.md	-	e65a6b24344093d5020f9c32ce2fd07bbffd7991c50a748e303368c5203990e4	templates	c860e9de2f367c6b24a4fc8898e2296b5df8f0745dc20cc025ebb24330e2a464
@@ -265,7 +292,7 @@ library/templates/handoff-package-manifest.md	authored	-	-	7b803decfffd9bc915eb2
 library/templates/handoff-source-map.md	authored	-	-	049f647ee79e10e6b83aff09d9d8d2ef804b010d099bcb79f289fed49e5b6e3e	templates	-
 library/templates/handoff-validation-report.md	authored	-	-	17b7127e6e13082e5b9e020b4f5701353f19d61dfb4ba9eea0d61c88f7a8df7e	templates	-
 library/templates/handover.md	authored	-	-	cdfb76f0329c995e9c82db951fc3bd34c76ffd07bef49a223267329925927e70	templates	-
-library/templates/index-manifest.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-index-manifest.md	-	95cdf121dcfc7e98a4a4ed736f0fdda22a3042d049512270052409f0180203c3	templates	65c45b79453eb8912d174b33bbac4814c6e429090ed3d2ae235628a57fa8368a
+library/templates/index-manifest.md	WeiKuoWei/gitroll-operations	/Users/weikuo/Documents/jobs/gitroll/tasks/operations.nosync/templates/admin/admin-index-manifest.md	-	867e65db529ce0e2d74ff1d1a379e484f3bb7e687d1df48bd8823cca9596bbc6	templates	65c45b79453eb8912d174b33bbac4814c6e429090ed3d2ae235628a57fa8368a
 library/templates/interview-record.md	authored	-	-	63134e3f01cf7e77d3ab6faa5bd31e32d2ebcb0e20bff03c52cc0fd78bee8370	templates	-
 library/templates/operational-acceptance.md	authored	-	-	24ffcd668f3d4b424221bc677356956fec67fce4f6758d13717e7aa2944fb0dc	templates	-
 library/templates/owner-acceptance.md	authored	-	-	88afb87aa9b02abc8803f0c22c892c19f79cd59605b1209cc12c25f95c58e5f8	templates	-

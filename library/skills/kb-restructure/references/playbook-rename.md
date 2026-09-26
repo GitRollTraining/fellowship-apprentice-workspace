@@ -42,7 +42,7 @@ Detailed steps for engine phases 2–9 when the operation is a 1→1 mutation: r
    ```bash
    KB="<kb-root>"                                                     # absolute path to the KB root
    POLICY="<policy-patterns-file>"                                    # the same file refscan took
-   LC="$KB/.claude/skills/kb-restructure/scripts/linkcheck.sh"        # ABSOLUTE — a relative path does
+   LC="<this skill's folder>/scripts/linkcheck.sh"                    # ABSOLUTE — a relative path does
    [ -x "$LC" ] || { echo "linkcheck not executable: $LC"; exit 1; }  # not resolve from the KB root
    run() {                       # $1 = output file
      local rc=0

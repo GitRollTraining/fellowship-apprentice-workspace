@@ -66,7 +66,7 @@ The four that cost the most time, in short:
 
 | Key | Value |
 |---|---|
-| Skill location | `library/skills/drive-portal/`, reached through the `.claude/skills` symlink |
+| Skill location | `library/skills/drive-portal/` in the `apprentice-workspace` plugin, reached through the plugin |
 | Companion refs | `references/{reconnaissance,form-fill,upload-and-frames,verify-save,diagnosis,gotchas}.md` |
 | Browser tools | `mcp__claude-in-chrome__*` — the Chrome extension, part of this workspace's base set of connected servers |
 | Provenance | Derived 2026-07-29/30 against two live public-sector grant portals serving one application, one built on mootools and one on jQuery |
@@ -98,3 +98,5 @@ two checks are the acceptance criteria for any run. A save handler returning wit
 
 Adhere to the quality guidelines in `library/reference/agent-quality-guidelines.md` (runtime behaviour)
 and the structural principles in `library/reference/skill-architecture.md`.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

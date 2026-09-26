@@ -8,7 +8,7 @@ serves: D-01, D-03, D-09, D-12
 # Set up an engagement environment
 
 Run this at the start of every engagement, before the first owner interview and before client material
-enters the fork. The outcome is an engagement ready for safe discovery: its files have a home, its
+enters the repository. The outcome is an engagement ready for safe discovery: its files have a home, its
 current decisions have one record, and the limits that matter now are explicit.
 
 This is not Fellow onboarding and it is not production setup. It assumes the repository itself is
@@ -33,7 +33,9 @@ identity's name, type, owner, purpose, permission scope and storage mechanism on
 
 Do not begin until all of these hold:
 
-1. You are at the root of the Fellow's fork and can read `CLAUDE.md`, `engagements/` and `library/`.
+1. The repository where the engagement's work lives has the apprentice workspace set up
+   (`apprentice-workspace/`, from the plugin's `setup` skill), and you can read
+   `apprentice-workspace/AGENTS.md`, `engagements/` and `library/`.
    Missing base plugins, skills or account-level setup is an onboarding problem: report it and stop
    rather than installing a substitute inside a client engagement.
 2. One client and one engagement have been named. Do not create a shared directory for several
@@ -90,8 +92,8 @@ initial decision surface, not answers to copy from one client to another.
 Resolve `EW-001`, `EW-002` and `EW-003` in `decision-register.md` before importing client material or
 connecting client systems. Record:
 
-- which data categories may enter the fork or leave it for an external discovery processor, for what
-  purpose and under which authorised provider;
+- which data categories may enter the repository or leave it for an external discovery processor, for
+  what purpose and under which authorised provider;
 - which may be Git-tracked, which must use an ignored `*.local.*` path, and which must remain in a
   client-owned system;
 - which client-owned identities may be used, their permission scope and storage mechanism;

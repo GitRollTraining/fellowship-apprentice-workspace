@@ -9,7 +9,7 @@ The user has asked you to teach them something. This is a stateful request - the
 
 ## Teaching Workspace
 
-Treat `training/learning/` as the teaching workspace, creating it if it does not exist, and put every file this skill writes underneath it. Never write these files to the repository root or anywhere under `library/`, which is read-only and fingerprinted. The state of their learning is captured in this directory in several files:
+Treat `apprentice-workspace/training/learning/` as the teaching workspace, creating it if it does not exist, and put every file this skill writes underneath it. Never write these files to the repository root or anywhere under `library/`, which is read-only and fingerprinted. The state of their learning is captured in this directory in several files:
 
 - `MISSION.md`: A document capturing the _reason_ the user is interested in the topic. This should be used to ground all teaching. Use the format in [MISSION-FORMAT.md](./MISSION-FORMAT.md).
 - `./reference/*.html`: A directory of reference materials. These are the compressed learnings from the lessons - cheat sheets, reference algorithms, syntax, yoga poses, glossaries. They are the raw units of learning. They should be beautiful documents which print out well, and are designed for quick reference.

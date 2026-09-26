@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "fellowship-apprentice-workspace",
+  "description": "The AI Fellowship apprentice workspace as one installable plugin.",
+  "owner": {
+    "name": "GitRollTraining",
+    "url": "https://github.com/GitRollTraining"
+  },
+  "plugins": [
+    {
+      "name": "apprentice-workspace",
+      "description": "The AI Fellowship apprentice workspace: the curated skills, playbooks, personas, standards and templates, and a setup skill that adds the workspace folder and its rules to any repository.",
+      "source": "./",
+      "skills": ["./library/skills/"],
+      "category": "productivity"
+    }
+  ]
+}

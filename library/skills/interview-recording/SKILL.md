@@ -14,6 +14,9 @@ argument-hint: <path/to/audio> [attendee-count] [session title]
 > `library/playbooks/playbook-interview.md`. Which step's output goes to which directory:
 > `library/playbooks/playbook-interview.runbook.md`.
 
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
+
 ## Preconditions
 
 1. The owner has agreed to the recording and knows what happens to it afterwards. Ask before the session, not at the start of it (interview playbook, precondition 2). A session you did not record is a first pass to be repeated, not the record.
@@ -21,14 +24,14 @@ argument-hint: <path/to/audio> [attendee-count] [session title]
 3. The client-authorised `EW-001` through `EW-003` positions permit the recording to enter the chosen
    speech-to-text provider and define its account owner, retention/deletion route and credential
    storage. `EW-006` names that provider as a discovery system. Use an engagement-authorised credential
-   exported in the shell. Nothing in this repository ships an account, key or quota, and a Fellow's
+   exported in the shell. Nothing in this plugin ships an account, key or quota, and a Fellow's
    personal account is not an acceptable silent default.
 
 ## Constants
 
 | Key | Value |
 |---|---|
-| Session directory | `engagements/<client-slug>/interview/session-<date>/` |
+| Session directory | `apprentice-workspace/engagements/<client-slug>/interview/session-<date>/` |
 | Audio, never committed | `audio.local.<ext>` in that directory |
 | Raw provider response, never committed | `transcript.local.json` — may include full text, service IDs and an uploaded-audio URL |
 | Raw transcript, never committed | `original.local.md` — what the service returned, unedited |
@@ -48,7 +51,7 @@ argument-hint: <path/to/audio> [attendee-count] [session title]
 
 2. **File the audio, and keep it out of git.**
    ```bash
-   D=engagements/<client-slug>/interview/session-$(date +%F)
+   D=apprentice-workspace/engagements/<client-slug>/interview/session-$(date +%F)
    mkdir -p "$D"
    mv <recording> "$D/audio.local.m4a"
    git check-ignore -v "$D/audio.local.m4a"
@@ -69,7 +72,7 @@ argument-hint: <path/to/audio> [attendee-count] [session title]
 
    Worked example against one service that meets all three. The field names are that service's; the shape is general.
    ```bash
-   cd engagements/<client-slug>/interview/session-<date>
+   cd apprentice-workspace/engagements/<client-slug>/interview/session-<date>
    KEY="$SPEECH_API_KEY"
 
    UPLOAD=$(curl -s -X POST https://api.assemblyai.com/v2/upload \
@@ -117,8 +120,9 @@ argument-hint: <path/to/audio> [attendee-count] [session title]
    truth.
 
 6. **Index it at the point of creation.** Add a row to
-   `engagements/<client-slug>/interview/INDEX.md` naming the session directory, date, process, actual
-   tracked/ignored paths or client-system pointers, and the `EW-001` source that permits each placement.
+   `apprentice-workspace/engagements/<client-slug>/interview/INDEX.md` naming the session directory,
+   date, process, actual tracked/ignored paths or client-system pointers, and the `EW-001` source that
+   permits each placement.
    Record whether the labels passed step 4 — a later reader needs to know how much attribution is the
    engine's and how much is yours.
 
@@ -155,3 +159,5 @@ contribution to this library.
 Adhere to:
 - `library/reference/agent-quality-guidelines.md` (runtime behavior)
 - `library/reference/skill-architecture.md` (structural principles)
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

@@ -67,8 +67,8 @@ the session record itself.
 
 ## Which shipped tool serves which step
 
-This table is the list. Every tool named here is in this repository at the path given, and the steps
-are the numbered steps of `playbook-interview.md`.
+This table is the list. Every tool named here is in the plugin's library at the path given, and the
+steps are the numbered steps of `playbook-interview.md`.
 
 | Step | Tool | Where it is | Why this one |
 |---|---|---|---|

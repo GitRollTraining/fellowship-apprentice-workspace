@@ -12,7 +12,8 @@ shipped skills route to. It sits inside `library/` rather than in the writable `
 definition anyone can silently edit is not a definition, and a tool cut anyone can silently edit is not
 a cut.
 
-Everything here is hashed in the provenance record and denied to writes by `.claude/settings.json`.
+Everything here is hashed in the provenance record and read-only under the workspace rules in
+`apprentice-workspace/AGENTS.md`.
 
 ## Inventory
 
@@ -42,4 +43,4 @@ instructions resolved to nothing.
 
 ## Where the apprentice's own reference material goes
 
-`reference/` at the repository root — writable, yours, and not hashed.
+`apprentice-workspace/reference/` in the repository you work in — writable, yours, and not hashed.

@@ -3,8 +3,8 @@
 This directory contains the maintenance record for the shipped toolbox: provenance, cut decisions and
 high-level design decisions that should not be mixed into Fellow-facing runtime instructions.
 
-Start with `INDEX.md`. Nothing here is confidential: `.maintainers/` ships in every clone. The boundary
-is audience and purpose, not access control.
+Start with `INDEX.md`. Nothing here is confidential: `.maintainers/` ships in every clone and every
+plugin install. The boundary is audience and purpose, not access control.
 
 ## Structure
 

@@ -87,11 +87,12 @@ questioning you have no record of, so the self-audit is impossible; the ambiguit
 live; and every pointer in your write-up resolves to your own notes rather than to something the owner
 could check without you. Treat it as a first pass to be repeated.
 
-## This workspace asks before every network call
+## The agent asks before a network call
 
-`.claude/settings.json` puts `curl` in `ask`, so the upload in workflow step 3 raises a prompt. That is
-the gate working as designed — approve it when you recognise the command, and read it when you do not. A
-first engagement should never be able to send something to the internet by accident.
+Codex asks before most commands under its own rules, and Claude Code asks by default, so the upload in
+workflow step 3 raises a prompt. That is the gate working as designed — approve it when you recognise
+the command, and read it when you do not. A first engagement should never be able to send something to
+the internet by accident.
 
 ## The service's request fields are the one thing here that rots
 

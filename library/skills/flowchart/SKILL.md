@@ -22,8 +22,9 @@ boxes — which is what `scripts/` removes.
 ## Workflow
 
 1. **Copy the toolkit** into the caller's working directory:
-   `mkdir -p <target>/flowchart && cp library/skills/flowchart/scripts/*.py <target>/flowchart/`
-   (run from the repository root; the scripts travel with this repository, not with a home directory)
+   `mkdir -p <target>/flowchart && cp "<this skill's folder>/scripts/"*.py <target>/flowchart/`
+   (this skill's folder is the one holding this `SKILL.md`, inside the installed plugin; the scripts
+   travel with the plugin, not with a home directory)
 2. **Write the spec** as `<target>/flowchart/<name>-spec.py` — one file, the ONLY file that states
    content. Start from `references/symbols.md` to pick a symbol per node.
 3. **Render**, passing both the spec and the intended output path:
@@ -137,3 +138,5 @@ counts, is a working baseline.
 
 Adhere to the quality guidelines in `library/reference/agent-quality-guidelines.md` and structural
 principles in `library/reference/skill-architecture.md`.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

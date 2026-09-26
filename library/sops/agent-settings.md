@@ -6,8 +6,9 @@ serves: D-03, D-09
 
 # Agent settings
 
-What is configured in this workspace, and why each setting exists. The live file is `.claude/settings.json`
-at the repo root; this file is the reasoning behind it, which a JSON file cannot carry.
+What this workspace wants from the agent's settings, and why each setting exists. The settings here are
+reasoning only: the workspace is installed as the `apprentice-workspace` plugin, and a plugin cannot
+ship permission rules, so no settings file comes with it.
 
 ## The two ideas behind every setting here
 
@@ -20,6 +21,10 @@ class: reading is free, writing inside the engagement is free, anything that lea
 gated.
 
 ## Settings, and the reason for each
+
+No file applies this table for you. Codex asks before most commands under its own rules and Claude Code
+asks by default; the table is the reasoning to use when you answer those prompts or write rules of your
+own.
 
 | Setting | Value | Why |
 |---|---|---|
@@ -93,7 +98,7 @@ are not expected to use it.
 |---|---|---|
 | `planning-with-files` | `planning-with-files` | Keeps the engagement's state on disk across days |
 | `claude-plugins-official` | `skill-development` | The reference for what a `SKILL.md` must contain |
-| `claude-plugins-official` | `agent-development` | How to install a persona as a subagent, which this repository asks you to do |
+| `claude-plugins-official` | `agent-development` | How to install a persona as a subagent, which this workspace asks you to do |
 | `claude-plugins-official` | `mcp-integration` | How to author a project-scoped `.mcp.json` for a server the client runs |
 | `claude-plugins-official` | `command-development` | How to give the owner a simple explicit trigger for the finished automation |
 
@@ -112,16 +117,6 @@ handoff and prove it during operational acceptance.
 
 ## Making the skills visible to the agent
 
-The curated skills live in `library/skills/`, which is where provenance can guard them. Claude Code
-looks in `.claude/skills/`. The repo ships a symlink so both are true at once:
-
-```bash
-ls -l .claude/skills     # -> ../library/skills
-```
-
-On a filesystem without symlinks, copy instead — and re-copy after every `git pull`, or the library and
-what the agent loads will silently disagree:
-
-```bash
-cp -R library/skills .claude/skills
-```
+The curated skills live in `library/skills/`, which is where provenance can guard them. They reach the
+agent through the `apprentice-workspace` plugin, so the symlink and the copy step that used to sit here
+are gone.

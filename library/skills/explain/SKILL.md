@@ -10,6 +10,9 @@ argument-hint: <source-document-or-topic>
 > `library/reference/explanation-style.md`. This skill routes to them and copies none of them, so there
 > stays exactly one home. Read the reference before writing — do not work from this summary.
 
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
+
 ## Inputs
 
 - `<source-document-or-topic>` — what to explain: a document, a codebase, an API, a paper. If

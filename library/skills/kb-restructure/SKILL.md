@@ -94,3 +94,5 @@ that fixture — one planted reference per failure class — is a good first con
 Adhere to the house standards where installed (they live at the user level, not in this skill; on a foreign install without them, skip):
 - `library/reference/agent-quality-guidelines.md` (runtime behavior)
 - `library/reference/skill-architecture.md` (structural principles)
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

@@ -200,7 +200,7 @@ Skill is NOT done until all failures resolved (excluding N/A).
 | # | Check | How | Fail means |
 |---|---|---|---|
 | S1 | Scope was decided, not defaulted | The report states which criterion branch applied | Nobody asked where the skill writes |
-| S2 | No name collision | Compare resolved paths and contents under `library/skills/` and `.claude/skills/`; the shipped symlink may make them the same file | Two different contents, one name — one silently wins |
+| S2 | No name collision | Compare names and contents under the plugin's `library/skills/` and the repository's `.claude/skills/` | Two different contents, one name — one silently wins |
 | S3 | User-level skill has no hardcoded division path | Run `grep -nE '(health\|finance\|career\|infra\|notes\|projects\|hobbies\|meetings)/' "$SKILL_FILE" "$SKILL_DIR"/references/*.md`. **The grep cannot finish this check** — it cannot tell a destination from a citation or worked example. Read each hit: a path the skill writes to outside `routing.md` is a violation; provenance and proven-output examples are allowed. A duplicated routing table is also a violation | Broken in every other workspace, silently; or a duplicated destination table that drifts |
 | S4 | Every flag in `argument-hint` is justified | For each: could it be inferred from workspace, input type, or config? | A flag the user has to remember is a behavior that never runs |
 | S5 | Workspace resolution uses the shipped probe | `grep -n 'git rev-parse --show-toplevel' "$SKILL_FILE"` when workspace resolution is needed; no hand-rolled "walk up to `.git/`" | Resolves the wrong root inside worktrees, without erroring |

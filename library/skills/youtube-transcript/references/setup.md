@@ -33,9 +33,9 @@ recording leaves the machine, which is a decision the owner makes, not you.
 
 ## Permissions in this workspace
 
-`.claude/settings.json` puts network commands behind an approval prompt, so the first `yt-dlp` call in a
-session asks. That is deliberate — see `library/sops/agent-settings.md`. Approve it per session rather
-than widening the rule.
+Codex asks before most commands under its own rules, and Claude Code asks by default, so the first
+`yt-dlp` call in a session asks. That is deliberate — see `library/sops/agent-settings.md`. Approve it
+per session rather than adding a rule that always allows it.
 
 ## Maintenance — the one durability cost
 
@@ -51,8 +51,8 @@ Nothing else here rots. `ffmpeg` and the standard-library cleaner have been stab
 ## Where the output goes
 
 A transcript made from a client's video is that client's material:
-`engagements/<client-slug>/interview/`, with the directory's `INDEX.md` updated in the same operation.
-Anything you keep across clients — a question stem, a checking habit — is not client material and belongs
-in `reference/`.
+`apprentice-workspace/engagements/<client-slug>/interview/`, with the directory's `INDEX.md` updated in
+the same operation. Anything you keep across clients — a question stem, a checking habit — is not client
+material and belongs in `apprentice-workspace/reference/`.
 
 Keep the downloaded media out of the repository. Commit the transcript, not the recording.

@@ -14,6 +14,9 @@ argument-hint: <video-url> [output.md]
 > account; a local transcription pass if it does not. Anything `yt-dlp` supports works, not only
 > YouTube.
 
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
+
 ## Inputs
 
 - `<video-url>` — the video. If it is missing, ask.
@@ -26,11 +29,11 @@ No flags.
 
 | Key | Value |
 |---|---|
-| Skill location | `library/skills/youtube-transcript/`, reached through the `.claude/skills` symlink |
+| Skill location | `library/skills/youtube-transcript/` in the `apprentice-workspace` plugin, reached through the plugin |
 | Caption cleaner | `scripts/clean_vtt.py` — WebVTT to plain text, Python standard library only |
 | Dependencies and maintenance | `references/setup.md` |
 | Fallback when there are no captions | the pipeline in `library/skills/video-to-markdown/` — transcribes on this machine, no account, no cost |
-| Where a transcript is filed | `engagements/<client-slug>/interview/` |
+| Where a transcript is filed | `apprentice-workspace/engagements/<client-slug>/interview/` |
 
 ## Workflow
 
@@ -57,7 +60,7 @@ No flags.
 3. **Clean them.**
 
    ```bash
-   python3 library/skills/youtube-transcript/scripts/clean_vtt.py <id>.en.vtt
+   python3 "<this skill's folder>/scripts/clean_vtt.py" <id>.en.vtt
    ```
 
    Cue numbers, timings, karaoke tags, HTML entities and the rolling repeats automatic captions produce
@@ -85,9 +88,9 @@ No flags.
      sends the owner's recording to a third party. Ask the owner before doing that, not after.
 
 5. **File it.** A transcript from a client's video is engagement material:
-   `engagements/<client-slug>/interview/{date}_{slug}.md`, and update that directory's `INDEX.md` in
-   the same operation. Keep the downloaded media out of the repository — commit the transcript, never
-   the recording.
+   `apprentice-workspace/engagements/<client-slug>/interview/{date}_{slug}.md`, and update that
+   directory's `INDEX.md` in the same operation. Keep the downloaded media out of the repository —
+   commit the transcript, never the recording.
 
 6. **Verify before reporting done.** The output is non-empty, opens with the `# {title}` header, and
    reads as speech rather than as timing artifacts. Read two passages yourself. Report the path and
@@ -151,3 +154,5 @@ with the title header and contains a phrase you know is spoken in the video. Re-
 Adhere to the quality guidelines in `library/reference/agent-quality-guidelines.md` (build-verify,
 review before exit) and the structural principles in `library/reference/skill-architecture.md`
 (three-tier disclosure, gotchas).
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

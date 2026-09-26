@@ -82,9 +82,11 @@ maintaining the same content twice.
 ## How to start
 
 ```
-cp library/templates/brief-design/reference/base.html \
-   engagements/<client-slug>/handover/owner-account.html
+cp "<this template's folder>/reference/base.html" \
+   apprentice-workspace/engagements/<client-slug>/handover/owner-account.html
 ```
+
+This template's folder is the one holding this `SKILL.md`, inside the installed plugin.
 
 Then replace every `<!-- REPLACE: ... -->` block. Anything you do not use, delete — an unused component
 left in the file is a placeholder the owner will read.

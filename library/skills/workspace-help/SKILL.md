@@ -1,11 +1,15 @@
 ---
 name: workspace-help
-description: Answer an apprentice's "how do I ...?" and "where does this go?" questions about this workspace by listing what is actually in it right now and reading its manifests, never from a remembered inventory. Use whenever someone asks where a file belongs, what a playbook or skill is for, what they are allowed to edit, or which tool to reach for. Do not use it to run a playbook or to set anything up.
+description: Answer an apprentice's "how do I ...?" and "where does this go?" questions about this workspace by listing what is actually in it right now and reading its manifests, never from a remembered inventory. Use whenever someone asks which skills they have, where a file belongs, what a playbook or skill is for, what they are allowed to edit, or which tool to reach for. Do not use it to run a playbook or to set anything up.
 ---
 
 # Workspace help
 
-Answer the question the apprentice actually asked, from what is in the repository **at this moment**.
+Answer the question the apprentice actually asked, from what is in the plugin's library and the
+repository's `apprentice-workspace/` folder **at this moment**.
+
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
 
 ## The one rule this skill exists to enforce
 
@@ -45,8 +49,8 @@ file — not knowing the name is usually why they are asking.
 | "how many X are there" | Counts — count them, never quote a number from prose |
 | "what personas / renderers are there" | Personas, references, renderers |
 
-The commands for each are in `references/enumeration.md`. Run the one that matches, from the
-repository root.
+The commands for each are in `references/enumeration.md`. Set its two variables first — the
+plugin's library and the repository's workspace folder — then run the one that matches.
 
 ### 2. Answer from the output, briefly
 
@@ -54,17 +58,17 @@ Name the thing and give its path. One or two sentences on what it is for. Stop t
 ask for more — and when they do ask, go as deep as they want.
 
 Give a path the first time you name any file. "The interview playbook" is not something an
-apprentice can open; `library/playbooks/playbook-interview.md` is.
+apprentice can open; `library/playbooks/playbook-interview.md`, in the plugin, is.
 
 ### 3. When you point at a playbook, say two things first
 
-**The word means two different things**, and this repository's own manifest says the conflict has
+**The word means two different things**, and the library's own manifest says the conflict has
 never been reconciled. Say which one you mean the first time it comes up in a conversation:
 
 > In this workspace a playbook is a step-by-step procedure you actually run on a client engagement,
 > not the read-it-yourself reference document the course calls a playbook.
 
-**Three files in this repository define the word, and they do not agree.** When you have to pick,
+**Three files in the library define the word, and they do not agree.** When you have to pick,
 `library/playbooks/INDEX.md` wins: it is the manifest governing the directory the files live in.
 `library/reference/terminology.md` says a playbook is run *across* engagements, which reads as the
 opposite of the manifest's *engagement-bound*; both are defensible and the difference is real, so
@@ -99,15 +103,16 @@ you. The workspace's own writing standard says the same thing.
 ## What this skill does not do
 
 **It writes nothing.** No record, no notes, no file. It reads and answers. If the apprentice needs
-something written, that is theirs to write, in one of the trees they are allowed to write.
+something written, that is theirs to write, in `apprentice-workspace/`.
 
 **It does not run playbooks or set anything up.** For a first-time machine and workspace setup, that
-is `/onboarding`. For starting a client engagement, that is
-`library/playbooks/playbook-environment-setup.md`.
+is `onboarding`. For adding the workspace folder to a new repository, that is `setup`. For starting
+a client engagement, that is `library/playbooks/playbook-environment-setup.md`.
 
 **It does not repair the library.** If the answer turns out to be that a file is wrong, say so and
-tell them to report it. Editing anything under `library/` is denied by the permission list and
-breaks a provenance record that hashes every file in that tree.
+tell them to report it. Editing anything under `library/` changes the installed plugin copy, which
+the next plugin update overwrites, and breaks a provenance record that hashes every file in that
+tree.
 
 ## Gotchas
 
@@ -117,7 +122,7 @@ breaks a provenance record that hashes every file in that tree.
   are reading right now are the two that broke it.
 - **Reading the manifest instead of the directory.** A file with no row is invisible that way. List
   both and reconcile.
-- **Trusting a count written in prose.** Several counts in this repository disagree with the files
+- **Trusting a count written in prose.** Several counts in the library disagree with the files
   they describe, today, before anything else changes. Count the files yourself.
 - **Routing a beginner into a long procedure that needs a business owner.** Most of these playbooks
   do, and a beginner in week one has no client. Check what the playbook requires before naming it as
@@ -133,3 +138,5 @@ Adhere to:
 
 - `library/reference/agent-quality-guidelines.md` for runtime behavior.
 - `library/reference/skill-architecture.md` for structural principles.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

@@ -178,8 +178,8 @@ the package; Validator B holds the integrity evidence.
 Resolve package contents against the current `DP-*` decision before copying anything. Use a fresh
 temporary staging directory and fail if the versioned archive already exists. Before running the
 example, resolve the staging location against `EW-001` and `EW-003`; use an approved ignored directory
-instead of the operating-system temp area when those decisions require it. From the repository root,
-adapt this example only for the selected owner-account extension:
+instead of the operating-system temp area when those decisions require it. From the
+`apprentice-workspace/` folder, adapt this example only for the selected owner-account extension:
 
 ```bash
 CLIENT=<client-slug>
