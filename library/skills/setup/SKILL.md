@@ -10,7 +10,8 @@ client work, coursework and reusable notes, and the rules file that says where e
 it adds a short block to the repository's `AGENTS.md` and `CLAUDE.md` so the agent reads those rules
 in every later session. The tools themselves (skills, playbooks, templates) stay in the plugin.
 
-Run it once per repository. Running it again is safe: it only adds what is missing.
+Run it once per repository, and again after the plugin is updated. Running it again is safe: it only
+adds what is missing, and replaces the rules file only if the apprentice agrees.
 
 ## Input
 
@@ -28,6 +29,9 @@ says to.
    under `<root>/apprentice-workspace/`, skipping any file that already exists. On macOS or Linux:
    `cp -R -n "<this skill's folder>/template/apprentice-workspace" "<root>/"`. Anywhere else, or if
    that command is not available, create each missing file with the template file's exact text.
+   One exception: if `<root>/apprentice-workspace/AGENTS.md` already exists and differs from the
+   template's, it is an older copy of the plugin's rules. Say so, and replace that one file with the
+   template's only if the apprentice agrees. Never replace any other file that exists.
 3. **Add the root blocks.** For `<root>/AGENTS.md` and `<root>/CLAUDE.md`, follow
    `references/root-blocks.md`: add the block only if the file does not already contain
    `<!-- apprentice-workspace: start -->`, append it at the end, and never change anything else in
@@ -39,10 +43,10 @@ says to.
    the template and check again.
 5. **Read the rules now.** Read `<root>/apprentice-workspace/AGENTS.md` in full and follow it for the
    rest of this session: this session started before the file existed, so nothing loaded it for you.
-6. **Tell the apprentice, in three lines at most:** what was created and what already existed; that
-   their work for this repository goes in `apprentice-workspace/`; and that a new chat will load the
-   rules by itself. Do not commit; if they want the folder in git, that is a normal commit they
-   approve.
+6. **Tell the apprentice, in three lines at most:** what was created, what already existed, and
+   whether the rules file was replaced; that their work for this repository goes in
+   `apprentice-workspace/`; and that a new chat will load the rules by itself. Do not commit; if they
+   want the folder in git, that is a normal commit they approve.
 
 ## Gotchas
 

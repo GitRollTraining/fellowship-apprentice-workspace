@@ -114,7 +114,7 @@ onto rather than assuming the row applies.
 | Have you **sent your GitHub username to your trainer**? | their answer. The checklist names Ray; confirm who their trainer actually is rather than assuming |
 
 **Where each reading topic is explained, and what to do when they have not read it:**
-`references/reading.md`. Read that before answering any "what is X?" question about setup. Two of
+`references/reading.md`. Read that before answering any "what is X?" question about setup. Three of
 the four topics are mirrored into this plugin's library and one is published in Google Classroom, so
 searching the public web is a last resort, not a first move — and if you do search, say so.
 

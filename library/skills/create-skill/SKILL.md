@@ -31,7 +31,7 @@ If args missing, ask user.
    - **A fork is a hard block.** Two divergent contents cannot share one name at user level; one would silently replace the other. Check with `diff -r` before deciding.
    - **A skill in a home directory does not travel.** Anything that has to work for the person you hand the repository to must live inside the repository.
 
-   **Check the name before writing** — `ls library/skills/` and `ls .claude/skills/`. Two skills with one name means one of them silently never runs.
+   **Check the name before writing** — `ls "<this skill's folder>/.."` (the plugin's skills) and `ls .claude/skills/` (this repository's own). Two skills with one name means one of them silently never runs.
 
 2a. **Cross-repository skills pick a SHARING PATTERN, not just a scope.** When the skill is — or turns out to be — used from more than one repository, decide in this order:
 
@@ -52,7 +52,9 @@ If args missing, ask user.
    Then `{target-dir}/references/routing.md` maps the resolved root to a destination. A failure here must **stop and report**, never fall back to the current directory. Worked example: `library/skills/digest-doc/references/routing.md`.
 
 3. **Resolve target dir.**
-   - ours, reusable across engagements → propose it for `library/skills/{slug}/`
+   - ours, reusable across engagements → draft it in `apprentice-workspace/reference/skill-proposals/{slug}/`
+     and offer it to your trainer. The plugin's `library/skills/` is read-only; a skill joins it only
+     when the plugin's maintainers add it
    - this client's only skill → `apprentice-workspace/engagements/<client-slug>/deliverable/`; for a
      multi-skill delivery, use the component directory selected by the specification
    - resolve the root with `git rev-parse --show-toplevel`, and if that fails, ask for an explicit root rather than guessing

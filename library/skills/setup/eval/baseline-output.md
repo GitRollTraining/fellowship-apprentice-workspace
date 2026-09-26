@@ -16,6 +16,7 @@ says a new chat loads the rules.
 
 ## Last verified
 
-- Date: not yet run
-- Model: —
-- By: —
+- Date: 2026-09-26, all three inputs, every acceptance criterion met
+- Model: claude-sonnet-5, in Claude Code 2.1.283, plugin installed from GitHub into an empty
+  configuration
+- By: the maintainer's clean-install test; the three repositories are inputs 1-3 above

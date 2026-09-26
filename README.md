@@ -17,10 +17,12 @@ up the folder your work goes in, with the rules your agent follows there.
 2. **Open your agent in the repository you work in** and start `onboarding` the first time, or
    `setup` in every repository after that. Either one creates `apprentice-workspace/` there.
 3. Read `apprentice-workspace/AGENTS.md` — how to work in the workspace — and
-   `library/sops/working-standards.md`, the four rules.
-4. Run `library/playbooks/playbook-environment-setup.md`, then run
-   `library/playbooks/playbook-interview.md` with its runbook wrapper on your first engagement.
-5. After current-state confirmation, run `library/playbooks/playbook-discovery-to-deliverable.md`. It
+   [`library/sops/working-standards.md`](library/sops/working-standards.md), the four rules.
+4. Run [`library/playbooks/playbook-environment-setup.md`](library/playbooks/playbook-environment-setup.md),
+   then run [`library/playbooks/playbook-interview.md`](library/playbooks/playbook-interview.md) with its
+   runbook wrapper on your first engagement.
+5. After current-state confirmation, run
+   [`library/playbooks/playbook-discovery-to-deliverable.md`](library/playbooks/playbook-discovery-to-deliverable.md). It
    owns PRD sign-off, automation choice, build, both validators, owner-facing phrasing, comprehension,
    operational acceptance and final handoff. The Output Phraser invokes the renderer for the owner
    account.
@@ -63,14 +65,17 @@ Then install the plugins `library/sops/agent-settings.md` lists; `onboarding` wa
 | Claude Code | `claude plugin marketplace update fellowship-apprentice-workspace`, then `claude plugin update apprentice-workspace@fellowship-apprentice-workspace`, then restart |
 | Codex command-line tool | `codex plugin marketplace upgrade fellowship-apprentice-workspace` |
 
-Updating never touches `apprentice-workspace/` in your repositories: that folder is yours.
+Updating never touches `apprentice-workspace/` in your repositories: that folder is yours. After an
+update, start `setup` again in each repository you work in: it adds anything new, offers to replace
+the rules file `apprentice-workspace/AGENTS.md` if yours is older than the plugin's, and changes
+nothing else.
 
 ## Already cloned this repository?
 
-The clone keeps working as it is until you pull. To switch: install the plugin, start `setup` in the
-repository where you work, and move anything you wrote under the clone's `training/`, `engagements/`
-or `reference/` into the same place under that repository's `apprentice-workspace/`. Then the clone
-can go.
+The clone keeps working as it is. Do not pull it: the folders you wrote in have moved, so a pull
+can stop with a conflict. To switch: install the plugin, start `setup` in the repository where you
+work, and move anything you wrote under the clone's `training/`, `engagements/` or `reference/` into
+the same place under that repository's `apprentice-workspace/`. Then the clone can go.
 
 ## What is in the plugin
 

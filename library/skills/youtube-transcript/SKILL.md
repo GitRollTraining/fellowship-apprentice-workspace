@@ -60,7 +60,7 @@ No flags.
 3. **Clean them.**
 
    ```bash
-   python3 library/skills/youtube-transcript/scripts/clean_vtt.py <id>.en.vtt
+   python3 "<this skill's folder>/scripts/clean_vtt.py" <id>.en.vtt
    ```
 
    Cue numbers, timings, karaoke tags, HTML entities and the rolling repeats automatic captions produce

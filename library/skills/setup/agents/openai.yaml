@@ -1,4 +1,4 @@
 interface:
-  display_name: "Set up the workspace"
+  display_name: "Setup"
   short_description: "Add the apprentice workspace folder to this repository"
   default_prompt: "Use $setup to set up the apprentice workspace in this repository."
