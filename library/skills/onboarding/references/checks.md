@@ -23,19 +23,16 @@ command are different evidence, and the record keeps them apart.
 | Read: version control systems | none — reading is not observable | the apprentice says so; record the date |
 | Read: Git and GitHub | none | the apprentice says so; record the date |
 | Create a GitHub account | partial, and only after the GitHub tool is signed in: `gh api users/<name> --jq .login` | the username echoes back. This proves the account exists, not that it is theirs |
-| Send your GitHub username to Ray | none — it is a message on a channel this repository never names | the apprentice says so |
+| Send your GitHub username to Ray | none — it is a message on a channel this workspace never names | the apprentice says so |
 
-The username gates repository *access*, not the clone: an anonymous `git ls-remote` against a public
-repository succeeds. Do not hold up the rest of the session for it.
+The username gates repository *access*, not this setup. Do not hold up the rest of the session for
+it.
 
 ## Your machine
 
-### Three checks whose obvious form is wrong — all three fail silently, and the third also sticks
+### Two checks whose obvious form is wrong — both fail silently
 
-All three pass on a broken machine without printing anything wrong. The third differs in two further
-ways: it belongs to the workspace step rather than the machine step, and once the copy fallback is
-taken it stays broken by design rather than repairing itself. Read all three before running any of
-them.
+Both pass on a broken machine without printing anything wrong. Read both before running either.
 
 **Git — use `git --version`, never `command -v git`.** On a Mac with no Xcode command line tools
 `/usr/bin/git` exists as a shim, so `command -v git` succeeds and prints a path for a machine that
@@ -71,40 +68,20 @@ gh auth status
 This is the one place in the whole checklist where a green command is weaker evidence than the
 apprentice's own eyes.
 
-**The skills symlink — use `test -L`, not `ls`.** This one belongs to the workspace step, not the
-machine step: there is nothing to test until the repository has been cloned. It sits here because it
-fails in the same silent way as the two above, and it is the third of the three. Run it after the
-clone, not before. The link is tracked in git as mode `120000`. On a
-Windows checkout without symlink support git writes a **17-byte ordinary text file** containing the
-text `../library/skills`. Nothing errors, and the agent then loads **zero skills** — an empty skills
-directory is not an error condition. The apprentice can work for a week without the skills this
-workspace is built around.
-
-```bash
-test -L .claude/skills && echo "symlink OK" || { echo "NOT a symlink; contents:"; cat .claude/skills; }
-```
-
-If it is not a symlink, `library/sops/agent-settings.md` gives the fallback: copy the directory
-instead — and re-copy after every `git pull`, or what the agent loads and what the library holds
-drift apart silently.
-
-**If you take the copy fallback, `test -L` will fail forever after**, correctly and permanently. Do
-not keep re-running it and do not record the item as failed — the skills load, which is what the
-item is about. Record it as `verified` with the note `copied, not linked — re-copy after every git
-pull`.
-
-That note describes *how* it passed, which is allowed. It is not a caveat on the pass, which is not
-— see `record-format.md` § Rules, "Never write a caveat into the note of a `verified` row".
+**The skills symlink check is gone.** The workspace's skills used to reach the agent through a
+symlink that a Windows checkout could silently turn into a text file. They now come from the plugin,
+so there is nothing to test here; the workspace step checks the plugin and the folder instead
+(§ Setting up the workspace, below).
 
 ### The rest
 
 | Item | Check | Notes |
 |---|---|---|
 | Codex | `ls -d /Applications/ChatGPT.app` on macOS | Partial. There is no `codex` command. The real failure is quieter: the app is installed, the apprentice never finds the mode selector, and uses plain chat for a week. Ask them to confirm they are in Codex mode, not chat |
-| Package manager | `brew --version` on macOS | This repository names no package manager for Windows anywhere. On Windows say so and fall back to general practice |
+| Package manager | `brew --version` on macOS | This workspace names no package manager for Windows anywhere. On Windows say so and fall back to general practice |
 | Code editor | `code --version` | A missing `code` command does not mean a missing editor — in Visual Studio Code the shell command is a separate opt-in step |
 | Git | `git --version` | see above |
-| GitHub command-line tool | `gh --version` | inside this repository the whole `gh` namespace raises an approval prompt |
+| GitHub command-line tool | `gh --version` | the agent asks before running `gh` commands |
 | Node.js and Python | `node --version` then `python3 --version` | on macOS `python --version` may be absent while `python3` works |
 | Git name and email | see above | |
 | Sign in to GitHub from the terminal | `gh auth status` | names the account and the scopes. `gh auth login` is interactive and cannot be driven for them |
@@ -159,7 +136,22 @@ GitHub username is on their row in the Apprentices roster.
 
 ### Setting up the workspace
 
-Clone, then check the symlink with `test -L` as above. Then the plugins.
+Three checks, in this order.
+
+**The plugin.** This skill ships in the `apprentice-workspace` plugin, so if it is running, the
+plugin is installed in the agent in front of you. Record which agent: the ChatGPT app (Codex) or
+Claude Code.
+
+**The workspace folder.** At the repository root, both must hold:
+
+```bash
+test -f apprentice-workspace/AGENTS.md && grep -q 'apprentice-workspace: start' AGENTS.md && echo "workspace OK"
+```
+
+In Windows PowerShell: `(Test-Path apprentice-workspace/AGENTS.md) -and (Select-String -Quiet 'apprentice-workspace: start' AGENTS.md)`.
+Anything missing: run the `setup` skill, which adds only what is missing, and check again.
+
+**The plugins in `library/sops/agent-settings.md`.** They come third.
 
 `library/sops/agent-settings.md` lists **two** plugins: `planning-with-files`, which needs its
 marketplace added first, and `plugin-dev@claude-plugins-official`, which does not. Its introduction
@@ -170,7 +162,7 @@ the apprentice's machine, not of this page. Run the block in order, one at a tim
 instructs, and record what actually failed.
 
 Treat a failure as expected rather than as the apprentice's mistake. Record what failed and tell
-them to report it — this repository asks for library problems to be reported, not repaired in
+them to report it — this workspace asks for library problems to be reported, not repaired in
 place.
 
 **Checking what actually installed.** The page says the install "cannot be scripted", and the
@@ -194,7 +186,9 @@ which one you used and why.
 **Read `enabled`, not presence.** Installed-but-disabled is a real state, and a check that only
 looks for the name passes it.
 
-**In Codex none of this applies.** These are Claude Code plugins and there is no equivalent. Record
-the step as not applicable and move on. Nothing else in this skill depends on it — but
+**In Codex the command above does not exist.** Ask the apprentice to open the ChatGPT app's plugin
+screen and read you what is installed, or run `codex plugin list` if the Codex command-line tool is
+installed. A plugin on that page that is not offered for Codex is recorded as not applicable, with
+its name in the note. Nothing else in this skill depends on it — but
 `library/playbooks/playbook-environment-setup.md` will later refuse to start on missing base
 plugins, so flag it to the trainer rather than leaving it as a silent gap.

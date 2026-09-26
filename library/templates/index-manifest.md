@@ -6,8 +6,9 @@ produces: INDEX.md
 
 # INDEX.md — the directory manifest
 
-`CLAUDE.md` requires one `INDEX.md` in every governed work area. This file gives the format, defines the
-words in it and preserves the same companion-directory exception.
+The workspace rules in `apprentice-workspace/AGENTS.md` require one `INDEX.md` in every governed work
+area. This file gives the format, defines the words in it and preserves the same companion-directory
+exception.
 
 ## When it is written
 
@@ -61,11 +62,11 @@ The first line of every manifest names the manifest one level up, as an HTML com
 
     <!-- upstream: engagements/example-client/INDEX.md -->
 
-- The path is written from the repository root, never as `../INDEX.md`. A relative path stops being
-  true the moment the directory moves.
+- The path is written from the `apprentice-workspace/` folder, never as `../INDEX.md`. A relative path
+  stops being true the moment the directory moves.
 - It goes above the frontmatter, on line 1, so that one search across the repository returns the whole
   parent-child map.
-- The repository's own root `INDEX.md` carries no pointer. It is the top.
+- The workspace's own `INDEX.md`, in `apprentice-workspace/`, carries no pointer. It is the top.
 
 ## Purpose
 
@@ -108,12 +109,12 @@ whether the file can be relied on; "first draft, not read back to the owner yet"
 
 ## Class — the four values
 
-| Class | Use it for | Example in this repository |
+| Class | Use it for | Example in this workspace |
 |---|---|---|
 | Mutable | The default. Content that changes as work continues | your engagement notes, a reconstructed process |
 | Immutable | Frozen when created, never rewritten | an interview recording, a session record, a version of a document already sent to the owner |
-| Instruction | Tells a person or an agent how to work | `CLAUDE.md`, everything under `library/` |
-| Data | A structured file something reads mechanically | `.claude/settings.json`, an export from the business's own software |
+| Instruction | Tells a person or an agent how to work | `AGENTS.md`, everything under `library/` |
+| Data | A structured file something reads mechanically | `.gitignore`, an export from the business's own software |
 
 Anything you cannot place is Mutable. Do not invent a fifth value; if four are genuinely not enough,
 report it rather than adding one locally.

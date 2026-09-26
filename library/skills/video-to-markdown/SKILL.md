@@ -43,7 +43,7 @@ export VIDEO2MD_PYTHON="$PWD/.venv/bin/python"
 4. **Verify.** Every markdown image link resolves; no uncovered gap longer than 180 s inside a video segment; screenshots per video-hour between 12 and 360; every media file appears in the transcript's source list; timestamps increase monotonically. Then READ two or three random sections plus their screenshots yourself — the automated checks alone do not qualify the output.
 5. **Language check.** Sample transcript segments across the timeline. English prose where the audio is another language, or the reverse, means the transcriber flipped language mid-file: re-run that file's transcription with `--language` forced, then rebuild.
 6. **Name correction.** Every business has proper nouns a transcriber garbles — a supplier, a product line, the software they run on, a member of staff. Collect them from the owner, write the list down, then run a conservative correction pass over `transcript.json`: high-confidence corrections only, anything ambiguous reported rather than changed, never a blind find-and-replace. The screenshots can settle an ambiguous name — read the screen the speech points at. Re-run `scripts/assemble.py` afterwards.
-7. **Report, and treat the output as unreviewed.** State the sources and their usable durations, the screenshot counts (total and per hour), the transcription engine used per file, the number of name corrections, and a sensitivity line. A recording of a real business routinely captures customer names, invoice values, saved passwords and account balances. Keep the output directory out of version control until you have read it, and move anything the owner said must not leave the business into an untracked sidecar (repository `CLAUDE.md`, "Where things go").
+7. **Report, and treat the output as unreviewed.** State the sources and their usable durations, the screenshot counts (total and per hour), the transcription engine used per file, the number of name corrections, and a sensitivity line. A recording of a real business routinely captures customer names, invoice values, saved passwords and account balances. Keep the output directory out of version control until you have read it, and move anything the owner said must not leave the business into an untracked sidecar (`apprentice-workspace/AGENTS.md`, "Where things go").
 8. **Digest.** Not skippable on agent judgment — session size does not exempt it; skip only if the person running it says so, and state the skip in the report. Two files: `session.md` is the complete record and is never touched; `digest.md` is the derived reader view — agent-judged screenshot consolidation (keep, merge or drop, each with a caption) over a whitelist-sanitized transcript. Run `scripts/digest_batches.py`, dispatch the verdict and sanitize sub-agents per `references/pipeline.md` § Digest (their prompts MUST embed the merge rubric, the caption discipline and the credential rule verbatim), then `digest_merge.py` → `sanitize_transcript.py` → `render_digest.py` → re-run `render_transcript.py`, which refreshes `transcript.md` from the sanitized transcript. Verify: every screenshot has exactly one verdict, kept screenshots are at most 75% of the total and at least 12 per video-hour, per-segment token preservation is at least 0.85, and `session.md` is byte-identical to before. Then audit adversarially (under-merge, caption against image, paraphrase, coverage) with fresh sub-agents until two consecutive rounds surface no new failure class. Full mechanism and the measurements behind it: `references/methodology.md`.
 
 ## Gotchas
@@ -59,7 +59,7 @@ The four that cost the most. Full registry: `references/gotchas.md`.
 
 | Key | Value |
 |---|---|
-| Skill location | `library/skills/video-to-markdown/` (read-only; also reachable as `.claude/skills/video-to-markdown/`) |
+| Skill location | `library/skills/video-to-markdown/` in the `apprentice-workspace` plugin (read-only), reached through the plugin |
 | Pipeline scripts | `scripts/` in this skill directory |
 | Python interpreter | `$VIDEO2MD_PYTHON` if set, otherwise whatever `python3` is on the path |
 | Companion references | `references/pipeline.md`, `references/gotchas.md`, `references/methodology.md` |
@@ -82,3 +82,5 @@ Run the pipeline on a short recording you can verify by eye — five to ten minu
 ## Quality guidelines
 
 Adhere to `library/reference/agent-quality-guidelines.md` (runtime behaviour) and `library/reference/skill-architecture.md` (structural principles).
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

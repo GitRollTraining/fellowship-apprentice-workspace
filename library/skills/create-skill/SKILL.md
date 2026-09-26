@@ -11,7 +11,7 @@ argument-hint: <skill-name-slug> [scope=user|project]
 ## Inputs
 
 - `<skill-name-slug>` — kebab-case slug, will be the directory name and the `name:` field
-- `[scope]` — in this workspace always `project`: the skill is written to `library/skills/` if it is ours, or to the engagement it belongs to if it is the client's. A skill that lives in a home directory does not travel with the work
+- `[scope]` — in this workspace always `project`: the skill is proposed for `library/skills/` if it is ours, or written to the engagement it belongs to if it is the client's. A skill that lives in a home directory does not travel with the work
 
 If args missing, ask user.
 
@@ -53,8 +53,8 @@ If args missing, ask user.
 
 3. **Resolve target dir.**
    - ours, reusable across engagements → propose it for `library/skills/{slug}/`
-   - this client's only skill → `engagements/<client-slug>/deliverable/`; for a multi-skill delivery,
-     use the component directory selected by the specification
+   - this client's only skill → `apprentice-workspace/engagements/<client-slug>/deliverable/`; for a
+     multi-skill delivery, use the component directory selected by the specification
    - resolve the root with `git rev-parse --show-toplevel`, and if that fails, ask for an explicit root rather than guessing
    - for a library skill, halt if the proposed skill directory already exists
    - for an engagement skill, the scaffolded `deliverable/` directory is expected to exist; halt only
@@ -119,15 +119,15 @@ If args missing, ask user.
 
 | Key | Value |
 |---|---|
-| Skill location (this skill) | `library/skills/create-skill/`, reached through the `.claude/skills` symlink |
-| Architecture ref | `library/reference/skill-architecture.md` — shipped in this repository |
+| Skill location (this skill) | `library/skills/create-skill/` in the `apprentice-workspace` plugin, reached through the plugin |
+| Architecture ref | `library/reference/skill-architecture.md` — shipped in this plugin |
 | Quality ref | `library/reference/agent-quality-guidelines.md` |
 | Companion refs | `references/skeleton.md`, `references/checklist.md`, `references/questions.md` |
 | Workspace probe | `git rev-parse --show-toplevel`. **Local patch:** upstream this is a script recognising two GitRoll repositories by remote, which does not ship |
 | Scope criterion | In this workspace: `project`. The cross-workspace promotion ledger is GitRoll-internal and does not ship |
 | Promotion SOP | GitRoll-internal; does not ship. See the note in step 2a |
 | Routing worked example | `library/skills/digest-doc/references/routing.md` |
-| Skill directory | `library/skills/` for ours; `.claude/skills` is the symlink the agent reads |
+| Skill directory | `library/skills/` for ours; the agent reads them through the plugin |
 | Project-level skill dir | `{workspace-root}/.claude/skills/` |
 
 ## Output
@@ -159,3 +159,5 @@ Procedural skill. No voice prescription on output (user's new skill defines its 
 Adhere to:
 - `library/reference/agent-quality-guidelines.md` (runtime — delegate, build-verify, doom loops)
 - `library/reference/skill-architecture.md` (structural — three-tier disclosure, gotchas, evals)
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

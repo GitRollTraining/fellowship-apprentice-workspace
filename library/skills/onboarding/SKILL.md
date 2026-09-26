@@ -18,19 +18,22 @@ engagement* and assumes a working machine; it says in its own preconditions that
 setup "is an onboarding problem: report it and stop". This skill is what happens on the other side
 of that stop.
 
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
+
 ## Input
 
 Nothing is required. Ask for what each step needs, when the step needs it.
 
-Two things you must ask for and never guess, because they are not in this repository and must not
-be — the repository is public:
+Two things you must ask for and never guess, because they must not be written in any file — this
+plugin is public, and the repository the apprentice works in may be too:
 
 - the **Google Classroom** joining link or course code, which the trainer sends each apprentice
   privately;
 - the **Discord** invite, sent the same way.
 
 If the apprentice does not have them, that is not a failure. Record it as outstanding and tell them
-to ask their trainer. Never search for, reconstruct, or store either value in this repository.
+to ask their trainer. Never search for, reconstruct, or store either value in any file.
 
 ## How to behave
 
@@ -38,11 +41,9 @@ to ask their trainer. Never search for, reconstruct, or store either value in th
 matters, then do it. Apprentices are expected to ask, and when they ask, explain properly — as long
 as they want. Do not pre-empt with a tutorial nobody requested.
 
-**Expect permission prompts, and say so before the first one.** Inside this repository the only
-shell commands on the allow-list are `git status`, `git diff` and `git log`, so every version check,
-every `gh` command and even `ls -l` raises an approval prompt. Reading files and writing under
-`training/`, `engagements/` and `reference/` are allowed and raise nothing — so the record itself
-saves without a prompt, while `git add` and `git commit` do not. Tell the apprentice this once, up
+**Expect permission prompts, and say so before the first one.** The agent asks before most shell
+commands, so every version check, every `gh` command, `git add` and `git commit` can raise an
+approval prompt, and some agents ask before writing a file too. Tell the apprentice this once, up
 front: approving those prompts is the intended path, not a warning sign.
 
 **Say which items you cannot check.** Several of the nineteen happen somewhere this agent cannot
@@ -57,7 +58,12 @@ prefer the command. Say what each one said and leave it visible.
 
 ### 1. Open the record before anything else
 
-Read `training/onboarding/setup-record.md` in the apprentice's own copy of the repository.
+The record lives in the apprentice workspace folder of the repository you are working in. At the
+repository root, check that `apprentice-workspace/AGENTS.md` exists. If it does not, run this
+plugin's `setup` skill first (`../setup/SKILL.md`, beside this skill's folder), then read the
+`AGENTS.md` it created and continue here.
+
+Read `apprentice-workspace/training/onboarding/setup-record.md`.
 
 - **It does not exist** — this is a first session. Create it from `references/record-format.md`,
   then work the whole list.
@@ -102,14 +108,14 @@ onto rather than assuming the row applies.
 
 | Ask | What to record |
 |---|---|
-| Have you read the notes on **version control systems**? | their answer, with the date. The notes are in this repository — `library/reference/setup-reading/version-control-systems.md` |
-| Have you read the notes on **Git and GitHub**? | their answer, with the date. Also in this repository — `library/reference/setup-reading/git-and-github.md` |
+| Have you read the notes on **version control systems**? | their answer, with the date. The notes ship with this plugin — `library/reference/setup-reading/version-control-systems.md` |
+| Have you read the notes on **Git and GitHub**? | their answer, with the date. Also in this plugin — `library/reference/setup-reading/git-and-github.md` |
 | Do you have a **GitHub account**? | the username, which the next step needs |
 | Have you **sent your GitHub username to your trainer**? | their answer. The checklist names Ray; confirm who their trainer actually is rather than assuming |
 
 **Where each reading topic is explained, and what to do when they have not read it:**
 `references/reading.md`. Read that before answering any "what is X?" question about setup. Two of
-the four topics are mirrored into this repository and one is published in Google Classroom, so
+the four topics are mirrored into this plugin's library and one is published in Google Classroom, so
 searching the public web is a last resort, not a first move — and if you do search, say so.
 
 Only the third can be checked at all, and only loosely: `gh api users/<name> --jq .login` proves
@@ -128,7 +134,7 @@ name that every later step trusts.
 It resolves a public profile, so the answer is the same either way — but say which account you used,
 because a 404 under somebody else's sign-in invites the wrong conclusion.
 
-Sending the username to their trainer gates repository *access* later, not the clone, so it does not hold up
+Sending the username to their trainer gates repository *access* later, not this setup, so it does not hold up
 the rest of this session. It is `outstanding`, not `blocked` — sending a message is the apprentice's
 own action, and `blocked` is reserved for waiting on somebody else. Say plainly that access will not
 arrive until they send it.
@@ -147,11 +153,11 @@ Two of these nine have a wrong-looking obvious form, and both fail *silently*: *
 `git --version`, never `command -v git`, which succeeds on a Mac that cannot actually run git — and
 **your Git name and email**, where a non-empty answer is not a passing answer, because the values
 can belong to somebody else. `references/checks.md` gives the right form for each and says why; use
-it rather than improvising. It carries a third check of the same shape — the skills symlink — but
-that one belongs to the workspace step in section 4, because there is nothing to test until the
-repository has been cloned.
+it rather than improvising. The third check of that shape it used to carry, the skills symlink, is
+gone: the skills now come from the plugin, and section 4 checks the plugin and the workspace folder
+instead.
 
-If the apprentice is on Windows, say plainly that this repository takes no position on Windows
+If the apprentice is on Windows, say plainly that this workspace takes no position on Windows
 tooling — it names no package manager for it anywhere — and that you are working from general
 practice rather than from a house standard.
 
@@ -177,17 +183,20 @@ start. Then **set up the workspace**. Then **open Classroom, open one subject an
 page** — record which subject, so the record shows they actually got in. Then **put office hours in
 your calendar**.
 
-**Setting up the workspace is two jobs, and only the first works everywhere.**
+**Setting up the workspace is three jobs.**
 
-1. Clone the repository and confirm the skills symlink resolves. This is a filesystem check and
-   works identically under either agent.
-2. Install the plugins listed in `library/sops/agent-settings.md`. Run the commands from that page
-   rather than from a count remembered here. These are Claude Code plugins. **In Codex there is no
-   equivalent** — record the step as not applicable, say so plainly, and move on. It is not the
-   apprentice's fault, and nothing later in *this skill* depends on it. Say the rest out loud
-   though: the engagement playbook they will eventually run treats missing base plugins as an
-   onboarding problem and stops. So a Codex-only apprentice is set up for this skill and not yet
-   set up for that one, and their trainer needs to know.
+1. The `apprentice-workspace` plugin. If this skill is running, the plugin is installed in the agent
+   in front of you, because this skill ships in it. Record which agent.
+2. The workspace folder in this repository. Step 1 ran `setup` if it was missing; confirm with the
+   check in `references/checks.md` § Setting up the workspace. Tell the apprentice to run `setup`
+   once in every other repository they work in, starting with Project A.
+3. Install the plugins listed in `library/sops/agent-settings.md`. Run the commands from that page
+   rather than from a count remembered here. In the ChatGPT app, a plugin is added from the app's
+   plugin screen, the same way the apprentice added this one. If a plugin on that page is not
+   offered for their agent, record the step as not applicable with the plugin's name, say so
+   plainly, and move on. It is not the apprentice's fault, and nothing later in *this skill*
+   depends on it. Say the rest out loud though: the engagement playbook they will eventually run
+   treats missing base plugins as an onboarding problem and stops, so their trainer needs to know.
 
 For a Claude Code apprentice, the install is interactive: the commands are in
 `library/sops/agent-settings.md`. One of them adds a marketplace first. Read
@@ -201,35 +210,39 @@ Write the record. Then tell the apprentice, in two lines, what is still outstand
 Then point them at the next thing:
 
 > Setup is done. From here, when you want to know how something in this workspace works — where a
-> file goes, what a playbook is, which skill to reach for — run `/workspace-help` and ask it in
-> plain words.
+> file goes, what a playbook is, which skill to reach for — start `workspace-help` and ask it in
+> plain words. In the ChatGPT app, type @ and pick it; in Claude Code, type
+> /apprentice-workspace:workspace-help. In each new repository you work in, start `setup` once.
 
 ## The record
 
-`training/onboarding/setup-record.md`, in the apprentice's own copy of the repository. Whether it
-can be pushed anywhere depends on access they may not have yet, so committing it is a step you offer
-rather than an outcome you assume. Shape, the six states and the rules for resuming:
-`references/record-format.md`.
+`apprentice-workspace/training/onboarding/setup-record.md`, in the repository the apprentice ran
+onboarding in. Whether it can be pushed anywhere depends on whether that repository has a GitHub copy
+they can write to, so committing it is a step you offer rather than an outcome you assume. Shape, the
+six states and the rules for resuming: `references/record-format.md`.
 
-It lives under `training/` because that is where work-before-a-client belongs and because it is one
-of the three trees the apprentice's own agent is allowed to write. `library/` is denied outright,
-so a record kept beside this skill could never be written by the agent that needs to write it.
+It lives under `training/` because that is where work-before-a-client belongs. `library/` is the
+plugin's own read-only copy, which the next plugin update replaces, so a record kept beside this
+skill would not survive.
 
 ## Gotchas
 
-- **Putting a joining link in a file.** This repository is public. Ask the apprentice for the link
-  each time; never write it down here, and never carry one between apprentices.
-- **Running the workspace step before the machine steps.** The clone will succeed and the plugin
-  install will fail in a way that reads as a repository problem rather than a missing tool.
-- **Treating a permission prompt as an error.** It is the settings file doing its job. Warn once,
-  early, and keep going.
+- **Putting a joining link in a file.** The plugin is public, and the apprentice's repository may be
+  too. Ask the apprentice for the link each time; never write it down, and never carry one between
+  apprentices.
+- **Running the workspace step before the machine steps.** The plugins from
+  `library/sops/agent-settings.md` will fail to install in a way that reads as a workspace problem
+  rather than a missing tool.
+- **Treating a permission prompt as an error.** It is the agent's safety check doing its job. Warn
+  once, early, and keep going.
 - **Marking a reminder as done because the apprentice said "yeah".** Record the date and, where
   there is one, the small piece of evidence — the subject name they opened, the username they sent.
   A record with no date cannot be resumed.
 - **Re-driving settled steps on a later session.** Read the record first. An apprentice made to
   re-run nine version checks to reach the one thing they still owe will stop running this skill.
 - **Repairing something in `library/`.** If a library file is wrong, report it. Do not fix it in
-  place — the provenance record hashes every file in that tree.
+  place — the provenance record hashes every file in that tree, and the next plugin update overwrites
+  the installed copy anyway.
 
 ## Quality guidelines
 
@@ -237,3 +250,5 @@ Adhere to:
 
 - `library/reference/agent-quality-guidelines.md` for runtime behavior.
 - `library/reference/skill-architecture.md` for structural principles.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

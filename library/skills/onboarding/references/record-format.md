@@ -4,20 +4,19 @@ style: descriptive
 
 # The setup record
 
-`training/onboarding/setup-record.md`, in the apprentice's own copy of the repository.
+`apprentice-workspace/training/onboarding/setup-record.md`, in the repository the apprentice ran
+onboarding in.
 
-**Their copy, not necessarily a fork, and not necessarily pushable.** The setup step is a clone; no
-step in this skill creates a fork, and an apprentice with no write access who tries to push to the
-shared repository gets a permission error rather than a backup. Ask whether they have their own fork
-or write access before suggesting a push. If they do not, say plainly that the record is local until
-their trainer sorts access out, and leave it committed locally.
+**Their repository, and not necessarily pushable.** For most apprentices that is the folder they made
+by hand before installing their agent, which has no GitHub copy at all. No step in this skill creates
+one. Ask whether the repository has a GitHub copy they can write to before suggesting a push. If it
+does not, say plainly that the record is local, and leave it committed locally.
 
-**Committing it is a step, not an assumption.** Writing the file is covered by the permission list;
-`git add` and `git commit` are not, so both raise an approval prompt. At the end of a session, show
-the apprentice what changed and offer to commit it:
+**Committing it is a step, not an assumption.** The agent asks before `git add` and `git commit`. At
+the end of a session, show the apprentice what changed and offer to commit it:
 
 ```bash
-git add training/onboarding/
+git add apprentice-workspace/training/onboarding/
 git commit -m "Onboarding: record setup progress"
 ```
 
@@ -29,17 +28,18 @@ all nineteen items, and the ones only the apprentice can confirm get re-asked fo
 
 ## Where it lives, and why there
 
-`training/` holds work from before there is a client, and it is one of only three trees the
-apprentice's agent may write — `engagements/`, `training/` and `reference/`. Writes under
-`library/` are denied outright, so a record kept beside the skill could never be written by the
-agent that needs to write it.
+`training/` holds work from before there is a client; it sits inside `apprentice-workspace/` with
+`engagements/` and `reference/`, the three trees that are the apprentice's own. `library/` is the
+plugin's read-only copy, which the next plugin update replaces, so a record kept beside the skill
+would not survive.
 
 `training/INDEX.md` says one directory per module. `onboarding/` is not a module, so it is admitted
 by an explicit row in that manifest rather than by the naming convention.
 
-**The directory and its `INDEX.md` already ship with the repository.** Do not create them; they are
-there in a fresh clone. What you owe is the manifest update that `CLAUDE.md` requires of anyone who
-adds a file: set the Freshness row for `setup-record.md` in `training/onboarding/INDEX.md` to
+**The directory and its `INDEX.md` are created by the `setup` skill.** Do not create them by hand;
+if they are missing, run `setup`. What you owe is the manifest update that the workspace rules
+(`apprentice-workspace/AGENTS.md`) require of anyone who adds a file: set the Freshness row for
+`setup-record.md` in `apprentice-workspace/training/onboarding/INDEX.md` to
 today's date — **every session that writes the record, not only the first.** A freshness row that is
 only ever set once is stale from the second session onward, which is worse than an empty one because
 it looks maintained.
@@ -70,8 +70,8 @@ returns 404. An identity check prints a name that is not theirs. Recording eithe
 because the command exited zero is the failure this state prevents. Write both values down — what
 they said and what the command returned — and leave it for the next session or the trainer.
 
-`not applicable` is for one real case — the plugin install when the apprentice is using Codex.
-Do not use it to retire something inconvenient.
+`not applicable` is for one real case — a plugin from `library/sops/agent-settings.md` that is not
+offered for the agent the apprentice uses. Do not use it to retire something inconvenient.
 
 ## The shape
 
@@ -101,8 +101,9 @@ Last session: YYYY-MM-DD, session <n>
 | Session logging on entire.io | blocked | 2026-08-21 | trainer: setup page not sent yet |
 | Joined Google Classroom | blocked | 2026-08-21 | trainer: join link not sent yet |
 | Joined Discord | blocked | 2026-08-21 | trainer: invite not sent yet |
-| Workspace cloned and skills symlink resolving | verified | 2026-08-21 | test -L passed |
-| Workspace plugins installed | not applicable | 2026-08-21 | using Codex; no plugin mechanism |
+| Apprentice workspace plugin installed | verified | 2026-08-21 | ChatGPT app (Codex); this skill ran from it |
+| Workspace folder set up in this repository | verified | 2026-08-21 | apprentice-workspace/AGENTS.md and the root AGENTS.md block present |
+| Workspace plugins installed | not applicable | 2026-08-21 | using Codex; <plugin name> not offered for Codex |
 | Opened Classroom and read one subject | blocked | 2026-08-21 | trainer: cannot open until they are in Classroom |
 | Office hours in the calendar | outstanding | 2026-08-21 | asked; not added yet |
 
@@ -149,13 +150,19 @@ Keeping them separate is the point: an apprentice who can see which rows are act
 clear tonight will clear them. One undifferentiated list reads as a wall and gets nothing done.
 
 **The table has more rows than the checklist has items, and that is deliberate.** Setting up the
-workspace is two independent jobs with two different outcomes — cloning with a working skills link,
-and installing the plugins — and under Codex the second is `not applicable` while the first is
-`verified`. One row cannot hold two states, so it gets two.
+workspace is three independent jobs with different outcomes — the `apprentice-workspace` plugin, the
+workspace folder in this repository, and the plugins from `library/sops/agent-settings.md` — and one
+can be `not applicable` while the others are `verified`. One row cannot hold three states, so it
+gets three.
 
 **Do not remove or rename a row.** A later session reads this table by its row labels. Adding a row
 when the checklist grows is fine; adding a line under `Evidence or note` is fine. Renaming
 `Joined Discord` to something tidier is what breaks the next session.
+
+**One exception, made once.** A record written while the workspace was a cloned repository has the row
+`Workspace cloned and skills symlink resolving`. The thing it checked no longer exists: replace that
+row with `Apprentice workspace plugin installed` and `Workspace folder set up in this repository`,
+check both, and note the old row's date in the new rows' notes.
 
 **That rule is about the table only.** The lists underneath are rewritten every session by design —
 replace them wholesale to match the table as it now stands. A record written before this format had

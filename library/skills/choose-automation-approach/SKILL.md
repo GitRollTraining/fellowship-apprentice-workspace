@@ -63,8 +63,8 @@ and high-stakes controls that accidentally recreate the manual process.
 ## Output
 
 Use `references/output-template.md`. If this is an active engagement and the client slug is known, offer
-to save the agreed brief at `engagements/<client-slug>/spec/automation-approach.md`; otherwise return it
-in the conversation. Do not invent a client or destination.
+to save the agreed brief at `apprentice-workspace/engagements/<client-slug>/spec/automation-approach.md`;
+otherwise return it in the conversation. Do not invent a client or destination.
 
 ## Eval
 
@@ -76,3 +76,5 @@ ability to trade safety for convenience deliberately.
 
 Adhere to `library/reference/agent-quality-guidelines.md` and
 `library/reference/skill-architecture.md`.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

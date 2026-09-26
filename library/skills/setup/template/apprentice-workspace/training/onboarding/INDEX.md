@@ -12,8 +12,8 @@ for one.
 
 Getting to working state is work you do before you have a client, so it belongs under `training/`
 rather than in an engagement. It has its own directory because a record that a later session has to
-find and re-read needs a stable path, and because `training/` is one of the three trees your agent
-is allowed to write.
+find and re-read needs a stable path, and because `training/` is one of the three trees that are
+yours rather than the plugin's.
 
 ## Inventory
 
@@ -24,8 +24,8 @@ is allowed to write.
 Empty until you run the skill. The skill creates the record on your first session and updates it on
 every session after.
 
-**Never put a joining link or a course code in here.** This repository is public. The record says
-whether you joined something, never how to join it.
+**Never put a joining link or a course code in here.** The repository this folder sits in may be
+public. The record says whether you joined something, never how to join it.
 
 ## Freshness
 

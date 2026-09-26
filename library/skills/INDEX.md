@@ -9,7 +9,7 @@ Skills are bounded, reusable agent capabilities that are not tightly coupled to 
 engagement lifecycle, directory structure or required artifacts. A skill may be used during an
 engagement, but it remains meaningful and usable outside one.
 
-The curated skills are reached through the `.claude/skills` symlink at the repository root. The
+The curated skills reach the agent through the `apprentice-workspace` plugin. The
 skills here are copies rather than links: each was taken from a source repository at a recorded
 commit and patched where it named something that does not exist here. Nine arrived from
 [mattpocock/skills](https://github.com/mattpocock/skills) (MIT) on 2026-08-23 at commit `5b15a47`:
@@ -41,6 +41,7 @@ than silent.
 | `kb-restructure/` | the engagement directory has outgrown its shape | Renames and re-nests an engagement directory as it grows without breaking what points at it |
 | `onboarding/` | you are a new apprentice and nothing is set up yet | Walks the nineteen setup items from a fresh machine to a working workspace, verifies the ones a command can verify, and records the ones only the apprentice can confirm so a later session knows what is still outstanding. |
 | `scan-agent-skill/` | you are about to install, execute or hand over an agent skill | Runs a pinned, local-only security scan over the whole skill package, then requires a human disposition for findings and a manual review even when the scan is clean. The scanner installs separately; its source and dependencies are not copied into this workspace. |
+| `setup/` | you are starting work in a new repository | Creates the `apprentice-workspace/` folder, its rules and the root `AGENTS.md`/`CLAUDE.md` pointers in the repository you are working in; adds only what is missing. |
 | `teach/` | you need to learn something properly, over days | Builds a stateful teaching workspace under `training/learning/`: a mission, a learning record, a glossary and self-contained HTML lessons that accumulate into a course. |
 | `to-questionnaire/` | the owner could not answer it in the room | Turns a decision you cannot settle into a questionnaire for someone else to fill in, so an unanswered question leaves the session as a document rather than a gap. |
 | `to-spec/` | the interview is done and you have the answers | Synthesises the conversation into a specification without re-interviewing: problem, solution, seams, definition of done. |
@@ -59,3 +60,4 @@ than silent.
 | `choose-automation-approach/` | 2026-08-13 | Instruction | authored for this workspace; eval baseline included |
 | `scan-agent-skill/` | 2026-08-14 | Instruction | authored wrapper; pins Cisco AI Skill Scanner 2.0.13 |
 | `onboarding/`, `workspace-help/` | 2026-08-22 | Instruction | authored for this workspace; apprentice-facing. Both were driven end to end for the first time on 2026-08-22, in the ChatGPT desktop application in Codex mode, against a throwaway clone. The onboarding run surfaced the gap this update closes: the four reading topics were explained nowhere the agent could reach, so it answered from the public web. Neither has yet been run by an apprentice who is not also a maintainer |
+| `setup/` | 2026-09-26 | Instruction | authored for this workspace; creates the workspace folder in any repository |

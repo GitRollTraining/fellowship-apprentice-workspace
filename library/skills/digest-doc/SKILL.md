@@ -8,6 +8,9 @@ argument-hint: <file-path-or-url-or-pasted-text>
 
 > Turns a source document into a navigable descriptive fact-sheet so nobody re-reads the original except for legal review. Every fact page/section-sourced. Digest captures ALL substantive content of the document; decision-relevance ("implications") is a dedicated section at the end, NOT the keep/cut filter. Length: as long as the content requires — no size bands. Document families plug in as reference sets; the spine (classify → schema → full read → write → verify → file + index) is family-agnostic.
 
+**Where `library/` is.** Every `library/…` path in this skill is inside the `apprentice-workspace`
+plugin, not in your repository: `library/` is the folder two levels above this skill's own folder.
+
 ## Families
 
 | Family | Status | Covers | Refs |
@@ -27,13 +30,14 @@ No other arguments. The type within the family (paper / report / page) is always
 ## Step 0 — establish WHERE you are, before anything else
 
 ```bash
-git rev-parse --show-toplevel          # -> the root of this apprentice workspace
+git rev-parse --show-toplevel          # -> the root of the repository you work in
 ```
 
 **User-level since 2026-07-27**, so this runs in every workspace and must never assume one. Whatever
-this prints is the workspace the digest is filed into. Exit 1 → **stop and report**; do not guess a
-root, do not fall back to cwd. Filing routes are in `references/routing.md`; there is deliberately no
-destination flag (preference #17 rule 2 — config is read from the workspace, not typed).
+this prints is the repository, and its `apprentice-workspace/` folder is the workspace the digest is
+filed into. Exit 1 → **stop and report**; do not guess a root, do not fall back to cwd. Filing routes
+are in `references/routing.md`; there is deliberately no destination flag (preference #17 rule 2 —
+config is read from the workspace, not typed).
 
 Do not hand-roll the check. "Walk up to a directory with `.git/`" is true in both workspaces and in
 every worktree, and silently resolves the wrong root.
@@ -60,7 +64,7 @@ Top four inline; full per-family list in `references/{family}-gotchas.md` — re
 
 | Key | Value |
 |---|---|
-| Skill location | `library/skills/digest-doc/`, reached through the `.claude/skills` symlink |
+| Skill location | `library/skills/digest-doc/` in the `apprentice-workspace` plugin, reached through the plugin |
 | Workspace probe | `git rev-parse --show-toplevel`. **Local patch for the apprentice workspace:** upstream this skill probes a script that recognises exactly two GitRoll repositories by git remote and exits 1 on anything else, which halted this skill at step 0 here |
 | Filing routes | `references/routing.md` — per-workspace destinations, read at runtime |
 | Family refs pattern | `references/{family}-schemas.md`, `references/{family}-importance-rules.md`, `references/{family}-gotchas.md` |
@@ -93,3 +97,5 @@ first contribution to this library.
 Adhere to:
 - `library/reference/agent-quality-guidelines.md` (runtime behavior)
 - `library/reference/skill-architecture.md` (structural principles)
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

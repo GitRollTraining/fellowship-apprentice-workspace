@@ -62,3 +62,5 @@ Adhere to:
 
 - `library/reference/agent-quality-guidelines.md` for runtime behavior.
 - `library/reference/skill-architecture.md` for structural principles.
+
+`library/` here is the plugin's library: the folder two levels above this skill's own folder.

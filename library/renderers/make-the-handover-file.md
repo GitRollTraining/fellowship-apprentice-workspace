@@ -73,7 +73,8 @@ and must not appear in rendered prose.
 
 ## 2. Build
 
-From the repository root:
+From the `apprentice-workspace/` folder, with `library/` resolved to the plugin's library as
+`apprentice-workspace/AGENTS.md` says:
 
 ```bash
 python3 library/renderers/build-document-pdf.py "$ACCOUNT"
@@ -148,7 +149,7 @@ Tables of four rows or fewer are held together across page breaks where possible
 | `pandoc: command not found` | Install Pandoc as above |
 | `ModuleNotFoundError: No module named 'playwright'` | Install Playwright for the same Python interpreter and install Chromium |
 | `pdftotext: command not found` | Install Poppler; do not claim the text-layer checks ran |
-| `no such source` | Run from the repository root and resolve the engagement path |
+| `no such source` | Run from the `apprentice-workspace/` folder and resolve the engagement path |
 | PDF absent during check | Run the builder first against the same markdown file |
 | Frontmatter printed in the body | Frontmatter did not begin on line 1 or did not close correctly |
 | Two title blocks | Remove the extra H1; do not blanket-rewrite headings inside code fences |
