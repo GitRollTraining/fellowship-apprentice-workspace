@@ -1,6 +1,6 @@
 ---
 name: workspace-help
-description: Answer an apprentice's "how do I ...?" and "where does this go?" questions about this workspace by listing what is actually in it right now and reading its manifests, never from a remembered inventory. Use whenever someone asks where a file belongs, what a playbook or skill is for, what they are allowed to edit, or which tool to reach for. Do not use it to run a playbook or to set anything up.
+description: Answer an apprentice's "how do I ...?" and "where does this go?" questions about this workspace by listing what is actually in it right now and reading its manifests, never from a remembered inventory. Use whenever someone asks which skills they have, where a file belongs, what a playbook or skill is for, what they are allowed to edit, or which tool to reach for. Do not use it to run a playbook or to set anything up.
 ---
 
 # Workspace help

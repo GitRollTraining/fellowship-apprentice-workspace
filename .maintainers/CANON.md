@@ -219,7 +219,7 @@ library/skills/setup/eval/baseline-input.md	authored	-	-	4447d870ccfc4deecd990ab
 library/skills/setup/eval/baseline-output.md	authored	-	-	39aa505e57be98c64475296f5fa54ed596f81a93194d9f23a47d0e3563954e54	skills	-
 library/skills/setup/references/root-blocks.md	authored	-	-	492d8e6698492704c98196bae15f948820cd8506f91f10db68771838726a75dd	skills	-
 library/skills/setup/template/apprentice-workspace/.gitignore	authored	-	-	cd1ed456b93069292793b8c5a189a970953b52888c7d80aa7aad97041a6380f7	skills	-
-library/skills/setup/template/apprentice-workspace/AGENTS.md	authored	-	-	5e32a52611477b4d5d1eea4556e8bb16b5ca74294d2e15c47c2e5d7a6c2bad33	skills	-
+library/skills/setup/template/apprentice-workspace/AGENTS.md	authored	-	-	d7052ed4c6d3db51333f8133cd74b5637d6d7ee559696aa5692d4861ae76a6e4	skills	-
 library/skills/setup/template/apprentice-workspace/INDEX.md	authored	-	-	983ecdd7cd5b5b5af2d0e1d4d86c5461fea18f42592c8350800ab4f144cb1c36	skills	-
 library/skills/setup/template/apprentice-workspace/engagements/INDEX.md	authored	-	-	b544789175a30fd37bf9a9e35663046ca5978d73ff15bdc5b6944f3caa924776	skills	-
 library/skills/setup/template/apprentice-workspace/engagements/example-client/INDEX.md	authored	-	-	cbf7ce77fdd34d1f57f6ee4dc3a7075a8363f902d295811f7f56ee868200f976	skills	-
@@ -262,7 +262,7 @@ library/skills/video-to-markdown/scripts/srt_to_transcript.py	WeiKuoWei/dotclaud
 library/skills/video-to-markdown/scripts/transcribe_timed.py	WeiKuoWei/dotclaude	~/.claude/skills/wei-video-to-markdown/scripts/transcribe_timed.py	-	0aaa08a501abe26d0a34736e7b92469ecb88794372b7589b8301296b4cbd1c7b	skills	eda2f978e342e1200c0049941279f6981cf55a98b062f679d206e1924b968ab1
 library/skills/wait-what/SKILL.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what	2026-08-23	dcaa44ef972d5a3f9bda65a69442fb11e36eb41b7e9bb0dc8b63031ba0582fdb	skills	dcaa44ef972d5a3f9bda65a69442fb11e36eb41b7e9bb0dc8b63031ba0582fdb
 library/skills/wait-what/agents/openai.yaml	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what	2026-08-23	e0d9beddf0093b3cf05de2722699affab5d240e5950469e208d59c1f0ed91bef	skills	e0d9beddf0093b3cf05de2722699affab5d240e5950469e208d59c1f0ed91bef
-library/skills/workspace-help/SKILL.md	authored	-	-	8c72323f4c5c8837f28dc4efb0597346064b5a4106caf956d189b31895810926	skills	-
+library/skills/workspace-help/SKILL.md	authored	-	-	fe9dae80febc4f56d5c6f603f7196007790e20fcc8c7456b11b7ecd0327d51de	skills	-
 library/skills/workspace-help/agents/openai.yaml	authored	-	-	1ce00af0130218e327348e3c0f6e8308e71c9c126ae805b0d1d08a3d96d72dea	skills	-
 library/skills/workspace-help/references/enumeration.md	authored	-	-	ac1539a9d50e83cd18bb2a7bbd22cb3d25d2f1f805409acab1ba8ffbf76bd0bd	skills	-
 library/skills/writing-for-agents/SKILL-MECHANICS.md	mattpocock/skills	https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents	2026-08-23	86f112c08d785cc224c13dcda75c0724b74bd62622cc61d4b7ab3dbbaf37f6fc	skills	86f112c08d785cc224c13dcda75c0724b74bd62622cc61d4b7ab3dbbaf37f6fc
